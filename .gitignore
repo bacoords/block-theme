@@ -1,0 +1,9 @@
+# Npm
+node_modules
+
+# Code editor files
+.vscode
+
+# Other system files
+.DS_Store
+

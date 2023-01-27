@@ -1,0 +1,19 @@
+{
+  "name": "tangent",
+  "version": "0.0.0",
+  "description": "A theme starter for the modern WordPress developer.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/understrap/tangent.git"
+  },
+  "author": "",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/understrap/tangent/issues"
+  },
+  "homepage": "https://github.com/understrap/tangent#readme"
+}
