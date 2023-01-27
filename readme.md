@@ -7,7 +7,7 @@ A few similarities:
 - Sensible defaults.
 - A fast scaffold for custom development.
 - A modern build process.
-- A "classic" (non-FSE) WordPress theme that still uses PHP.
+- A "hybrid" (non-FSE) WordPress theme that still uses PHP but embraces the Block Editor.
 - Reusable components that are _extremely_ well documented.
 
 And some differences:
