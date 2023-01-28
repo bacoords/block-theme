@@ -1,0 +1,32 @@
+{
+  "settings": {
+    "color": {
+      "palette": [
+        {
+          "name": "Primary",
+          "slug": "primary",
+          "color": "#f28400"
+        },
+        {
+          "name": "Secondary",
+          "slug": "secondary",
+          "color": "#619237"
+        },
+        {
+          "name": "Dark",
+          "slug": "dark",
+          "color": "#222222"
+        },
+        {
+          "name": "Light",
+          "slug": "light",
+          "color": "#fff6ed"
+        }
+      ],
+      "defaultGradients": false,
+      "custom": false,
+      "defaultPalette": false
+    }
+  },
+  "version": "2"
+}

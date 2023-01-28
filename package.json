@@ -4,16 +4,28 @@
   "description": "A theme starter for the modern WordPress developer.",
   "main": "index.js",
   "scripts": {
+	"themejson": "node ./bin/theme-json.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/understrap/tangent.git"
   },
-  "author": "",
+  "author": "Howard Development & Consulting",
   "license": "GPL-3.0",
   "bugs": {
     "url": "https://github.com/understrap/tangent/issues"
   },
-  "homepage": "https://github.com/understrap/tangent#readme"
+  "homepage": "https://github.com/understrap/tangent#readme",
+  "keywords": [
+    "wordpress",
+    "starter",
+    "theme"
+  ],
+  "dependencies": {
+    "fs-extra": "^11.1.0",
+    "glob": "^8.1.0",
+    "jsonc": "^2.0.0",
+    "lodash.set": "^4.3.2"
+  }
 }

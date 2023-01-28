@@ -1,0 +1,23 @@
+/* This is the custom palette for the theme. */
+[
+	{
+		"name": "Primary",
+		"slug": "primary",
+		"color": "#f28400"
+	},
+	{
+		"name": "Secondary",
+		"slug": "secondary",
+		"color": "#619237"
+	},
+	{
+		"name": "Dark",
+		"slug": "dark",
+		"color": "#222222"
+	},
+	{
+		"name": "Light",
+		"slug": "light",
+		"color": "#fff6ed"
+	}
+]
