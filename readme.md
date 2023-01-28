@@ -32,7 +32,7 @@ Probably something with webpack and @wordpress/scripts...
 ├── src
 │   ├── css
 │   ├── js
-├── templates
+├── template-parts
 ├── functions.php
 ├── index.php
 ├── node_modules
@@ -41,3 +41,7 @@ Probably something with webpack and @wordpress/scripts...
 ├── style.css
 └── .gitignore
 ```
+
+## Credits
+
+- Underscores: https://github.com/Automattic/_s
