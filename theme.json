@@ -1,9 +1,6 @@
 {
   "settings": {
     "color": {
-      "defaultGradients": false,
-      "custom": false,
-      "defaultPalette": false,
       "palette": [
         {
           "name": "Primary",
@@ -25,7 +22,10 @@
           "slug": "light",
           "color": "#fff6ed"
         }
-      ]
+      ],
+      "defaultGradients": false,
+      "custom": false,
+      "defaultPalette": false
     }
   },
   "version": "2"
