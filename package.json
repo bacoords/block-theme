@@ -10,10 +10,15 @@
     "type": "git",
     "url": "git+https://github.com/understrap/tangent.git"
   },
-  "author": "",
+  "author": "Howard Development & Consulting",
   "license": "GPL-3.0",
   "bugs": {
     "url": "https://github.com/understrap/tangent/issues"
   },
-  "homepage": "https://github.com/understrap/tangent#readme"
+  "homepage": "https://github.com/understrap/tangent#readme",
+  "keywords": [
+    "wordpress",
+    "starter",
+    "theme"
+  ]
 }
