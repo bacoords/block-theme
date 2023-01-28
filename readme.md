@@ -13,7 +13,7 @@ A few similarities:
 And some differences:
 
 - Gutenberg/block-first from the ground up
-- No more Underscores or Bootstrap 😮 
+- No more Bootstrap 😮 
 - Works _with_ the design language of Gutenberg, instead of against it
 - Approachable, but modern, PHP best practices
 
