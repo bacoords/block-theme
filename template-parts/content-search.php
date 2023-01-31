@@ -16,20 +16,20 @@
 		<?php if ( 'post' === get_post_type() ) : ?>
 		<div class="entry-meta">
 			<?php
-			get_template_part( 'template-parts/-s', 'posted-on' );
-			get_template_part( 'template-parts/-s', 'posted-by' );
+			get_template_part( 'template-parts/meta', 'posted-on' );
+			get_template_part( 'template-parts/meta', 'posted-by' );
 			?>
 		</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php get_template_part( 'template-parts/-s', 'post-thumbnail' ); ?>
+	<?php get_template_part( 'template-parts/meta', 'post-thumbnail' ); ?>
 
 	<div class="entry-summary">
 		<?php the_excerpt(); ?>
 	</div><!-- .entry-summary -->
 
 	<footer class="entry-footer">
-		<?php get_template_part( 'template-parts/-s', 'entry-footer' ); ?>
+		<?php get_template_part( 'template-parts/meta', 'entry-footer' ); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->

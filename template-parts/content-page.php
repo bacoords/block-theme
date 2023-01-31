@@ -14,7 +14,7 @@
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 
-	<?php get_template_part( 'template-parts/-s', 'post-thumbnail' ); ?>
+	<?php get_template_part( 'template-parts/meta', 'post-thumbnail' ); ?>
 
 	<div class="entry-content">
 		<?php
