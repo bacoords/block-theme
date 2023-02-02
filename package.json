@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "themejson": "node ./bin/theme-json.js",
+    "css-compile": "sass --style compressed --source-map --embed-sources --no-error-css --quiet src/scss/editor.scss:css/editor.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -27,5 +28,8 @@
     "glob": "^8.1.0",
     "jsonc": "^2.0.0",
     "lodash.set": "^4.3.2"
+  },
+  "devDependencies": {
+    "sass": "^1.58.0"
   }
 }

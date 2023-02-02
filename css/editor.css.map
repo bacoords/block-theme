@@ -1,0 +1,1 @@
+{"version":3,"sourceRoot":"","sources":["../src/scss/blocks/wp-block-blockquote.scss"],"names":[],"mappings":"AAAA,qBACC","file":"editor.css","sourcesContent":[".wp-block-blockquote {\n\tborder: 2px solid var(--wp--preset--color--primary);\n}"]}
