@@ -1,6 +1,7 @@
 {
   "settings": {
     "color": {
+      "custom": false,
       "palette": [
         {
           "name": "Primary",
@@ -24,9 +25,8 @@
         }
       ],
       "defaultGradients": false,
-      "custom": false,
       "defaultPalette": false
     }
   },
-  "version": "2"
+  "version": 2
 }
