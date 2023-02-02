@@ -22,7 +22,7 @@ async function parseFile(filePath, parser = jsonc.parse) {
 	try {
 		return parser(text);
 	} catch (parseError) {
-		throw new Error(`Couldn't to parse ${filePath}. Error: ${parseError}`);
+		throw new Error(`Couldn't parse ${filePath}. Error: ${parseError}`);
 	}
 }
 
