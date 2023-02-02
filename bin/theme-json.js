@@ -99,7 +99,7 @@ async function combineJSONC(root, options = {}) {
 }
 
 /**
- * Creates a theme.json file from the themejson directory in the root of the project.
+ * Creates a theme.json file from the src/theme-json directory in the root of the project.
  * @returns void
  */
 async function createThemeJson() {
