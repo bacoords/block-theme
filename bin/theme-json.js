@@ -104,7 +104,7 @@ async function combineJSONC(root, options = {}) {
  */
 async function createThemeJson() {
 	// Combine the JSONC files in the themejson directory into a JSON object
-	const themeJson = await combineJSONC("theme-json");
+	const themeJson = await combineJSONC("src/theme-json");
 
 	// Write the theme.json file
 	let themeJsonObject = JSON.stringify(themeJson, null, 2);
