@@ -16,7 +16,7 @@
 		);
 
 		// Prints a media query based on the value
-		@media #{$query} {
+		@media (min-width: #{$query} ) {
 			@content;
 		}
 	} @else {
