@@ -7,6 +7,13 @@
  * @package Tangent
  */
 
+$args = wp_parse_args(
+	$args,
+	array(
+		'post_id' => get_the_ID(),
+	)
+);
+
 $byline = sprintf(
 	/* translators: %s: post author. */
 	esc_html_x( 'by %s', 'post author', 'tangent' ),

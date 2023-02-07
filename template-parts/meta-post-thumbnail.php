@@ -10,7 +10,14 @@
  * @package Tangent
  */
 
-if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
+$args = wp_parse_args(
+	$args,
+	array(
+		'post_id' => get_the_ID(),
+	)
+);
+
+if ( post_password_required( $args['post_id'] ) || is_attachment( $args['post_id'] ) || ! has_post_thumbnail( $args['post_id'] ) ) {
 	return;
 }
 
@@ -18,14 +25,15 @@ if ( is_singular() ) :
 	?>
 
 	<div class="post-thumbnail">
-		<?php the_post_thumbnail(); ?>
+		<?php echo get_the_post_thumbnail( $args['post_id'] ); ?>
 	</div><!-- .post-thumbnail -->
 
 <?php else : ?>
 
-	<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
+	<a class="post-thumbnail" href="<?php the_permalink( $args['post_id'] ); ?>" aria-hidden="true" tabindex="-1">
 		<?php
-			the_post_thumbnail(
+			echo get_the_post_thumbnail(
+				$args['post_id'],
 				'post-thumbnail',
 				array(
 					'alt' => the_title_attribute(
