@@ -10,7 +10,7 @@ namespace Tangent\Setup;
 /**
  * Setup theme
  */
-function tangent_setup() {
+function theme_setup() {
 	/*
 	* Make theme available for translation.
 	* Translations can be filed in the /languages/ directory.
@@ -61,4 +61,4 @@ function tangent_setup() {
 		)
 	);
 }
-add_action( 'after_setup_theme', 'Tangent\Setup\tangent_setup' );
+add_action( 'after_setup_theme', 'Tangent\Setup\theme_setup' );
