@@ -22,7 +22,7 @@ async function parseFile(filePath, parser = jsonc.parse) {
 	try {
 		return parser(text);
 	} catch (parseError) {
-		throw new Error(`Couldn't to parse ${filePath}. Error: ${parseError}`);
+		throw new Error(`Couldn't parse ${filePath}. Error: ${parseError}`);
 	}
 }
 
@@ -99,12 +99,12 @@ async function combineJSONC(root, options = {}) {
 }
 
 /**
- * Creates a theme.json file from the themejson directory in the root of the project.
+ * Creates a theme.json file from the provided directory (defaults to src/theme-json directory) in the root of the project.
  * @returns void
  */
-async function createThemeJson() {
+async function createThemeJson(path = "src/theme-json") {
 	// Combine the JSONC files in the themejson directory into a JSON object
-	const themeJson = await combineJSONC("theme-json");
+	const themeJson = await combineJSONC(path);
 
 	// Write the theme.json file
 	let themeJsonObject = JSON.stringify(themeJson, null, 2);
