@@ -11,13 +11,18 @@
 		"color": "#619237"
 	},
 	{
-		"name": "Dark",
-		"slug": "dark",
+		"name": "Foreground",
+		"slug": "foreground",
 		"color": "#222222"
 	},
 	{
-		"name": "Light",
-		"slug": "light",
+		"name": "Background",
+		"slug": "background",
 		"color": "#fff6ed"
+	},
+	{
+		"name": "Accent",
+		"slug": "accent",
+		"color": "#ac3c68"
 	}
 ]
