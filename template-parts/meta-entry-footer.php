@@ -10,17 +10,17 @@
 // Hide category and tag text for pages.
 if ( 'post' === get_post_type() ) {
 	/* translators: used between list items, there is a space after the comma */
-	$categories_list = get_the_category_list( esc_html__( ', ', '_s' ) );
+	$categories_list = get_the_category_list( esc_html__( ', ', 'tangent' ) );
 	if ( $categories_list ) {
 		/* translators: 1: list of categories. */
-		printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', '_s' ) . '</span>', $categories_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'tangent' ) . '</span>', $categories_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 
 	/* translators: used between list items, there is a space after the comma */
-	$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', '_s' ) );
+	$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'tangent' ) );
 	if ( $tags_list ) {
 		/* translators: 1: list of tags. */
-		printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', '_s' ) . '</span>', $tags_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'tangent' ) . '</span>', $tags_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 }
 
@@ -30,7 +30,7 @@ if ( ! is_single() && ! post_password_required() && ( comments_open() || get_com
 		sprintf(
 			wp_kses(
 				/* translators: %s: post title */
-				__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', '_s' ),
+				__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'tangent' ),
 				array(
 					'span' => array(
 						'class' => array(),
@@ -47,7 +47,7 @@ edit_post_link(
 	sprintf(
 		wp_kses(
 			/* translators: %s: Name of current post. Only visible to screen readers */
-			__( 'Edit <span class="screen-reader-text">%s</span>', '_s' ),
+			__( 'Edit <span class="screen-reader-text">%s</span>', 'tangent' ),
 			array(
 				'span' => array(
 					'class' => array(),

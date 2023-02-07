@@ -22,7 +22,7 @@ $time_string = sprintf(
 
 $posted_on = sprintf(
 	/* translators: %s: post date. */
-	esc_html_x( 'Posted on %s', 'post date', '_s' ),
+	esc_html_x( 'Posted on %s', 'post date', 'tangent' ),
 	'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 );
 ?>

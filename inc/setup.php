@@ -15,7 +15,7 @@ function tangent_setup() {
 	* Make theme available for translation.
 	* Translations can be filed in the /languages/ directory.
 	* If you're building a theme based on _s, use a find and replace
-	* to change '_s' to the name of your theme in all the template files.
+	* to change 'tangent' to the name of your theme in all the template files.
 	*/
 	load_theme_textdomain( 'tangent', get_template_directory() . '/languages' );
 
@@ -40,7 +40,7 @@ function tangent_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
-			'menu-1' => esc_html__( 'Primary', '_s' ),
+			'menu-1' => esc_html__( 'Primary', 'tangent' ),
 		)
 	);
 
