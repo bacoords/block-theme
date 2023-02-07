@@ -1,0 +1,76 @@
+/// This mixin assumes mobile-first coding, and helps you respond to different breakpoints
+/// from within each applicable selector.
+/// It pulls breakpoints from a map of breakpoints set in _variables.scss
+/// Read More : https://sass-guidelin.es/#responsive-web-design-and-breakpoints
+@mixin respond-to($breakpoint) {
+	// Retrieves the value of the breakpoint
+	$raw-query: map-get($breakpoints, $breakpoint);
+
+	// If the breakpoint exists in the map
+	@if $raw-query {
+
+		$query: if(
+			type-of($raw-query) == 'string',
+			unquote($raw-query),
+			inspect($raw-query)
+		);
+
+		// Prints a media query based on the value
+		@media (min-width: #{$query} ) {
+			@content;
+		}
+	} @else {
+		@error "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+		 + "Please make sure it is defined in `$breakpoints` map.";
+	}
+}
+
+/// Size an element
+@mixin size($width, $height: $width) {
+	width: $width;
+	height: $height;
+}
+
+/// Add left/right padding to an element
+@mixin padding-x($left, $right: $left) {
+	padding-left: $left;
+	padding-right: $right;
+}
+
+/// Add top/bottom padding to an element
+@mixin margin-y($top, $bottom: $top) {
+	padding-top: $top;
+	padding-bottom: $bottom;
+}
+
+/// Add left/right margin to an element
+@mixin margin-x($left, $right: $left) {
+	margin-left: $left;
+	margin-right: $right;
+}
+
+/// Add top/bottom margin to an element
+@mixin margin-y($top, $bottom: $top) {
+	margin-top: $top;
+	margin-bottom: $bottom;
+}
+
+/// Set font size, line height, and letter spacing
+@mixin font-size($font-size, $line-height: normal, $letter-spacing: normal) {
+	font-size: $font-size;
+	line-height: $line-height;
+	letter-spacing: $letter-spacing;
+}
+
+/// Simple fade-in animation
+@mixin fade($type: "hide") {
+	@if $type == "hide" {
+		visibility: hidden;
+		opacity: 0;
+		transition: visibility 1s, opacity 1s;
+	} @else if $type == "show" {
+		visibility: visible;
+		opacity: 1;
+		transition: visibility 1s, opacity 1s;
+	}
+}
