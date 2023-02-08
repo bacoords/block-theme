@@ -1,2 +1,3 @@
-@use "wp-block-blockquote";
-@use "wp-block-columns";
+@forward "./core/group";
+@forward "wp-block-blockquote";
+@forward "wp-block-columns";
