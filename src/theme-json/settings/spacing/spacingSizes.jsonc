@@ -1,0 +1,32 @@
+[
+	{
+		"size": "clamp(1.5rem, 5vw, 2rem)",
+		"slug": "30",
+		"name": "1"
+	},
+	{
+		"size": "clamp(1.8rem, 1.8rem + ((1vw - 0.48rem) * 2.885), 3rem)",
+		"slug": "40",
+		"name": "2"
+	},
+	{
+		"size": "clamp(2.5rem, 8vw, 4.5rem)",
+		"slug": "50",
+		"name": "3"
+	},
+	{
+		"size": "clamp(3.75rem, 10vw, 7rem)",
+		"slug": "60",
+		"name": "4"
+	},
+	{
+		"size": "clamp(5rem, 5.25rem + ((1vw - 0.48rem) * 9.096), 8rem)",
+		"slug": "70",
+		"name": "5"
+	},
+	{
+		"size": "clamp(7rem, 14vw, 11rem)",
+		"slug": "80",
+		"name": "6"
+	}
+]

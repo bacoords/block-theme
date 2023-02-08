@@ -1,0 +1,26 @@
+[
+	{
+		"fluid": {
+			"min": "0.875rem",
+			"max": "1rem"
+		},
+		"size": "1rem",
+		"slug": "small"
+	},
+	{
+		"fluid": {
+			"min": "1rem",
+			"max": "1.125rem"
+		},
+		"size": "1.125rem",
+		"slug": "medium"
+	},
+	{
+		"fluid": {
+			"min": "1.75rem",
+			"max": "1.875rem"
+		},
+		"size": "1.75rem",
+		"slug": "large"
+	}
+]

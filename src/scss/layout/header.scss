@@ -1,2 +1,7 @@
+@use "../utilities/container.scss" as *;;
 #masthead {
+	display: flex;
+	justify-content: space-between;
+	padding: var(--wp--preset--spacing--40) 0;
+	@extend .wrapper;
 }

@@ -3,17 +3,17 @@
 	{
 		"name": "Primary",
 		"slug": "primary",
-		"color": "#f28400"
+		"color": "#4B7F00"
 	},
 	{
 		"name": "Secondary",
 		"slug": "secondary",
-		"color": "#619237"
+		"color": "#AD5D00"
 	},
 	{
 		"name": "Foreground",
 		"slug": "foreground",
-		"color": "#222222"
+		"color": "#0d171c"
 	},
 	{
 		"name": "Background",
