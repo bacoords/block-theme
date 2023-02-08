@@ -1,0 +1,29 @@
+{
+	":hover": {
+		"color": {
+			"text": "var(--wp--preset--color--accent)"
+		},
+		"typography": {
+			"textDecoration": "underline var(--wp--preset--color--accent)"
+		}
+	},
+	":focus": {
+		"typography": {
+			"textDecoration": "underline dashed"
+		}
+	},
+	":active": {
+		"color": {
+			"text": "var(--wp--preset--color--primary)"
+		},
+		"typography": {
+			"textDecoration": "none"
+		}
+	},
+	"color": {
+		"text": "var(--wp--preset--color--secondary)"
+	},
+	"typography": {
+		"textDecoration": "underline var(--wp--preset--color--secondary)"
+	}
+}
