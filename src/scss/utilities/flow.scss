@@ -1,0 +1,5 @@
+.flow {
+	& > * + * {
+		margin-top: var(--wp--custom--block-gap, 1rem);
+	}
+}
