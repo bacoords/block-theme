@@ -5,6 +5,13 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package Tangent
+ *
+ * @param args array {
+ *    Optional. Array of arguments.
+ *
+ *    @type int $post_id The post ID. Default is the current post ID.
+ *
+ * }
  */
 
 $args = wp_parse_args(
