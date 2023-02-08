@@ -1,5 +1,5 @@
 {
-	"blockGap": "1.5rem",
+	"blockGap": "var(--wp--custom--spacing--block-gap)",
 	"padding": {
 		"top": "var(--wp--preset--spacing--40)",
 		"right": "var(--wp--preset--spacing--30)",

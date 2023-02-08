@@ -1,4 +1,4 @@
 {
-	"contentSize": "650px",
-	"wideSize": "1200px"
+	"contentSize": "var(--wp--custom--content-sizes--default)",
+	"wideSize": "var(--wp--custom--content-sizes--wide)"
 }
