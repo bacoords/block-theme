@@ -1,0 +1,8 @@
+@use "../utilities/flow.scss" as *;
+#primary {
+	max-width: var(--wp--custom--content-sizes--default);
+	margin: 0 auto;
+	.entry-content {
+		@extend .flow;
+	}
+}
