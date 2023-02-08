@@ -1,22 +1,21 @@
 {
   "settings": {
     "color": {
-      "defaultGradients": false,
       "palette": [
         {
           "name": "Primary",
           "slug": "primary",
-          "color": "#f28400"
+          "color": "#4B7F00"
         },
         {
           "name": "Secondary",
           "slug": "secondary",
-          "color": "#619237"
+          "color": "#AD5D00"
         },
         {
           "name": "Foreground",
           "slug": "foreground",
-          "color": "#222222"
+          "color": "#0d171c"
         },
         {
           "name": "Background",
@@ -29,6 +28,7 @@
           "color": "#ac3c68"
         }
       ],
+      "defaultGradients": false,
       "custom": false,
       "defaultPalette": false
     }
