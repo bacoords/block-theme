@@ -1,6 +1,6 @@
 <?php
 /**
- * Setup theme
+ * Enqueue scripts and styles.
  *
  * @package Tangent
  */
@@ -8,7 +8,7 @@
 namespace Tangent\Enqueue;
 
 /**
- * Setup theme
+ * Enqueue the `global.css` file.
  */
 function global_theme_styles() {
 	$theme_version = wp_get_theme()->get( 'Version' );
