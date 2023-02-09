@@ -1,65 +1,65 @@
 {
 	"small": {
 		"fluid": {
-			"min": "0.875rem",
+			"min": "0.94rem",
 			"max": "1rem"
 		},
 		"size": "1rem"
 	},
 	"paragraph": {
 		"fluid": {
-			"min": "0.875rem",
-			"max": "1rem"
+			"min": "1.13rem",
+			"max": "1.25rem"
 		},
-		"size": "1rem"
+		"size": "1.25rem"
 	},
 	"h6": {
 		"fluid": {
-			"min": "0.875rem",
-			"max": "1rem"
+			"min": "1.35rem",
+			"max": "1.56rem"
 		},
-		"size": "1rem"
+		"size": "1.56rem"
 	},
 	"h5": {
 		"fluid": {
-			"min": "0.875rem",
-			"max": "1rem"
+			"min": "1.62rem",
+			"max": "1.95rem"
 		},
-		"size": "1rem"
+		"size": "1.95rem"
 	},
 	"h4": {
 		"fluid": {
-			"min": "0.875rem",
-			"max": "1rem"
+			"min": "1.94rem",
+			"max": "2.44rem"
 		},
-		"size": "1rem"
+		"size": "2.44rem"
 	},
 	"h3": {
 		"fluid": {
-			"min": "0.875rem",
-			"max": "1rem"
+			"min": "2.33rem",
+			"max": "3.05rem"
 		},
-		"size": "1rem"
+		"size": "3.05rem"
 	},
 	"h2": {
 		"fluid": {
-			"min": "0.875rem",
-			"max": "1rem"
+			"min": "2.8rem",
+			"max": "3.82rem"
 		},
-		"size": "1rem"
+		"size": "3.82rem"
 	},
 	"large": {
 		"fluid": {
-			"min": "0.875rem",
-			"max": "1rem"
+			"min": "3.36rem",
+			"max": "4.77rem"
 		},
-		"size": "1rem"
+		"size": "4.77rem"
 	},
 	"h1": {
 		"fluid": {
-			"min": "0.875rem",
-			"max": "1rem"
+			"min": "4.03rem",
+			"max": "5.96rem"
 		},
-		"size": "1rem"
+		"size": "5.96rem"
 	}
 }

@@ -1,82 +1,82 @@
 [
 	{
 		"fluid": {
-			"min": "var(--wp--custom--font-sizes--small--fluid--min)",
-			"max": "var(--wp--custom--font-sizes--small--fluid--max)"
+			"min": "var(--wp--custom--fontsizes--small--fluid--min)",
+			"max": "var(--wp--custom--fontsizes--small--fluid--max)"
 		},
-		"size": "var(--wp--custom--font-sizes--small--size)",
+		"size": "var(--wp--custom--fontsizes--small--size)",
 		"slug": "small",
 		"name": "Small"
 	},
 	{
 		"fluid": {
-			"min": "var(--wp--custom--font-sizes--paragraph--fluid--min)",
-			"max": "var(--wp--custom--font-sizes--paragraph--fluid--max)"
+			"min": "var(--wp--custom--fontsizes--paragraph--fluid--min)",
+			"max": "var(--wp--custom--fontsizes--paragraph--fluid--max)"
 		},
-		"size": "var(--wp--custom--font-sizes--paragraph--size)",
+		"size": "var(--wp--custom--fontsizes--paragraph--size)",
 		"slug": "paragraph",
 		"name": "Paragraph"
 	},
 	{
 		"fluid": {
-			"min": "var(--wp--custom--font-sizes--h6--fluid--min)",
-			"max": "var(--wp--custom--font-sizes--h6--fluid--max)"
+			"min": "var(--wp--custom--fontsizes--h-6--fluid--min)",
+			"max": "var(--wp--custom--fontsizes--h-6--fluid--max)"
 		},
-		"size": "var(--wp--custom--font-sizes--h6--size)",
+		"size": "var(--wp--custom--fontsizes--h-6--size)",
 		"slug": "h6",
 		"name": "H6"
 	},
 	{
 		"fluid": {
-			"min": "var(--wp--custom--font-sizes--h5--fluid--min)",
-			"max": "var(--wp--custom--font-sizes--h5--fluid--max)"
+			"min": "var(--wp--custom--fontsizes--h-5--fluid--min)",
+			"max": "var(--wp--custom--fontsizes--h-5--fluid--max)"
 		},
-		"size": "var(--wp--custom--font-sizes--h5--size)",
+		"size": "var(--wp--custom--fontsizes--h-5--size)",
 		"slug": "h5",
 		"name": "H5"
 	},
 	{
 		"fluid": {
-			"min": "var(--wp--custom--font-sizes--h4--fluid--min)",
-			"max": "var(--wp--custom--font-sizes--h4--fluid--max)"
+			"min": "var(--wp--custom--fontsizes--h-4--fluid--min)",
+			"max": "var(--wp--custom--fontsizes--h-4--fluid--max)"
 		},
-		"size": "var(--wp--custom--font-sizes--h4--size)",
+		"size": "var(--wp--custom--fontsizes--h-4--size)",
 		"slug": "h4",
 		"name": "H4"
 	},
 	{
 		"fluid": {
-			"min": "var(--wp--custom--font-sizes--h3--fluid--min)",
-			"max": "var(--wp--custom--font-sizes--h3--fluid--max)"
+			"min": "var(--wp--custom--fontsizes--h-3--fluid--min)",
+			"max": "var(--wp--custom--fontsizes--h-3--fluid--max)"
 		},
-		"size": "var(--wp--custom--font-sizes--h3--size)",
+		"size": "var(--wp--custom--fontsizes--h-3--size)",
 		"slug": "h3",
 		"name": "H3"
 	},
 	{
 		"fluid": {
-			"min": "var(--wp--custom--font-sizes--h2--fluid--min)",
-			"max": "var(--wp--custom--font-sizes--h2--fluid--max)"
+			"min": "var(--wp--custom--fontsizes--h-2--fluid--min)",
+			"max": "var(--wp--custom--fontsizes--h-2--fluid--max)"
 		},
-		"size": "var(--wp--custom--font-sizes--h2--size)",
+		"size": "var(--wp--custom--fontsizes--h-2--size)",
 		"slug": "h2",
 		"name": "H2"
 	},
 	{
 		"fluid": {
-			"min": "var(--wp--custom--font-sizes--large--fluid--min)",
-			"max": "var(--wp--custom--font-sizes--large--fluid--max)"
+			"min": "var(--wp--custom--fontsizes--large--fluid--min)",
+			"max": "var(--wp--custom--fontsizes--large--fluid--max)"
 		},
-		"size": "var(--wp--custom--font-sizes--large--size)",
+		"size": "var(--wp--custom--fontsizes--large--size)",
 		"slug": "large",
 		"name": "Large"
 	},
 	{
 		"fluid": {
-			"min": "var(--wp--custom--font-sizes--h1--fluid--min)",
-			"max": "var(--wp--custom--font-sizes--h1--fluid--max)"
+			"min": "var(--wp--custom--fontsizes--h-1--fluid--min)",
+			"max": "var(--wp--custom--fontsizes--h-1--fluid--max)"
 		},
-		"size": "var(--wp--custom--font-sizes--h1--size)",
+		"size": "var(--wp--custom--fontsizes--h-1--size)",
 		"slug": "h1",
 		"name": "H1"
 	}
