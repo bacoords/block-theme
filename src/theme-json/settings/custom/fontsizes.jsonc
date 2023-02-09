@@ -1,0 +1,65 @@
+{
+	"small": {
+		"fluid": {
+			"min": "0.875rem",
+			"max": "1rem"
+		},
+		"size": "1rem"
+	},
+	"paragraph": {
+		"fluid": {
+			"min": "0.875rem",
+			"max": "1rem"
+		},
+		"size": "1rem"
+	},
+	"h6": {
+		"fluid": {
+			"min": "0.875rem",
+			"max": "1rem"
+		},
+		"size": "1rem"
+	},
+	"h5": {
+		"fluid": {
+			"min": "0.875rem",
+			"max": "1rem"
+		},
+		"size": "1rem"
+	},
+	"h4": {
+		"fluid": {
+			"min": "0.875rem",
+			"max": "1rem"
+		},
+		"size": "1rem"
+	},
+	"h3": {
+		"fluid": {
+			"min": "0.875rem",
+			"max": "1rem"
+		},
+		"size": "1rem"
+	},
+	"h2": {
+		"fluid": {
+			"min": "0.875rem",
+			"max": "1rem"
+		},
+		"size": "1rem"
+	},
+	"large": {
+		"fluid": {
+			"min": "0.875rem",
+			"max": "1rem"
+		},
+		"size": "1rem"
+	},
+	"h1": {
+		"fluid": {
+			"min": "0.875rem",
+			"max": "1rem"
+		},
+		"size": "1rem"
+	}
+}
