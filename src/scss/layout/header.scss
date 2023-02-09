@@ -6,6 +6,10 @@
 	padding: var(--wp--preset--spacing--40) 0;
 	@extend .wrapper;
 
+	.site-title{
+		font-size: var(--wp--custom--fontsizes--h-1--size);
+	}
+
 	.custom-logo-link img {
 		max-height: 3rem;
 		width: auto;
