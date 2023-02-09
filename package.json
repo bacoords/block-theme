@@ -7,8 +7,8 @@
     "themejson": "node ./bin/theme-json.js",
     "css-compile": "(sass --style compressed --source-map --embed-sources --no-error-css --quiet src/scss/editor.scss:css/editor.css) & (sass --style compressed --source-map --embed-sources --no-error-css --quiet src/scss/global.scss:css/global.css)",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "wp-scripts build --config ./bin/webpack.config.js --output-path=dist",
-	"start": "wp-scripts start --config ./bin/webpack.config.js --output-path=dist"
+    "build": "wp-scripts build --config ./bin/webpack.config.js --output-path=js",
+	"start": "wp-scripts start --config ./bin/webpack.config.js --output-path=js"
   },
   "repository": {
     "type": "git",
