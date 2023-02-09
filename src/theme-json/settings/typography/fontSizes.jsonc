@@ -1,26 +1,83 @@
 [
 	{
 		"fluid": {
-			"min": "0.875rem",
-			"max": "1rem"
+			"min": "var(--wp--custom--fontsizes--small--fluid--min)",
+			"max": "var(--wp--custom--fontsizes--small--fluid--max)"
 		},
-		"size": "1rem",
-		"slug": "small"
+		"size": "var(--wp--custom--fontsizes--small--size)",
+		"slug": "small",
+		"name": "Small"
 	},
 	{
 		"fluid": {
-			"min": "1rem",
-			"max": "1.125rem"
+			"min": "var(--wp--custom--fontsizes--paragraph--fluid--min)",
+			"max": "var(--wp--custom--fontsizes--paragraph--fluid--max)"
 		},
-		"size": "1.125rem",
-		"slug": "medium"
+		"size": "var(--wp--custom--fontsizes--paragraph--size)",
+		"slug": "paragraph",
+		"name": "Paragraph"
 	},
 	{
 		"fluid": {
-			"min": "1.75rem",
-			"max": "1.875rem"
+			"min": "var(--wp--custom--fontsizes--h-6--fluid--min)",
+			"max": "var(--wp--custom--fontsizes--h-6--fluid--max)"
 		},
-		"size": "1.75rem",
-		"slug": "large"
+		"size": "var(--wp--custom--fontsizes--h-6--size)",
+		"slug": "h6",
+		"name": "H6"
+	},
+	{
+		"fluid": {
+			"min": "var(--wp--custom--fontsizes--h-5--fluid--min)",
+			"max": "var(--wp--custom--fontsizes--h-5--fluid--max)"
+		},
+		"size": "var(--wp--custom--fontsizes--h-5--size)",
+		"slug": "h5",
+		"name": "H5"
+	},
+	{
+		"fluid": {
+			"min": "var(--wp--custom--fontsizes--h-4--fluid--min)",
+			"max": "var(--wp--custom--fontsizes--h-4--fluid--max)"
+		},
+		"size": "var(--wp--custom--fontsizes--h-4--size)",
+		"slug": "h4",
+		"name": "H4"
+	},
+	{
+		"fluid": {
+			"min": "var(--wp--custom--fontsizes--h-3--fluid--min)",
+			"max": "var(--wp--custom--fontsizes--h-3--fluid--max)"
+		},
+		"size": "var(--wp--custom--fontsizes--h-3--size)",
+		"slug": "h3",
+		"name": "H3"
+	},
+	{
+		"fluid": {
+			"min": "var(--wp--custom--fontsizes--h-2--fluid--min)",
+			"max": "var(--wp--custom--fontsizes--h-2--fluid--max)"
+		},
+		"size": "var(--wp--custom--fontsizes--h-2--size)",
+		"slug": "h2",
+		"name": "H2"
+	},
+	{
+		"fluid": {
+			"min": "var(--wp--custom--fontsizes--large--fluid--min)",
+			"max": "var(--wp--custom--fontsizes--large--fluid--max)"
+		},
+		"size": "var(--wp--custom--fontsizes--large--size)",
+		"slug": "large",
+		"name": "Large"
+	},
+	{
+		"fluid": {
+			"min": "var(--wp--custom--fontsizes--h-1--fluid--min)",
+			"max": "var(--wp--custom--fontsizes--h-1--fluid--max)"
+		},
+		"size": "var(--wp--custom--fontsizes--h-1--size)",
+		"slug": "h1",
+		"name": "H1"
 	}
 ]
