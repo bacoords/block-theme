@@ -2,6 +2,7 @@
 #masthead {
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 	padding: var(--wp--preset--spacing--40) 0;
 	@extend .wrapper;
 
