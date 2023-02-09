@@ -7,3 +7,7 @@ node_modules
 # Other system files
 .DS_Store
 
+# Composer
+/vendor/
+composer.lock
+.phpcs-cache
