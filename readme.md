@@ -45,3 +45,4 @@ Probably something with webpack and @wordpress/scripts...
 ## Credits
 
 - Underscores: https://github.com/Automattic/_s
+- Micromodal: https://micromodal.vercel.app
