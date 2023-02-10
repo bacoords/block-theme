@@ -1,74 +1,54 @@
 const defaultConfig = require("@wordpress/scripts/config/webpack.config");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const RemovePlugin = require("remove-files-webpack-plugin");
 const path = require("path");
 
-/* ---------------
- * Main config
- * ---------------*/
+/**
+ * Custom Webpack Configuration
+ *
+ * Adds the ability to compile extra scripts and CSS files for the theme.
+ *
+ * @see https://developer.wordpress.org/block-editor/packages/packages-scripts/#webpack-config
+ */
 var config = {
 	...defaultConfig,
 	entry: {
-		"js/scripts": path.resolve(process.cwd(), "src/js", "index.js"),
-		"css/editor": path.resolve(process.cwd(), "src/scss", "editor.scss"),
-		"css/global": path.resolve(process.cwd(), "src/scss", "global.scss"),
+		...defaultConfig.entry(),
+		"../js/scripts": path.resolve(process.cwd(), "src/js", "index.js"),
+		"../css/editor": path.resolve(process.cwd(), "src/scss", "editor.scss"),
+		"../css/global": path.resolve(process.cwd(), "src/scss", "global.scss"),
 	},
-	module: {
-		...defaultConfig.module,
-		rules: [
-			{
-				test: /\.s[ac]ss$/i,
-				use: [
+
+	output: {
+		...defaultConfig.output,
+		// change the output path for blocks to the blocks/ folder
+		path: path.resolve(process.cwd(), "blocks"),
+	},
+	plugins: [
+		new RemovePlugin({
+			/**
+			 * After compilation permanently removes
+			 * the extra .js and .php files in the css folder
+			 */
+			after: {
+				test: [
 					{
-						loader: MiniCssExtractPlugin.loader,
-					},
-					{
-						loader: "css-loader",
-						options: {
-							sourceMap: true,
-							url: false,
+						folder: "./css",
+						method: (absoluteItemPath) => {
+							return new RegExp(/\.js/, "m").test(absoluteItemPath);
 						},
 					},
-					"sass-loader",
+					{
+						folder: "./css",
+						method: (absoluteItemPath) => {
+							return new RegExp(/\.php$/, "m").test(absoluteItemPath);
+						},
+					},
 				],
 			},
-		],
-	},
+		}),
+		...defaultConfig.plugins,
+	],
 };
 
-// var configGlobalCSS = Object.assign({}, config, {
-// 	name: "configCSS",
-// 	entry: {
-
-// 	},
-// 	output: {
-// 		path: path.resolve("./css"),
-// 		filename: "[name].css",
-// 		chunkFilename: "[name].chunk.js",
-// 	},
-// 	plugins: [new MiniCssExtractPlugin()],
-// 	module: {
-// 		rules: [
-// 			{
-// 				test: /\.s[ac]ss$/i,
-// 				use: [
-// 					{
-// 						loader: MiniCssExtractPlugin.loader,
-// 					},
-// 					{
-// 						// Interprets CSS
-// 						loader: "css-loader",
-// 						options: {
-// 							importLoaders: 2,
-// 						},
-// 					},
-// 					{
-// 						loader: "sass-loader", // 将 Sass 编译成 CSS
-// 					},
-// 				],
-// 			},
-// 		],
-// 	},
-// });
-
-// Return Array of Configurations
-module.exports = [config];
+// Return Configuration
+module.exports = config;
