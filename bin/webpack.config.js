@@ -1,7 +1,7 @@
 const defaultConfig = require("@wordpress/scripts/config/webpack.config");
 const RemovePlugin = require("remove-files-webpack-plugin");
 const path = require("path");
-
+const { createThemeJson } = require("./theme-json");
 /**
  * Custom Webpack Configuration
  *
@@ -17,7 +17,15 @@ var config = {
 		"../css/editor": path.resolve(process.cwd(), "src/scss", "editor.scss"),
 		"../css/global": path.resolve(process.cwd(), "src/scss", "global.scss"),
 	},
-
+	module: {
+		rules: [
+			{
+				test: /\.jsonc$/,
+				use: createThemeJson(),
+			},
+		],
+		...defaultConfig.module,
+	},
 	output: {
 		...defaultConfig.output,
 		// change the output path for blocks to the blocks/ folder
