@@ -16,57 +16,59 @@
 		max-height: 3rem;
 		width: auto;
 	}
+}
 
-	#site-navigation {
 
-		.menu-toggle,
-		.menu-close {
-			appearance: none;
-			background-color: transparent;
-			border: none;
-			padding: calc( var(--wp--preset--spacing--40) / 2 );
-			@include respond-to('pond') {
-				display: none;
-			}
-		}
 
-		#primary-menu {
-			display: flex;
-			flex-direction: column;
-			list-style-type: none;
-			padding-left: 0;
-			li {
-				padding: calc( var(--wp--preset--spacing--40) / 2 );
-			}
-			@include respond-to('pond') {
-				flex-direction: row;
-				li {
-					padding: 0;
-					margin-left: var(--wp--preset--spacing--40);
-				}
-			}
-		}
+.main-navigation {
 
-		#navigation-modal {
-			bottom: 0;
+	.menu-toggle,
+	.menu-close {
+		appearance: none;
+		background-color: transparent;
+		border: none;
+		padding: calc( var(--wp--preset--spacing--40) / 2 );
+		@include respond-to('pond') {
 			display: none;
-			left: 0;
-			position: fixed;
-			right: 0;
-			top: 0;
-			background-color: var(--wp--preset--color--background);
-			padding: var(--wp--preset--spacing--40) 0;
-			&.is-open {
-				display: block;
-			}
-			@include respond-to('pond') {
-				display: block;
-				position: relative;
-				background-color: transparent;
+		}
+	}
+
+	.menu {
+		display: flex;
+		flex-direction: column;
+		list-style-type: none;
+		padding-left: 0;
+		li {
+			padding: calc( var(--wp--preset--spacing--40) / 2 );
+		}
+		@include respond-to('pond') {
+			flex-direction: row;
+			li {
 				padding: 0;
-				header {
-					display: none;
-				}
+				margin-left: var(--wp--preset--spacing--40);
+			}
+		}
+	}
+
+	.menu-modal {
+		bottom: 0;
+		display: none;
+		left: 0;
+		position: fixed;
+		right: 0;
+		top: 0;
+		background-color: var(--wp--preset--color--background);
+		padding: var(--wp--preset--spacing--40) 0;
+		&.is-open {
+			display: block;
+		}
+		@include respond-to('pond') {
+			display: block;
+			position: relative;
+			background-color: transparent;
+			padding: 0;
+			header {
+				display: none;
 			}
 		}
 	}
@@ -74,7 +76,7 @@
 
 // Fix for the admin bar
 body.admin-bar {
-	#masthead #site-navigation #navigation-modal {
+	.main-navigation .menu-modal {
 		top: 46px;
 		@include respond-to('pond') {
 			top: 0px;

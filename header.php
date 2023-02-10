@@ -52,20 +52,16 @@
 
 			<button class="menu-toggle" aria-haspopup="true" data-micromodal-trigger="navigation-modal"><?php esc_html_e( 'Primary Menu', 'tangent' ); ?></button>
 
-			<!-- [1] -->
-			<div id="navigation-modal" aria-hidden="true">
+			<div id="navigation-modal" class="menu-modal" aria-hidden="true">
 
-				<!-- [2] -->
 				<div tabindex="-1" data-micromodal-close>
 
-					<!-- [3] -->
 					<div role="dialog" aria-modal="true" aria-label="<?php esc_html_e( 'Menu', 'tangent' ); ?>" >
 
 						<header>
-							<!-- [4] -->
 							<button class="menu-close" aria-label="Close modal" data-micromodal-close><?php esc_html_e( 'Close Menu', 'tangent' ); ?></button>
 						</header>
-						
+
 						<?php
 						wp_nav_menu(
 							array(
