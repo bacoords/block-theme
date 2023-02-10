@@ -111,4 +111,5 @@ async function createThemeJson(path = "src/theme-json") {
 	fs.writeFileSync("theme.json", themeJsonObject);
 }
 
-createThemeJson();
+// export function for use in webpack.config.js
+module.exports.createThemeJson = createThemeJson;
