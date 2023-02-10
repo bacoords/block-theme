@@ -7,7 +7,8 @@
     "themejson": "node ./bin/theme-json.js",
     "css-compile": "(sass --style compressed --source-map --embed-sources --no-error-css --quiet src/scss/editor.scss:css/editor.css) & (sass --style compressed --source-map --embed-sources --no-error-css --quiet src/scss/global.scss:css/global.css)",
     "test": "echo \"Error: no test specified\" && exit 1",
-	"build": "wp-scripts build --config ./bin/webpack.config.js"
+    "build": "wp-scripts build --config ./bin/webpack.config.j  --webpack-src-dir=src/blocks/",
+    "start": "wp-scripts start --config ./bin/webpack.config.js --webpack-src-dir=src/blocks/"
   },
   "repository": {
     "type": "git",
@@ -28,7 +29,8 @@
     "fs-extra": "^11.1.0",
     "glob": "^8.1.0",
     "jsonc": "^2.0.0",
-    "lodash.set": "^4.3.2"
+    "lodash.set": "^4.3.2",
+    "remove-files-webpack-plugin": "^1.5.0"
   },
   "devDependencies": {
     "@wordpress/scripts": "^25.3.0",

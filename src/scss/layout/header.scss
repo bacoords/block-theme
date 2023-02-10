@@ -1,7 +1,28 @@
-@use "../utilities/container.scss" as *;;
+@use "../utilities/container.scss" as *;
 #masthead {
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 	padding: var(--wp--preset--spacing--40) 0;
 	@extend .wrapper;
+
+	.custom-logo-link img {
+		max-height: 3rem;
+		width: auto;
+	}
+
+	#site-navigation {
+		#primary-menu {
+			display: flex;
+			flex-direction: row;
+			list-style-type: none;
+			li {
+				margin-left: var(--wp--preset--spacing--40);
+			}
+		}
+
+		.menu-toggle {
+			display: none;
+		}
+	}
 }
