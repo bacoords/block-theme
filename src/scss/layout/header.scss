@@ -75,9 +75,9 @@
 // Fix for the admin bar
 body.admin-bar {
 	#masthead #site-navigation #navigation-modal {
-		top: 32px;
+		top: 46px;
 		@include respond-to('pond') {
-			top: 46px;
+			top: 0px;
 		}
 	}
 }
