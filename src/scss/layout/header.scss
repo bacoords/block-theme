@@ -1,4 +1,6 @@
 @use "../utilities/container.scss" as *;
+@use "../abstracts/mixins.scss" as *;
+
 #masthead {
 	display: flex;
 	justify-content: space-between;
@@ -16,17 +18,66 @@
 	}
 
 	#site-navigation {
-		#primary-menu {
-			display: flex;
-			flex-direction: row;
-			list-style-type: none;
-			li {
-				margin-left: var(--wp--preset--spacing--40);
+
+		.menu-toggle,
+		.menu-close {
+			appearance: none;
+			background-color: transparent;
+			border: none;
+			padding: calc( var(--wp--preset--spacing--40) / 2 );
+			@include respond-to('pond') {
+				display: none;
 			}
 		}
 
-		.menu-toggle {
+		#primary-menu {
+			display: flex;
+			flex-direction: column;
+			list-style-type: none;
+			padding-left: 0;
+			li {
+				padding: calc( var(--wp--preset--spacing--40) / 2 );
+			}
+			@include respond-to('pond') {
+				flex-direction: row;
+				li {
+					padding: 0;
+					margin-left: var(--wp--preset--spacing--40);
+				}
+			}
+		}
+
+		#navigation-modal {
+			bottom: 0;
 			display: none;
+			left: 0;
+			position: fixed;
+			right: 0;
+			top: 0;
+			background-color: var(--wp--preset--color--background);
+			padding: var(--wp--preset--spacing--40) 0;
+			&.is-open {
+				display: block;
+			}
+			@include respond-to('pond') {
+				display: block;
+				position: relative;
+				background-color: transparent;
+				padding: 0;
+				header {
+					display: none;
+				}
+			}
+		}
+	}
+}
+
+// Fix for the admin bar
+body.admin-bar {
+	#masthead #site-navigation #navigation-modal {
+		top: 32px;
+		@include respond-to('pond') {
+			top: 46px;
 		}
 	}
 }

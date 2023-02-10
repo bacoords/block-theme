@@ -1,10 +1,12 @@
+@use "variables";
+
 /// This mixin assumes mobile-first coding, and helps you respond to different breakpoints
 /// from within each applicable selector.
 /// It pulls breakpoints from a map of breakpoints set in _variables.scss
 /// Read More : https://sass-guidelin.es/#responsive-web-design-and-breakpoints
 @mixin respond-to($breakpoint) {
 	// Retrieves the value of the breakpoint
-	$raw-query: map-get($breakpoints, $breakpoint);
+	$raw-query: map-get(variables.$breakpoints, $breakpoint);
 
 	// If the breakpoint exists in the map
 	@if $raw-query {

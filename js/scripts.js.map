@@ -1,1 +1,0 @@
-{"version":3,"file":"scripts.js","mappings":";;;;;AAAAA,OAAO,CAACC,GAAG,CAAC,OAAO,CAAC,C","sources":["webpack://tangent/./src/js/index.js"],"sourcesContent":["console.log(\"hello\");\n"],"names":["console","log"],"sourceRoot":""}
