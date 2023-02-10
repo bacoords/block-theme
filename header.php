@@ -50,7 +50,9 @@
 
 		<nav id="site-navigation" class="main-navigation">
 
-			<button class="menu-toggle" aria-haspopup="true" data-micromodal-trigger="navigation-modal"><?php esc_html_e( 'Primary Menu', 'tangent' ); ?></button>
+			<button class="menu-toggle" aria-haspopup="true" data-micromodal-trigger="navigation-modal" aria-label="<?php esc_html_e( 'Primary Menu', 'tangent' ); ?>">
+				<span class="menu-icon"><span></span></span>
+			</button>
 
 			<div id="navigation-modal" class="menu-modal" aria-hidden="true">
 
@@ -59,7 +61,9 @@
 					<div role="dialog" aria-modal="true" aria-label="<?php esc_html_e( 'Menu', 'tangent' ); ?>" >
 
 						<header>
-							<button class="menu-close" aria-label="Close modal" data-micromodal-close><?php esc_html_e( 'Close Menu', 'tangent' ); ?></button>
+							<button class="menu-close" aria-label="<?php esc_html_e( 'Close Menu', 'tangent' ); ?>" data-micromodal-close>
+								<span class="menu-icon"><span></span></span>
+							</button>
 						</header>
 
 						<?php

@@ -5,6 +5,7 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	flex-wrap: wrap;
 	padding: var(--wp--preset--spacing--40) 0;
 	@extend .wrapper;
 
@@ -28,6 +29,7 @@
 		background-color: transparent;
 		border: none;
 		padding: calc( var(--wp--preset--spacing--40) / 2 );
+		cursor: pointer;
 		@include respond-to('pond') {
 			display: none;
 		}
@@ -73,6 +75,57 @@
 		}
 	}
 }
+
+
+// Menu Icon
+.menu-icon {
+	position: relative;
+	transition-duration: 0.5s;
+	display: block;
+
+	>span {
+		position: relative;
+		transition-duration: 0.5s;
+		top: 0px;
+		display: block;
+		pointer-events: none;
+
+		&:before {
+			transition-duration: 0.5s;
+			width: 20px;
+			height: 2px;
+			background-color: var(--wp--preset--color--foreground);
+			content: "";
+			top: 0px;
+			display: block;
+		}
+
+		&:after {
+			transition-duration: 0.5s;
+			width: 20px;
+			height: 2px;
+			background-color: var(--wp--preset--color--foreground);
+			content: "";
+			margin-top: 7px;
+			display: block;
+		}
+	}
+}
+
+.menu-close {
+	.menu-icon > span{
+		transition: 0.5s;
+
+		&:before {
+			transform: rotateZ(45deg) scaleX(1.25) translate(1px, 5px);
+		}
+
+		&:after {
+			transform: rotateZ(-45deg) scaleX(1.25) translate(1px, -5px);
+		}
+	}
+}
+
 
 // Fix for the admin bar
 body.admin-bar {
