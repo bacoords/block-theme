@@ -28,7 +28,7 @@
 		appearance: none;
 		background-color: transparent;
 		border: none;
-		padding: calc( var(--wp--preset--spacing--40) / 2 );
+		padding: calc( var(--wp--preset--spacing--30) / 2 );
 		cursor: pointer;
 		@include respond-to('pond') {
 			display: none;
@@ -41,13 +41,18 @@
 		list-style-type: none;
 		padding-left: 0;
 		li {
-			padding: calc( var(--wp--preset--spacing--40) / 2 );
+			a {
+				display: block;
+				padding: calc( var(--wp--preset--spacing--30) / 2 );
+			}
 		}
 		@include respond-to('pond') {
 			flex-direction: row;
 			li {
-				padding: 0;
-				margin-left: var(--wp--preset--spacing--40);
+				margin-left: var(--wp--preset--spacing--30);
+				a {
+					padding: 0;
+				}
 			}
 		}
 	}
@@ -133,6 +138,43 @@ body.admin-bar {
 		top: 46px;
 		@include respond-to('pond') {
 			top: 0px;
+		}
+	}
+}
+
+// Submenu
+.menu {
+	.sub-menu {
+		list-style-type: none;
+		padding-left: var(--wp--preset--spacing--30);
+		li {
+			margin-left: 0;
+			a {
+				padding: calc( var(--wp--preset--spacing--30) / 2);
+			}
+		}
+		@include respond-to('pond') {
+			display: none;
+			position: absolute;
+			z-index: 2;
+			top:100%;
+			right:0;
+			min-width: 200px;
+			padding-left: 0;
+			background-color: var(--wp--preset--color--background);
+			border: 1px solid var(--wp--preset--color--accent);
+			li {
+				a {
+					padding: calc( var(--wp--preset--spacing--30) / 4);
+				}
+			}
+		}
+	}
+	.menu-item-has-children {
+		&:hover {
+			.sub-menu {
+				display: block;
+			}
 		}
 	}
 }
