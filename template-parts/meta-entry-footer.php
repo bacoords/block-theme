@@ -44,7 +44,7 @@ if ( ! is_single( $args['post_id'] ) && ! post_password_required( $args['post_id
 		sprintf(
 			wp_kses(
 				/* translators: %s: post title */
-				__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'tangent' ),
+				__( 'Leave a Comment<span class="visually-hidden"> on %s</span>', 'tangent' ),
 				array(
 					'span' => array(
 						'class' => array(),
@@ -61,7 +61,7 @@ edit_post_link(
 	sprintf(
 		wp_kses(
 			/* translators: %s: Name of current post. Only visible to screen readers */
-			__( 'Edit <span class="screen-reader-text">%s</span>', 'tangent' ),
+			__( 'Edit <span class="visually-hidden">%s</span>', 'tangent' ),
 			array(
 				'span' => array(
 					'class' => array(),
