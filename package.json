@@ -8,8 +8,7 @@
         "patterns": ["src", "theme-json"],
         "extensions": "jsonc",
         "quiet": false
-      },
-    "test": "{src,theme-json}/*.jsonc"
+      }
   },
   "scripts": {
     "themejson": "node ./bin/theme-json.js",
