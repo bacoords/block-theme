@@ -68,6 +68,7 @@
 								'theme_location' => 'menu-1',
 								'menu_id'        => 'primary-menu',
 								'container_id'   => 'navigation-modal-content',
+								'depth'          => 1,
 							)
 						);
 						?>
