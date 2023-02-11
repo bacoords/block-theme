@@ -1,0 +1,42 @@
+/*
+This map is used for a mobile first responsive coding
+approach mixin in `respond-to`.
+
+The map uses simple t-shirt sizing to define the breakpoints.
+*/
+$breakpoints: (
+	xs: 375px,
+	sm: 500px,
+	md: 768px,
+	lg: 1024px,
+	xl: 1280px,
+	xxl: 1440px,
+	xxxl: 1920px
+);
+
+/// This mixin assumes mobile-first coding, and helps you respond to
+/// different breakpoints from within each applicable selector.
+/// It pulls breakpoints from a map of breakpoints set in above.
+/// Read More : https://sass-guidelin.es/#responsive-web-design-and-breakpoints
+@mixin respond-to($breakpoint) {
+	// Retrieves the value of the breakpoint
+	$raw-query: map-get($breakpoints, $breakpoint);
+
+	// If the breakpoint exists in the map
+	@if $raw-query {
+
+		$query: if(
+			type-of($raw-query) == 'string',
+			unquote($raw-query),
+			inspect($raw-query)
+		);
+
+		// Prints a media query based on the value
+		@media (min-width: #{$query} ) {
+			@content;
+		}
+	} @else {
+		@error "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+		 + "Please make sure it is defined in `$breakpoints` map.";
+	}
+}
