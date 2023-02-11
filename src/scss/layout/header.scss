@@ -42,7 +42,7 @@
 		padding-left: 0;
 		li {
 			a {
-				display: block;
+				display: inline-block;
 				padding: calc( var(--wp--preset--spacing--30) / 2 );
 			}
 		}
@@ -171,6 +171,21 @@ body.admin-bar {
 		}
 	}
 	.menu-item-has-children {
+		.submenu-trigger{
+			appearance: none;
+			background-color: transparent;
+			border: none;
+			cursor: pointer;
+			display: none;
+			svg {
+				width: 1rem;
+				height: 1rem;
+				stroke: var(--wp--preset--color--secondary);
+			}
+			@include respond-to('pond') {
+				display: inline-block;
+			}
+		}
 		&:hover {
 			.sub-menu {
 				display: block;

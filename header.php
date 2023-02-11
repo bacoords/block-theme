@@ -73,6 +73,7 @@
 								'menu_id'        => 'primary-menu',
 								'container_id'   => 'navigation-modal-content',
 								'depth'          => 2,
+								'walker'         => new Tangent\Navwalker\Tangent_Walker(),
 							)
 						);
 						?>
