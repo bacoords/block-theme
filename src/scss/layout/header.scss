@@ -23,6 +23,9 @@
 
 .main-navigation {
 
+	header{
+		text-align: right;
+	}
 	.menu-toggle,
 	.menu-close {
 		appearance: none;
@@ -38,12 +41,14 @@
 	.menu {
 		display: flex;
 		flex-direction: column;
+		align-items: flex-end;
 		list-style-type: none;
 		padding-left: 0;
 		li {
 			a {
 				display: inline-block;
 				padding: calc( var(--wp--preset--spacing--30) / 2 );
+				text-align: right;
 			}
 		}
 		@include respond-to('md') {
@@ -52,6 +57,7 @@
 				margin-left: var(--wp--preset--spacing--30);
 				a {
 					padding: 0;
+					text-align: left;
 				}
 			}
 		}
@@ -146,7 +152,11 @@ body.admin-bar {
 .menu {
 	.sub-menu {
 		list-style-type: none;
-		padding-left: var(--wp--preset--spacing--30);
+		display:flex;
+		flex-direction: column;
+		align-items: flex-end;
+		padding-left: 0;
+		padding-right: var(--wp--preset--spacing--30);
 		li {
 			margin-left: 0;
 			a {
@@ -187,11 +197,11 @@ body.admin-bar {
 				&[aria-expanded="true"] ~ .sub-menu{
 					display: block;
 				}
-			}
-		}
-		&:hover {
-			.sub-menu {
-				display: block;
+				&:hover {
+					.sub-menu {
+						display: block;
+					}
+				}
 			}
 		}
 	}
