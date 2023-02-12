@@ -25,7 +25,7 @@ module.exports = function (content) {
 		// this generates a map keyed to the filename
 		scssVars[parsedContentPath.name] = parsedObject;
 	} else {
-		throw "Invalid file type (" + parsedContentPath.ext + ")";
+		throw clc.red.bold("Invalid file type (" + parsedContentPath.ext + ")");
 	}
 
 	this.cacheable();
