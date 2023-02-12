@@ -52,6 +52,15 @@ async function processMatch(result, root, filePath, parser) {
 	const fullPath = join(root, filePath);
 	const what = await parseFile(fullPath, parser);
 	const where = getKey(filePath);
+	// if we are in the blocks directory, we need to combine the block namespace and name into one key
+	const inBlocksObject = where[1] === "blocks";
+	if (inBlocksObject) {
+		// if the file is in the blocks directory, we need to add the block name to the key
+		const blockNamespace = where[2];
+		const blockName = where[3];
+		where[2] = `${blockNamespace}/${blockName}`;
+		where.splice(3, 1);
+	}
 	set(result, where, what);
 	return result;
 }
