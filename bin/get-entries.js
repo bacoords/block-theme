@@ -1,5 +1,5 @@
 /**
- * This file is used to get all the root `scss`/`js` files in the`src` folder for use
+ * This file is used to get all the root files in the provided folder for use
  * as entry points in the webpack.config.js file.
  */
 
@@ -10,9 +10,9 @@ const path = require("path");
  * Get all the root files in the indicated folder
  * and return an object with the relative output path as the key for each.
  *
- * @param {string} root The root folder to search for scss files; should be relative to the root of the theme with no leading or trailing slashes
- * @param {string} include The glob pattern to use to find style files
- * @param {string} outputFolder The folder to output the compiled style files in; should be relative to the root of the theme with no leading or trailing slashes
+ * @param {string} root The root folder to search for files; should be relative to the root of the theme with no leading or trailing slashes
+ * @param {string} include The glob pattern to use to find files
+ * @param {string} outputFolder The folder to output the compiled files in; should be relative to the root of the theme with no leading or trailing slashes
  * @returns
  */
 function getEntries(options) {
