@@ -12,7 +12,7 @@
   },
   "scripts": {
     "themejson": "node ./bin/theme-json.js",
-    "build": "wp-scripts build --config ./bin/webpack.config.js  --webpack-src-dir=src/blocks/",
+    "build": "concurrently \"wp-scripts build --config ./bin/webpack.config.js --webpack-src-dir=src/blocks\" \"npm-watch themejson\"",
     "start": "concurrently \"wp-scripts start --config ./bin/webpack.config.js --webpack-src-dir=src/blocks\" \"npm-watch themejson\""
   },
   "repository": {
