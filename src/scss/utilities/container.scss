@@ -1,6 +1,7 @@
 @use "../abstracts/mixins.scss";
+@use "../abstracts/properties.scss";
 
 .wrapper {
-	max-width: var(--wp--custom--content-sizes--wide);
+	max-width: properties.custom("content-sizes", "wide");
 	@include mixins.margin-x(auto);
 }

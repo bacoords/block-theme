@@ -1,9 +1,10 @@
 @use "../utilities/container.scss" as *;
+@use "../abstracts/properties.scss";
 #masthead {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: var(--wp--preset--spacing--40) 0;
+	padding: properties.preset("spacing", "40") 0;
 	@extend .wrapper;
 
 	.custom-logo-link img {
@@ -17,7 +18,7 @@
 			flex-direction: row;
 			list-style-type: none;
 			li {
-				margin-left: var(--wp--preset--spacing--40);
+				margin-left: properties.preset("spacing", "40");
 			}
 		}
 

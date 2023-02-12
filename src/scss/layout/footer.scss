@@ -1,7 +1,8 @@
 @use "../utilities/container.scss" as *;
+@use "../abstracts/properties.scss";
 #colophon {
 	display: flex;
 	justify-content: space-between;
-	padding: var(--wp--preset--spacing--40) 0;
+	padding: properties.preset("spacing", "40") 0;
 	@extend .wrapper;
 }

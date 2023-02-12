@@ -1,3 +1,4 @@
+@use "../abstracts/properties.scss";
 .wp-block-blockquote {
-	border: 2px solid var(--wp--preset--color--primary);
+	border: 2px solid properties.preset("color", "primary");
 }
