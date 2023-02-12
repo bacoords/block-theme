@@ -35,6 +35,7 @@
   ],
   "devDependencies": {
     "@wordpress/scripts": "^25.3.0",
+    "cli-color": "^2.0.3",
     "concurrently": "^7.6.0",
     "fs-extra": "^11.1.0",
     "glob": "^8.1.0",
@@ -43,6 +44,7 @@
     "npm-watch": "^0.11.0",
     "remove-files-webpack-plugin": "^1.5.0",
     "sass": "^1.58.0",
-    "sass-loader": "^13.2.0"
+    "sass-loader": "^13.2.0",
+    "terminal-overwrite": "^2.0.1"
   }
 }
