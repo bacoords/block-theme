@@ -2,7 +2,7 @@ const defaultConfig = require("@wordpress/scripts/config/webpack.config");
 const RemovePlugin = require("remove-files-webpack-plugin");
 const path = require("path");
 const { getStyleEntries } = require("./get-style-entries");
-
+const styleOutputFolder = "../css";
 /**
  * Custom Webpack Configuration
  *
@@ -14,7 +14,7 @@ var config = {
 	...defaultConfig,
 	entry: {
 		...defaultConfig.entry(),
-		...getStyleEntries(),
+		...getStyleEntries({ outputFolder: styleOutputFolder }),
 	},
 	module: {
 		...defaultConfig.module,
@@ -33,13 +33,13 @@ var config = {
 			after: {
 				test: [
 					{
-						folder: "./css",
+						folder: styleOutputFolder,
 						method: (absoluteItemPath) => {
 							return new RegExp(/\.js/, "m").test(absoluteItemPath);
 						},
 					},
 					{
-						folder: "./css",
+						folder: styleOutputFolder,
 						method: (absoluteItemPath) => {
 							return new RegExp(/\.php$/, "m").test(absoluteItemPath);
 						},
