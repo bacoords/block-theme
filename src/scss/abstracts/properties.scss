@@ -1,0 +1,28 @@
+/// A handy function to get CSS Custom Properties
+/// generated from the custom section of the theme.json file.
+@function custom($type, $key:null, $default:null) {
+	@if ( $key and $default ) {
+		@return var(--wp--custom--#{$type}--#{$key}, $default);
+	} @else if ( $key and $default == null ) {
+		@return var(--wp--custom--#{$type}--#{$key});
+	} @else if ( $key == null and $default ) {
+		@return var(--wp--custom--#{$type}, $default);
+	} @else {
+		@return var(--wp--custom--#{$type});
+	}
+}
+
+/// A handy function to get CSS Custom Properties
+/// generated from the settings section of the theme.json file.
+/// These are values not set in the custom section of theme.json settings.
+@function preset($type, $key:null, $default:null) {
+	@if ( $key and $default ) {
+		@return var(--wp--preset--#{$type}--#{$key}, $default);
+	} @else if ( $key and $default == null ) {
+		@return var(--wp--preset--#{$type}--#{$key});
+	} @else if ( $key == null and $default ) {
+		@return var(--wp--preset--#{$type}, $default);
+	} @else {
+		@return var(--wp--preset--#{$type});
+	}
+}
