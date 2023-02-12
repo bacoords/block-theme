@@ -10,8 +10,8 @@ const path = require("path");
  * Get all the root style files in the indicated styles folder
  * and return an object with the relative output path as the key for each.
  *
- * @param {string} root The root folder to search for scss files
- * @param {string} include The glob pattern to use to style files
+ * @param {string} root The root folder to search for scss files; should be relative to the root of the theme with no leading or trailing slashes
+ * @param {string} include The glob pattern to use to find style files
  * @param {string} outputFolder The folder to output the compiled style files in; should be relative to the root of the theme with no leading or trailing slashes
  * @returns
  */
