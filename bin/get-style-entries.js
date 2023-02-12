@@ -12,7 +12,7 @@ const path = require("path");
  *
  * @param {string} root The root folder to search for scss files
  * @param {string} include The glob pattern to use to style files
- * @param {string} outputFolder The folder to output the compiled style files in
+ * @param {string} outputFolder The folder to output the compiled style files in; should be relative to the root of the theme with no leading or trailing slashes
  * @returns
  */
 function getStyleEntries(options) {
