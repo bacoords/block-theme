@@ -1,10 +1,10 @@
 @use "../utilities/container.scss" as *;
-@use "../abstracts/properties.scss";
+@use "../abstracts/props.scss";
 #masthead {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: properties.preset("spacing", "40") 0;
+	padding: props.preset("spacing", "40") 0;
 	@extend .wrapper;
 
 	.custom-logo-link img {
@@ -18,7 +18,7 @@
 			flex-direction: row;
 			list-style-type: none;
 			li {
-				margin-left: properties.preset("spacing", "40");
+				margin-left: props.preset("spacing", "40");
 			}
 		}
 

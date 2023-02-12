@@ -1,8 +1,8 @@
 @use "../utilities/container.scss" as *;
-@use "../abstracts/properties.scss";
+@use "../abstracts/props.scss";
 #colophon {
 	display: flex;
 	justify-content: space-between;
-	padding: properties.preset("spacing", "40") 0;
+	padding: props.preset("spacing", "40") 0;
 	@extend .wrapper;
 }

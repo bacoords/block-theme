@@ -1,6 +1,6 @@
-@use "../abstracts/properties.scss";
+@use "../abstracts/props.scss";
 .flow {
 	& > * + * {
-		margin-top: properties.preset("block-gap", null, 1rem);
+		margin-top: props.preset("block-gap", null, 1rem);
 	}
 }

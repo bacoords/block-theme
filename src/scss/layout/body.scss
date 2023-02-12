@@ -1,6 +1,6 @@
 @use "../utilities/flow.scss" as *;
 @use "../abstracts/mixins.scss";
-@use "../abstracts/properties.scss";
+@use "../abstracts/props.scss";
 #primary {
 	.entry-header {
 		text-align: center;
@@ -13,17 +13,17 @@
 			@include mixins.margin-x(auto);
 		}
 		& > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
-			max-width: properties.custom("content-sizes", "default");
+			max-width: props.custom("content-sizes", "default");
 		}
 		& > :where(.alignwide) {
-			max-width: properties.custom("content-sizes", "wide");
+			max-width: props.custom("content-sizes", "wide");
 		}
 	}
 	.entry-content {
 		@extend .flow;
 	}
 	.entry-footer {
-		padding: properties.preset("spacing", "40");
+		padding: props.preset("spacing", "40");
 		.edit-link {
 			display: block;
 			text-align: center;

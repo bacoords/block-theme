@@ -1,7 +1,7 @@
 @use "../abstracts/mixins.scss";
-@use "../abstracts/properties.scss";
+@use "../abstracts/props.scss";
 
 .wrapper {
-	max-width: properties.custom("content-sizes", "wide");
+	max-width: props.custom("content-sizes", "wide");
 	@include mixins.margin-x(auto);
 }
