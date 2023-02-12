@@ -1,0 +1,7 @@
+// enables:
+// border: color, radius, style, width
+// color: link
+// dimensions: minHeight
+// spacing: blockGap, margin, padding
+// typography: lineHeight
+true
