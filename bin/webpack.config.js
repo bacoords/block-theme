@@ -21,6 +21,12 @@ var config = {
 			include: "*.scss",
 			outputFolder: styleOutputFolder,
 		}),
+		...getEntries({
+			root: "src/scss/blocks",
+			include: "**/*.scss",
+			outputFolder: styleOutputFolder,
+			blockDir: true,
+		}),
 		"../src/scss/abstracts/breakpoints": path.resolve(
 			process.cwd(),
 			"src/theme-json/settings/custom",
