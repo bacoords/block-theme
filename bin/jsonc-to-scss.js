@@ -32,8 +32,10 @@ module.exports = function (content) {
 	// add the file as a dependency so webpack knows to rebuild when it changes
 	this.addDependency(contentPath);
 
+	// create a string comment to include in the scss file to note it was generated from `theme.json`
+	const scssComment = `// This file was generated from "${parsedContentPath.base}". Do not edit directly.\n`;
 	// generate the scss from the jsonc file, with a tab indent
-	var scss = jsontoSCSS(scssVars, "\t");
+	var scss = scssComment + jsontoSCSS(scssVars, "\t");
 	if (scss) {
 		terminal(
 			`\n${clc.green.bold("Generating SCSS from JSONC file:")} "${
