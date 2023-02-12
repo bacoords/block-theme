@@ -10,9 +10,8 @@ See [the Theme-JSON readme](../theme-json/README.md) for more information on how
 
 The `scss` architecture in Tangent is inspired by the 7-1 Pattern in [Sass Guidelines Style Guide](https://sass-guidelin.es/), but instead of one root level file, we have two: `global.scss` and `editor.scss`.
 
-`global.scss` is enqueued on the front-end everywhere. All styles excluding your block-specific styles should be enqueued here.
-
-`editor.scss` is enqueued in the Block Editor. Typically you'll want all your files and folders included in this file.
+1. `global.scss` is enqueued on the front-end everywhere. All styles excluding your block-specific styles should be enqueued here.
+2. `editor.scss` is enqueued in the Block Editor. Typically you'll want all your files and folders included in this file.
 
 ### Folders
 
