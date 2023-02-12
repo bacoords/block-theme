@@ -42,7 +42,7 @@ The `scss` is divided up into the following 7 folders:
 
 ## Folder Guidelines
 
-Each folder should have an `index.scss` file that pulls in its partials using the `@forward` rule.
+Each folder has an `index.scss` file that pulls in its partials using the `@forward` rule.
 
 ```scss
 @forward "variables";
@@ -58,7 +58,7 @@ In the `editor.scss` and `global.scss` files you can import entire folders like 
 
 ## Adopting the Modular Approach
 
-The old `@import` directive is on its way out within SCSS, and in its stead we have `@use` and `@forward`. This allows us to automatically namespace our partials and easily track where what is coming from. Your variables, mixins, functions, and other helpers are no longer available in the global namespace by default.
+The old `@import` directive is [on its way out within SCSS](https://github.com/sass/sass/blob/main/accepted/module-system.md#timeline), and in its stead we have `@use` and `@forward`. This allows us to automatically namespace our partials and easily track where what is coming from. Your variables, mixins, functions, and other helpers are no longer available in the global namespace by default.
 
 There are a lot of advantages to the new modular SCSS system, [this CSS-Tricks article](https://css-tricks.com/introducing-sass-modules/) will get you started, but we've listed two of the key advantages below.
 
