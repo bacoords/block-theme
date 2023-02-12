@@ -1,6 +1,7 @@
 const defaultConfig = require("@wordpress/scripts/config/webpack.config");
 const RemovePlugin = require("remove-files-webpack-plugin");
 const path = require("path");
+const { getStyleEntries } = require("./get-style-entries");
 
 /**
  * Custom Webpack Configuration
@@ -13,9 +14,7 @@ var config = {
 	...defaultConfig,
 	entry: {
 		...defaultConfig.entry(),
-		"../js/scripts": path.resolve(process.cwd(), "src/js", "index.js"),
-		"../css/editor": path.resolve(process.cwd(), "src/scss", "editor.scss"),
-		"../css/global": path.resolve(process.cwd(), "src/scss", "global.scss"),
+		...getStyleEntries(),
 	},
 	module: {
 		...defaultConfig.module,
