@@ -24,9 +24,9 @@ add_action( 'wp_enqueue_scripts', 'Tangent\Enqueue\global_theme_styles' );
  */
 function front_end_scripts() {
 
-	$asset_file = include get_template_directory() . '/js/index.asset.php';
+	$asset_file = include get_template_directory() . '/js/scripts.asset.php';
 	$dependencies = $asset_file['dependencies'];
 
-	wp_enqueue_script( 'tangent-front-end-scripts', get_template_directory_uri() . '/js/index.js', $dependencies, $asset_file['version'], );
+	wp_enqueue_script( 'tangent-front-end-scripts', get_template_directory_uri() . '/js/scripts.js', $dependencies, $asset_file['version'], );
 }
 add_action( 'wp_enqueue_scripts', 'Tangent\Enqueue\front_end_scripts' );
