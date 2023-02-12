@@ -53,3 +53,7 @@ On the outset, this adds a little extra work. You now have to import a partial (
 ### Improved Performance
 
 Regardless of how many times a module is included in a partial, it only gets loaded _once_ during the compilation process, this speeds up the compiling process, reduces conflicts, and avoids duplications. This is especially noticeable as your styles grow more complex and have a bigger codebase.
+
+## You can still use Bootstrap if you want to
+
+Unlike Understrap, Tangent doesn't include Bootstrap out of the box, and strives to help you create lean styles that work in concert with WordPress Core and the new Block Editor. However, you can still import Bootstrap into Tangent if you prefer, or any other CSS Framework that catches your eye. Use the tools that make the most sense for your specific project.
