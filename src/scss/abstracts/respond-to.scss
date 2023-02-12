@@ -1,7 +1,7 @@
 /// This map is used for a mobile first responsive coding
 /// approach mixin in `respond-to`.
 /// The map uses simple t-shirt sizing to define the breakpoints.
-@forward "breakpoints";
+@use "breakpoints" as *;
 
 /// This mixin assumes mobile-first coding, and helps you respond to
 /// different breakpoints from within each applicable selector.
