@@ -3,6 +3,7 @@
 #primary {
 	.entry-header {
 		text-align: center;
+		padding: var(--wp--style--root--padding-top) var(--wp--style--root--padding-left) var(--wp--style--root--padding-bottom) var(--wp--style--root--padding-right);
 	}
 	& > article {
 		@include mixins.margin-x(auto);
@@ -24,7 +25,7 @@
 		@extend .flow;
 	}
 	.entry-footer {
-		padding: var(--wp--preset--spacing--40);
+		padding: var(--wp--style--root--padding-top) var(--wp--style--root--padding-left) var(--wp--style--root--padding-bottom) var(--wp--style--root--padding-right);
 		.edit-link {
 			display: block;
 			text-align: center;
