@@ -1,3 +1,2 @@
-import MicroModal from 'micromodal';
-
-MicroModal.init();
+// Import components/navigation.js
+import { navigation } from './components/navigation.js';

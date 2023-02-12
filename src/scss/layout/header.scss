@@ -171,7 +171,7 @@ body.admin-bar {
 		}
 	}
 	.menu-item-has-children {
-		.submenu-trigger{
+		.sub-menu-toggle{
 			appearance: none;
 			background-color: transparent;
 			border: none;
@@ -184,6 +184,9 @@ body.admin-bar {
 			}
 			@include respond-to('md') {
 				display: inline-block;
+				&[aria-expanded="true"] ~ .sub-menu{
+					display: block;
+				}
 			}
 		}
 		&:hover {
