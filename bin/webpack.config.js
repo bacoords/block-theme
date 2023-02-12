@@ -2,8 +2,8 @@ const defaultConfig = require("@wordpress/scripts/config/webpack.config");
 const RemovePlugin = require("remove-files-webpack-plugin");
 const path = require("path");
 const { getStyleEntries } = require("./get-style-entries");
-// omit the trailing slash in your styleOutputFolder
-const styleOutputFolder = "../css";
+// styleOutputFolder should be relative to the root of the theme with no leading or trailing slashes
+const styleOutputFolder = "css";
 /**
  * Custom Webpack Configuration
  *

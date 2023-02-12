@@ -19,18 +19,17 @@ function getStyleEntries(options) {
 	const {
 		root = "src/scss",
 		include = "*.scss",
-		outputFolder = "../css",
+		outputFolder = "css",
 	} = options;
 	// get all root scss files in the src/scss folder
 	const entries = glob.sync(root + "/" + include);
 
 	// create an object with the relative output path as the key and the file path as the value
 	const entriesWithKeys = entries.reduce((acc, entry) => {
-		const name = outputFolder + "/" + path.basename(entry);
+		const name = "../" + outputFolder + "/" + path.parse(entry).name;
 		acc[name] = path.resolve(entry);
 		return acc;
 	}, {});
-
 	return entriesWithKeys;
 }
 
