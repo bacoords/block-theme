@@ -7,7 +7,7 @@ const glob = require("glob");
 const path = require("path");
 
 /**
- * Get all the root style files in the indicated styles folder
+ * Get all the root files in the indicated folder
  * and return an object with the relative output path as the key for each.
  *
  * @param {string} root The root folder to search for scss files; should be relative to the root of the theme with no leading or trailing slashes
@@ -15,7 +15,7 @@ const path = require("path");
  * @param {string} outputFolder The folder to output the compiled style files in; should be relative to the root of the theme with no leading or trailing slashes
  * @returns
  */
-function getStyleEntries(options) {
+function getEntries(options) {
 	const {
 		root = "src/scss",
 		include = "*.scss",
@@ -33,28 +33,5 @@ function getStyleEntries(options) {
 	return entriesWithKeys;
 }
 
-/**
- * Get all the root script files in the indicated scripts folder
- * and return an object with the relative output path as the key for each.
- *
- * @param {string} root The root folder to search for script files; should be relative to the root of the theme with no leading or trailing slashes
- * @param {string} include The glob pattern to use to find script files
- * @param {string} outputFolder The folder to output the compiled script files in; should be relative to the root of the theme with no leading or trailing slashes
- * @returns
- */
-function getScriptEntries(options) {
-	const { root = "src/js", include = "*.js", outputFolder = "js" } = options;
-	// get all root scss files in the src/scss folder
-	const entries = glob.sync(root + "/" + include);
-
-	// create an object with the relative output path as the key and the file path as the value
-	const entriesWithKeys = entries.reduce((acc, entry) => {
-		const name = "../" + outputFolder + "/" + path.parse(entry).name;
-		acc[name] = path.resolve(entry);
-		return acc;
-	}, {});
-	return entriesWithKeys;
-}
-
 // export the function so it can be used in the webpack.config.js file
-module.exports = { getStyleEntries, getScriptEntries };
+module.exports = { getEntries };

@@ -1,10 +1,7 @@
 const defaultConfig = require("@wordpress/scripts/config/webpack.config");
 const RemovePlugin = require("remove-files-webpack-plugin");
 const path = require("path");
-const {
-	getStyleEntries,
-	getScriptEntries,
-} = require("./get-style-script-entries");
+const { getEntries } = require("./get-entries");
 // styleOutputFolder should be relative to the root of the theme with no leading or trailing slashes
 const styleOutputFolder = "css";
 /**
@@ -18,8 +15,12 @@ var config = {
 	...defaultConfig,
 	entry: {
 		...defaultConfig.entry(),
-		...getScriptEntries({ outputFolder: "js" }),
-		...getStyleEntries({ outputFolder: styleOutputFolder }),
+		...getEntries({ root: "src/js", include: "*.js", outputFolder: "js" }),
+		...getEntries({
+			root: "src/scss",
+			include: "*.scss",
+			outputFolder: styleOutputFolder,
+		}),
 	},
 	module: {
 		...defaultConfig.module,
