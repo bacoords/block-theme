@@ -2,6 +2,21 @@
   "name": "tangent",
   "version": "0.0.0",
   "description": "A theme starter for the modern WordPress developer.",
+  "author": "Howard Development & Consulting",
+  "license": "GPL-2.0-or-later",
+  "keywords": [
+    "wordpress",
+    "starter",
+    "theme"
+  ],
+  "homepage": "https://github.com/understrap/tangent#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/understrap/tangent.git"
+  },
+  "bugs": {
+    "url": "https://github.com/understrap/tangent/issues"
+  },
   "main": "index.js",
   "watch": {
     "themejson": {
@@ -13,26 +28,6 @@
       "quiet": false
     }
   },
-  "scripts": {
-    "themejson": "node ./bin/theme-json.js",
-    "build": "wp-scripts build --config ./bin/webpack.config.js  --webpack-src-dir=src/blocks/",
-    "start": "concurrently \"wp-scripts start --config ./bin/webpack.config.js --webpack-src-dir=src/blocks\" \"npm-watch themejson\""
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/understrap/tangent.git"
-  },
-  "author": "Howard Development & Consulting",
-  "license": "GPL-3.0",
-  "bugs": {
-    "url": "https://github.com/understrap/tangent/issues"
-  },
-  "homepage": "https://github.com/understrap/tangent#readme",
-  "keywords": [
-    "wordpress",
-    "starter",
-    "theme"
-  ],
   "devDependencies": {
     "@wordpress/scripts": "^25.3.0",
     "cli-color": "^2.0.3",
@@ -46,5 +41,11 @@
     "sass": "^1.58.0",
     "sass-loader": "^13.2.0",
     "terminal-overwrite": "^2.0.1"
+  },
+  "scripts": {
+    "themejson": "node ./bin/theme-json.js",
+	"lint:pkg-json": "wp-scripts lint-pkg-json",
+    "build": "wp-scripts build --config ./bin/webpack.config.js  --webpack-src-dir=src/blocks/",
+    "start": "concurrently \"wp-scripts start --config ./bin/webpack.config.js --webpack-src-dir=src/blocks\" \"npm-watch themejson\""
   }
 }
