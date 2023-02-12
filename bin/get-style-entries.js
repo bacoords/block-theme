@@ -6,13 +6,26 @@
 const glob = require("glob");
 const path = require("path");
 
-function getStyleEntries() {
+/**
+ * Get all the root style files in the indicated styles folder
+ * and return an object with the relative output path as the key for each.
+ *
+ * @param {string} root The root folder to search for scss files
+ * @param {string} include The glob pattern to use to style files
+ * @param {string} outputFolder The folder to output the compiled style files in
+ * @returns
+ */
+function getStyleEntries(
+	root = "src/scss",
+	include = "*.scss",
+	outputFolder = "../css",
+) {
 	// get all root scss files in the src/scss folder
-	const entries = glob.sync("src/scss/*.scss");
+	const entries = glob.sync(root + "/" + include);
 
 	// create an object with the relative output path as the key and the file path as the value
 	const entriesWithKeys = entries.reduce((acc, entry) => {
-		const name = "../css/" + path.basename(entry);
+		const name = outputFolder + "/" + path.basename(entry);
 		acc[name] = path.resolve(entry);
 		return acc;
 	}, {});
