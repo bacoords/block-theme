@@ -14,7 +14,7 @@
 
 /// A handy function to get CSS Custom Properties
 /// generated from the settings section of the theme.json file.
-/// These are values not set in the custom section of theme.json settings.
+/// These are values not set in theme.json settings, excluding the custom section.
 @function preset($type, $key:null, $default:null) {
 	@if ( $key and $default ) {
 		@return var(--wp--preset--#{$type}--#{$key}, $default);
@@ -24,5 +24,22 @@
 		@return var(--wp--preset--#{$type}, $default);
 	} @else {
 		@return var(--wp--preset--#{$type});
+	}
+}
+
+/// A handy function to get CSS Custom Properties
+/// generated from theme.json file.
+/// This is for a few exceptional CSS Custom Properties that
+/// generated from the styles section of the theme.json file.
+/// For example: blockGap, contentSize, and root padding
+@function style($type, $key:null, $default:null) {
+	@if ( $key and $default ) {
+		@return var(--wp--style--#{$type}--#{$key}, $default);
+	} @else if ( $key and $default == null ) {
+		@return var(--wp--style--#{$type}--#{$key});
+	} @else if ( $key == null and $default ) {
+		@return var(--wp--style--#{$type}, $default);
+	} @else {
+		@return var(--wp--style--#{$type});
 	}
 }
