@@ -15,11 +15,12 @@ const path = require("path");
  * @param {string} outputFolder The folder to output the compiled style files in
  * @returns
  */
-function getStyleEntries(
-	root = "src/scss",
-	include = "*.scss",
-	outputFolder = "../css",
-) {
+function getStyleEntries(options) {
+	const {
+		root = "src/scss",
+		include = "*.scss",
+		outputFolder = "../css",
+	} = options;
 	// get all root scss files in the src/scss folder
 	const entries = glob.sync(root + "/" + include);
 
