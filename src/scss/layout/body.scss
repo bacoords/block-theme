@@ -10,6 +10,8 @@
 	.entry-content {
 		& > * {
 			@include mixins.margin-x(auto);
+			padding-right: var(--wp--style--root--padding-right);
+			padding-left: var(--wp--style--root--padding-left);
 		}
 		& > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
 			max-width: var(--wp--custom--content-sizes--default);

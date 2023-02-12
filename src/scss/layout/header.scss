@@ -3,7 +3,7 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: var(--wp--preset--spacing--40) 0;
+	padding: var(--wp--style--root--padding-top) var(--wp--style--root--padding-left) var(--wp--style--root--padding-bottom) var(--wp--style--root--padding-right);
 	@extend .wrapper;
 
 	.custom-logo-link img {
