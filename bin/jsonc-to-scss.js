@@ -51,7 +51,6 @@ module.exports = function (content) {
 	 * @returns {string} the scss string
 	 */
 	function jsontoSCSS(object, indent) {
-		// Make object root properties into scss variables
 		var scss = "";
 
 		// turn all keys into scss variables by adding the $ prefix
