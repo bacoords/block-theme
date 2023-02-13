@@ -7,8 +7,8 @@ node_modules
 # Other system files
 .DS_Store
 
-css
-js
-blocks
+/css
+/js
+/blocks
 
-theme.json
+/theme.json
