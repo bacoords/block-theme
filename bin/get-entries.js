@@ -48,7 +48,7 @@ function getBlockStylesheetName(filePath) {
 	}
 	const blockNamespace = pathParts[pathParts.length - 2];
 	const blockName = pathParts[pathParts.length - 1];
-	return blockNamespace + "-" + blockName;
+	return blockNamespace + "--" + blockName;
 }
 
 // export the function so it can be used in the webpack.config.js file
