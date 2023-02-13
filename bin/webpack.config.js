@@ -1,7 +1,9 @@
 const defaultConfig = require("@wordpress/scripts/config/webpack.config");
 const RemovePlugin = require("remove-files-webpack-plugin");
 const path = require("path");
-
+const { getEntries } = require("./get-entries");
+// styleOutputFolder should be relative to the root of the theme with no leading or trailing slashes
+const styleOutputFolder = "css";
 /**
  * Custom Webpack Configuration
  *
@@ -13,9 +15,18 @@ var config = {
 	...defaultConfig,
 	entry: {
 		...defaultConfig.entry(),
-		"../js/scripts": path.resolve(process.cwd(), "src/js", "index.js"),
-		"../css/editor": path.resolve(process.cwd(), "src/scss", "editor.scss"),
-		"../css/global": path.resolve(process.cwd(), "src/scss", "global.scss"),
+		...getEntries({ root: "src/js", include: "*.js", outputFolder: "js" }),
+		...getEntries({
+			root: "src/scss",
+			include: "*.scss",
+			outputFolder: styleOutputFolder,
+		}),
+		...getEntries({
+			root: "src/scss/blocks",
+			include: "**/*.scss",
+			outputFolder: styleOutputFolder,
+			blockDir: true,
+		}),
 		"../src/scss/abstracts/breakpoints": path.resolve(
 			process.cwd(),
 			"src/theme-json/settings/custom",
@@ -56,13 +67,13 @@ var config = {
 			after: {
 				test: [
 					{
-						folder: "./css",
+						folder: styleOutputFolder,
 						method: (absoluteItemPath) => {
 							return new RegExp(/\.js/, "m").test(absoluteItemPath);
 						},
 					},
 					{
-						folder: "./css",
+						folder: styleOutputFolder,
 						method: (absoluteItemPath) => {
 							return new RegExp(/\.php$/, "m").test(absoluteItemPath);
 						},
