@@ -48,7 +48,6 @@ function enqueue_block_specific_styles() {
 	 * e.g. array( 'core/group' => array( 'path' => '/path/to/file.css', 'src' => 'https://example.com/path/to/file.css' ) )
 	 */
 	$styled_blocks = get_block_specific_stylesheets();
-	echo '<pre>' . var_export($styled_blocks, true) . '</pre>';
 	// Enqueue the stylesheet for each block.
 	foreach ( $styled_blocks as $block_name => $stylesheet_path ) {
 		$args = array(
