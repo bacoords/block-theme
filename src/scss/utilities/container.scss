@@ -2,5 +2,7 @@
 
 .wrapper {
 	max-width: var(--wp--custom--content-sizes--wide);
+	padding-right: var(--wp--style--root--padding-right);
+	padding-left: var(--wp--style--root--padding-left);
 	@include mixins.margin-x(auto);
 }
