@@ -22,7 +22,6 @@
 
 
 .main-navigation {
-
 	header{
 		text-align: right;
 	}
@@ -197,10 +196,13 @@ body.admin-bar {
 				&[aria-expanded="true"] ~ .sub-menu{
 					display: block;
 				}
-				&:hover {
-					.sub-menu {
-						display: block;
-					}
+			}
+		}
+
+		&:hover {
+			@include respond-to('md') {
+				.sub-menu {
+					display: block;
 				}
 			}
 		}
