@@ -37,35 +37,44 @@ function enqueue_block_specific_custom_styles() {
 	/*
 	 * Load additional block styles.
 	 */
-		$styled_blocks = ['post-author'];
-	foreach ( $styled_blocks as $block_name ) {
+	$styled_blocks = get_block_specific_stylesheets();
+
+	foreach ( $styled_blocks as $block_name => $stylesheet_path ) {
 		$args = array(
-			'handle' => "twentytwentytwo-$block_name",
-			'src'    => get_theme_file_uri( "assets/css/blocks/$block_name.css" ),
+			'handle' => $block_name,
+			'src'    => $stylesheet_path,
 		);
-		wp_enqueue_block_style( "core/$block_name", $args );
+		wp_enqueue_block_style( $block_name, $args );
 	}
 }
 
 // function to get all css files in the css/ folder
 function get_css_files() {
-	$css_files = glob( get_template_directory() . '/css/*.css' );
-	$css_files = array_reduce( $css_files, 'Tangent\Enqueue\css_file_keys', array() );
-	$css_files = array_filter( $css_files, 'Tangent\Enqueue\exclude_stylesheets', ARRAY_FILTER_USE_KEY );
-	echo '<pre>' . var_export($css_files, true) . '</pre>';
-
+	$get_all_css_files = glob( get_stylesheet_directory() . '/css/*.css' );
+	$css_files = array_reduce( $get_all_css_files, 'Tangent\Enqueue\associative_array_of_filenames_and_filepaths', array() );
 	return $css_files;
 }
 
-function css_file_keys( $accumulator, $css_file ) {
-	$accumulator[basename( $css_file )] = $css_file;
+function associative_array_of_filenames_and_filepaths( $accumulator, $css_file ) {
+	$exclude_stylesheets = array( 'global.css', 'editor.css' );
+	if ( in_array( basename( $css_file ), $exclude_stylesheets, true ) ) {
+		return $accumulator;
+	}
+	$accumulator[basename( $css_file )] = str_replace(get_stylesheet_directory(), get_stylesheet_directory_uri(), $css_file);
 	return $accumulator;
 }
 
-function exclude_stylesheets( $stylesheet ) {
-	$exclude_stylesheets = array( 'global.css', 'editor.css' );
-	if ( in_array( $stylesheet, $exclude_stylesheets, true ) ) {
-		return false;
+
+function get_block_specific_stylesheets() {
+	$stylesheets = get_css_files();
+	$blocks_with_custom_stylesheets = array();
+	$pattern = "/(.+)--(.+)\.css/i"; // e.g. core--default.css
+	foreach ( $stylesheets as $stylesheet => $stylesheet_path ) {
+		preg_match( $pattern, $stylesheet, $matches );
+		$block_name = $matches[2];
+		$block_namespace = $matches[1];
+		$blocks_with_custom_stylesheets[ $block_namespace . '/' . $block_name ] = $stylesheet_path;
 	}
-	return true;
+	return $blocks_with_custom_stylesheets;
 }
+add_action( 'after_setup_theme', 'Tangent\Enqueue\enqueue_block_specific_custom_styles' );
