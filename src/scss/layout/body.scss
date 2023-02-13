@@ -3,6 +3,7 @@
 #primary {
 	.entry-header {
 		text-align: center;
+		padding: var(--wp--style--root--padding-top) var(--wp--style--root--padding-left) var(--wp--style--root--padding-bottom) var(--wp--style--root--padding-right);
 	}
 	& > article {
 		@include mixins.margin-x(auto);
@@ -10,6 +11,8 @@
 	.entry-content {
 		& > * {
 			@include mixins.margin-x(auto);
+			padding-right: var(--wp--style--root--padding-right);
+			padding-left: var(--wp--style--root--padding-left);
 		}
 		& > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
 			max-width: var(--wp--custom--content-sizes--default);
@@ -22,7 +25,7 @@
 		@extend .flow;
 	}
 	.entry-footer {
-		padding: var(--wp--preset--spacing--40);
+		padding: var(--wp--style--root--padding-top) var(--wp--style--root--padding-left) var(--wp--style--root--padding-bottom) var(--wp--style--root--padding-right);
 		.edit-link {
 			display: block;
 			text-align: center;
