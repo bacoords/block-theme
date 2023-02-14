@@ -51,7 +51,7 @@ window.addEventListener( 'load', () => {
 	// Close on click outside.
 	document.addEventListener( 'click', function ( event ) {
 		const navigationMenus = document.querySelectorAll(
-			'.menu'
+			'.has-accessible-submenu > .menu'
 		);
 		navigationMenus.forEach( function ( menu ) {
 			if ( ! menu.contains( event.target ) ) {
@@ -76,5 +76,6 @@ window.addEventListener( 'load', () => {
 		} );
 	} );
 
+	// Initializes offcanvas modal.
 	MicroModal.init();
 } );

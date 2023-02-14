@@ -48,38 +48,5 @@
 			<?php endif; ?>
 		</div><!-- .site-branding -->
 
-		<nav id="site-navigation" class="main-navigation">
-
-			<button class="menu-toggle" aria-haspopup="true" data-micromodal-trigger="navigation-modal" aria-label="<?php esc_html_e( 'Primary Menu', 'tangent' ); ?>">
-				<span class="menu-icon"><span></span></span>
-			</button>
-
-			<div id="navigation-modal" class="menu-modal" aria-hidden="true">
-
-				<div tabindex="-1" data-micromodal-close>
-
-					<div role="dialog" aria-modal="true" aria-label="<?php esc_html_e( 'Menu', 'tangent' ); ?>" >
-
-						<header>
-							<button class="menu-close" aria-label="<?php esc_html_e( 'Close Menu', 'tangent' ); ?>" data-micromodal-close>
-								<span class="menu-icon"><span></span></span>
-							</button>
-						</header>
-
-						<?php
-						wp_nav_menu(
-							array(
-								'theme_location' => 'menu-1',
-								'menu_id'        => 'primary-menu',
-								'container_id'   => 'navigation-modal-content',
-								'depth'          => 2,
-								'walker'         => new Tangent\Navwalker\Tangent_Walker(),
-							)
-						);
-						?>
-
-					</div>
-				</div>
-			</div>
-		</nav><!-- #site-navigation -->
+		<?php get_template_part( 'template-parts/navigation', 'offcanvas' ); ?>
 	</header><!-- #masthead -->

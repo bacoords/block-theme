@@ -8,7 +8,7 @@ namespace Tangent\Navwalker;
 /**
  * Custom navwalker for accessible dropdown menus
  */
-class Tangent_Walker extends \Walker_Nav_Menu {
+class Tangent_Navwalker extends \Walker_Nav_Menu {
 
 	/**
 	 * Starts the list before the elements are added.
