@@ -11,3 +11,9 @@ node_modules
 /vendor/
 composer.lock
 .phpcs-cache
+
+/css
+/js
+/blocks
+
+/theme.json
