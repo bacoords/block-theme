@@ -1,9 +1,11 @@
 @use "../utilities/flow.scss" as *;
 @use "../abstracts/mixins.scss";
 @use "../abstracts/props.scss";
+
 #primary {
 	.entry-header {
 		text-align: center;
+		padding: props.style("root", "padding-top") props.style("root", "padding-left") props.style("root", "padding-bottom") props.style("root", "padding-right");
 	}
 	& > article {
 		@include mixins.margin-x(auto);
@@ -11,6 +13,8 @@
 	.entry-content {
 		& > * {
 			@include mixins.margin-x(auto);
+			padding-right: props.style("root", "padding-right");
+			padding-left: props.style("root", "padding-left");
 		}
 		& > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
 			max-width: props.custom("content-sizes", "default");
@@ -23,7 +27,7 @@
 		@extend .flow;
 	}
 	.entry-footer {
-		padding: props.preset("spacing", "40");
+		padding: props.style("root", "padding-top") props.style("root", "padding-left") props.style("root", "padding-bottom") props.style("root", "padding-right");
 		.edit-link {
 			display: block;
 			text-align: center;

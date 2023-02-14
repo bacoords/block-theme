@@ -7,8 +7,13 @@ node_modules
 # Other system files
 .DS_Store
 
-css
-js
-blocks
+# Composer
+/vendor/
+composer.lock
+.phpcs-cache
 
-theme.json
+/css
+/js
+/blocks
+
+/theme.json

@@ -3,5 +3,7 @@
 
 .wrapper {
 	max-width: props.custom("content-sizes", "wide");
+	padding-right: props.style("root", "padding-right");
+	padding-left: props.style("root", "padding-left");
 	@include mixins.margin-x(auto);
 }

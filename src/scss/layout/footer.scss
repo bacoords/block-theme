@@ -3,6 +3,6 @@
 #colophon {
 	display: flex;
 	justify-content: space-between;
-	padding: props.preset("spacing", "40") 0;
+	padding: props.style("root", "padding-top") props.style("root", "padding-left") props.style("root", "padding-bottom") props.style("root", "padding-right");
 	@extend .wrapper;
 }
