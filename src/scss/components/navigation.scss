@@ -67,7 +67,7 @@
 }
 // Fix for the admin bar
 body.admin-bar {
-	.main-navigation .menu-modal {
+	.offcanvas-navigation .menu-modal {
 		top: 46px;
 		@include respond-to('md') {
 			top: 0px;
