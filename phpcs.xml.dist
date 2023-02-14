@@ -12,6 +12,9 @@
 	<!-- Show colors in console -->
 	<arg name="colors"/>
 
+	<!-- Only check the PHP, CSS and SCSS files. JS files are checked separately with ESLint. -->
+	<arg name="extensions" value="php,css,scss/css"/>
+
 	<!-- Show sniff codes in all reports -->
 	<arg value="s"/>
 
@@ -26,6 +29,7 @@
 	<exclude-pattern>/fonts/*</exclude-pattern>
 	<exclude-pattern>/dist/*</exclude-pattern>
 	<exclude-pattern>*.min.(js|css)</exclude-pattern>
+	<exclude-pattern>*.asset.php</exclude-pattern>
 	<exclude-pattern>/\.*</exclude-pattern>
 
 	<!-- Use the WordPress Ruleset -->
