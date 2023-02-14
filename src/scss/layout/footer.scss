@@ -1,7 +1,8 @@
 @use "../utilities/container.scss" as *;
+@use "../abstracts/props.scss";
 #colophon {
 	display: flex;
 	justify-content: space-between;
-	padding: var(--wp--style--root--padding-top) var(--wp--style--root--padding-left) var(--wp--style--root--padding-bottom) var(--wp--style--root--padding-right);
+	padding: props.style("root", "padding-top") props.style("root", "padding-left") props.style("root", "padding-bottom") props.style("root", "padding-right");
 	@extend .wrapper;
 }

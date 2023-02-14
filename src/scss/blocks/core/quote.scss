@@ -1,3 +1,4 @@
-.wp-block-quote {
-	border: 2px solid var(--wp--preset--color--primary);
+@use "../../abstracts/props.scss";
+.wp-block-blockquote {
+	border: 2px solid props.preset("color", "primary");
 }

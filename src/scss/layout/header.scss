@@ -1,3 +1,4 @@
+@use "../abstracts/props.scss";
 @use "../utilities/container.scss" as *;
 @use "../abstracts/respond-to.scss" as *;
 
@@ -5,12 +6,12 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	padding: props.style("root", "padding-top") props.style("root", "padding-left") props.style("root", "padding-bottom") props.style("root", "padding-right");
 	flex-wrap: wrap;
-	padding: var(--wp--style--root--padding-top) var(--wp--style--root--padding-left) var(--wp--style--root--padding-bottom) var(--wp--style--root--padding-right);
 	@extend .wrapper;
 
 	.site-title{
-		font-size: var(--wp--custom--fontsizes--h-3--size);
+		font-size: props.preset("font-sizes", "h-3");
 	}
 
 	.custom-logo-link img {
@@ -18,9 +19,6 @@
 		width: auto;
 	}
 }
-
-
-
 
 // Menu Icon
 .menu-icon {
@@ -39,7 +37,7 @@
 			transition-duration: 0.5s;
 			width: 20px;
 			height: 2px;
-			background-color: var(--wp--preset--color--foreground);
+			background-color: props.preset("color", "foreground");
 			content: "";
 			top: 0px;
 			display: block;
@@ -49,7 +47,7 @@
 			transition-duration: 0.5s;
 			width: 20px;
 			height: 2px;
-			background-color: var(--wp--preset--color--foreground);
+			background-color: props.preset("color", "foreground");
 			content: "";
 			margin-top: 7px;
 			display: block;
