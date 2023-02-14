@@ -80,14 +80,17 @@ function get_block_specific_stylesheets() {
  * @return void
  */
 function associative_array_of_blocks_and_stylesheet_args( $accumulator, $css_file ) {
+	// Hard coded values to exclude certain stylesheets.
+	// TODO: Make this dynamic or provide a way to exclude stylesheets through /setup.php.
 	$exclude_stylesheets = array( 'global.css', 'editor.css' );
 
 	if ( in_array( basename( $css_file ), $exclude_stylesheets, true ) ) {
 		return $accumulator;
 	}
 
-	$pattern             = "/(.+)--(.+)\.css/i";  // e.g. core--group.css
+	$pattern = "/(.+)--(.+)\.css/i";  // e.g. core--group.css
 	preg_match( $pattern, basename( $css_file ), $matches );
+
 	$block_name = $matches[1] . '/' . $matches[2];
 
 	$accumulator[$block_name]['path'] = $css_file;
