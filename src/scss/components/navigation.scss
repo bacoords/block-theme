@@ -1,4 +1,5 @@
 @use "../abstracts/respond-to.scss" as *;
+@use "../abstracts/props.scss";
 
 // Offcanvas Navigation
 .offcanvas-navigation {
@@ -10,7 +11,7 @@
 		appearance: none;
 		background-color: transparent;
 		border: none;
-		padding: calc( var(--wp--preset--spacing--30) / 2 );
+		padding: calc( props.preset("spacing", "30") / 2 );
 		cursor: pointer;
 		@include respond-to('md') {
 			display: none;
@@ -26,14 +27,14 @@
 		li {
 			a {
 				display: inline-block;
-				padding: calc( var(--wp--preset--spacing--30) / 2 );
+				padding: calc( props.preset("spacing", "30") / 2 );
 				text-align: right;
 			}
 		}
 		@include respond-to('md') {
 			flex-direction: row;
 			li {
-				margin-left: var(--wp--preset--spacing--30);
+				margin-left: props.preset("spacing", "30");
 				a {
 					padding: 0;
 					text-align: left;
@@ -49,8 +50,8 @@
 		position: fixed;
 		right: 0;
 		top: 0;
-		background-color: var(--wp--preset--color--background);
-		padding: var(--wp--preset--spacing--40) 0;
+		background-color: props.preset("color", "background");
+		padding: props.preset("spacing", "40") 0;
 		&.is-open {
 			display: block;
 		}
@@ -84,11 +85,11 @@ body.admin-bar {
 		flex-direction: column;
 		align-items: flex-end;
 		padding-left: 0;
-		padding-right: var(--wp--preset--spacing--30);
+		padding-right: props.preset("spacing", "30");
 		li {
 			margin-left: 0;
 			a {
-				padding: calc( var(--wp--preset--spacing--30) / 2);
+				padding: calc( props.preset("spacing", "30") / 2);
 			}
 		}
 		@include respond-to('md') {
@@ -99,11 +100,11 @@ body.admin-bar {
 			right:0;
 			min-width: 200px;
 			padding-left: 0;
-			background-color: var(--wp--preset--color--background);
-			border: 1px solid var(--wp--preset--color--secondary);
+			background-color: props.preset("color", "background");
+			border: 1px solid props.preset("color", "secondary");
 			li {
 				a {
-					padding: calc( var(--wp--preset--spacing--30) / 4);
+					padding: calc( props.preset("spacing", "30") / 4);
 				}
 			}
 		}
@@ -118,7 +119,7 @@ body.admin-bar {
 			svg {
 				width: 1rem;
 				height: 1rem;
-				stroke: var(--wp--preset--color--secondary);
+				stroke: props.preset("color", "secondary");
 			}
 			@include respond-to('md') {
 				display: inline-block;
