@@ -37,7 +37,7 @@
 			transition-duration: 0.5s;
 			width: 20px;
 			height: 2px;
-			background-color: props.preset("color", "foreground");;
+			background-color: props.preset("color", "foreground");
 			content: "";
 			top: 0px;
 			display: block;
@@ -47,7 +47,7 @@
 			transition-duration: 0.5s;
 			width: 20px;
 			height: 2px;
-			background-color: props.preset("color", "foreground");;
+			background-color: props.preset("color", "foreground");
 			content: "";
 			margin-top: 7px;
 			display: block;
