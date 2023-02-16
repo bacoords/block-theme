@@ -9,16 +9,6 @@
  *
  * @package Tangent
  */
-
-/**
- * Get the custom design tokens from the theme.json file settings section
- */
-$design_tokens = \Tangent\Theme_Json\get_custom_design_tokens();
-// See src/theme-json/settings/custom/comments.jsonc for the comments design tokens
-$comments_design_tokens = $design_tokens['comments'];
-$comment_label_single   = $comments_design_tokens['commentLabelSingle'];
-$comment_label_plural   = $comments_design_tokens['commentLabelPlural'];
-$comments_avatar_size   = $comments_design_tokens['avatarSize'];
 /*
  * If the current post is protected by a password and
  * the visitor has not yet entered the password we will
@@ -41,13 +31,13 @@ if ( post_password_required() ) {
 			if ( '1' === $comment_count ) {
 				printf(
 					/* translators: 1: title. */
-					esc_html__( 'One ' . $comment_label_single . ' on &ldquo;%1$s&rdquo;', 'tangent' ),
+					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'tangent' ),
 					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
 				);
 			} else {
 				printf(
 					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( '%1$s ' . $comment_label_single . ' on &ldquo;%2$s&rdquo;', '%1$s ' . $comment_label_plural . ' on &ldquo;%2$s&rdquo;', $comment_count, 'comments title', 'tangent' ) ),
+					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $comment_count, 'comments title', 'tangent' ) ),
 					number_format_i18n( $comment_count ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
 				);
@@ -63,7 +53,6 @@ if ( post_password_required() ) {
 				array(
 					'style'       => 'ol',
 					'short_ping'  => true,
-					'avatar_size' => $comments_avatar_size,
 				)
 			);
 			?>
