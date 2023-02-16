@@ -34,7 +34,7 @@ const removeEditorPanels = ["discussion-panel"];
  * @type {Object} Add the names of blocks and styles to remove here
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-styles/
  */
-const removeBlockStyles = {
+const unregisterBlockStyles = {
 	"core/button": "outline",
 };
 
@@ -93,8 +93,8 @@ domReady(function () {
 	removeEditorPanels.forEach((panel) => {
 		removeEditorPanel(panel);
 	});
-	Object.keys(removeBlockStyles).forEach((block) => {
-		unregisterBlockStyle(block, removeBlockStyles[block]);
+	Object.keys(unregisterBlockStyles).forEach((block) => {
+		unregisterBlockStyle(block, unregisterBlockStyles[block]);
 	});
 	Object.keys(removeBlockVariations).forEach((block) => {
 		unregisterBlockVariation(block, removeBlockVariations[block]);
