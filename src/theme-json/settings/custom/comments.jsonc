@@ -1,0 +1,7 @@
+// Set up a the basics of comments here
+// These values are pulled into the theme with PHP and used in the comments.php file primarily.
+{
+	"avatarSize": 32, // in pixels
+	"commentLabelSingle": "Comment", // what to call comments on the front end
+	"commentLabelPlural": "Comments" // what to call comments on the front end
+}
