@@ -57,7 +57,7 @@ const registerBlockStyles = {
  * @type {Object} Add the names of blocks and variations to remove here
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-variations/
  */
-const removeBlockVariations = {
+const unregisterBlockVariations = {
 	"core/columns": "two-columns-two-thirds-one-third",
 };
 
@@ -96,8 +96,8 @@ domReady(function () {
 	Object.keys(unregisterBlockStyles).forEach((block) => {
 		unregisterBlockStyle(block, unregisterBlockStyles[block]);
 	});
-	Object.keys(removeBlockVariations).forEach((block) => {
-		unregisterBlockVariation(block, removeBlockVariations[block]);
+	Object.keys(unregisterBlockVariations).forEach((block) => {
+		unregisterBlockVariation(block, unregisterBlockVariations[block]);
 	});
 	Object.keys(registerBlockStyles).forEach((block) => {
 		registerBlockStyle(block, registerBlockStyles[block]);
