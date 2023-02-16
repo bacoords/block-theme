@@ -33,7 +33,7 @@ module.exports = function (content) {
 	this.addDependency(contentPath);
 
 	// create a string comment to include in the scss file to note it was generated from `theme.json`
-	const scssComment = `// This file was generated from "${parsedContentPath.base}". Do not edit directly.\n`;
+	const scssComment = `/// This file was generated from "${parsedContentPath.base}". Do not edit directly.\n`;
 	// generate the scss from the jsonc file, with a tab indent
 	var scss = scssComment + jsontoSCSS(scssVars, "\t");
 	if (scss) {
