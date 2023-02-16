@@ -1,25 +1,42 @@
-/// Josh's Custom CSS Reset
-/// https://www.joshwcomeau.com/css/custom-css-reset/
+////
+///  Josh's Custom CSS Reset
+/// @group reset
+/// @author Josh Comeau
+/// @link https://www.joshwcomeau.com/css/custom-css-reset/
+////
 
+/// Apply a natural box layout model to all elements
 *, *::before, *::after {
 	box-sizing: border-box;
 }
+
+/// Remove default margin on all elements
 * {
 	margin: 0;
 }
+
+/// Give the body a default full height
 html, body {
 	height: 100%;
 }
+
+/// Antialiasing for text
 body {
 	-webkit-font-smoothing: antialiased;
 }
+
+/// Assign block behaviour to all media elements
 img, picture, video, canvas, svg {
 	display: block;
 	max-width: 100%;
 }
+
+/// Inherit the base font information for form elements
 input, button, textarea, select {
 	font: inherit;
 }
+
+/// Wrap text elements and allow words to be broken up if they are too long
 p, h1, h2, h3, h4, h5, h6 {
 	overflow-wrap: break-word;
 }
