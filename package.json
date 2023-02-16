@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "A theme starter for the modern WordPress developer.",
   "author": "Howard Development & Consulting",
-  "license": "GPL-2.0-or-later",
+  "license": "GPL-3.0-or-later",
   "keywords": [
     "wordpress",
     "starter",
@@ -36,7 +36,7 @@
     "glob": "^8.1.0",
     "jsonc": "^2.0.0",
     "lodash.set": "^4.3.2",
-	"micromodal": "^0.4.10",
+    "micromodal": "^0.4.10",
     "nodemon": "^2.0.20",
     "npm-watch": "^0.11.0",
     "remove-files-webpack-plugin": "^1.5.0",
@@ -49,6 +49,6 @@
     "lint:pkg-json": "wp-scripts lint-pkg-json",
     "build": "concurrently \"wp-scripts build --config ./bin/webpack.config.js  --webpack-src-dir=src/blocks/\" \"npm-watch themejson\"",
     "start": "concurrently \"wp-scripts start --config ./bin/webpack.config.js --webpack-src-dir=src/blocks\" \"npm-watch themejson\"",
-	"watch": "nodemon --watch ./src --ext js,css,scss,jsonc --exec \"npm run build\""
+    "watch": "nodemon --watch ./src --ext js,css,scss,jsonc --exec \"npm run build\""
   }
 }
