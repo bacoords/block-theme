@@ -2,7 +2,7 @@
 @use "../abstracts/props.scss";
 
 /// Offcanvas Navigation
-/// @see `template-parts/navigation-offcanvas.php` for the markup
+/// See "../../../template-parts/navigation-offcanvas.php" for the markup
 .offcanvas-navigation {
 	header{
 		text-align: right;
@@ -79,7 +79,7 @@ body.admin-bar {
 
 
 /// Accessible Submenu for the tangent\navwalker
-/// @see `inc/class-tangent-navwalker.php` for the markup
+/// See "../../../inc/class-tangent-navwalker.php" for the markup
 .has-accessible-submenu {
 	.sub-menu {
 		list-style-type: none;
