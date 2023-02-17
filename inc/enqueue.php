@@ -146,3 +146,16 @@ function enqueue_editor_modifications() {
 }
 
 add_action( 'enqueue_block_editor_assets', 'Tangent\Enqueue\enqueue_editor_modifications' );
+
+/**
+ * Enqueue the `comment-reply` script if threaded comments are enabled.
+ *
+ * @return void
+ */
+function enqueue_threaded_comment_reply() {
+	if ( get_option( 'thread_comments' ) ) {
+		wp_enqueue_script( 'comment-reply' );
+	}
+}
+
+add_action( 'comment_form_before', 'Tangent\Enqueue\enqueue_threaded_comment_reply' );
