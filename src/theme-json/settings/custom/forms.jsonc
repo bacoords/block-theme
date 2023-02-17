@@ -1,7 +1,0 @@
-{
-	"border": "2px solid var(--wp--preset--color--foreground)",
-	"focus": {
-		"outline": "0",
-		"border": "2px solid var(--wp--preset--color--accent)"
-	}
-}
