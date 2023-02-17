@@ -133,6 +133,7 @@ body.admin-bar {
 			padding-left: 0;
 			background-color: props.preset("color", "background");
 			border: 1px solid props.preset("color", "secondary");
+			border-radius: props.custom("border", "radius");
 			li {
 				a {
 					padding: calc( props.preset("spacing", "30") / 4);
