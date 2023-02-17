@@ -1,0 +1,10 @@
+@use "../abstracts/props.scss";
+
+input, textarea {
+	transition: props.custom("effects", "transition");
+	border: props.custom("forms", "border");
+	&:focus {
+		outline: props.custom("forms", "focus--outline");
+		border: props.custom("forms", "focus--border");
+	}
+}
