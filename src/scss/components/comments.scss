@@ -11,6 +11,9 @@
 	max-width: props.custom("content-sizes", "wide");
 	@include mixins.margin-x(auto);
 	@extend .flow;
+	.comments-title {
+		text-align: center;
+	}
 	.comment-list {
 		@extend .flow;
 		list-style: none;
@@ -26,11 +29,13 @@
 		}
 		.comment {
 			@extend .flow;
-			#respond {
-				// threaded reply form should have the same background as a comment block
+			// threaded reply form should have the same background as a comment block
+			#respond, .comment-body {
 				@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
 					// backdrop-filter: brightness(0.95);
 				}
+			}
+			#respond {
 				border-radius: var(--wp--custom--border--radius);
 				border-radius: props.custom("border", "radius");
 				border-color: props.custom("border", "color");
@@ -38,9 +43,6 @@
 				border-width: props.custom("border", "width");
 			}
 			.comment-body {
-				@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-					// backdrop-filter: brightness(0.95);
-				}
 				border-radius: var(--wp--custom--border--radius);
 				border-radius: props.custom("border", "radius");
 				border-color: props.custom("border", "color");
