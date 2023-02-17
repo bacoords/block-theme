@@ -25,19 +25,19 @@
 		list-style-type: none;
 		padding-left: 0;
 		li {
+			text-align: right;
 			a {
 				display: inline-block;
 				padding: calc( props.preset("spacing", "30") / 2 );
-				text-align: right;
 			}
 		}
 		@include respond-to('md') {
 			flex-direction: row;
 			li {
 				margin-left: props.preset("spacing", "30");
+				text-align: left;
 				a {
 					padding: 0;
-					text-align: left;
 				}
 			}
 		}
@@ -54,6 +54,7 @@
 		padding: props.preset("spacing", "40") 0;
 		&.is-open {
 			display: block;
+			overflow: auto;
 		}
 		@include respond-to('md') {
 			display: block;
@@ -80,7 +81,9 @@ body.admin-bar {
 // Accessible Submenu for the tangent\navwalker
 .has-accessible-submenu {
 	.menu-item-has-children {
-		position: relative;
+		@include respond-to('md') {
+			position: relative;
+		}
 		.sub-menu-toggle{
 			appearance: none;
 			background-color: transparent;
