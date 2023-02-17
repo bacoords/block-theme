@@ -1,6 +1,6 @@
 {
 	"border": {
-		"radius": "5px"
+		"radius": "var(--wp--custom--border--radius)"
 	},
 	"spacing": {
 		"padding": {

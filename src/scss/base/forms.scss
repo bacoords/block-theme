@@ -2,9 +2,15 @@
 
 input, textarea {
 	transition: props.custom("effects", "transition");
-	border: props.custom("forms", "border");
+	border-radius: props.custom("border", "radius");
+	border-color: props.custom("border", "color");
+	border-style: props.custom("border", "style");
+	border-width: props.custom("border", "width");
 	&:focus {
 		outline: props.custom("forms", "focus--outline");
-		border: props.custom("forms", "focus--border");
+		border-radius: props.custom("border--focus", "radius");
+		border-color: props.custom("border--focus", "color");
+		border-style: props.custom("border--focus", "style");
+		border-width: props.custom("border--focus", "width");
 	}
 }
