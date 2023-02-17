@@ -29,13 +29,23 @@
 			#respond {
 				// threaded reply form should have the same background as a comment block
 				@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-					backdrop-filter: brightness(0.95);
+					// backdrop-filter: brightness(0.95);
 				}
+				border-radius: var(--wp--custom--border--radius);
+				border-radius: props.custom("border", "radius");
+				border-color: props.custom("border", "color");
+				border-style: props.custom("border", "style");
+				border-width: props.custom("border", "width");
 			}
 			.comment-body {
 				@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-					backdrop-filter: brightness(0.95);
+					// backdrop-filter: brightness(0.95);
 				}
+				border-radius: var(--wp--custom--border--radius);
+				border-radius: props.custom("border", "radius");
+				border-color: props.custom("border", "color");
+				border-style: props.custom("border", "style");
+				border-width: props.custom("border", "width");
 				padding: props.style("root", "padding-top")
 					props.style("root", "padding-left")
 					props.style("root", "padding-bottom")
