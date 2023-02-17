@@ -165,3 +165,26 @@ input[type="radio"] {
 		}
 	}
 }
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button {
+	background-color: props.custom("button", "color--background");
+	border-radius: props.custom("button", "border--radius");
+	border-color: props.custom("button", "border--color");
+	border-width: props.custom("button", "border--width");
+	color: props.custom("button", "color--text");
+	padding-top: props.custom("button", "spacing--padding--top");
+	padding-right: props.custom("button", "spacing--padding--right");
+	padding-bottom: props.custom("button", "spacing--padding--bottom");
+	padding-left: props.custom("button", "spacing--padding--left");
+	&:hover {
+		background-color: props.custom("button", "hover--color--background");
+		color: props.custom("button", "hover--color--text");
+	}
+	&:focus {
+		background-color: props.custom("button", "focus--color--background");;
+		color: props.custom("button", "focus--color--text");;
+	}
+}
