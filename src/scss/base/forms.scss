@@ -1,5 +1,6 @@
 @use "../abstracts/props.scss";
 @use "../utilities/visually-hidden.scss" as *;
+@use "../abstracts/respond-to" as *;
 input,
 textarea {
 	transition: props.custom("effects", "transition");
@@ -61,18 +62,22 @@ input[type="checkbox"] {
 				position: absolute;
 				top: 10px;
 				left: 4px;
-				border-left: props.custom("border", "width") solid props.preset("color", "background");
-				border-bottom: props.custom("border", "width") solid props.preset("color", "background");
+				border-left: props.custom("border", "width") solid
+					props.preset("color", "background");
+				border-bottom: props.custom("border", "width") solid
+					props.preset("color", "background");
 				height: 6px;
 				width: 13px;
 				transform: rotate(-45deg);
 			}
 		}
 	}
-	&:focus, &:focus-visible {
+	&:focus,
+	&:focus-visible {
 		& + label {
 			&:before {
-				outline: props.preset("color", "background") solid props.custom("border", "width");;
+				outline: props.preset("color", "background") solid
+					props.custom("border", "width");
 				box-shadow: 1px 1px 8px props.preset("color", "secondary");
 			}
 		}
@@ -128,6 +133,9 @@ input[type="radio"] {
 				content: "";
 				position: absolute;
 				top: 9px;
+				@include respond-to(md) {
+					top: 10px;
+				}
 				left: 5px;
 				background-color: props.preset("color", "background");
 				border-radius: 50%;
@@ -136,10 +144,12 @@ input[type="radio"] {
 			}
 		}
 	}
-	&:focus, &:focus-visible {
+	&:focus,
+	&:focus-visible {
 		& + label {
 			&:before {
-				outline: props.preset("color", "background") solid props.custom("border", "width");;
+				outline: props.preset("color", "background") solid
+					props.custom("border", "width");
 				box-shadow: 1px 1px 8px props.preset("color", "secondary");
 			}
 		}
