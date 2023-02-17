@@ -14,6 +14,9 @@
 	.comments-title {
 		text-align: center;
 	}
+	small {
+		display: block;
+	}
 	.comment-list {
 		@extend .flow;
 		list-style: none;
