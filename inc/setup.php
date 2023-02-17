@@ -17,7 +17,7 @@ function theme_setup() {
 	* If you're building a theme based on _s, use a find and replace
 	* to change 'tangent' to the name of your theme in all the template files.
 	*/
-	load_theme_textdomain( 'tangent', get_template_directory() . '/languages' );
+	load_theme_tangent( 'tangent', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
