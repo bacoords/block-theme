@@ -14,3 +14,7 @@ input, textarea {
 		border-width: props.custom("border--focus", "width");
 	}
 }
+
+input[type="checkbox"], input[type="radio"] {
+	accent-color: props.preset("color", "foreground");
+}
