@@ -1,0 +1,108 @@
+@use "../utilities/flow.scss" as *;
+@use "../abstracts/mixins.scss";
+@use "../abstracts/props.scss";
+@use "../abstracts/respond-to.scss" as *;
+@use "sass:color";
+
+#comments {
+	padding: props.style("root", "padding-top")
+		props.style("root", "padding-left") props.style("root", "padding-bottom")
+		props.style("root", "padding-right");
+	max-width: props.custom("content-sizes", "wide");
+	@include mixins.margin-x(auto);
+	@extend .flow;
+	.comment-list {
+		@extend .flow;
+		list-style: none;
+		padding: 0;
+		.children {
+			@extend .flow;
+			list-style: none;
+			.children {
+				ol {
+					padding: 0;
+				}
+			}
+		}
+		.comment {
+			@extend .flow;
+			#respond {
+				// threaded reply form should have the same background as a comment block
+				@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+					backdrop-filter: brightness(0.95);
+				}
+			}
+			.comment-body {
+				@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+					backdrop-filter: brightness(0.95);
+				}
+				padding: props.style("root", "padding-top")
+					props.style("root", "padding-left")
+					props.style("root", "padding-bottom")
+					props.style("root", "padding-right");
+				.comment-meta {
+					display: flex;
+					justify-content: space-between;
+					flex-wrap: wrap;
+					margin-bottom: 1rem;
+					gap: 0.5rem;
+
+					.comment-author {
+						display: flex;
+						gap: 0.5rem;
+						order: 1;
+						@include respond-to(md) {
+							order: 0;
+						}
+					}
+					.comment-metadata {
+						font-size: props.preset("font-size", "small");
+					}
+				}
+			}
+		}
+	}
+
+	/// Comment Form
+	#respond {
+		padding: props.style("root", "padding-top")
+			props.style("root", "padding-left") props.style("root", "padding-bottom")
+			props.style("root", "padding-right");
+		.required-field-message {
+			display: block;
+			font-size: props.preset("font-size", "small");
+			margin-top: props.preset("spacing", "20");
+		}
+		form {
+			@extend .flow;
+			p {
+				display: flex;
+				flex-direction: column;
+				@extend .flow;
+				& > * {
+					--wp--style--block-gap: 0.5rem;
+				}
+				&.comment-form-cookies-consent {
+					flex-direction: row;
+					align-items: baseline;
+					gap: 0.5rem;
+					& > * + * {
+						margin-top: 0;
+					}
+				}
+				&.form-submit {
+					// don't make the submit button full width
+					display: block;
+				}
+				&.logged-in-as {
+					display: block;
+					margin-top: props.preset("spacing", "20");
+				}
+			}
+			.comment-notes {
+				font-size: props.preset("font-size", "small");
+				margin-top: props.style("block-gap");
+			}
+		}
+	}
+}
