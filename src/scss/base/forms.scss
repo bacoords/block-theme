@@ -184,7 +184,8 @@ button {
 		color: props.custom("button", "hover--color--text");
 	}
 	&:focus {
-		background-color: props.custom("button", "focus--color--background");;
-		color: props.custom("button", "focus--color--text");;
+		background-color: props.custom("button", "focus--color--background");
+		color: props.custom("button", "focus--color--text");
+		border-color: props.custom("button", "focus--border--color");
 	}
 }

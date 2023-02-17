@@ -1,8 +1,8 @@
 {
 	"border": {
 		"radius": "var(--wp--custom--border--radius)",
-		"color": "var(--wp--custom--border--color)",
-		"width": "0"
+		"color": "transparent",
+		"width": "2px"
 	},
 	"spacing": {
 		"padding": {
@@ -25,7 +25,10 @@
 	"focus": {
 		"color": {
 			"background": "var(--wp--preset--color--background)",
-			"text": "var(--wp--preset--color--background)"
+			"text": "var(--wp--preset--color--secondary)"
+		},
+		"border": {
+			"color": "var(--wp--custom--border--color)"
 		}
 	},
 	"active": {

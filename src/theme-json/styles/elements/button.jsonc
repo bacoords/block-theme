@@ -26,6 +26,9 @@
 		"color": {
 			"background": "var(--wp--custom--button--focus--color--background)",
 			"text": "var(--wp--custom--button--focus--color--text)"
+		},
+		"border": {
+			"color": "var(--wp--custom--border--color)"
 		}
 	},
 	":active": {
