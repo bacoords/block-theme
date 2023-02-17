@@ -41,6 +41,9 @@
 				border-color: props.custom("border", "color");
 				border-style: props.custom("border", "style");
 				border-width: props.custom("border", "width");
+				padding: props.style("root", "padding-top")
+				props.style("root", "padding-left") props.style("root", "padding-bottom")
+				props.style("root", "padding-right");
 			}
 			.comment-body {
 				border-radius: var(--wp--custom--border--radius);
@@ -81,9 +84,6 @@
 
 	/// Comment Form
 	#respond {
-		padding: props.style("root", "padding-top")
-			props.style("root", "padding-left") props.style("root", "padding-bottom")
-			props.style("root", "padding-right");
 		.required-field-message {
 			display: block;
 			font-size: props.preset("font-size", "small");
