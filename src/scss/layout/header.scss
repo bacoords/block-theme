@@ -57,7 +57,7 @@
 
 .menu-close {
 	.menu-icon > span{
-		transition: 0.5s;
+		transition: props.custom("effects", "transition");
 
 		&:before {
 			transform: rotateZ(45deg) scaleX(1.25) translate(1px, 5px);
