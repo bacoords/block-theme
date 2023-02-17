@@ -13,7 +13,6 @@ https://www.joshwcomeau.com/css/custom-css-reset/
 }
 html, body {
 	height: 100%;
-	font-size: props.preset("font-size", "paragraph");
 }
 body {
 	-webkit-font-smoothing: antialiased;
