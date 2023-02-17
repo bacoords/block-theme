@@ -79,6 +79,37 @@ body.admin-bar {
 
 // Accessible Submenu for the tangent\navwalker
 .has-accessible-submenu {
+	.menu-item-has-children {
+		position: relative;
+		.sub-menu-toggle{
+			appearance: none;
+			background-color: transparent;
+			border: none;
+			cursor: pointer;
+			display: none;
+			padding:calc( props.preset("spacing", "30") / 4) calc( props.preset("spacing", "30") / 8);
+			svg {
+				width: 1rem;
+				height: 1rem;
+				stroke: props.preset("color", "secondary");
+			}
+			@include respond-to('md') {
+				display: inline-block;
+				&[aria-expanded="true"] ~ .sub-menu{
+					display: block;
+				}
+			}
+		}
+
+		&:hover {
+			@include respond-to('md') {
+				.sub-menu {
+					display: block;
+				}
+			}
+		}
+	}
+
 	.sub-menu {
 		list-style-type: none;
 		display:flex;
@@ -105,34 +136,6 @@ body.admin-bar {
 			li {
 				a {
 					padding: calc( props.preset("spacing", "30") / 4);
-				}
-			}
-		}
-	}
-	.menu-item-has-children {
-		.sub-menu-toggle{
-			appearance: none;
-			background-color: transparent;
-			border: none;
-			cursor: pointer;
-			display: none;
-			svg {
-				width: 1rem;
-				height: 1rem;
-				stroke: props.preset("color", "secondary");
-			}
-			@include respond-to('md') {
-				display: inline-block;
-				&[aria-expanded="true"] ~ .sub-menu{
-					display: block;
-				}
-			}
-		}
-
-		&:hover {
-			@include respond-to('md') {
-				.sub-menu {
-					display: block;
 				}
 			}
 		}
