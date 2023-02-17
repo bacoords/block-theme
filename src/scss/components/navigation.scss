@@ -25,19 +25,19 @@
 		list-style-type: none;
 		padding-left: 0;
 		li {
+			text-align: right;
 			a {
 				display: inline-block;
 				padding: calc( props.preset("spacing", "30") / 2 );
-				text-align: right;
 			}
 		}
 		@include respond-to('md') {
 			flex-direction: row;
 			li {
 				margin-left: props.preset("spacing", "30");
+				text-align: left;
 				a {
 					padding: 0;
-					text-align: left;
 				}
 			}
 		}
@@ -54,6 +54,8 @@
 		padding: props.preset("spacing", "40") 0;
 		&.is-open {
 			display: block;
+			overflow: auto;
+			z-index: 100000;
 		}
 		@include respond-to('md') {
 			display: block;
@@ -79,6 +81,39 @@ body.admin-bar {
 
 // Accessible Submenu for the tangent\navwalker
 .has-accessible-submenu {
+	.menu-item-has-children {
+		@include respond-to('md') {
+			position: relative;
+		}
+		.sub-menu-toggle{
+			appearance: none;
+			background-color: transparent;
+			border: none;
+			cursor: pointer;
+			display: none;
+			padding:calc( props.preset("spacing", "30") / 4) calc( props.preset("spacing", "30") / 8);
+			svg {
+				width: 1rem;
+				height: 1rem;
+				stroke: props.preset("color", "secondary");
+			}
+			@include respond-to('md') {
+				display: inline-block;
+				&[aria-expanded="true"] ~ .sub-menu{
+					display: block;
+				}
+			}
+		}
+
+		&:hover {
+			@include respond-to('md') {
+				.sub-menu {
+					display: block;
+				}
+			}
+		}
+	}
+
 	.sub-menu {
 		list-style-type: none;
 		display:flex;
@@ -102,37 +137,10 @@ body.admin-bar {
 			padding-left: 0;
 			background-color: props.preset("color", "background");
 			border: 1px solid props.preset("color", "secondary");
+			border-radius: props.custom("border", "radius");
 			li {
 				a {
 					padding: calc( props.preset("spacing", "30") / 4);
-				}
-			}
-		}
-	}
-	.menu-item-has-children {
-		.sub-menu-toggle{
-			appearance: none;
-			background-color: transparent;
-			border: none;
-			cursor: pointer;
-			display: none;
-			svg {
-				width: 1rem;
-				height: 1rem;
-				stroke: props.preset("color", "secondary");
-			}
-			@include respond-to('md') {
-				display: inline-block;
-				&[aria-expanded="true"] ~ .sub-menu{
-					display: block;
-				}
-			}
-		}
-
-		&:hover {
-			@include respond-to('md') {
-				.sub-menu {
-					display: block;
 				}
 			}
 		}

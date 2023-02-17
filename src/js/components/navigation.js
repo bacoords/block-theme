@@ -77,5 +77,7 @@ window.addEventListener( 'load', () => {
 	} );
 
 	// Initializes offcanvas modal.
-	MicroModal.init();
+	MicroModal.init({
+		disableScroll: true,
+	});
 } );
