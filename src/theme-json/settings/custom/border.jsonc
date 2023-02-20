@@ -1,0 +1,12 @@
+{
+	"radius": "5px",
+	"width": "2px",
+	"style": "solid",
+	"color": "var(--wp--preset--color--foreground)",
+	"focus": {
+		"radius": "5px",
+		"width": "2px",
+		"style": "solid",
+		"color": "var(--wp--preset--color--secondary)"
+	}
+}

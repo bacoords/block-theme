@@ -22,7 +22,7 @@
 			<span class="sep"> | </span>
 				<?php
 				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'tangent' ), 'Tangent', '<a href="https://understrap.com/">Understrap</a>' );
+				printf( esc_html__( 'Theme: %1$s by %2$s.', 'tangent' ), 'Tangent', '<a href="https://tangentwp.com/">Tangent</a>' );
 				?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->

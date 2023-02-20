@@ -1,0 +1,26 @@
+@use "../abstracts/props.scss";
+
+.navigation.pagination {
+	padding: props.style("root", "padding-top")
+		props.style("root", "padding-left") props.style("root", "padding-bottom")
+		props.style("root", "padding-right");
+	.nav-links {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: props.style("block-gap");
+	}
+	.prev,
+	.next {
+		border: 2px solid props.preset("color", "accent");
+		padding: 0.2em 1em;
+		text-decoration: none;
+		background-color: props.preset("color", "accent");
+		transition: 0.3s ease all;
+		color: props.preset("color", "background");
+		&:hover {
+			border: 2px solid props.preset("color", "secondary");
+			background-color: props.preset("color", "secondary");
+		}
+	}
+}
