@@ -1,6 +1,7 @@
 # Tangent
 
 Tangent is a new starter theme (currently in development) for WordPress.
+[tangentwp.com](https://tangentwp.com)
 
 ## Theme Setup
 
@@ -56,30 +57,22 @@ Tangent follows the WordPress Coding Standards. You can check your code against 
 ## File/Folder Structure
 
 ```
-├── bin
-├── blocks
-├── css
-├── fonts
-├── inc
-│   ├── class-tangent-navwalker.php
-│   ├── enqueue.php
-│   ├── setup.php
-├── js
-├── languages
-├── src
-│   ├── css
-│   ├── js
-│   ├── theme-json
-├── template-parts
-├── composer.json
-├── composer.lock
-├── functions.php
-├── index.php
-├── node_modules
-├── package.json
-├── package-lock.json 
-├── style.css
-└── .gitignore
+├── bin 			<-- Node scripts for building the theme
+├── blocks 			<-- Custom blocks
+├── css 			<-- Compiled CSS files
+├── fonts			<-- Theme fonts
+├── inc				<-- Theme includes and functions
+│   ├── class-tangent-navwalker.php		<-- Custom navwalker
+│   ├── enqueue.php						<-- Enqueue scripts and styles
+│   ├── setup.php						<-- Theme setup
+├── js				<-- Compiled JavaScript files
+├── languages 		<-- Translations
+├── patterns 		<-- Custom block patterns
+├── src				<-- Theme source files
+│   ├── css 		<-- SCSS source files
+│   ├── js			<-- JavaScript source files
+│   ├── theme-json	<-- Theme.json partials
+├── template-parts	<-- Template parts and other partials
 ```
 
 ## License
