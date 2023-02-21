@@ -1,0 +1,29 @@
+{
+	"apiVersion": 2,
+	"name": "tangent/hello-world",
+	"title": "Hello World",
+	"category": "text",
+	"icon": "admin-comments",
+	"description": "An example block written with ESNext standard and JSX support – build step required.",
+	"textdomain": "tangent",
+	"attributes": {
+		"content": {
+			"selector": "hello-world-text"
+		},
+		"imgUrl": {
+			"type": "string",
+			"default": "https://via.placeholder.com/325x216"
+		}
+	},
+	"supports": {
+		"html": false,
+		"align": ["full", "wide"],
+		"color": {
+			"background": true,
+			"text": true
+		}
+	},
+	"editorScript": "file:index.js",
+	"editorStyle": "file:index.css",
+	"style": "file:style-index.css"
+}

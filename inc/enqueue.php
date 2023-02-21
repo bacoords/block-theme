@@ -159,3 +159,21 @@ function enqueue_threaded_comment_reply() {
 }
 
 add_action( 'comment_form_before', 'Tangent\Enqueue\enqueue_threaded_comment_reply' );
+
+/**
+ * Get all block folders in the blocks/ folder and register each block.
+ * This will work for native blocks of any kind, as well as for ACF Blocks.
+ *
+ * Remember to create your blocks in src/blocks, then those will be compiled
+ * to the blocks/ folder.
+ *
+ * @return void
+ */
+function register_blocks() {
+	$block_folders = glob( get_stylesheet_directory() . '/blocks/*', GLOB_ONLYDIR );
+	foreach ( $block_folders as $block_folder ) {
+		register_block_type( $block_folder );
+	}
+}
+
+add_action( 'init', 'Tangent\Enqueue\register_blocks' );
