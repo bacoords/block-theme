@@ -8,6 +8,10 @@ textarea {
 	border-color: props.custom("border", "color");
 	border-style: props.custom("border", "style");
 	border-width: props.custom("border", "width");
+	padding-top: props.custom("button", "spacing--padding--top");
+	padding-right: props.custom("button", "spacing--padding--right");
+	padding-bottom: props.custom("button", "spacing--padding--bottom");
+	padding-left: props.custom("button", "spacing--padding--left");
 	&:focus {
 		outline: props.custom("forms", "focus--outline");
 		border-radius: props.custom("border--focus", "radius");
