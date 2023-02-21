@@ -75,6 +75,13 @@ function theme_setup() {
 			'script',
 		)
 	);
+
+	/**
+	 * Add support for Block Template Parts
+	 *
+	 * @link https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-support/#block-based-template-parts
+	 */
+	add_theme_support( 'block-template-parts' );
 }
 add_action( 'after_setup_theme', 'Tangent\Setup\theme_setup' );
 
