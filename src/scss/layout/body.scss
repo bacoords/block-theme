@@ -1,9 +1,14 @@
 @use "../utilities/flow.scss" as *;
+@use "../utilities/container.scss" as *;
 @use "../abstracts/mixins.scss";
 @use "../abstracts/props.scss";
 @use "../abstracts/respond-to.scss" as *;
 
 #primary {
+	.page-header {
+		text-align: center;
+		padding: props.style("root", "padding-top") props.style("root", "padding-left") props.style("root", "padding-bottom") props.style("root", "padding-right");
+	}
 	.entry-header {
 		text-align: center;
 		padding: props.style("root", "padding-top") props.style("root", "padding-left") props.style("root", "padding-bottom") props.style("root", "padding-right");
@@ -35,14 +40,24 @@
 		@extend .flow;
 	}
 	.entry-footer {
-		padding: props.style("root", "padding-top") props.style("root", "padding-left") props.style("root", "padding-bottom") props.style("root", "padding-right");
+		@extend .wrapper;
+		padding-top: props.style("root", "padding-top");
+		padding-bottom: props.style("root", "padding-bottom");
+		display:flex;
+		flex-direction: column;
 		.edit-link {
 			display: block;
 			text-align: center;
 		}
 	}
 	.post-navigation {
-		padding: var(--wp--style--root--padding-top) var(--wp--style--root--padding-left) var(--wp--style--root--padding-bottom) var(--wp--style--root--padding-right);
+		@extend .wrapper;
+		padding-top: props.style("root", "padding-top");
+		padding-bottom: props.style("root", "padding-bottom");
+		.nav-links{
+			display: flex;
+			justify-content: space-between;
+		}
 	}
 }
 

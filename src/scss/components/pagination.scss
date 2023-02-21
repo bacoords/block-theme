@@ -1,9 +1,10 @@
 @use "../abstracts/props.scss";
+@use "../utilities/container.scss" as *;
 
 .navigation.pagination {
-	padding: props.style("root", "padding-top")
-		props.style("root", "padding-left") props.style("root", "padding-bottom")
-		props.style("root", "padding-right");
+	@extend .wrapper;
+	padding-top: props.style("root", "padding-top");
+	padding-bottom: props.style("root", "padding-bottom");
 	.nav-links {
 		display: flex;
 		justify-content: center;
@@ -13,6 +14,7 @@
 	.prev,
 	.next {
 		border: 2px solid props.preset("color", "accent");
+		border-radius: props.custom('border', 'radius');
 		padding: 0.2em 1em;
 		text-decoration: none;
 		background-color: props.preset("color", "accent");
