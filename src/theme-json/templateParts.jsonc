@@ -1,3 +1,4 @@
+// You can add your own template parts here, the available "areas" are: header, footer, uncategerized (shows up as "General" in the editor)
 [
 	{
 		"name": "footer-credit",
