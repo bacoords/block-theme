@@ -25,7 +25,13 @@ export default function save({ attributes }) {
 	return (
 		<div {...useBlockProps.save()}>
 			<div className="hello-world-image">
-				<img src={attributes.img.sizes.full.url} />
+				<img
+					src={
+						attributes.img
+							? attributes.img.sizes.full.url
+							: "https://via.placeholder.com/325x216"
+					}
+				/>
 			</div>
 			<RichText.Content
 				className="hello-world-text"
