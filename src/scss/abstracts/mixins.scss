@@ -1,3 +1,5 @@
+@use "../abstracts/props.scss";
+
 /// Size an element
 @mixin size($width, $height: $width) {
 	width: $width;
@@ -5,9 +7,8 @@
 }
 
 /// Add left/right padding to an element
-@mixin padding-x($left, $right: $left) {
-	padding-left: $left;
-	padding-right: $right;
+@mixin padding($top: props.style("root", "padding-top"), $left: props.style("root", "padding-left"), $bottom: props.style("root", "padding-bottom"), $right: props.style("root", "padding-right")) {
+	padding: $top $right $bottom $left;
 }
 
 /// Add top/bottom padding to an element
