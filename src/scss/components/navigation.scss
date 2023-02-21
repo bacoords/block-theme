@@ -1,4 +1,4 @@
-@use "../abstracts/respond-to.scss" as *;
+@use "../abstracts/breakpoint-mixin.scss" as *;
 @use "../abstracts/props.scss";
 
 // Offcanvas Navigation
@@ -13,7 +13,7 @@
 		border: none;
 		padding: props.preset("spacing", "sm");
 		cursor: pointer;
-		@include respond-to('md') {
+		@include breakpoint('md') {
 			display: none;
 		}
 	}
@@ -31,7 +31,7 @@
 				padding: props.preset("spacing", "xs");
 			}
 		}
-		@include respond-to('md') {
+		@include breakpoint('md') {
 			flex-direction: row;
 			li {
 				margin-left: props.preset("spacing", "md");
@@ -57,7 +57,7 @@
 			overflow: auto;
 			z-index: 100000;
 		}
-		@include respond-to('md') {
+		@include breakpoint('md') {
 			display: block;
 			position: relative;
 			background-color: transparent;
@@ -72,7 +72,7 @@
 body.admin-bar {
 	.offcanvas-navigation .menu-modal {
 		top: 46px;
-		@include respond-to('md') {
+		@include breakpoint('md') {
 			top: 0px;
 		}
 	}
@@ -82,7 +82,7 @@ body.admin-bar {
 // Accessible Submenu for the tangent\navwalker
 .has-accessible-submenu {
 	.menu-item-has-children {
-		@include respond-to('md') {
+		@include breakpoint('md') {
 			position: relative;
 		}
 		.sub-menu-toggle{
@@ -97,7 +97,7 @@ body.admin-bar {
 				height: 1rem;
 				stroke: props.preset("color", "secondary");
 			}
-			@include respond-to('md') {
+			@include breakpoint('md') {
 				display: inline-block;
 				&[aria-expanded="true"] ~ .sub-menu{
 					display: block;
@@ -106,7 +106,7 @@ body.admin-bar {
 		}
 
 		&:hover {
-			@include respond-to('md') {
+			@include breakpoint('md') {
 				.sub-menu {
 					display: block;
 				}
@@ -127,7 +127,7 @@ body.admin-bar {
 				padding: props.preset("spacing", "xs");
 			}
 		}
-		@include respond-to('md') {
+		@include breakpoint('md') {
 			display: none;
 			position: absolute;
 			z-index: 2;

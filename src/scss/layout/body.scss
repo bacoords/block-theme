@@ -2,7 +2,7 @@
 @use "../utilities/container.scss" as *;
 @use "../abstracts/mixins.scss";
 @use "../abstracts/props.scss";
-@use "../abstracts/respond-to.scss" as *;
+@use "../abstracts/breakpoint-mixin.scss" as *;
 
 #primary {
 	.entry-header {
