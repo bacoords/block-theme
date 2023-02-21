@@ -2,22 +2,24 @@
 @use "../utilities/container.scss" as *;
 @use "../abstracts/respond-to.scss" as *;
 
-#masthead .wrapper {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: props.style("root", "padding-top") props.style("root", "padding-left") props.style("root", "padding-bottom") props.style("root", "padding-right");
-	flex-wrap: wrap;
-	@extend .wrapper;
+#masthead {
+	.wrapper {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: props.style("root", "padding-top") props.style("root", "padding-left") props.style("root", "padding-bottom") props.style("root", "padding-right");
+		flex-wrap: wrap;
 
-	.site-title{
-		font-size: props.preset("font-sizes", "h-3");
+		.site-title{
+			font-size: props.preset("font-sizes", "h-3");
+		}
+
+		.custom-logo-link img {
+			max-height: 3rem;
+			width: auto;
+		}
 	}
 
-	.custom-logo-link img {
-		max-height: 3rem;
-		width: auto;
-	}
 }
 
 // Menu Icon
