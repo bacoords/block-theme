@@ -35,7 +35,7 @@
 			// it's currently set to `xl` because the `xl` breakpoint is 1280px and
 			// the default wide container size is 1200px, so it's a good match
 			@include respond-to(md) {
-				&:where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+				&:where(:not(.alignleft):not(.alignright):not(.alignfull):not(.alignwide)) {
 					max-width: props.custom("content-sizes", "default");
 				}
 				@include mixins.margin-x(auto);
