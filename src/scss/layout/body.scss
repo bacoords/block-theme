@@ -78,5 +78,6 @@
 }
 
 .alignwide {
-	margin: 0 var(--wp--style--root--padding-left);
+	margin-right: var(--wp--style--root--padding-right);
+	margin-left: var(--wp--style--root--padding-left);
 }
