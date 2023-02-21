@@ -23,7 +23,7 @@ As of now, this repository does _not_ include the final built assets. You'll nee
 
 ### CSS & SCSS
 
-Tangent does enqueue stylesheets for the frontend and the block editor, However, Tangent's superpowers include the ability to pull props _directly from your theme.json_ as well as generate _block-specific CSS files_ and enqueue them to their specific blocks. 
+Tangent does enqueue stylesheets for the frontend and the block editor, However, Tangent's superpowers include the ability to pull props _directly from your theme.json_ as well as generate _block-specific CSS files_ and enqueue them to their specific blocks.
 
 - [Using SCSS in Tangent](https://github.com/understrap/tangent/tree/develop/src/scss#readme)
 - [Using the functions found in the `props.scss` file](https://github.com/understrap/tangent/blob/develop/src/scss/abstracts/props.md)
@@ -39,6 +39,10 @@ Tangent uses `.jsonc` partials to store all of the theme's design settings. Thes
 
 Read: [How to create a theme.json from partials](https://github.com/understrap/tangent/tree/develop/src/theme-json#readme)
 
+## Block Template Parts
+
+Block Template Parts are enabled in Tangent, allowing you to create and store HTML template parts in the `parts` folder. This allows users to edit the template parts in the WordPress Dashboard from WordPress > Template Parts. You can control the registration of the template part (specifically the name and what `area` it's associated with) from `theme.json`. See `src/theme-json/templateParts.jsonc` for more information.
+
 ### Custom Blocks
 
 Because we're already using `@wordpress/scripts` to build our theme, we can also use it to build our custom blocks. TK
@@ -51,7 +55,7 @@ Tangent's `header.php` uses a "classic" WordPress Menu but is enhanced with much
 
 PHP linting is available by running `composer php-lint` from the command line.
 
-Tangent follows the WordPress Coding Standards. You can check your code against the standards by running `composer phpcs` from the command line. You can also run `composer phpcs-fix` to automatically fix any errors that can be fixed automatically. 
+Tangent follows the WordPress Coding Standards. You can check your code against the standards by running `composer phpcs` from the command line. You can also run `composer phpcs-fix` to automatically fix any errors that can be fixed automatically.
 
 
 ## File/Folder Structure
@@ -67,6 +71,7 @@ Tangent follows the WordPress Coding Standards. You can check your code against 
 │   ├── setup.php						<-- Theme setup
 ├── js				<-- Compiled JavaScript files
 ├── languages 		<-- Translations
+├── parts 			<-- Custom block template parts
 ├── patterns 		<-- Custom block patterns
 ├── src				<-- Theme source files
 │   ├── css 		<-- SCSS source files
