@@ -46,6 +46,15 @@
 			 }
 		}
 	}
+	.entry-summary{
+		@extend .flow;
+		& > * {
+			@include mixins.margin-x(auto);
+			max-width: props.custom("content-sizes", "default");
+			padding-right: props.style("root", "padding-right");
+			padding-left: props.style("root", "padding-left");
+		}
+	}
 	.entry-footer {
 		@extend .wrapper;
 		padding-top: props.style("root", "padding-top");
