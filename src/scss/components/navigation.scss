@@ -11,7 +11,7 @@
 		appearance: none;
 		background-color: transparent;
 		border: none;
-		padding: calc( props.preset("spacing", "30") / 2 );
+		padding: props.preset("spacing", "sm");
 		cursor: pointer;
 		@include respond-to('md') {
 			display: none;
@@ -28,13 +28,13 @@
 			text-align: right;
 			a {
 				display: inline-block;
-				padding: calc( props.preset("spacing", "30") / 2 );
+				padding: props.preset("spacing", "xs");
 			}
 		}
 		@include respond-to('md') {
 			flex-direction: row;
 			li {
-				margin-left: props.preset("spacing", "30");
+				margin-left: props.preset("spacing", "md");
 				text-align: left;
 				a {
 					padding: 0;
@@ -51,7 +51,7 @@
 		right: 0;
 		top: 0;
 		background-color: props.preset("color", "background");
-		padding: props.preset("spacing", "40") 0;
+		padding: props.preset("spacing", "lg") 0;
 		&.is-open {
 			display: block;
 			overflow: auto;
@@ -91,7 +91,7 @@ body.admin-bar {
 			border: none;
 			cursor: pointer;
 			display: none;
-			padding:calc( props.preset("spacing", "30") / 4) calc( props.preset("spacing", "30") / 8);
+			padding:4px props.preset("spacing", "xs");
 			svg {
 				width: 1rem;
 				height: 1rem;
@@ -120,11 +120,11 @@ body.admin-bar {
 		flex-direction: column;
 		align-items: flex-end;
 		padding-left: 0;
-		padding-right: props.preset("spacing", "30");
+		padding-right: props.preset("spacing", "md");
 		li {
 			margin-left: 0;
 			a {
-				padding: calc( props.preset("spacing", "30") / 2);
+				padding: props.preset("spacing", "xs");
 			}
 		}
 		@include respond-to('md') {
@@ -140,7 +140,7 @@ body.admin-bar {
 			border-radius: props.custom("border", "radius");
 			li {
 				a {
-					padding: calc( props.preset("spacing", "30") / 4);
+					padding: props.preset("spacing", "xs");
 				}
 			}
 		}

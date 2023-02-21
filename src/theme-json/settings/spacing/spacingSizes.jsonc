@@ -1,32 +1,27 @@
 [
 	{
-		"size": "clamp(1.5rem, 5vw, 2rem)",
-		"slug": "30",
-		"name": "1"
+		"size": "clamp(0.56rem, calc(0.54rem + 0.11vw), 0.63rem)",
+		"slug": "xs",
+		"name": "XS"
 	},
 	{
-		"size": "clamp(1.8rem, 1.8rem + ((1vw - 0.48rem) * 2.885), 3rem)",
-		"slug": "40",
-		"name": "2"
+		"size": "clamp(1.13rem, calc(1.08rem + 0.22vw), 1.25rem)",
+		"slug": "sm",
+		"name": "SM"
 	},
 	{
-		"size": "clamp(2.5rem, 8vw, 4.5rem)",
-		"slug": "50",
-		"name": "3"
+		"size": "clamp(1.69rem, calc(1.62rem + 0.33vw), 1.88rem)",
+		"slug": "md",
+		"name": "MD"
 	},
 	{
-		"size": "clamp(3.75rem, 10vw, 7rem)",
-		"slug": "60",
-		"name": "4"
+		"size": "clamp(2.25rem, calc(2.16rem + 0.43vw), 2.50rem)",
+		"slug": "lg",
+		"name": "LG"
 	},
 	{
-		"size": "clamp(5rem, 5.25rem + ((1vw - 0.48rem) * 9.096), 8rem)",
-		"slug": "70",
-		"name": "5"
-	},
-	{
-		"size": "clamp(7rem, 14vw, 11rem)",
-		"slug": "80",
-		"name": "6"
+		"size": "clamp(3.38rem, calc(3.24rem + 0.65vw), 3.75rem)",
+		"slug": "xl",
+		"name": "XL"
 	}
 ]

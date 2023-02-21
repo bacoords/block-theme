@@ -90,7 +90,7 @@
 		.required-field-message {
 			display: block;
 			font-size: props.preset("font-size", "small");
-			margin-top: props.preset("spacing", "20");
+			margin-top: props.preset("spacing", "sm");
 		}
 		form {
 			@extend .flow;
@@ -115,7 +115,7 @@
 				}
 				&.logged-in-as {
 					display: block;
-					margin-top: props.preset("spacing", "20");
+					margin-top: props.preset("spacing", "sm");
 				}
 			}
 			.comment-notes {
