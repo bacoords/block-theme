@@ -173,7 +173,7 @@ input[type="radio"] {
 input[type="submit"],
 input[type="reset"],
 input[type="button"],
-button {
+button:not(.components-button) {
 	background-color: props.custom("button", "color--background");
 	border-radius: props.custom("button", "border--radius");
 	border-color: props.custom("button", "border--color");
