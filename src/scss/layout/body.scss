@@ -31,15 +31,19 @@
 				(var(--wp--style--root--padding-right) + var(--wp--style--root--padding-left)) );
 
 			// but they should be centered on larger screens
-			// change this screen size to match the size of your wide container size
-			// it's currently set to `xl` because the `xl` breakpoint is 1280px and
+			// change this screen size to match the size of your default container size
+			// it's currently set to `md` because the `md` breakpoint is 1280px and
 			// the default wide container size is 1200px, so it's a good match
 			@include respond-to(md) {
 				&:where(:not(.alignleft):not(.alignright):not(.alignfull):not(.alignwide)) {
 					max-width: props.custom("content-sizes", "default");
 				}
 				@include mixins.margin-x(auto);
-			 }
+			}
+			// but they should be centered on larger screens
+			// change this screen size to match the size of your wide container size
+			// it's currently set to `xl` because the `xl` breakpoint is 1280px and
+			// the default wide container size is 1200px, so it's a good match
 			@include respond-to(xl) {
 				&:where(.alignwide) {
 					max-width: props.custom("content-sizes", "wide");
