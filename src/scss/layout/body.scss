@@ -5,10 +5,6 @@
 @use "../abstracts/respond-to.scss" as *;
 
 #primary {
-	.page-header {
-		text-align: center;
-		padding: props.style("root", "padding-top") props.style("root", "padding-left") props.style("root", "padding-bottom") props.style("root", "padding-right");
-	}
 	.entry-header {
 		text-align: center;
 		padding: props.style("root", "padding-top") props.style("root", "padding-left") props.style("root", "padding-bottom") props.style("root", "padding-right");
@@ -16,7 +12,14 @@
 	& > article {
 		@include mixins.margin-x(auto);
 	}
+	.post-thumbnail {
+		& > * {
+			padding: props.style("root", "padding-top") props.style("root", "padding-left") props.style("root", "padding-bottom") props.style("root", "padding-right");
+			@include mixins.margin-x(auto);
+		}
+	}
 	.entry-content {
+		@extend .flow;
 		& > * {
 			@include mixins.margin-x(auto);
 			padding-right: props.style("root", "padding-right");
@@ -35,9 +38,6 @@
 				@include mixins.margin-x(auto);
 			 }
 		}
-	}
-	.entry-content {
-		@extend .flow;
 	}
 	.entry-footer {
 		@extend .wrapper;
