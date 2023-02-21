@@ -1,3 +1,6 @@
+@use "../abstracts/respond-to" as *;
+@use "../abstracts/props.scss";
+
 // Menu Icon
 .menu-icon {
 	position: relative;
