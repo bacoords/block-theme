@@ -75,6 +75,8 @@ function theme_setup() {
 			'script',
 		)
 	);
+
+	add_theme_support( 'editor-styles');
 }
 add_action( 'after_setup_theme', 'Tangent\Setup\theme_setup' );
 

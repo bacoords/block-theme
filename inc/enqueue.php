@@ -159,3 +159,14 @@ function enqueue_threaded_comment_reply() {
 }
 
 add_action( 'comment_form_before', 'Tangent\Enqueue\enqueue_threaded_comment_reply' );
+
+/**
+ * Enqueue the `editor.css` file in the Block Editor.
+ *
+ * @return void
+ */
+function add_editor_styles() {
+	add_editor_style( 'css/editor.css' );
+}
+
+add_action('after_setup_theme', 'Tangent\Enqueue\add_editor_styles');
