@@ -26,7 +26,7 @@
 	<a class="visually-hidden" href="#primary"><?php esc_html_e( 'Skip to content', 'tangent' ); ?></a>
 
 	<header id="masthead" class="site-header">
-		<div class="wrapper">
+		<div class="wrapper alignwide">
 			<div class="site-branding">
 				<?php
 				if ( ! has_custom_logo() ) :
