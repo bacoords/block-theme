@@ -11,7 +11,15 @@ import { __ } from "@wordpress/i18n";
  *
  * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
  */
-import { useBlockProps, RichText, MediaUpload } from "@wordpress/block-editor";
+import {
+	useBlockProps,
+	RichText,
+	MediaReplaceFlow,
+	MediaUpload,
+	MediaUploadCheck,
+	BlockControls,
+} from "@wordpress/block-editor";
+import { ToolbarGroup, ToolbarButton } from "@wordpress/components";
 import { useState } from "@wordpress/element";
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -34,6 +42,7 @@ export default function Edit(props) {
 	const { attributes, setAttributes } = props;
 	const blockProps = useBlockProps();
 	const [heading, setHeading] = useState(attributes.content);
+	const [media, setMedia] = useState(attributes.img);
 
 	// Set default background color
 	if (!attributes.backgroundColor) {
@@ -53,23 +62,45 @@ export default function Edit(props) {
 
 	// set the image
 	function selectImage(value) {
+		console.log(value);
 		setAttributes({
-			imgUrl: value.sizes.full.url,
+			img: value,
 		});
+		setMedia(value);
 	}
 
 	return (
 		<div {...blockProps}>
+			<BlockControls>
+				<ToolbarGroup label={__("Media", "tangent")}>
+					{media ? (
+						<>
+							<MediaReplaceFlow
+								mediaUrl={media?.source_url}
+								onSelect={selectImage}
+								name={__("Replace Image", "tangent")}
+							/>
+						</>
+					) : (
+						<MediaUploadCheck>
+							<MediaUpload
+								onSelect={selectImage}
+								render={({ open }) => (
+									<ToolbarButton onClick={open}>
+										{__("Add Image", "tangent")}
+									</ToolbarButton>
+								)}
+							/>
+						</MediaUploadCheck>
+					)}
+				</ToolbarGroup>
+			</BlockControls>
 			<div className="hello-world-image">
-				<MediaUpload
-					onSelect={selectImage}
-					render={({ open }) => {
-						return (
-							<button onClick={open}>
-								<img src={attributes.imgUrl} />
-							</button>
-						);
-					}}
+				<img
+					src={
+						media ? media.sizes.full.url : "https://via.placeholder.com/325x216"
+					}
+					alt={media ? media.alt : "Placeholder image"}
 				/>
 			</div>
 			<h3 className="hello-world-text">

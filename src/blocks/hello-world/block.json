@@ -10,9 +10,8 @@
 		"content": {
 			"selector": "hello-world-text"
 		},
-		"imgUrl": {
-			"type": "string",
-			"default": "https://via.placeholder.com/325x216"
+		"img": {
+			"type": "object"
 		}
 	},
 	"supports": {
