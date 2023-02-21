@@ -76,6 +76,8 @@ function theme_setup() {
 		)
 	);
 
+	add_theme_support( 'editor-styles' );
+
 	/**
 	 * Add support for Block Template Parts
 	 *

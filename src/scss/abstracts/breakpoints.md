@@ -10,10 +10,10 @@ The `build` command will regenerate the `src/scss/abstracts/_breakpoints.scss` f
 
 ```scss
 // Import the respond-to mixin
-@use "../abstracts/respond-to.scss" as *;
+@use "../abstracts/breakpoint-mixin.scss" as *;
 
 // Use the breakpoints
-@include respond-to('md') {
+@include breakpoint('md') {
   // Styles for screens larger than the 'md' breakpoint
 }
 ```

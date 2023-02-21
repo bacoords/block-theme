@@ -1,51 +1,51 @@
 @use "../utilities/flow.scss" as *;
+@use "../utilities/container.scss" as *;
 @use "../abstracts/mixins.scss";
 @use "../abstracts/props.scss";
-@use "../abstracts/respond-to.scss" as *;
+@use "../abstracts/breakpoint-mixin.scss" as *;
 
 #primary {
 	.entry-header {
 		text-align: center;
-		padding: props.style("root", "padding-top") props.style("root", "padding-left") props.style("root", "padding-bottom") props.style("root", "padding-right");
+		@include mixins.padding;
+		@extend .flow;
 	}
 	& > article {
 		@include mixins.margin-x(auto);
 	}
-	.entry-content {
+	.post-thumbnail {
 		& > * {
+			@include mixins.padding;
 			@include mixins.margin-x(auto);
-			padding-right: props.style("root", "padding-right");
-			padding-left: props.style("root", "padding-left");
-		}
-		& > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
-			max-width: props.custom("content-sizes", "default");
-		}
-		& > :where(.alignwide) {
-			max-width: props.custom("content-sizes", "wide");
-			//items set to alignwide shouldn't hit the edge of the screen
-			margin-left: var(--wp--style--root--padding-left);
-			margin-right: var(--wp--style--root--padding-right);
-			// but they should be centered on larger screens
-			@include respond-to(xxl) {
-				@include mixins.margin-x(auto);
-			 }
 		}
 	}
 	.entry-content {
+		@extend .blocks-alignment;
+	}
+	.entry-summary{
 		@extend .flow;
+		@extend .blocks-alignment;
 	}
 	.entry-footer {
-		padding: props.style("root", "padding-top") props.style("root", "padding-left") props.style("root", "padding-bottom") props.style("root", "padding-right");
+		@extend .container-wide;
+		@include mixins.padding;
+		display:flex;
+		flex-direction: column;
 		.edit-link {
 			display: block;
 			text-align: center;
 		}
 	}
 	.post-navigation {
-		padding: var(--wp--style--root--padding-top) var(--wp--style--root--padding-left) var(--wp--style--root--padding-bottom) var(--wp--style--root--padding-right);
+		@extend .container-wide;
+		@include mixins.padding;
+		.nav-links{
+			display: flex;
+			justify-content: space-between;
+		}
 	}
 }
 
-.alignwide {
-	margin: 0 var(--wp--style--root--padding-left);
+.block-editor-block-list__layout.is-root-container {
+	@extend .blocks-alignment;
 }

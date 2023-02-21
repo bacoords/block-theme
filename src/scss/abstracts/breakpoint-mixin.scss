@@ -1,5 +1,5 @@
 /// This map is used for a mobile first responsive coding
-/// approach mixin in `respond-to`.
+/// approach mixin in `breakpoint`.
 /// The map uses simple t-shirt sizing to define the breakpoints.
 @use "breakpoints" as *;
 
@@ -7,7 +7,7 @@
 /// different breakpoints from within each applicable selector.
 /// It pulls breakpoints from a map of breakpoints set in `theme.json`.
 /// Read More : https://sass-guidelin.es/#responsive-web-design-and-breakpoints
-@mixin respond-to($breakpoint) {
+@mixin breakpoint($breakpoint) {
 	// Retrieves the value of the breakpoint
 	$raw-query: map-get($breakpoints, $breakpoint);
 

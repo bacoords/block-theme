@@ -22,7 +22,7 @@
 
 		wp_link_pages(
 			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'tangent' ),
+				'before' => '<div class="entry-links">' . esc_html__( 'Pages:', 'tangent' ),
 				'after'  => '</div>',
 			)
 		);
