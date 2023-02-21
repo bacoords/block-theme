@@ -1,9 +1,17 @@
 @use "../abstracts/mixins.scss";
 @use "../abstracts/props.scss";
 
-.wrapper {
+.container {
+	max-width: props.custom("content-sizes", "default");
+	@include mixins.margin-x(auto);
+}
+
+.container-wide {
 	max-width: props.custom("content-sizes", "wide");
-	padding-right: props.style("root", "padding-right");
-	padding-left: props.style("root", "padding-left");
+	@include mixins.margin-x(auto);
+}
+
+.container-full {
+	max-width: props.custom("content-sizes", "full");
 	@include mixins.margin-x(auto);
 }

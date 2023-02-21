@@ -2,7 +2,7 @@
 @use "../utilities/container.scss" as *;
 
 .navigation.pagination {
-	@extend .wrapper;
+	@extend .container-wide;
 	padding-top: props.style("root", "padding-top");
 	padding-bottom: props.style("root", "padding-bottom");
 	.nav-links {

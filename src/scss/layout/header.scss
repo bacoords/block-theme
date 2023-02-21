@@ -3,7 +3,7 @@
 @use "../abstracts/respond-to.scss" as *;
 
 #masthead {
-	.wrapper {
+	.container-wide {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;

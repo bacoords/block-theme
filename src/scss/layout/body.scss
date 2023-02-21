@@ -57,7 +57,7 @@
 		}
 	}
 	.entry-footer {
-		@extend .wrapper;
+		@extend .container-wide;
 		padding-top: props.style("root", "padding-top");
 		padding-bottom: props.style("root", "padding-bottom");
 		display:flex;
@@ -68,7 +68,7 @@
 		}
 	}
 	.post-navigation {
-		@extend .wrapper;
+		@extend .container-wide;
 		padding-top: props.style("root", "padding-top");
 		padding-bottom: props.style("root", "padding-bottom");
 		.nav-links{
