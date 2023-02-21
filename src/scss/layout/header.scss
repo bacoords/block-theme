@@ -1,14 +1,15 @@
 @use "../abstracts/props.scss";
 @use "../utilities/container.scss" as *;
 @use "../abstracts/respond-to.scss" as *;
+@use "../abstracts/mixins.scss";
 
 #masthead {
 	.container-wide {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		padding: props.style("root", "padding-top") props.style("root", "padding-left") props.style("root", "padding-bottom") props.style("root", "padding-right");
 		flex-wrap: wrap;
+		@include mixins.padding;
 
 		.site-title{
 			font-size: props.preset("font-sizes", "h-3");

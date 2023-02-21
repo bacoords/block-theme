@@ -7,7 +7,7 @@
 #primary {
 	.entry-header {
 		text-align: center;
-		padding: props.style("root", "padding-top") props.style("root", "padding-left") props.style("root", "padding-bottom") props.style("root", "padding-right");
+		@include mixins.padding;
 		@extend .flow;
 	}
 	& > article {
@@ -15,16 +15,19 @@
 	}
 	.post-thumbnail {
 		& > * {
-			padding: props.style("root", "padding-top") props.style("root", "padding-left") props.style("root", "padding-bottom") props.style("root", "padding-right");
+			@include mixins.padding;
 			@include mixins.margin-x(auto);
 		}
 	}
 	.entry-content {
 		@extend .flow;
 		& > * {
-			@include mixins.margin-x(auto);
+			@include mixins.margin-x(auto);;
+		}
+		& > :where(:not(.alignwide)) {
+			// items set to alignwide will get a max-width below
 			padding-right: props.style("root", "padding-right");
-			padding-left: props.style("root", "padding-left");
+			padding-left: props.style("root", "padding-left")
 		}
 		& > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
 			max-width: props.custom("content-sizes", "default");
@@ -58,8 +61,7 @@
 	}
 	.entry-footer {
 		@extend .container-wide;
-		padding-top: props.style("root", "padding-top");
-		padding-bottom: props.style("root", "padding-bottom");
+		@include mixins.padding;
 		display:flex;
 		flex-direction: column;
 		.edit-link {
@@ -69,8 +71,7 @@
 	}
 	.post-navigation {
 		@extend .container-wide;
-		padding-top: props.style("root", "padding-top");
-		padding-bottom: props.style("root", "padding-bottom");
+		@include mixins.padding;
 		.nav-links{
 			display: flex;
 			justify-content: space-between;

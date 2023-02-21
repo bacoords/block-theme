@@ -1,10 +1,10 @@
 @use "../abstracts/props.scss";
 @use "../utilities/container.scss" as *;
+@use "../abstracts/mixins.scss";
 
 .navigation.pagination {
 	@extend .container-wide;
-	padding-top: props.style("root", "padding-top");
-	padding-bottom: props.style("root", "padding-bottom");
+	@include mixins.padding;
 	.nav-links {
 		display: flex;
 		justify-content: center;
