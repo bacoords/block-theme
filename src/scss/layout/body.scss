@@ -23,17 +23,7 @@
 		@extend .flow;
 		& > * {
 			@include mixins.margin-x(auto);;
-		}
-		& > :where(:not(.alignwide)) {
-			// items set to alignwide will get a max-width below
-			padding-right: props.style("root", "padding-right");
-			padding-left: props.style("root", "padding-left")
-		}
-		& > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
-			max-width: props.custom("content-sizes", "default");
-		}
-		& > :where(.alignwide) {
-			// items set to alignwide shouldn't hit the edge of the screen
+			// items shouldn't hit the edge of the screen
 			// so we set a dynamic max width that still centers the content
 			// on smaller screens with the root padding settings
 			max-width: calc(
@@ -44,8 +34,16 @@
 			// change this screen size to match the size of your wide container size
 			// it's currently set to `xl` because the `xl` breakpoint is 1280px and
 			// the default wide container size is 1200px, so it's a good match
+			@include respond-to(md) {
+				&:where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+					max-width: props.custom("content-sizes", "default");
+				}
+				@include mixins.margin-x(auto);
+			 }
 			@include respond-to(xl) {
-				max-width: props.custom("content-sizes", "wide");
+				&:where(.alignwide) {
+					max-width: props.custom("content-sizes", "wide");
+				}
 				@include mixins.margin-x(auto);
 			 }
 		}
