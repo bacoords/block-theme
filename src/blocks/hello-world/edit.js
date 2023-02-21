@@ -62,7 +62,6 @@ export default function Edit(props) {
 
 	// set the image
 	function selectImage(value) {
-		console.log(value);
 		setAttributes({
 			img: value,
 		});
