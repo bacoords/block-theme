@@ -1,4 +1,5 @@
 {
 	"default": "650px",
-	"wide": "1200px"
+	"wide": "1200px",
+	"full": "100%"
 }
