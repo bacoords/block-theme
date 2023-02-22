@@ -9,7 +9,7 @@
 
 <nav id="site-navigation" class="offcanvas-navigation">
 
-	<button class="menu-toggle" aria-haspopup="true" data-micromodal-trigger="navigation-modal" aria-label="<?php esc_html_e( 'Primary Menu', 'tangent' ); ?>">
+	<button class="menu-toggle link-button" aria-haspopup="true" data-micromodal-trigger="navigation-modal" aria-label="<?php esc_html_e( 'Primary Menu', 'tangent' ); ?>">
 		<span class="menu-icon"><span></span></span>
 	</button>
 
@@ -20,7 +20,7 @@
 			<div role="dialog" aria-modal="true" aria-label="<?php esc_html_e( 'Menu', 'tangent' ); ?>" >
 
 				<header>
-					<button class="menu-close" aria-label="<?php esc_html_e( 'Close Menu', 'tangent' ); ?>" data-micromodal-close>
+					<button class="menu-close link-button" aria-label="<?php esc_html_e( 'Close Menu', 'tangent' ); ?>" data-micromodal-close>
 						<span class="menu-icon"><span></span></span>
 					</button>
 				</header>
