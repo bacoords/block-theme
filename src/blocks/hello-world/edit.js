@@ -39,9 +39,13 @@ import "./editor.scss";
  * @return {WPElement} Element to render.
  */
 export default function Edit(props) {
+	// Get the attributes and function to set attributes from props
 	const { attributes, setAttributes } = props;
+	// Get the Block Wrapper props
 	const blockProps = useBlockProps();
+	// Get the heading text and set up a local state for it
 	const [heading, setHeading] = useState(attributes.content);
+	// Get the image and set up a local state for it
 	const [media, setMedia] = useState(attributes.img);
 
 	// Set default background color
@@ -51,16 +55,20 @@ export default function Edit(props) {
 
 	// Set default text color
 	if (!attributes.textColor) {
-		setAttributes({ textColor: "tertiary" });
+		setAttributes({ textColor: "background" });
 	}
 
-	// set the heading text
+	// This is a function that is passed to the RichText component.
+	// It is called when the heading text is changed.
+	// It sets the local state and the attributes.
 	function setHeadingContent(content) {
 		setAttributes({ content: content });
 		setHeading(content);
 	}
 
-	// set the image
+	// This is a function that is passed to the MediaUpload component
+	// It is called when the image is changed.
+	// It sets the local state and the attributes.
 	function selectImage(value) {
 		setAttributes({
 			img: value,
@@ -70,44 +78,60 @@ export default function Edit(props) {
 
 	return (
 		<div {...blockProps}>
+			{
+				// We're adding the Media Add/Replace buttons to the toolbar of the whole block as a section.
+			}
 			<BlockControls>
 				<ToolbarGroup label={__("Media", "tangent")}>
-					{media ? (
-						<>
-							<MediaReplaceFlow
-								mediaUrl={media?.source_url}
-								onSelect={selectImage}
-								name={__("Replace Image", "tangent")}
-							/>
-						</>
-					) : (
-						<MediaUploadCheck>
-							<MediaUpload
-								onSelect={selectImage}
-								render={({ open }) => (
-									<ToolbarButton onClick={open}>
-										{__("Add Image", "tangent")}
-									</ToolbarButton>
-								)}
-							/>
-						</MediaUploadCheck>
-					)}
+					{
+						// If there is an image, show the replace button
+						media ? (
+							<>
+								<MediaReplaceFlow
+									mediaUrl={media?.source_url}
+									onSelect={selectImage}
+									name={__("Replace Image", "tangent")}
+								/>
+							</>
+						) : (
+							// If there is no image, show the add button
+							<MediaUploadCheck>
+								<MediaUpload
+									onSelect={selectImage}
+									render={({ open }) => (
+										<ToolbarButton onClick={open}>
+											{__("Add Image", "tangent")}
+										</ToolbarButton>
+									)}
+								/>
+							</MediaUploadCheck>
+						)
+					}
 				</ToolbarGroup>
 			</BlockControls>
 			<div className="hello-world-image">
 				<img
 					src={
+						// If there is an image, show it, otherwise show a placeholder
 						media ? media.sizes.full.url : "https://via.placeholder.com/325x216"
 					}
-					alt={media ? media.alt : "Placeholder image"}
+					alt={
+						// If there is an image, show its alt text, otherwise show placeholder alt text
+						media ? media.alt : "Placeholder image"
+					}
 				/>
 			</div>
 			<h3 className="hello-world-text">
 				<RichText
+					// This is the class name that will be added to the heading element
 					className="hello-world-text"
+					// This is the tag name that will be used in the editor
 					tagName="h3"
+					// This is the placeholder text that will be shown in the editor
 					placeholder={__("Enter text..", "viewsource-blocks")}
+					// If there is heading text, show it, otherwise show the placeholder
 					value={heading}
+					// This is the function that will be called when the heading text is changed
 					onChange={setHeadingContent}
 				/>
 			</h3>
