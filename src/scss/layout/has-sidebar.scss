@@ -1,0 +1,36 @@
+@use "../abstracts/mixins.scss";
+@use "../abstracts/props.scss";
+@use "../abstracts/breakpoint-mixin.scss" as *;
+@use "../utilities/container.scss" as *;
+
+body.has-sidebar {
+	#page {
+		@extend .container-wide;
+		display: grid;
+		grid-template-areas:
+		"header"
+		"content"
+		"sidebar"
+		"footer";
+		@include breakpoint(lg) {
+			grid-template-areas:
+			"header header header header"
+			"content content content sidebar"
+			"footer footer footer footer";
+		 }
+		@include mixins.padding( 0, props.style("root", "padding-left"), 0, props.style("root", "padding-right"));
+		gap: props.style("block-gap");
+		#masthead {
+			grid-area: header;
+		}
+		#primary {
+			grid-area: content;
+		}
+		#secondary {
+			grid-area: sidebar;
+		}
+		#colophon {
+			grid-area: footer;
+		}
+	}
+}
