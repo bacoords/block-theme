@@ -40,8 +40,9 @@
 				border-style: props.custom("border", "style");
 				border-width: props.custom("border", "width");
 				padding: props.style("root", "padding-top")
-				props.style("root", "padding-left") props.style("root", "padding-bottom")
-				props.style("root", "padding-right");
+					props.style("root", "padding-left")
+					props.style("root", "padding-bottom")
+					props.style("root", "padding-right");
 			}
 			.comment-body {
 				border-radius: var(--wp--custom--border--radius);
@@ -62,7 +63,7 @@
 					gap: 0.5rem;
 					@include breakpoint(md) {
 						flex-direction: row;
-					 }
+					}
 
 					.comment-author {
 						display: flex;

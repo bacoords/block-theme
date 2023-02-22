@@ -14,7 +14,7 @@
 	.prev,
 	.next {
 		border: 2px solid props.preset("color", "accent");
-		border-radius: props.custom('border', 'radius');
+		border-radius: props.custom("border", "radius");
 		padding: 0.2em 1em;
 		text-decoration: none;
 		background-color: props.preset("color", "accent");

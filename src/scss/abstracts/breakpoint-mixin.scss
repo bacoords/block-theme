@@ -13,9 +13,8 @@
 
 	/// If the breakpoint exists in the map
 	@if $raw-query {
-
 		$query: if(
-			type-of($raw-query) == 'string',
+			type-of($raw-query) == "string",
 			unquote($raw-query),
 			inspect($raw-query)
 		);

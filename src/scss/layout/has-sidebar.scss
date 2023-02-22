@@ -8,17 +8,22 @@ body.has-sidebar {
 		@extend .container-wide;
 		display: grid;
 		grid-template-areas:
-		"header"
-		"content"
-		"sidebar"
-		"footer";
+			"header"
+			"content"
+			"sidebar"
+			"footer";
 		@include breakpoint(lg) {
 			grid-template-areas:
-			"header header header header"
-			"content content content sidebar"
-			"footer footer footer footer";
-		 }
-		@include mixins.padding( 0, props.style("root", "padding-left"), 0, props.style("root", "padding-right"));
+				"header header header header"
+				"content content content sidebar"
+				"footer footer footer footer";
+		}
+		@include mixins.padding(
+			0,
+			props.style("root", "padding-left"),
+			0,
+			props.style("root", "padding-right")
+		);
 		gap: props.style("block-gap");
 		#masthead {
 			grid-area: header;

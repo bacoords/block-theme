@@ -25,13 +25,17 @@
 	@extend .flow;
 	padding-right: props.style("root", "padding-right");
 	padding-left: props.style("root", "padding-left");
-	& > *, .is-layout-flow > * {
+	& > *,
+	.is-layout-flow > * {
 		@include mixins.margin-x(auto);
 		max-width: props.custom("content-sizes", "default");
 		&:where(.alignfull) {
-			margin-right: calc( var(--wp--style--root--padding-right) * -1 );
-			margin-left: calc( var(--wp--style--root--padding-left) * -1 );
-			max-width: calc( 100% + var(--wp--style--root--padding-right) + var(--wp--style--root--padding-left) );
+			margin-right: calc(var(--wp--style--root--padding-right) * -1);
+			margin-left: calc(var(--wp--style--root--padding-left) * -1);
+			max-width: calc(
+				100% + var(--wp--style--root--padding-right) +
+					var(--wp--style--root--padding-left)
+			);
 		}
 		&:where(.alignwide) {
 			max-width: props.custom("content-sizes", "wide");

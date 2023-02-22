@@ -22,14 +22,14 @@
 	.entry-content {
 		@extend .blocks-alignment;
 	}
-	.entry-summary{
+	.entry-summary {
 		@extend .flow;
 		@extend .blocks-alignment;
 	}
 	.entry-footer {
 		@extend .container-wide;
 		@include mixins.padding;
-		display:flex;
+		display: flex;
 		flex-direction: column;
 		.edit-link {
 			display: block;
@@ -39,7 +39,7 @@
 	.post-navigation {
 		@extend .container-wide;
 		@include mixins.padding;
-		.nav-links{
+		.nav-links {
 			display: flex;
 			justify-content: space-between;
 		}

@@ -4,7 +4,7 @@
 /// Offcanvas Navigation
 /// See "../../../template-parts/navigation-offcanvas.php" for the markup
 .offcanvas-navigation {
-	header{
+	header {
 		text-align: right;
 	}
 	.menu-toggle,
@@ -14,7 +14,7 @@
 		border: none;
 		padding: props.preset("spacing", "sm");
 		cursor: pointer;
-		@include breakpoint('md') {
+		@include breakpoint("md") {
 			display: none;
 		}
 	}
@@ -32,7 +32,7 @@
 				padding: props.preset("spacing", "xs");
 			}
 		}
-		@include breakpoint('md') {
+		@include breakpoint("md") {
 			flex-direction: row;
 			li {
 				margin-left: props.preset("spacing", "md");
@@ -58,7 +58,7 @@
 			overflow: auto;
 			z-index: 100000;
 		}
-		@include breakpoint('md') {
+		@include breakpoint("md") {
 			display: block;
 			position: relative;
 			background-color: transparent;
@@ -73,42 +73,41 @@
 body.admin-bar {
 	.offcanvas-navigation .menu-modal {
 		top: 46px;
-		@include breakpoint('md') {
+		@include breakpoint("md") {
 			top: 0px;
 		}
 	}
 }
 
-
 /// Accessible Submenu for the tangent\navwalker
 /// See "../../../inc/class-tangent-navwalker.php" for the markup
 .has-accessible-submenu {
 	.menu-item-has-children {
-		@include breakpoint('md') {
+		@include breakpoint("md") {
 			position: relative;
 		}
-		.sub-menu-toggle{
+		.sub-menu-toggle {
 			appearance: none;
 			background-color: transparent;
 			border: none;
 			cursor: pointer;
 			display: none;
-			padding:4px props.preset("spacing", "xs");
+			padding: 4px props.preset("spacing", "xs");
 			svg {
 				width: 1rem;
 				height: 1rem;
 				stroke: props.preset("color", "secondary");
 			}
-			@include breakpoint('md') {
+			@include breakpoint("md") {
 				display: inline-block;
-				&[aria-expanded="true"] ~ .sub-menu{
+				&[aria-expanded="true"] ~ .sub-menu {
 					display: block;
 				}
 			}
 		}
 
 		&:hover {
-			@include breakpoint('md') {
+			@include breakpoint("md") {
 				.sub-menu {
 					display: block;
 				}
@@ -118,7 +117,7 @@ body.admin-bar {
 
 	.sub-menu {
 		list-style-type: none;
-		display:flex;
+		display: flex;
 		flex-direction: column;
 		align-items: flex-end;
 		padding-left: 0;
@@ -129,12 +128,12 @@ body.admin-bar {
 				padding: props.preset("spacing", "xs");
 			}
 		}
-		@include breakpoint('md') {
+		@include breakpoint("md") {
 			display: none;
 			position: absolute;
 			z-index: 2;
-			top:100%;
-			right:0;
+			top: 100%;
+			right: 0;
 			min-width: 200px;
 			padding-left: 0;
 			background-color: props.preset("color", "background");

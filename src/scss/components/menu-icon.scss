@@ -7,7 +7,7 @@
 	transition-duration: 0.5s;
 	display: block;
 
-	>span {
+	> span {
 		position: relative;
 		transition-duration: 0.5s;
 		top: 0px;
@@ -38,7 +38,7 @@
 
 /// Menu Close icon
 .menu-close {
-	.menu-icon > span{
+	.menu-icon > span {
 		transition: props.custom("effects", "transition");
 
 		&:before {
