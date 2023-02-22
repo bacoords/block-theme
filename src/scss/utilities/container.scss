@@ -21,7 +21,7 @@
 	@extend .flow;
 	padding-right: props.style("root", "padding-right");
 	padding-left: props.style("root", "padding-left");
-	& > * {
+	& > *, .is-layout-flow > * {
 		@include mixins.margin-x(auto);
 		max-width: props.custom("content-sizes", "default");
 		&:where(.alignfull) {
@@ -42,5 +42,9 @@
 			float: right;
 			margin-left: props.style("block-gap");
 		}
+	}
+	.is-layout-flow > * {
+		padding-right: props.style("root", "padding-right");
+		padding-left: props.style("root", "padding-left");
 	}
 }
