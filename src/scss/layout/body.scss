@@ -4,9 +4,6 @@
 @use "../abstracts/props.scss";
 @use "../abstracts/breakpoint-mixin.scss" as *;
 
-// if you have a sidebar, uncomment out this line to enable the sidebar layout
-// @forward "has-sidebar";
-
 #primary {
 	.entry-header {
 		text-align: center;
