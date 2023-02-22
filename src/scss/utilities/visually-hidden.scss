@@ -1,3 +1,5 @@
+/// A class to visually hide an element, but keep it accessible to screen readers
+/// and make the element visible on focus
 .visually-hidden:not(:focus):not(:active) {
 	border: 0;
 	clip: rect(0 0 0 0);
@@ -10,6 +12,8 @@
 	white-space: nowrap;
 }
 
+/// A class to visually hide an element, but keep it accessible to screen readers
+/// and keep the element hidden visually even on focus
 .always-visually-hidden {
 	border: 0;
 	clip: rect(0 0 0 0);

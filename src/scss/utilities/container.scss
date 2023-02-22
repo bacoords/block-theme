@@ -2,21 +2,25 @@
 @use "../abstracts/props.scss";
 @use "flow.scss" as *;
 
+/// Extend this class to add a default size container to your element
 .container {
 	max-width: props.custom("content-sizes", "default");
 	@include mixins.margin-x(auto);
 }
 
+/// Extend this class to add a wide size container to your element
 .container-wide {
 	max-width: props.custom("content-sizes", "wide");
 	@include mixins.margin-x(auto);
 }
 
+/// Extend this class to add a full width size container to your element
 .container-full {
 	max-width: props.custom("content-sizes", "full");
 	@include mixins.margin-x(auto);
 }
 
+/// Extend this class to apply standard block alignment styles to your element
 .blocks-alignment {
 	@extend .flow;
 	padding-right: props.style("root", "padding-right");

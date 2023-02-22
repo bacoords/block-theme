@@ -8,10 +8,10 @@
 /// It pulls breakpoints from a map of breakpoints set in `theme.json`.
 /// Read More : https://sass-guidelin.es/#responsive-web-design-and-breakpoints
 @mixin breakpoint($breakpoint) {
-	// Retrieves the value of the breakpoint
+	/// Retrieves the value of the breakpoint
 	$raw-query: map-get($breakpoints, $breakpoint);
 
-	// If the breakpoint exists in the map
+	/// If the breakpoint exists in the map
 	@if $raw-query {
 
 		$query: if(
@@ -20,7 +20,7 @@
 			inspect($raw-query)
 		);
 
-		// Prints a media query based on the value
+		/// Prints a media query based on the value
 		@media (min-width: #{$query} ) {
 			@content;
 		}

@@ -1,7 +1,7 @@
 @use "../abstracts/breakpoint-mixin" as *;
 @use "../abstracts/props.scss";
 
-// Menu Icon
+/// Menu Icon
 .menu-icon {
 	position: relative;
 	transition-duration: 0.5s;
@@ -36,6 +36,7 @@
 	}
 }
 
+/// Menu Close icon
 .menu-close {
 	.menu-icon > span{
 		transition: props.custom("effects", "transition");

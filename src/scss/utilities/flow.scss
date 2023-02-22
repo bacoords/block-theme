@@ -1,4 +1,7 @@
 @use "../abstracts/props.scss";
+
+/// Adds a gap between sibling elements
+/// @link https://piccalil.li/quick-tip/flow-utility/
 .flow {
 	& > * + * {
 		margin-top: props.style("block-gap", null, 1rem);
