@@ -9,6 +9,8 @@
  * @package Tangent
  */
 
+ $active_sidebars = is_dynamic_sidebar() ? 'has-sidebar' : '';
+
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -20,7 +22,7 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class( $active_sidebars ); ?>>
 <?php wp_body_open(); ?>
 <div id="page" class="site">
 	<a class="visually-hidden" href="#primary"><?php esc_html_e( 'Skip to content', 'tangent' ); ?></a>
