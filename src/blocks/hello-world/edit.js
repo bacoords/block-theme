@@ -6,12 +6,15 @@
 import { __ } from "@wordpress/i18n";
 
 /**
- * React hook that is used to mark the block wrapper element.
- * It provides all the necessary props like the class name.
- *
- * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
+ * WordPress dependencies
  */
 import {
+	/**
+	 * React hook that is used to mark the block wrapper element.
+	 * It provides all the necessary props like the class name.
+	 *
+	 * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
+	 */
 	useBlockProps,
 	RichText,
 	MediaReplaceFlow,
