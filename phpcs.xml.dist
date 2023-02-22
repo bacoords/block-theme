@@ -28,6 +28,9 @@
 	<exclude-pattern>/inc/deprecated.php</exclude-pattern>
 	<exclude-pattern>/fonts/*</exclude-pattern>
 	<exclude-pattern>/dist/*</exclude-pattern>
+	<exclude-pattern>/css/*</exclude-pattern>
+	<exclude-pattern>/blocks/*</exclude-pattern>
+	<exclude-pattern>/js/*</exclude-pattern>
 	<exclude-pattern>*.min.(js|css)</exclude-pattern>
 	<exclude-pattern>*.asset.php</exclude-pattern>
 	<exclude-pattern>/\.*</exclude-pattern>

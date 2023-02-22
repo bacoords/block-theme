@@ -89,9 +89,9 @@ function get_block_specific_stylesheets() {
  * create an array element for each block with the block name as the key
  * and the file path and URL in an array as the value.
  *
- * @param array $accumulator The array of block names and stylesheet paths.
+ * @param array  $accumulator The array of block names and stylesheet paths.
  * @param string $css_file The path to the CSS file.
- * @return void
+ * @return array The array of block names and stylesheet paths.
  */
 function associative_array_of_blocks_and_stylesheet_args( $accumulator, $css_file ) {
 	// Hard coded values to exclude certain stylesheets.
@@ -102,7 +102,7 @@ function associative_array_of_blocks_and_stylesheet_args( $accumulator, $css_fil
 		return $accumulator;
 	}
 
-	$pattern = '/(.+)--(.+)\.css/i';  // e.g. core--group.css
+	$pattern = '/(.+)--(.+)\.css/i';  // e.g. core--group.css.
 	preg_match( $pattern, basename( $css_file ), $matches );
 
 	$block_name = $matches[1] . '/' . $matches[2];

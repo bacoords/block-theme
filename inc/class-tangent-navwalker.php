@@ -1,6 +1,8 @@
 <?php
 /**
  * Custom navwalker for accessible dropdown menus
+ *
+ * @package Tangent
  */
 
 namespace Tangent\Navwalker;
@@ -31,7 +33,7 @@ class Tangent_Navwalker extends \Walker_Nav_Menu {
 		}
 		$indent = str_repeat( $t, $depth );
 
-		// Default class.
+		// Default class array.
 		$classes = array( 'sub-menu' );
 
 		/**
@@ -46,8 +48,7 @@ class Tangent_Navwalker extends \Walker_Nav_Menu {
 		$class_names = implode( ' ', apply_filters( 'nav_menu_submenu_css_class', $classes, $args, $depth ) );
 		$class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
 
-	
 		$output .= "{$n}{$indent}<button class=\"sub-menu-toggle\" aria-label=\"" . __( 'Open Submenu', 'tangent' ) . "\" aria-expanded=\"false\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M1.50002 4L6.00002 8L10.5 4\" stroke-width=\"1.5\"></path></svg></button><ul$class_names aria-label=\"submenu\">{$n}";
-		
+
 	}
 }
