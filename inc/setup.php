@@ -92,6 +92,8 @@ function theme_setup() {
 
 	/**
 	 * Uncomment the following block of code to register a sidebar.
+	 * You can also uncomment out the sidebar layout styling in
+	 * src/scss/layout/index.scss
 	 *
 	 * @link https://developer.wordpress.org/themes/functionality/sidebars/
 	 */
