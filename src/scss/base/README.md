@@ -8,4 +8,4 @@ This folder contains:
 
 ## Tips
 
-If you have a button that shouldn't inherit the default button styles from `forms.scss`, you can give it the class `link-style`, and the styles won't be applied to that button.
+If you have a button that shouldn't inherit the default button styles from `forms.scss`, you can give it the class `link-button`, and the styles won't be applied to that button.
