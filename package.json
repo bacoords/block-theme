@@ -9,13 +9,13 @@
     "starter",
     "theme"
   ],
-  "homepage": "https://github.com/understrap/tangent#readme",
+  "homepage": "https://github.com/tangentwp/tangent#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/understrap/tangent.git"
+    "url": "git+https://github.com/tangentwp/tangent.git"
   },
   "bugs": {
-    "url": "https://github.com/understrap/tangent/issues"
+    "url": "https://github.com/tangentwp/tangent/issues"
   },
   "main": "index.js",
   "watch": {
@@ -47,7 +47,7 @@
   "scripts": {
     "themejson": "node ./bin/theme-json.js",
     "lint:pkg-json": "wp-scripts lint-pkg-json",
-    "build": "concurrently \"wp-scripts build --config ./bin/webpack.config.js  --webpack-src-dir=src/blocks/\" \"npm-watch themejson\"",
+    "build": "wp-scripts build --config ./bin/webpack.config.js  --webpack-src-dir=src/blocks && npm run themejson",
     "start": "concurrently \"wp-scripts start --config ./bin/webpack.config.js --webpack-src-dir=src/blocks\" \"npm-watch themejson\"",
     "watch": "nodemon --watch ./src --ext js,css,scss,jsonc --exec \"npm run build\""
   }

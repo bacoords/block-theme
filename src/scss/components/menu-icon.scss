@@ -1,0 +1,51 @@
+@use "../abstracts/breakpoint-mixin" as *;
+@use "../abstracts/props.scss";
+
+// Menu Icon
+.menu-icon {
+	position: relative;
+	transition-duration: 0.5s;
+	display: block;
+
+	>span {
+		position: relative;
+		transition-duration: 0.5s;
+		top: 0px;
+		display: block;
+		pointer-events: none;
+
+		&:before {
+			transition-duration: 0.5s;
+			width: 20px;
+			height: 2px;
+			background-color: props.preset("color", "foreground");
+			content: "";
+			top: 0px;
+			display: block;
+		}
+
+		&:after {
+			transition-duration: 0.5s;
+			width: 20px;
+			height: 2px;
+			background-color: props.preset("color", "foreground");
+			content: "";
+			margin-top: 7px;
+			display: block;
+		}
+	}
+}
+
+.menu-close {
+	.menu-icon > span{
+		transition: props.custom("effects", "transition");
+
+		&:before {
+			transform: rotateZ(45deg) scaleX(1.25) translate(1px, 5px);
+		}
+
+		&:after {
+			transform: rotateZ(-45deg) scaleX(1.25) translate(1px, -5px);
+		}
+	}
+}

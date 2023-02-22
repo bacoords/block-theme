@@ -14,14 +14,17 @@ get_header();
 
 		<?php if ( have_posts() ) : ?>
 
-			<header class="page-header">
-				<h1 class="page-title">
+			<header class="entry-header">
+				<h1 class="entry-title">
 					<?php
 					/* translators: %s: search query. */
 					printf( esc_html__( 'Search Results for: %s', 'tangent' ), '<span>' . get_search_query() . '</span>' );
 					?>
 				</h1>
-			</header><!-- .page-header -->
+				<?php
+				get_search_form();
+				?>
+			</header><!-- .entry-header -->
 
 			<?php
 			/* Start the Loop */
@@ -37,7 +40,13 @@ get_header();
 
 			endwhile;
 
-			the_posts_navigation();
+			the_posts_pagination(
+				array(
+					'mid_size'  => 1,
+					'prev_text' => __( '<', 'tangent' ),
+					'next_text' => __( '>', 'tangent' ),
+				)
+			);
 
 		else :
 

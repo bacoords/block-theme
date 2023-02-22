@@ -11,7 +11,7 @@ namespace Tangent\Setup;
  * Setup theme
  */
 function theme_setup() {
-	/*
+	/**
 	* Make theme available for translation.
 	* Translations can be filed in the /languages/ directory.
 	* If you're building a theme based on _s, use a find and replace
@@ -22,7 +22,7 @@ function theme_setup() {
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
 
-	/*
+	/**
 	* Let WordPress manage the document title.
 	* By adding theme support, we declare that this theme does not use a
 	* hard-coded <title> tag in the document head, and expect WordPress to
@@ -30,7 +30,7 @@ function theme_setup() {
 	*/
 	add_theme_support( 'title-tag' );
 
-	/*
+	/**
 	 * Enable support for Post Thumbnails on posts and pages.
 	 *
 	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
@@ -59,7 +59,7 @@ function theme_setup() {
 		)
 	);
 
-	/*
+	/**
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
 	 */
@@ -75,6 +75,39 @@ function theme_setup() {
 			'script',
 		)
 	);
+
+	/**
+	 * Add support for Editor Styles
+	 *
+	 * @link https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-support/#editor-styles
+	 */
+	add_theme_support( 'editor-styles' );
+
+	/**
+	 * Add support for Block Template Parts
+	 *
+	 * @link https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-support/#block-based-template-parts
+	 */
+	add_theme_support( 'block-template-parts' );
+
+	/**
+	 * Uncomment the following block of code to register a sidebar.
+	 * You can also uncomment out the sidebar layout styling in
+	 * src/scss/layout/index.scss
+	 *
+	 * @link https://developer.wordpress.org/themes/functionality/sidebars/
+	 */
+	// register_sidebar(
+	// 	array(
+	// 		'name'          => esc_html__( 'Sidebar', 'tangent' ),
+	// 		'id'            => 'sidebar-1',
+	// 		'description'   => esc_html__( 'Add widgets here.', 'tangent' ),
+	// 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+	// 		'after_widget'  => '</section>',
+	// 		'before_title'  => '<h2 class="widget-title">',
+	// 		'after_title'   => '</h2>',
+	// 	)
+	// );
 }
 add_action( 'after_setup_theme', 'Tangent\Setup\theme_setup' );
 

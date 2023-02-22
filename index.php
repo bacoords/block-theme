@@ -23,7 +23,7 @@ get_header();
 			if ( is_home() && ! is_front_page() ) :
 				?>
 				<header>
-					<h1 class="page-title visually-hidden"><?php single_post_title(); ?></h1>
+					<h1 class="entry-title visually-hidden"><?php single_post_title(); ?></h1>
 				</header>
 				<?php
 			endif;
@@ -41,7 +41,14 @@ get_header();
 
 			endwhile;
 
-			the_posts_navigation();
+
+			the_posts_pagination(
+				array(
+					'mid_size'  => 1,
+					'prev_text' => __( '<', 'tangent' ),
+					'next_text' => __( '>', 'tangent' ),
+				)
+			);
 
 		else :
 

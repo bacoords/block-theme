@@ -14,12 +14,12 @@ get_header();
 
 		<?php if ( have_posts() ) : ?>
 
-			<header class="page-header">
+			<header class="entry-header">
 				<?php
-				the_archive_title( '<h1 class="page-title">', '</h1>' );
+				the_archive_title( '<h1 class="entry-title">', '</h1>' );
 				the_archive_description( '<div class="archive-description">', '</div>' );
 				?>
-			</header><!-- .page-header -->
+			</header><!-- .entry-header -->
 
 			<?php
 			/* Start the Loop */
@@ -35,7 +35,13 @@ get_header();
 
 			endwhile;
 
-			the_posts_navigation();
+			the_posts_pagination(
+				array(
+					'mid_size'  => 1,
+					'prev_text' => __( '<', 'tangent' ),
+					'next_text' => __( '>', 'tangent' ),
+				)
+			);
 
 		else :
 

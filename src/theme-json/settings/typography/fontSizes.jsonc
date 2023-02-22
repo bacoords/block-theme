@@ -1,82 +1,82 @@
 [
 	{
 		"fluid": {
-			"min": "var(--wp--custom--fontsizes--small--fluid--min)",
-			"max": "var(--wp--custom--fontsizes--small--fluid--max)"
+			"min": "0.94rem",
+			"max": "1rem"
 		},
-		"size": "var(--wp--custom--fontsizes--small--size)",
-		"slug": "small",
+		"size": "1rem",
+		"slug": "sm",
 		"name": "Small"
 	},
 	{
 		"fluid": {
-			"min": "var(--wp--custom--fontsizes--paragraph--fluid--min)",
-			"max": "var(--wp--custom--fontsizes--paragraph--fluid--max)"
+			"min": "1.13rem",
+			"max": "1.25rem"
 		},
-		"size": "var(--wp--custom--fontsizes--paragraph--size)",
+		"size": "1.25rem",
 		"slug": "paragraph",
 		"name": "Paragraph"
 	},
 	{
 		"fluid": {
-			"min": "var(--wp--custom--fontsizes--h-6--fluid--min)",
-			"max": "var(--wp--custom--fontsizes--h-6--fluid--max)"
+			"min": "1.35rem",
+			"max": "1.56rem"
 		},
-		"size": "var(--wp--custom--fontsizes--h-6--size)",
+		"size": "1.56rem",
 		"slug": "h6",
 		"name": "H6"
 	},
 	{
 		"fluid": {
-			"min": "var(--wp--custom--fontsizes--h-5--fluid--min)",
-			"max": "var(--wp--custom--fontsizes--h-5--fluid--max)"
+			"min": "1.62rem",
+			"max": "1.95rem"
 		},
-		"size": "var(--wp--custom--fontsizes--h-5--size)",
+		"size": "1.95rem",
 		"slug": "h5",
 		"name": "H5"
 	},
 	{
 		"fluid": {
-			"min": "var(--wp--custom--fontsizes--h-4--fluid--min)",
-			"max": "var(--wp--custom--fontsizes--h-4--fluid--max)"
+			"min": "1.94rem",
+			"max": "2.44rem"
 		},
-		"size": "var(--wp--custom--fontsizes--h-4--size)",
+		"size": "2.44rem",
 		"slug": "h4",
 		"name": "H4"
 	},
 	{
 		"fluid": {
-			"min": "var(--wp--custom--fontsizes--h-3--fluid--min)",
-			"max": "var(--wp--custom--fontsizes--h-3--fluid--max)"
+			"min": "2.33rem",
+			"max": "3.05rem"
 		},
-		"size": "var(--wp--custom--fontsizes--h-3--size)",
+		"size": "3.05rem",
 		"slug": "h3",
 		"name": "H3"
 	},
 	{
 		"fluid": {
-			"min": "var(--wp--custom--fontsizes--h-2--fluid--min)",
-			"max": "var(--wp--custom--fontsizes--h-2--fluid--max)"
+			"min": "2.8rem",
+			"max": "3.82rem"
 		},
-		"size": "var(--wp--custom--fontsizes--h-2--size)",
+		"size": "3.82rem",
 		"slug": "h2",
 		"name": "H2"
 	},
 	{
 		"fluid": {
-			"min": "var(--wp--custom--fontsizes--large--fluid--min)",
-			"max": "var(--wp--custom--fontsizes--large--fluid--max)"
+			"min": "3.36rem",
+			"max": "4.77rem"
 		},
-		"size": "var(--wp--custom--fontsizes--large--size)",
+		"size": "4.77rem",
 		"slug": "large",
 		"name": "Large"
 	},
 	{
 		"fluid": {
-			"min": "var(--wp--custom--fontsizes--h-1--fluid--min)",
-			"max": "var(--wp--custom--fontsizes--h-1--fluid--max)"
+			"min": "4.03rem",
+			"max": "5.96rem"
 		},
-		"size": "var(--wp--custom--fontsizes--h-1--size)",
+		"size": "5.96rem",
 		"slug": "h1",
 		"name": "H1"
 	}
