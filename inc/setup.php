@@ -92,6 +92,8 @@ function theme_setup() {
 
 	/**
 	 * Uncomment the following block of code to register a sidebar.
+	 *
+	 * @link https://developer.wordpress.org/themes/functionality/sidebars/
 	 */
 	// register_sidebar(
 	// 	array(
