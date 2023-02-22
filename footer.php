@@ -14,7 +14,7 @@
 	<footer id="colophon" class="site-footer">
 
 		<div class="site-info">
-			<?php block_template_part('footer-credit'); ?>
+			<?php block_template_part( 'footer-credit' ); ?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

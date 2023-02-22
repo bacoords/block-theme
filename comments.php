@@ -9,6 +9,7 @@
  *
  * @package Tangent
  */
+
 /*
  * If the current post is protected by a password and
  * the visitor has not yet entered the password we will
@@ -51,8 +52,8 @@ if ( post_password_required() ) {
 			<?php
 			wp_list_comments(
 				array(
-					'style'       => 'ol',
-					'short_ping'  => true,
+					'style'      => 'ol',
+					'short_ping' => true,
 				)
 			);
 			?>
