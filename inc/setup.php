@@ -76,6 +76,11 @@ function theme_setup() {
 		)
 	);
 
+	/**
+	 * Add support for Editor Styles
+	 *
+	 * @link https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-support/#editor-styles
+	 */
 	add_theme_support( 'editor-styles' );
 
 	/**
