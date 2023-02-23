@@ -4,5 +4,10 @@
 		"name": "footer-credit",
 		"title": "Footer Credit Area",
 		"area": "footer"
+	},
+	{
+		"name": "site-logo",
+		"title": "Site Logo",
+		"area": "header"
 	}
 ]

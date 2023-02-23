@@ -47,7 +47,7 @@
 						<p class="site-description"><?php echo $site_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
 					<?php endif; ?>
 				<?php else : ?>
-					<?php the_custom_logo(); ?>
+					<?php block_template_part( 'site-logo' ); ?>
 				<?php endif; ?>
 			</div><!-- .site-branding -->
 
