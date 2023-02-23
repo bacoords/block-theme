@@ -4,7 +4,7 @@
 @use "../abstracts/mixins.scss";
 
 #masthead {
-	.container-wide {
+	& > .container-wide {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
@@ -20,5 +20,4 @@
 			width: auto;
 		}
 	}
-
 }
