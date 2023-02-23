@@ -5,6 +5,5 @@
 #colophon {
 	display: flex;
 	justify-content: space-between;
-	@extend .container-wide;
 	@include mixins.padding;
 }
