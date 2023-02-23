@@ -3,7 +3,10 @@
 @use "../abstracts/mixins.scss";
 
 #colophon {
-	display: flex;
-	justify-content: space-between;
-	@include mixins.padding;
+	& > .container-wide {
+		display: flex;
+		justify-content: space-between;
+		@include mixins.padding;
+	}
+
 }
