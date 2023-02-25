@@ -10,7 +10,9 @@ import {
 } from "@wordpress/blocks";
 import { dispatch } from "@wordpress/data";
 import domReady from "@wordpress/dom-ready";
-const { removeEditorPanel } = dispatch("core/edit-post");
+if (null !== dispatch("core/edit-post")) {
+	const { removeEditorPanel } = dispatch("core/edit-post");
+}
 
 /**
  * Unregister blocks
@@ -90,9 +92,12 @@ domReady(function () {
 	unregisterBlocks.forEach((block) => {
 		unregisterBlockType(block);
 	});
-	removeEditorPanels.forEach((panel) => {
-		removeEditorPanel(panel);
-	});
+	// Only run if we are in the post editor
+	if (null !== dispatch("core/edit-post")) {
+		removeEditorPanels.forEach((panel) => {
+			removeEditorPanel(panel);
+		});
+	}
 	Object.keys(unregisterBlockStyles).forEach((block) => {
 		unregisterBlockStyle(block, unregisterBlockStyles[block]);
 	});
