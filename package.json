@@ -1,54 +1,54 @@
 {
-  "name": "tangent",
-  "version": "0.0.0",
-  "description": "A theme starter for the modern WordPress developer.",
-  "author": "Howard Development & Consulting",
-  "license": "GPL-2.0-or-later",
-  "keywords": [
-    "wordpress",
-    "starter",
-    "theme"
-  ],
-  "homepage": "https://github.com/tangentwp/tangent#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/tangentwp/tangent.git"
-  },
-  "bugs": {
-    "url": "https://github.com/tangentwp/tangent/issues"
-  },
-  "main": "index.js",
-  "watch": {
-    "themejson": {
-      "patterns": [
-        "src",
-        "theme-json"
-      ],
-      "extensions": "jsonc",
-      "quiet": false
-    }
-  },
-  "devDependencies": {
-    "@wordpress/scripts": "^25.3.0",
-    "cli-color": "^2.0.3",
-    "concurrently": "^7.6.0",
-    "fs-extra": "^11.1.0",
-    "glob": "^8.1.0",
-    "jsonc": "^2.0.0",
-    "lodash.set": "^4.3.2",
-	"micromodal": "^0.4.10",
-    "nodemon": "^2.0.20",
-    "npm-watch": "^0.11.0",
-    "remove-files-webpack-plugin": "^1.5.0",
-    "sass": "^1.58.0",
-    "sass-loader": "^13.2.0",
-    "terminal-overwrite": "^2.0.1"
-  },
-  "scripts": {
-    "themejson": "node ./bin/theme-json.js",
-    "lint:pkg-json": "wp-scripts lint-pkg-json",
-    "build": "wp-scripts build --config ./bin/webpack.config.js  --webpack-src-dir=src/blocks && npm run themejson",
-    "start": "concurrently \"wp-scripts start --config ./bin/webpack.config.js --webpack-src-dir=src/blocks\" \"npm-watch themejson\"",
-	"watch": "nodemon --watch ./src --ext js,css,scss,jsonc --exec \"npm run build\""
-  }
+	"name": "tangent",
+	"version": "0.0.0",
+	"description": "A theme starter for the modern WordPress developer.",
+	"author": "Howard Development & Consulting",
+	"license": "GPL-2.0-or-later",
+	"keywords": [
+		"wordpress",
+		"starter",
+		"theme"
+	],
+	"homepage": "https://github.com/tangentwp/tangent#readme",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/tangentwp/tangent.git"
+	},
+	"bugs": {
+		"url": "https://github.com/tangentwp/tangent/issues"
+	},
+	"main": "index.js",
+	"watch": {
+		"themejson": {
+			"patterns": [
+				"src",
+				"theme-json"
+			],
+			"extensions": "jsonc",
+			"quiet": false
+		}
+	},
+	"devDependencies": {
+		"@wordpress/scripts": "^25.3.0",
+		"cli-color": "^2.0.3",
+		"concurrently": "^7.6.0",
+		"fs-extra": "^11.1.0",
+		"glob": "^8.1.0",
+		"jsonc": "^2.0.0",
+		"lodash.set": "^4.3.2",
+		"micromodal": "^0.4.10",
+		"nodemon": "^2.0.20",
+		"npm-watch": "^0.11.0",
+		"remove-files-webpack-plugin": "^1.5.0",
+		"sass": "^1.58.0",
+		"sass-loader": "^13.2.0",
+		"terminal-overwrite": "^2.0.1"
+	},
+	"scripts": {
+		"themejson": "node ./bin/theme-json.js",
+		"lint:pkg-json": "wp-scripts lint-pkg-json",
+		"build": "npm run themejson && wp-scripts build --config ./bin/webpack.config.js  --webpack-src-dir=src/blocks",
+		"start": "concurrently \"npm-watch themejson\" \"wp-scripts start --config ./bin/webpack.config.js --webpack-src-dir=src/blocks\"",
+		"watch": "nodemon --watch ./src --ext js,css,scss,jsonc --exec \"npm run build\""
+	}
 }
