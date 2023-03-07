@@ -24,7 +24,7 @@ get_header();
 				<?php
 				get_search_form();
 				?>
-			</header><!-- .entry-header -->
+			</header>
 
 			<?php
 			/* Start the Loop */
@@ -55,7 +55,7 @@ get_header();
 		endif;
 		?>
 
-	</main><!-- #main -->
+	</main>
 
 <?php
 get_sidebar();

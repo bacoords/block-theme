@@ -33,7 +33,7 @@ if ( is_singular() ) :
 
 	<div class="post-thumbnail">
 		<?php echo get_the_post_thumbnail( $args['post_id'] ); ?>
-	</div><!-- .post-thumbnail -->
+	</div>
 
 <?php else : ?>
 

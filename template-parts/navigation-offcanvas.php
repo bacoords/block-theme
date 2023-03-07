@@ -41,4 +41,4 @@
 			</div>
 		</div>
 	</div>
-</nav><!-- #site-navigation -->
+</nav>
