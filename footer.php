@@ -15,9 +15,9 @@
 
 		<div class="site-info">
 			<?php block_template_part( 'footer-credit' ); ?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
-</div><!-- #page -->
+		</div>
+	</footer>
+</div>
 
 <?php wp_footer(); ?>
 
