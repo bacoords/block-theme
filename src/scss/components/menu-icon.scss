@@ -18,7 +18,7 @@
 			transition-duration: 0.5s;
 			width: 20px;
 			height: 2px;
-			background-color: props.preset("color", "foreground");
+			background-color: props.theme("preset.color.foreground");
 			content: "";
 			top: 0px;
 			display: block;
@@ -28,7 +28,7 @@
 			transition-duration: 0.5s;
 			width: 20px;
 			height: 2px;
-			background-color: props.preset("color", "foreground");
+			background-color: props.theme("preset.color.foreground");
 			content: "";
 			margin-top: 7px;
 			display: block;
@@ -38,7 +38,7 @@
 
 .menu-close {
 	.menu-icon > span{
-		transition: props.custom("effects", "transition");
+		transition: props.theme("custom.effects.transition");
 
 		&:before {
 			transform: rotateZ(45deg) scaleX(1.25) translate(1px, 5px);

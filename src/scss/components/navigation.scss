@@ -11,7 +11,7 @@
 		appearance: none;
 		background-color: transparent;
 		border: none;
-		padding: props.preset("spacing", "sm");
+		padding: props.theme("preset.spacing.sm");
 		cursor: pointer;
 		@include breakpoint('md') {
 			display: none;
@@ -28,13 +28,13 @@
 			text-align: right;
 			a {
 				display: inline-block;
-				padding: props.preset("spacing", "xs");
+				padding: props.theme("preset.spacing.xs");
 			}
 		}
 		@include breakpoint('md') {
 			flex-direction: row;
 			li {
-				margin-left: props.preset("spacing", "md");
+				margin-left: props.theme("preset.spacing.md");
 				text-align: left;
 				a {
 					padding: 0;
@@ -50,8 +50,8 @@
 		position: fixed;
 		right: 0;
 		top: 0;
-		background-color: props.preset("color", "background");
-		padding: props.preset("spacing", "lg") 0;
+		background-color: props.theme("preset.color.background");
+		padding: props.theme("preset.spacing.lg") 0;
 		&.is-open {
 			display: block;
 			overflow: auto;
@@ -91,11 +91,11 @@ body.admin-bar {
 			border: none;
 			cursor: pointer;
 			display: none;
-			padding:4px props.preset("spacing", "xs");
+			padding:4px props.theme("preset.spacing.xs");
 			svg {
 				width: 1rem;
 				height: 1rem;
-				stroke: props.preset("color", "secondary");
+				stroke: props.theme("preset.color.secondary");
 			}
 			@include breakpoint('md') {
 				display: inline-block;
@@ -120,11 +120,11 @@ body.admin-bar {
 		flex-direction: column;
 		align-items: flex-end;
 		padding-left: 0;
-		padding-right: props.preset("spacing", "md");
+		padding-right: props.theme("preset.spacing.md");
 		li {
 			margin-left: 0;
 			a {
-				padding: props.preset("spacing", "xs");
+				padding: props.theme("preset.spacing.xs");
 			}
 		}
 		@include breakpoint('md') {
@@ -135,12 +135,12 @@ body.admin-bar {
 			right:0;
 			min-width: 200px;
 			padding-left: 0;
-			background-color: props.preset("color", "background");
-			border: 1px solid props.preset("color", "secondary");
-			border-radius: props.custom("border", "radius");
+			background-color: props.theme("preset.color.background");
+			border: 1px solid props.theme("preset.color.secondary");
+			border-radius: props.theme("custom.border.radius");
 			li {
 				a {
-					padding: props.preset("spacing", "xs");
+					padding: props.theme("preset.spacing.xs");
 				}
 			}
 		}

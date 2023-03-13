@@ -5,10 +5,10 @@
 @use "sass:color";
 
 #comments {
-	padding: props.style("root", "padding-top")
-		props.style("root", "padding-left") props.style("root", "padding-bottom")
-		props.style("root", "padding-right");
-	max-width: props.custom("content-sizes", "wide");
+	padding: props.theme("style.root.padding-top")
+		props.theme("style.root.padding-left") props.theme("style.root.padding-bottom")
+		props.theme("style.root.padding-right");
+	max-width: props.theme("custom.content-sizes.wide");
 	@include mixins.margin-x(auto);
 	@extend .flow;
 	.comments-title {
@@ -40,24 +40,24 @@
 			}
 			#respond {
 				border-radius: var(--wp--custom--border--radius);
-				border-radius: props.custom("border", "radius");
-				border-color: props.custom("border", "color");
-				border-style: props.custom("border", "style");
-				border-width: props.custom("border", "width");
-				padding: props.style("root", "padding-top")
-				props.style("root", "padding-left") props.style("root", "padding-bottom")
-				props.style("root", "padding-right");
+				border-radius: props.theme("custom.border.radius");
+				border-color: props.theme("custom.border.color");
+				border-style: props.theme("custom.border.style");
+				border-width: props.theme("custom.border.width");
+				padding: props.theme("style.root.padding-top")
+				props.theme("style.root.padding-left") props.theme("style.root.padding-bottom")
+				props.theme("style.root.padding-right");
 			}
 			.comment-body {
 				border-radius: var(--wp--custom--border--radius);
-				border-radius: props.custom("border", "radius");
-				border-color: props.custom("border", "color");
-				border-style: props.custom("border", "style");
-				border-width: props.custom("border", "width");
-				padding: props.style("root", "padding-top")
-					props.style("root", "padding-left")
-					props.style("root", "padding-bottom")
-					props.style("root", "padding-right");
+				border-radius: props.theme("custom.border.radius");
+				border-color: props.theme("custom.border.color");
+				border-style: props.theme("custom.border.style");
+				border-width: props.theme("custom.border.width");
+				padding: props.theme("style.root.padding-top")
+					props.theme("style.root.padding-left")
+					props.theme("style.root.padding-bottom")
+					props.theme("style.root.padding-right");
 				.comment-meta {
 					display: flex;
 					flex-direction: column;
@@ -78,7 +78,7 @@
 						}
 					}
 					.comment-metadata {
-						font-size: props.preset("font-size", "small");
+						font-size: props.theme("preset.font-size.small");
 					}
 				}
 			}
@@ -89,8 +89,8 @@
 	#respond {
 		.required-field-message {
 			display: block;
-			font-size: props.preset("font-size", "small");
-			margin-top: props.preset("spacing", "sm");
+			font-size: props.theme("preset.font-size.small");
+			margin-top: props.theme("preset.spacing.sm");
 		}
 		form {
 			@extend .flow;
@@ -115,12 +115,12 @@
 				}
 				&.logged-in-as {
 					display: block;
-					margin-top: props.preset("spacing", "sm");
+					margin-top: props.theme("preset.spacing.sm");
 				}
 			}
 			.comment-notes {
-				font-size: props.preset("font-size", "small");
-				margin-top: props.style("block-gap");
+				font-size: props.theme("preset.font-size.small");
+				margin-top: props.theme("style.block-gap");
 			}
 		}
 	}

@@ -1,6 +1,6 @@
 @use "../abstracts/props.scss";
 .flow {
 	& > * + * {
-		margin-top: props.style("block-gap", null, 1rem);
+		margin-top: props.theme("style.block-gap");
 	}
 }
