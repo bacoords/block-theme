@@ -1,15 +1,13 @@
 @use "../utilities/flow.scss" as *;
-@use "../abstracts/mixins.scss";
-@use "../abstracts/props.scss";
-@use "../abstracts/breakpoint-mixin.scss" as *;
+@use "../abstracts";
 @use "sass:color";
 
 #comments {
-	padding: props.style("root", "padding-top")
-		props.style("root", "padding-left") props.style("root", "padding-bottom")
-		props.style("root", "padding-right");
-	max-width: props.custom("content-sizes", "wide");
-	@include mixins.margin-x(auto);
+	padding: abstracts.style("root", "padding-top")
+		abstracts.style("root", "padding-left") abstracts.style("root", "padding-bottom")
+		abstracts.style("root", "padding-right");
+	max-width: abstracts.custom("content-sizes", "wide");
+	@include abstracts.margin-x(auto);
 	@extend .flow;
 	.comments-title {
 		text-align: center;
@@ -40,24 +38,24 @@
 			}
 			#respond {
 				border-radius: var(--wp--custom--border--radius);
-				border-radius: props.custom("border", "radius");
-				border-color: props.custom("border", "color");
-				border-style: props.custom("border", "style");
-				border-width: props.custom("border", "width");
-				padding: props.style("root", "padding-top")
-				props.style("root", "padding-left") props.style("root", "padding-bottom")
-				props.style("root", "padding-right");
+				border-radius: abstracts.custom("border", "radius");
+				border-color: abstracts.custom("border", "color");
+				border-style: abstracts.custom("border", "style");
+				border-width: abstracts.custom("border", "width");
+				padding: abstracts.style("root", "padding-top")
+				abstracts.style("root", "padding-left") abstracts.style("root", "padding-bottom")
+				abstracts.style("root", "padding-right");
 			}
 			.comment-body {
 				border-radius: var(--wp--custom--border--radius);
-				border-radius: props.custom("border", "radius");
-				border-color: props.custom("border", "color");
-				border-style: props.custom("border", "style");
-				border-width: props.custom("border", "width");
-				padding: props.style("root", "padding-top")
-					props.style("root", "padding-left")
-					props.style("root", "padding-bottom")
-					props.style("root", "padding-right");
+				border-radius: abstracts.custom("border", "radius");
+				border-color: abstracts.custom("border", "color");
+				border-style: abstracts.custom("border", "style");
+				border-width: abstracts.custom("border", "width");
+				padding: abstracts.style("root", "padding-top")
+					abstracts.style("root", "padding-left")
+					abstracts.style("root", "padding-bottom")
+					abstracts.style("root", "padding-right");
 				.comment-meta {
 					display: flex;
 					flex-direction: column;
@@ -65,7 +63,7 @@
 					flex-wrap: wrap;
 					margin-bottom: 1rem;
 					gap: 0.5rem;
-					@include breakpoint(md) {
+					@include abstracts.breakpoint(md) {
 						flex-direction: row;
 					 }
 
@@ -73,12 +71,12 @@
 						display: flex;
 						gap: 0.5rem;
 						order: 1;
-						@include breakpoint(md) {
+						@include abstracts.breakpoint(md) {
 							order: 0;
 						}
 					}
 					.comment-metadata {
-						font-size: props.preset("font-size", "small");
+						font-size: abstracts.preset("font-size", "small");
 					}
 				}
 			}
@@ -89,8 +87,8 @@
 	#respond {
 		.required-field-message {
 			display: block;
-			font-size: props.preset("font-size", "small");
-			margin-top: props.preset("spacing", "sm");
+			font-size: abstracts.preset("font-size", "small");
+			margin-top: abstracts.preset("spacing", "sm");
 		}
 		form {
 			@extend .flow;
@@ -115,12 +113,12 @@
 				}
 				&.logged-in-as {
 					display: block;
-					margin-top: props.preset("spacing", "sm");
+					margin-top: abstracts.preset("spacing", "sm");
 				}
 			}
 			.comment-notes {
-				font-size: props.preset("font-size", "small");
-				margin-top: props.style("block-gap");
+				font-size: abstracts.preset("font-size", "small");
+				margin-top: abstracts.style("block-gap");
 			}
 		}
 	}

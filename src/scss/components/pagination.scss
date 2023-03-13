@@ -1,28 +1,27 @@
-@use "../abstracts/props.scss";
+@use "../abstracts";
 @use "../utilities/container.scss" as *;
-@use "../abstracts/mixins.scss";
 
 .navigation.pagination {
 	@extend .container-wide;
-	@include mixins.padding;
+	@include abstracts.padding;
 	.nav-links {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		gap: props.style("block-gap");
+		gap: abstracts.style("block-gap");
 	}
 	.prev,
 	.next {
-		border: 2px solid props.preset("color", "accent");
-		border-radius: props.custom('border', 'radius');
+		border: 2px solid abstracts.preset("color", "accent");
+		border-radius: abstracts.custom('border', 'radius');
 		padding: 0.2em 1em;
 		text-decoration: none;
-		background-color: props.preset("color", "accent");
+		background-color: abstracts.preset("color", "accent");
 		transition: 0.3s ease all;
-		color: props.preset("color", "background");
+		color: abstracts.preset("color", "background");
 		&:hover {
-			border: 2px solid props.preset("color", "secondary");
-			background-color: props.preset("color", "secondary");
+			border: 2px solid abstracts.preset("color", "secondary");
+			background-color: abstracts.preset("color", "secondary");
 		}
 	}
 }

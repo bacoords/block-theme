@@ -1,10 +1,9 @@
 @use "../utilities/container.scss" as *;
-@use "../abstracts/props.scss";
-@use "../abstracts/mixins.scss";
+@use "../abstracts";
 
 #colophon {
 	display: flex;
 	justify-content: space-between;
 	@extend .container-wide;
-	@include mixins.padding;
+	@include abstracts.padding;
 }

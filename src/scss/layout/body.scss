@@ -1,22 +1,20 @@
 @use "../utilities/flow.scss" as *;
 @use "../utilities/container.scss" as *;
-@use "../abstracts/mixins.scss";
-@use "../abstracts/props.scss";
-@use "../abstracts/breakpoint-mixin.scss" as *;
+@use "../abstracts";
 
 #primary {
 	.entry-header {
 		text-align: center;
-		@include mixins.padding;
+		@include abstracts.padding;
 		@extend .flow;
 	}
 	& > article {
-		@include mixins.margin-x(auto);
+		@include abstracts.margin-x(auto);
 	}
 	.post-thumbnail {
 		& > * {
-			@include mixins.padding;
-			@include mixins.margin-x(auto);
+			@include abstracts.padding;
+			@include abstracts.margin-x(auto);
 		}
 	}
 	.entry-content {
@@ -28,7 +26,7 @@
 	}
 	.entry-footer {
 		@extend .container-wide;
-		@include mixins.padding;
+		@include abstracts.padding;
 		display:flex;
 		flex-direction: column;
 		.edit-link {
@@ -38,7 +36,7 @@
 	}
 	.post-navigation {
 		@extend .container-wide;
-		@include mixins.padding;
+		@include abstracts.padding;
 		.nav-links{
 			display: flex;
 			justify-content: space-between;

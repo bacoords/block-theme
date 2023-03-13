@@ -1,7 +1,5 @@
-@use "../abstracts/props.scss";
+@use "../abstracts";
 @use "../utilities/container.scss" as *;
-@use "../abstracts/breakpoint-mixin.scss" as *;
-@use "../abstracts/mixins.scss";
 
 #masthead {
 	& > .container-wide {
@@ -9,10 +7,10 @@
 		justify-content: space-between;
 		align-items: center;
 		flex-wrap: wrap;
-		@include mixins.padding;
+		@include abstracts.padding;
 
 		.site-title{
-			font-size: props.preset("font-sizes", "h-3");
+			font-size: abstracts.preset("font-sizes", "h-3");
 		}
 
 		.custom-logo-link img {

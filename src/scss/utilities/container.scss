@@ -1,50 +1,49 @@
-@use "../abstracts/mixins.scss";
-@use "../abstracts/props.scss";
+@use "../abstracts";
 @use "flow.scss" as *;
 
 .container {
-	max-width: props.custom("content-sizes", "default");
-	@include mixins.margin-x(auto);
+	max-width: abstracts.custom("content-sizes", "default");
+	@include abstracts.margin-x(auto);
 }
 
 .container-wide {
-	max-width: props.custom("content-sizes", "wide");
-	@include mixins.margin-x(auto);
+	max-width: abstracts.custom("content-sizes", "wide");
+	@include abstracts.margin-x(auto);
 }
 
 .container-full {
-	max-width: props.custom("content-sizes", "full");
-	@include mixins.margin-x(auto);
+	max-width: abstracts.custom("content-sizes", "full");
+	@include abstracts.margin-x(auto);
 }
 
 .blocks-alignment {
 	@extend .flow;
-	padding-right: props.style("root", "padding-right");
-	padding-left: props.style("root", "padding-left");
+	padding-right: abstracts.style("root", "padding-right");
+	padding-left: abstracts.style("root", "padding-left");
 	& > *, .is-layout-flow > * {
-		@include mixins.margin-x(auto);
-		max-width: props.custom("content-sizes", "default");
+		@include abstracts.margin-x(auto);
+		max-width: abstracts.custom("content-sizes", "default");
 		&:where(.alignfull) {
 			margin-right: calc( var(--wp--style--root--padding-right) * -1 );
 			margin-left: calc( var(--wp--style--root--padding-left) * -1 );
 			max-width: calc( 100% + var(--wp--style--root--padding-right) + var(--wp--style--root--padding-left) );
 		}
 		&:where(.alignwide) {
-			max-width: props.custom("content-sizes", "wide");
+			max-width: abstracts.custom("content-sizes", "wide");
 		}
 		&:where(.alignleft) {
 			margin-left: 0;
 			float: left;
-			margin-right: props.style("block-gap");
+			margin-right: abstracts.style("block-gap");
 		}
 		&:where(.alignright) {
 			margin-right: 0;
 			float: right;
-			margin-left: props.style("block-gap");
+			margin-left: abstracts.style("block-gap");
 		}
 	}
 	.is-layout-flow > * {
-		padding-right: props.style("root", "padding-right");
-		padding-left: props.style("root", "padding-left");
+		padding-right: abstracts.style("root", "padding-right");
+		padding-left: abstracts.style("root", "padding-left");
 	}
 }

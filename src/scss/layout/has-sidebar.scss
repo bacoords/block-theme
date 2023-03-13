@@ -1,6 +1,4 @@
-@use "../abstracts/mixins.scss";
-@use "../abstracts/props.scss";
-@use "../abstracts/breakpoint-mixin.scss" as *;
+@use "../abstracts";
 @use "../utilities/container.scss" as *;
 
 body.has-sidebar {
@@ -12,14 +10,14 @@ body.has-sidebar {
 		"content"
 		"sidebar"
 		"footer";
-		@include breakpoint(lg) {
+		@include abstracts.breakpoint(lg) {
 			grid-template-areas:
 			"header header header header"
 			"content content content sidebar"
 			"footer footer footer footer";
 		 }
-		@include mixins.padding( 0, props.style("root", "padding-left"), 0, props.style("root", "padding-right"));
-		gap: props.style("block-gap");
+		@include abstracts.padding( 0, abstracts.style("root", "padding-left"), 0, abstracts.style("root", "padding-right"));
+		gap: abstracts.style("block-gap");
 		#masthead {
 			grid-area: header;
 		}
