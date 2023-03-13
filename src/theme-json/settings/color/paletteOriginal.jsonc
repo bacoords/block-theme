@@ -3,21 +3,26 @@
 	{
 		"name": "Primary",
 		"slug": "primary",
-		"color": "#66ae8f"
+		"color": "#4B7F00"
 	},
 	{
 		"name": "Secondary",
 		"slug": "secondary",
-		"color": "#e45150"
+		"color": "#AD5D00"
 	},
 	{
 		"name": "Foreground",
 		"slug": "foreground",
-		"color": "#040600"
+		"color": "#0d171c"
 	},
 	{
 		"name": "Background",
 		"slug": "background",
-		"color": "#ffffff"
+		"color": "#fff6ed"
+	},
+	{
+		"name": "Accent",
+		"slug": "accent",
+		"color": "#ac3c68"
 	}
 ]

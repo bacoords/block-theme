@@ -184,7 +184,7 @@ add_action( 'after_setup_theme', 'Tangent\Enqueue\add_editor_styles' );
 function register_blocks() {
 	$block_folders = glob( get_stylesheet_directory() . '/blocks/*', GLOB_ONLYDIR );
 	foreach ( $block_folders as $block_folder ) {
-		register_block_type( $block_folder );
+		// register_block_type( $block_folder );
 	}
 }
 

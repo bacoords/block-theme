@@ -1,10 +1,10 @@
 {
 	":hover": {
 		"color": {
-			"text": "var(--wp--preset--color--accent)"
+			"text": "var(--wp--preset--color--primary)"
 		},
 		"typography": {
-			"textDecoration": "underline var(--wp--preset--color--accent)"
+			"textDecoration": "underline var(--wp--preset--color--primary)"
 		}
 	},
 	":focus": {

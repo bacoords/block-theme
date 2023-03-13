@@ -13,11 +13,11 @@
 	}
 	.prev,
 	.next {
-		border: 2px solid props.preset("color", "accent");
+		border: 2px solid props.preset("color", "primary");
 		border-radius: props.custom('border', 'radius');
 		padding: 0.2em 1em;
 		text-decoration: none;
-		background-color: props.preset("color", "accent");
+		background-color: props.preset("color", "primary");
 		transition: 0.3s ease all;
 		color: props.preset("color", "background");
 		&:hover {
