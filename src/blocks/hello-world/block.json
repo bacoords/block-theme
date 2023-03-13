@@ -9,8 +9,8 @@
 	"textdomain": "tangent",
 	"attributes": {
 		"content": {
-			"selector": "hello-world-text",
-			"type": "string"
+			"type": "string",
+			"selector": "hello-world-text"
 		},
 		"img": {
 			"type": "object"
