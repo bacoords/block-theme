@@ -1,4 +1,5 @@
 {
+	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 2,
 	"name": "tangent/hello-world",
 	"title": "Hello World",
@@ -8,6 +9,7 @@
 	"textdomain": "tangent",
 	"attributes": {
 		"content": {
+			"type": "string",
 			"selector": "hello-world-text"
 		},
 		"img": {
