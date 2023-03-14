@@ -95,7 +95,12 @@ body.admin-bar {
 			svg {
 				width: 1rem;
 				height: 1rem;
-				stroke: props.preset("color", "secondary");
+				stroke: props.preset("color", "primary");
+			}
+			&:hover {
+				svg {
+					stroke: props.preset("color", "background");
+				}
 			}
 			@include breakpoint('md') {
 				display: inline-block;
@@ -136,7 +141,7 @@ body.admin-bar {
 			min-width: 200px;
 			padding-left: 0;
 			background-color: props.preset("color", "background");
-			border: 1px solid props.preset("color", "secondary");
+			border: 1px solid props.preset("color", "primary");
 			border-radius: props.custom("border", "radius");
 			li {
 				a {
