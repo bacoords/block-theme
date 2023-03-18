@@ -47,10 +47,12 @@ const unregisterBlockStyles = {
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-styles/
  */
 const registerBlockStyles = {
-	"core/cover": {
-		name: "hero",
-		label: "Hero",
-	},
+	"core/cover": [
+		{
+			name: "hero",
+			label: "Hero",
+		},
+	]
 };
 
 /**
