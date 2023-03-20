@@ -91,6 +91,12 @@ function theme_setup() {
 	add_theme_support( 'block-template-parts' );
 
 	/**
+	 * Remove duotone filter SVGs from loading on the frontend
+	 */
+	remove_action( 'wp_body_open', 'wp_global_styles_render_svg_filters' );
+	remove_action( 'in_admin_header', 'wp_global_styles_render_svg_filters' );
+
+	/**
 	 * Uncomment the following block of code to register a sidebar.
 	 * You can also uncomment out the sidebar layout styling in
 	 * src/scss/layout/index.scss
