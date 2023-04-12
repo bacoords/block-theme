@@ -91,10 +91,17 @@ function theme_setup() {
 	add_theme_support( 'block-template-parts' );
 
 	/**
-	 * Remove duotone filter SVGs from loading on the frontend
+	 * Remove duotone filter SVGs from loading on the frontend if default
+	 * and custom duotones are disabled.
 	 */
-	remove_action( 'wp_body_open', 'wp_global_styles_render_svg_filters' );
-	remove_action( 'in_admin_header', 'wp_global_styles_render_svg_filters' );
+	$theme_json_color_settings = wp_get_global_settings( array('color') );
+
+	if ( ! $theme_json_color_settings['customDuotone'] && ! $theme_json_color_settings['defaultDuotone'] ) {
+		remove_action( 'wp_body_open', 'wp_global_styles_render_svg_filters' );
+		remove_action( 'in_admin_header', 'wp_global_styles_render_svg_filters' );
+	}
+
+
 
 	/**
 	 * Uncomment the following block of code to register a sidebar.
@@ -116,6 +123,16 @@ function theme_setup() {
 	// );
 }
 add_action( 'after_setup_theme', 'Tangent\Setup\theme_setup' );
+
+// // Check if default duotones are disabled
+// function wp_docs_block_editor_settings( $editor_settings, $editor_context ) {
+// 	if ( ! empty( $editor_context->post ) ) {
+// 		$editor_settings['maxUploadFileSize'] = 12345;
+// 	}
+// 	return $editor_settings;
+// }
+
+// add_filter( 'block_editor_settings_all', 'wp_docs_block_editor_settings', 10, 2 );
 
 
 /**
