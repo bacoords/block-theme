@@ -94,7 +94,7 @@ function theme_setup() {
 	 * Remove duotone filter SVGs from loading on the frontend if default
 	 * and custom duotones are disabled.
 	 */
-	$theme_json_color_settings = wp_get_global_settings( array('color') );
+	$theme_json_color_settings = wp_get_global_settings( array( 'color' ) );
 
 	if ( ! $theme_json_color_settings['customDuotone'] && ! $theme_json_color_settings['defaultDuotone'] ) {
 		remove_action( 'wp_body_open', 'wp_global_styles_render_svg_filters' );
@@ -123,17 +123,6 @@ function theme_setup() {
 	// );
 }
 add_action( 'after_setup_theme', 'Tangent\Setup\theme_setup' );
-
-// // Check if default duotones are disabled
-// function wp_docs_block_editor_settings( $editor_settings, $editor_context ) {
-// 	if ( ! empty( $editor_context->post ) ) {
-// 		$editor_settings['maxUploadFileSize'] = 12345;
-// 	}
-// 	return $editor_settings;
-// }
-
-// add_filter( 'block_editor_settings_all', 'wp_docs_block_editor_settings', 10, 2 );
-
 
 /**
  * Custom login logo
