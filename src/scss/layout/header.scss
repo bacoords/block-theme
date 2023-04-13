@@ -12,7 +12,7 @@
 		@include mixins.padding;
 
 		.site-title{
-			font-size: props.theme("preset.font-sizes.h-3");
+			font-size: props.ref("preset.fontSizes.h3");
 		}
 
 		.custom-logo-link img {

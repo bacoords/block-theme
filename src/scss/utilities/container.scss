@@ -3,48 +3,48 @@
 @use "flow.scss" as *;
 
 .container {
-	max-width: props.theme("custom.content-sizes.default");
+	max-width: props.ref("custom.contentSizes.default");
 	@include mixins.margin-x(auto);
 }
 
 .container-wide {
-	max-width: props.theme("custom.content-sizes.wide");
+	max-width: props.ref("custom.contentSizes.wide");
 	@include mixins.margin-x(auto);
 }
 
 .container-full {
-	max-width: props.theme("custom.content-sizes.full");
+	max-width: props.ref("custom.contentSizes.full");
 	@include mixins.margin-x(auto);
 }
 
 .blocks-alignment {
 	@extend .flow;
-	padding-right: props.theme("style.root.padding-right");
-	padding-left: props.theme("style.root.padding-left");
+	padding-right: props.ref("style.root.paddingRight");
+	padding-left: props.ref("style.root.paddingLeft");
 	& > *, .is-layout-flow > * {
 		@include mixins.margin-x(auto);
-		max-width: props.theme("custom.content-sizes.default");
+		max-width: props.ref("custom.contentSizes.default");
 		&:where(.alignfull) {
-			margin-right: calc( props.theme("style.root.padding-right") * -1 );
-			margin-left: calc( props.theme("style.root.padding-left") * -1 );
-			max-width: calc( 100% + props.theme("style.root.padding-right") + props.theme("style.root.padding-left") );
+			margin-right: calc( props.ref("style.root.paddingRight") * -1 );
+			margin-left: calc( props.ref("style.root.paddingLeft") * -1 );
+			max-width: calc( 100% + props.ref("style.root.paddingRight") + props.ref("style.root.paddingLeft") );
 		}
 		&:where(.alignwide) {
-			max-width: props.theme("custom.content-sizes.wide");
+			max-width: props.ref("custom.contentSizes.wide");
 		}
 		&:where(.alignleft) {
 			margin-left: 0;
 			float: left;
-			margin-right: props.theme("style.block-gap");
+			margin-right: props.ref("style.blockGap");
 		}
 		&:where(.alignright) {
 			margin-right: 0;
 			float: right;
-			margin-left: props.theme("style.block-gap");
+			margin-left: props.ref("style.blockGap");
 		}
 	}
 	.is-layout-flow > * {
-		padding-right: props.theme("style.root.padding-right");
-		padding-left: props.theme("style.root.padding-left");
+		padding-right: props.ref("style.root.paddingRight");
+		padding-left: props.ref("style.root.paddingLeft");
 	}
 }

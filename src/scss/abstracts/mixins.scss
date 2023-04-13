@@ -7,7 +7,7 @@
 }
 
 /// Add left/right padding to an element
-@mixin padding($top: props.theme("style.root.padding-top"), $left: props.theme("style.root.padding-left"), $bottom: props.theme("style.root.padding-bottom"), $right: props.theme("style.root.padding-right")) {
+@mixin padding($top: props.ref("style.root.paddingTop"), $left: props.ref("style.root.paddingLeft"), $bottom: props.ref("style.root.paddingBottom"), $right: props.ref("style.root.paddingRight")) {
 	padding: $top $right $bottom $left;
 }
 

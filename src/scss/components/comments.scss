@@ -5,10 +5,10 @@
 @use "sass:color";
 
 #comments {
-	padding: props.theme("style.root.padding-top")
-		props.theme("style.root.padding-left") props.theme("style.root.padding-bottom")
-		props.theme("style.root.padding-right");
-	max-width: props.theme("custom.content-sizes.wide");
+	padding: props.ref("style.root.paddingTop")
+		props.ref("style.root.paddingLeft") props.ref("style.root.paddingBottom")
+		props.ref("style.root.paddingRight");
+	max-width: props.ref("custom.contentSizes.wide");
 	@include mixins.margin-x(auto);
 	@extend .flow;
 	.comments-title {
@@ -40,24 +40,24 @@
 			}
 			#respond {
 				border-radius: var(--wp--custom--border--radius);
-				border-radius: props.theme("custom.border.radius");
-				border-color: props.theme("custom.border.color");
-				border-style: props.theme("custom.border.style");
-				border-width: props.theme("custom.border.width");
-				padding: props.theme("style.root.padding-top")
-				props.theme("style.root.padding-left") props.theme("style.root.padding-bottom")
-				props.theme("style.root.padding-right");
+				border-radius: props.ref("custom.border.radius");
+				border-color: props.ref("custom.border.color");
+				border-style: props.ref("custom.border.style");
+				border-width: props.ref("custom.border.width");
+				padding: props.ref("style.root.paddingTop")
+				props.ref("style.root.paddingLeft") props.ref("style.root.paddingBottom")
+				props.ref("style.root.paddingRight");
 			}
 			.comment-body {
 				border-radius: var(--wp--custom--border--radius);
-				border-radius: props.theme("custom.border.radius");
-				border-color: props.theme("custom.border.color");
-				border-style: props.theme("custom.border.style");
-				border-width: props.theme("custom.border.width");
-				padding: props.theme("style.root.padding-top")
-					props.theme("style.root.padding-left")
-					props.theme("style.root.padding-bottom")
-					props.theme("style.root.padding-right");
+				border-radius: props.ref("custom.border.radius");
+				border-color: props.ref("custom.border.color");
+				border-style: props.ref("custom.border.style");
+				border-width: props.ref("custom.border.width");
+				padding: props.ref("style.root.paddingTop")
+					props.ref("style.root.paddingLeft")
+					props.ref("style.root.paddingBottom")
+					props.ref("style.root.paddingRight");
 				.comment-meta {
 					display: flex;
 					flex-direction: column;
@@ -78,7 +78,7 @@
 						}
 					}
 					.comment-metadata {
-						font-size: props.theme("preset.font-size.small");
+						font-size: props.ref("preset.fontSize.small");
 					}
 				}
 			}
@@ -89,8 +89,8 @@
 	#respond {
 		.required-field-message {
 			display: block;
-			font-size: props.theme("preset.font-size.small");
-			margin-top: props.theme("preset.spacing.sm");
+			font-size: props.ref("preset.fontSize.small");
+			margin-top: props.ref("preset.spacing.sm");
 		}
 		form {
 			@extend .flow;
@@ -115,12 +115,12 @@
 				}
 				&.logged-in-as {
 					display: block;
-					margin-top: props.theme("preset.spacing.sm");
+					margin-top: props.ref("preset.spacing.sm");
 				}
 			}
 			.comment-notes {
-				font-size: props.theme("preset.font-size.small");
-				margin-top: props.theme("style.block-gap");
+				font-size: props.ref("preset.fontSize.small");
+				margin-top: props.ref("style.blockGap");
 			}
 		}
 	}

@@ -3,27 +3,27 @@
 @use "../abstracts/breakpoint-mixin" as *;
 input,
 textarea {
-	transition: props.theme("custom.effects.transition");
-	border-radius: props.theme("custom.border.radius");
-	border-color: props.theme("custom.border.color");
-	border-style: props.theme("custom.border.style");
-	border-width: props.theme("custom.border.width");
-	padding-top: props.theme("custom.button.spacing.padding.top");
-	padding-right: props.theme("custom.button.spacing.padding.right");
-	padding-bottom: props.theme("custom.button.spacing.padding.bottom");
-	padding-left: props.theme("custom.button.spacing.padding.left");
+	transition: props.ref("custom.effects.transition");
+	border-radius: props.ref("custom.border.radius");
+	border-color: props.ref("custom.border.color");
+	border-style: props.ref("custom.border.style");
+	border-width: props.ref("custom.border.width");
+	padding-top: props.ref("custom.button.spacing.padding.top");
+	padding-right: props.ref("custom.button.spacing.padding.right");
+	padding-bottom: props.ref("custom.button.spacing.padding.bottom");
+	padding-left: props.ref("custom.button.spacing.padding.left");
 	&:focus {
-		outline: props.theme("custom.forms.focus.outline");
-		border-radius: props.theme("custom.border.focus.radius");
-		border-color: props.theme("custom.border.focus.color");
-		border-style: props.theme("custom.border.focus.style");
-		border-width: props.theme("custom.border.focus.width");
+		outline: props.ref("custom.forms.focus.outline");
+		border-radius: props.ref("custom.border.focus.radius");
+		border-color: props.ref("custom.border.focus.color");
+		border-style: props.ref("custom.border.focus.style");
+		border-width: props.ref("custom.border.focus.width");
 	}
 }
 
 input[type="checkbox"],
 input[type="radio"] {
-	accent-color: props.theme("preset.color.foreground");
+	accent-color: props.ref("preset.color.foreground");
 }
 
 /// Accessible pseudo checkboxes with a focus state
@@ -50,26 +50,26 @@ input[type="checkbox"] {
 			width: 20px;
 			height: 20px;
 			background: transparent;
-			border-radius: props.theme("custom.border.radius");
-			border-color: props.theme("custom.border.color");
-			border-style: props.theme("custom.border.style");
-			border-width: props.theme("custom.border.width");
+			border-radius: props.ref("custom.border.radius");
+			border-color: props.ref("custom.border.color");
+			border-style: props.ref("custom.border.style");
+			border-width: props.ref("custom.border.width");
 		}
 	}
 	&:checked {
 		& + label {
 			&::before {
-				background: props.theme("custom.border.color");
+				background: props.ref("custom.border.color");
 			}
 			&::after {
 				content: "";
 				position: absolute;
 				top: 10px;
 				left: 4px;
-				border-left: props.theme("custom.border.width") solid
-					props.theme("preset.color.background");
-				border-bottom: props.theme("custom.border.width") solid
-					props.theme("preset.color.background");
+				border-left: props.ref("custom.border.width") solid
+					props.ref("preset.color.background");
+				border-bottom: props.ref("custom.border.width") solid
+					props.ref("preset.color.background");
 				height: 6px;
 				width: 13px;
 				transform: rotate(-45deg);
@@ -80,9 +80,9 @@ input[type="checkbox"] {
 	&:focus-visible {
 		& + label {
 			&:before {
-				outline: props.theme("preset.color.background") solid
-					props.theme("custom.border.width");
-				box-shadow: 1px 1px 8px props.theme("preset.color.secondary");
+				outline: props.ref("preset.color.background") solid
+					props.ref("custom.border.width");
+				box-shadow: 1px 1px 8px props.ref("preset.color.secondary");
 			}
 		}
 	}
@@ -123,15 +123,15 @@ input[type="radio"] {
 			height: 20px;
 			background: transparent;
 			border-radius: 50%;
-			border-color: props.theme("custom.border.color");
-			border-style: props.theme("custom.border.style");
-			border-width: props.theme("custom.border.width");
+			border-color: props.ref("custom.border.color");
+			border-style: props.ref("custom.border.style");
+			border-width: props.ref("custom.border.width");
 		}
 	}
 	&:checked {
 		& + label {
 			&::before {
-				background: props.theme("custom.border.color");
+				background: props.ref("custom.border.color");
 			}
 			&::after {
 				content: "";
@@ -141,7 +141,7 @@ input[type="radio"] {
 					top: 10px;
 				}
 				left: 5px;
-				background-color: props.theme("preset.color.background");
+				background-color: props.ref("preset.color.background");
 				border-radius: 50%;
 				height: 10px;
 				width: 10px;
@@ -152,9 +152,9 @@ input[type="radio"] {
 	&:focus-visible {
 		& + label {
 			&:before {
-				outline: props.theme("preset.color.background") solid
-					props.theme("custom.border.width");
-				box-shadow: 1px 1px 8px props.theme("preset.color.secondary");
+				outline: props.ref("preset.color.background") solid
+					props.ref("custom.border.width");
+				box-shadow: 1px 1px 8px props.ref("preset.color.secondary");
 			}
 		}
 	}
@@ -174,22 +174,22 @@ input[type="submit"],
 input[type="reset"],
 input[type="button"],
 button:not(.components-button):not(.link-button) {
-	background-color: props.theme("custom.button.color.background");
-	border-radius: props.theme("custom.button.border.radius");
-	border-color: props.theme("custom.button.border.color");
-	border-width: props.theme("custom.button.border.width");
-	color: props.theme("custom.button.color.text");
-	padding-top: props.theme("custom.button.spacing.padding.top");
-	padding-right: props.theme("custom.button.spacing.padding.right");
-	padding-bottom: props.theme("custom.button.spacing.padding.bottom");
-	padding-left: props.theme("custom.button.spacing.padding.left");
+	background-color: props.ref("custom.button.color.background");
+	border-radius: props.ref("custom.button.border.radius");
+	border-color: props.ref("custom.button.border.color");
+	border-width: props.ref("custom.button.border.width");
+	color: props.ref("custom.button.color.text");
+	padding-top: props.ref("custom.button.spacing.padding.top");
+	padding-right: props.ref("custom.button.spacing.padding.right");
+	padding-bottom: props.ref("custom.button.spacing.padding.bottom");
+	padding-left: props.ref("custom.button.spacing.padding.left");
 	&:hover {
-		background-color: props.theme("custom.button.hover.color.background");
-		color: props.theme("custom.button.hover.color.text");
+		background-color: props.ref("custom.button.hover.color.background");
+		color: props.ref("custom.button.hover.color.text");
 	}
 	&:focus {
-		background-color: props.theme("custom.button.focus.color.background");
-		color: props.theme("custom.button.focus.color.text");
-		border-color: props.theme("custom.button.focus.border.color");
+		background-color: props.ref("custom.button.focus.color.background");
+		color: props.ref("custom.button.focus.color.text");
+		border-color: props.ref("custom.button.focus.border.color");
 	}
 }

@@ -9,20 +9,20 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		gap: props.theme("style.block-gap");
+		gap: props.ref("style.blockGap");
 	}
 	.prev,
 	.next {
-		border: 2px solid props.theme("preset.color.accent");
-		border-radius: props.theme("custom.border.radius");
+		border: 2px solid props.ref("preset.color.accent");
+		border-radius: props.ref("custom.border.radius");
 		padding: 0.2em 1em;
 		text-decoration: none;
-		background-color: props.theme("preset.color.accent");
+		background-color: props.ref("preset.color.accent");
 		transition: 0.3s ease all;
-		color: props.theme("preset.color.background");
+		color: props.ref("preset.color.background");
 		&:hover {
-			border: 2px solid props.theme("preset.color.secondary");
-			background-color: props.theme("preset.color.secondary");
+			border: 2px solid props.ref("preset.color.secondary");
+			background-color: props.ref("preset.color.secondary");
 		}
 	}
 }

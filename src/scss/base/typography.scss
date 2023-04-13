@@ -1,5 +1,5 @@
 @use "../abstracts/props.scss";
 
 small {
-	font-size: props.theme("preset.font-size.small");
+	font-size: props.ref("preset.fontSize.small");
 }

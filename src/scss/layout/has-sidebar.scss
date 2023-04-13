@@ -18,8 +18,8 @@ body.has-sidebar {
 			"content content content sidebar"
 			"footer footer footer footer";
 		 }
-		@include mixins.padding( 0, props.theme("style.root.padding-left"), 0, props.theme("style.root.padding-right"));
-		gap: props.theme("style.block-gap");
+		@include mixins.padding( 0, props.ref("style.root.paddingLeft"), 0, props.ref("style.root.paddingRight"));
+		gap: props.ref("style.blockGap");
 		#masthead {
 			grid-area: header;
 		}
