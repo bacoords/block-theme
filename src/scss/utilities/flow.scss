@@ -1,6 +1,0 @@
-@use "../abstracts";
-.flow {
-	& > * + * {
-		margin-top: abstracts.style("block-gap", null, 1rem);
-	}
-}
