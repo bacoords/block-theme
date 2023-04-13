@@ -1,20 +1,20 @@
-@use "../utilities/flow.scss" as *;
-@use "../utilities/container.scss" as *;
-@use "../abstracts";
+@use "../utils/flow.scss" as *;
+@use "../utils/container.scss" as *;
+@use "../utils";
 
 #primary {
 	.entry-header {
 		text-align: center;
-		@include abstracts.padding;
+		@include utils.padding;
 		@extend .flow;
 	}
 	& > article {
-		@include abstracts.margin-x(auto);
+		@include utils.margin-x(auto);
 	}
 	.post-thumbnail {
 		& > * {
-			@include abstracts.padding;
-			@include abstracts.margin-x(auto);
+			@include utils.padding;
+			@include utils.margin-x(auto);
 		}
 	}
 	.entry-content {
@@ -26,7 +26,7 @@
 	}
 	.entry-footer {
 		@extend .container-wide;
-		@include abstracts.padding;
+		@include utils.padding;
 		display:flex;
 		flex-direction: column;
 		.edit-link {
@@ -36,7 +36,7 @@
 	}
 	.post-navigation {
 		@extend .container-wide;
-		@include abstracts.padding;
+		@include utils.padding;
 		.nav-links{
 			display: flex;
 			justify-content: space-between;

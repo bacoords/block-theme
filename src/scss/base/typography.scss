@@ -1,5 +1,5 @@
-@use "../abstracts";
+@use "../utils";
 
 small {
-	font-size: abstracts.preset("font-size", "small");
+	font-size: utils.preset("font-size", "small");
 }

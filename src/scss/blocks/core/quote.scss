@@ -1,4 +1,4 @@
-@use "../../abstracts";
+@use "../../utils";
 .wp-block-blockquote {
-	border: 2px solid abstracts.preset("color", "primary");
+	border: 2px solid utils.preset("color", "primary");
 }

@@ -1,5 +1,5 @@
-@use "../abstracts";
-@use "../utilities/container.scss" as *;
+@use "../utils";
+@use "../utils/container.scss" as *;
 
 #masthead {
 	& > .container-wide {
@@ -7,10 +7,10 @@
 		justify-content: space-between;
 		align-items: center;
 		flex-wrap: wrap;
-		@include abstracts.padding;
+		@include utils.padding;
 
 		.site-title{
-			font-size: abstracts.preset("font-sizes", "h-3");
+			font-size: utils.preset("font-sizes", "h-3");
 		}
 
 		.custom-logo-link img {

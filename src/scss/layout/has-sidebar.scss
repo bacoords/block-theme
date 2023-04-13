@@ -1,5 +1,5 @@
-@use "../abstracts";
-@use "../utilities/container.scss" as *;
+@use "../utils";
+@use "../utils/container.scss" as *;
 
 body.has-sidebar {
 	#page {
@@ -10,14 +10,14 @@ body.has-sidebar {
 		"content"
 		"sidebar"
 		"footer";
-		@include abstracts.breakpoint(lg) {
+		@include utils.breakpoint(lg) {
 			grid-template-areas:
 			"header header header header"
 			"content content content sidebar"
 			"footer footer footer footer";
 		 }
-		@include abstracts.padding( 0, abstracts.style("root", "padding-left"), 0, abstracts.style("root", "padding-right"));
-		gap: abstracts.style("block-gap");
+		@include utils.padding( 0, utils.style("root", "padding-left"), 0, utils.style("root", "padding-right"));
+		gap: utils.style("block-gap");
 		#masthead {
 			grid-area: header;
 		}

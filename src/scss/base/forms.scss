@@ -1,28 +1,28 @@
-@use "../abstracts";
-@use "../utilities/visually-hidden.scss" as *;
+@use "../utils";
+@use "../utils/visually-hidden.scss" as *;
 input,
 textarea {
-	transition: abstracts.custom("effects", "transition");
-	border-radius: abstracts.custom("border", "radius");
-	border-color: abstracts.custom("border", "color");
-	border-style: abstracts.custom("border", "style");
-	border-width: abstracts.custom("border", "width");
-	padding-top: abstracts.custom("button", "spacing--padding--top");
-	padding-right: abstracts.custom("button", "spacing--padding--right");
-	padding-bottom: abstracts.custom("button", "spacing--padding--bottom");
-	padding-left: abstracts.custom("button", "spacing--padding--left");
+	transition: utils.custom("effects", "transition");
+	border-radius: utils.custom("border", "radius");
+	border-color: utils.custom("border", "color");
+	border-style: utils.custom("border", "style");
+	border-width: utils.custom("border", "width");
+	padding-top: utils.custom("button", "spacing--padding--top");
+	padding-right: utils.custom("button", "spacing--padding--right");
+	padding-bottom: utils.custom("button", "spacing--padding--bottom");
+	padding-left: utils.custom("button", "spacing--padding--left");
 	&:focus {
-		outline: abstracts.custom("forms", "focus--outline");
-		border-radius: abstracts.custom("border--focus", "radius");
-		border-color: abstracts.custom("border--focus", "color");
-		border-style: abstracts.custom("border--focus", "style");
-		border-width: abstracts.custom("border--focus", "width");
+		outline: utils.custom("forms", "focus--outline");
+		border-radius: utils.custom("border--focus", "radius");
+		border-color: utils.custom("border--focus", "color");
+		border-style: utils.custom("border--focus", "style");
+		border-width: utils.custom("border--focus", "width");
 	}
 }
 
 input[type="checkbox"],
 input[type="radio"] {
-	accent-color: abstracts.preset("color", "foreground");
+	accent-color: utils.preset("color", "foreground");
 }
 
 /// Accessible pseudo checkboxes with a focus state
@@ -49,26 +49,26 @@ input[type="checkbox"] {
 			width: 20px;
 			height: 20px;
 			background: transparent;
-			border-radius: abstracts.custom("border", "radius");
-			border-color: abstracts.custom("border", "color");
-			border-style: abstracts.custom("border", "style");
-			border-width: abstracts.custom("border", "width");
+			border-radius: utils.custom("border", "radius");
+			border-color: utils.custom("border", "color");
+			border-style: utils.custom("border", "style");
+			border-width: utils.custom("border", "width");
 		}
 	}
 	&:checked {
 		& + label {
 			&::before {
-				background: abstracts.custom("border", "color");
+				background: utils.custom("border", "color");
 			}
 			&::after {
 				content: "";
 				position: absolute;
 				top: 10px;
 				left: 4px;
-				border-left: abstracts.custom("border", "width") solid
-					abstracts.preset("color", "background");
-				border-bottom: abstracts.custom("border", "width") solid
-					abstracts.preset("color", "background");
+				border-left: utils.custom("border", "width") solid
+					utils.preset("color", "background");
+				border-bottom: utils.custom("border", "width") solid
+					utils.preset("color", "background");
 				height: 6px;
 				width: 13px;
 				transform: rotate(-45deg);
@@ -79,9 +79,9 @@ input[type="checkbox"] {
 	&:focus-visible {
 		& + label {
 			&:before {
-				outline: abstracts.preset("color", "background") solid
-					abstracts.custom("border", "width");
-				box-shadow: 1px 1px 8px abstracts.preset("color", "secondary");
+				outline: utils.preset("color", "background") solid
+					utils.custom("border", "width");
+				box-shadow: 1px 1px 8px utils.preset("color", "secondary");
 			}
 		}
 	}
@@ -122,25 +122,25 @@ input[type="radio"] {
 			height: 20px;
 			background: transparent;
 			border-radius: 50%;
-			border-color: abstracts.custom("border", "color");
-			border-style: abstracts.custom("border", "style");
-			border-width: abstracts.custom("border", "width");
+			border-color: utils.custom("border", "color");
+			border-style: utils.custom("border", "style");
+			border-width: utils.custom("border", "width");
 		}
 	}
 	&:checked {
 		& + label {
 			&::before {
-				background: abstracts.custom("border", "color");
+				background: utils.custom("border", "color");
 			}
 			&::after {
 				content: "";
 				position: absolute;
 				top: 9px;
-				@include abstracts.breakpoint(md) {
+				@include utils.breakpoint(md) {
 					top: 10px;
 				}
 				left: 5px;
-				background-color: abstracts.preset("color", "background");
+				background-color: utils.preset("color", "background");
 				border-radius: 50%;
 				height: 10px;
 				width: 10px;
@@ -151,9 +151,9 @@ input[type="radio"] {
 	&:focus-visible {
 		& + label {
 			&:before {
-				outline: abstracts.preset("color", "background") solid
-					abstracts.custom("border", "width");
-				box-shadow: 1px 1px 8px abstracts.preset("color", "secondary");
+				outline: utils.preset("color", "background") solid
+					utils.custom("border", "width");
+				box-shadow: 1px 1px 8px utils.preset("color", "secondary");
 			}
 		}
 	}
@@ -173,22 +173,22 @@ input[type="submit"],
 input[type="reset"],
 input[type="button"],
 button:not(.components-button):not(.link-button) {
-	background-color: abstracts.custom("button", "color--background");
-	border-radius: abstracts.custom("button", "border--radius");
-	border-color: abstracts.custom("button", "border--color");
-	border-width: abstracts.custom("button", "border--width");
-	color: abstracts.custom("button", "color--text");
-	padding-top: abstracts.custom("button", "spacing--padding--top");
-	padding-right: abstracts.custom("button", "spacing--padding--right");
-	padding-bottom: abstracts.custom("button", "spacing--padding--bottom");
-	padding-left: abstracts.custom("button", "spacing--padding--left");
+	background-color: utils.custom("button", "color--background");
+	border-radius: utils.custom("button", "border--radius");
+	border-color: utils.custom("button", "border--color");
+	border-width: utils.custom("button", "border--width");
+	color: utils.custom("button", "color--text");
+	padding-top: utils.custom("button", "spacing--padding--top");
+	padding-right: utils.custom("button", "spacing--padding--right");
+	padding-bottom: utils.custom("button", "spacing--padding--bottom");
+	padding-left: utils.custom("button", "spacing--padding--left");
 	&:hover {
-		background-color: abstracts.custom("button", "hover--color--background");
-		color: abstracts.custom("button", "hover--color--text");
+		background-color: utils.custom("button", "hover--color--background");
+		color: utils.custom("button", "hover--color--text");
 	}
 	&:focus {
-		background-color: abstracts.custom("button", "focus--color--background");
-		color: abstracts.custom("button", "focus--color--text");
-		border-color: abstracts.custom("button", "focus--border--color");
+		background-color: utils.custom("button", "focus--color--background");
+		color: utils.custom("button", "focus--color--text");
+		border-color: utils.custom("button", "focus--border--color");
 	}
 }

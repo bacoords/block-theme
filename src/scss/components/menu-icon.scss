@@ -1,4 +1,4 @@
-@use "../abstracts";
+@use "../utils";
 
 // Menu Icon
 .menu-icon {
@@ -17,7 +17,7 @@
 			transition-duration: 0.5s;
 			width: 20px;
 			height: 2px;
-			background-color: abstracts.preset("color", "foreground");
+			background-color: utils.preset("color", "foreground");
 			content: "";
 			top: 0px;
 			display: block;
@@ -27,7 +27,7 @@
 			transition-duration: 0.5s;
 			width: 20px;
 			height: 2px;
-			background-color: abstracts.preset("color", "foreground");
+			background-color: utils.preset("color", "foreground");
 			content: "";
 			margin-top: 7px;
 			display: block;
@@ -37,7 +37,7 @@
 
 .menu-close {
 	.menu-icon > span{
-		transition: abstracts.custom("effects", "transition");
+		transition: utils.custom("effects", "transition");
 
 		&:before {
 			transform: rotateZ(45deg) scaleX(1.25) translate(1px, 5px);
