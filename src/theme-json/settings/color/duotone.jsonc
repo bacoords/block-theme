@@ -1,1 +1,2 @@
-null
+/* Define your custom duotone patterns here. To remove duotones from core, we pass an empty array, as passing `null` causes problems with the site editor. */
+[]
