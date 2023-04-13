@@ -131,7 +131,7 @@ export default function Edit(props) {
 					// This is the tag name that will be used in the editor
 					tagName="h3"
 					// This is the placeholder text that will be shown in the editor
-					placeholder={__("Enter text..", "viewsource-blocks")}
+					placeholder={__("Enter text..", "tangent")}
 					// If there is heading text, show it, otherwise show the placeholder
 					value={heading}
 					// This is the function that will be called when the heading text is changed
