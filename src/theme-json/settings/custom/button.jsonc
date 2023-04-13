@@ -25,7 +25,7 @@
 	"focus": {
 		"color": {
 			"background": "var(--wp--preset--color--foreground)",
-			"text": "var(--wp--preset--color--secondary)"
+			"text": "var(--wp--preset--color--background)"
 		},
 		"border": {
 			"color": "var(--wp--custom--border--color)"
