@@ -97,9 +97,9 @@ body.admin-bar {
 				height: 1rem;
 				stroke: props.preset("color", "primary");
 			}
-			&:hover {
+			&:hover, &:focus {
 				svg {
-					stroke: props.preset("color", "background");
+					stroke: currentColor;
 				}
 			}
 			@include breakpoint('md') {
