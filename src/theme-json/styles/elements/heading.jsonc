@@ -1,6 +1,15 @@
+/* We've included an example color reference below. You can uncomment it to see how it works. */
 {
 	"typography": {
 		"fontWeight": "400",
 		"lineHeight": "1.2"
 	}
+	// "color": {
+	// 	"background": {
+	// 		"ref": "styles.color.background"
+	// 	},
+	// 	"text": {
+	// 		"ref": "styles.color.text"
+	// 	}
+	// }
 }

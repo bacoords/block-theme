@@ -3,3 +3,7 @@
 small {
 	font-size: utils.preset("font-size", "small");
 }
+
+ul, ol {
+	padding: 0 0 0 utils.preset("spacing", "md");
+}
