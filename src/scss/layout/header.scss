@@ -2,7 +2,7 @@
 @use "../utils/container.scss" as *;
 
 #masthead {
-	& > .container-wide {
+	& > [class^="container-"] {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
