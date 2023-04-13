@@ -20,7 +20,9 @@ if (null !== dispatch("core/edit-post")) {
  * @type {Array} Add the names of blocks to unregister here
  * @see https://developer.wordpress.org/block-editor/reference-guides/filters/block-filters/#using-a-deny-list
  */
-const unregisterBlocks = ["core/verse"];
+const unregisterBlocks = [
+	// "core/verse"
+];
 
 /**
  * Remove editor panels
@@ -28,7 +30,9 @@ const unregisterBlocks = ["core/verse"];
  * @type {Array} Add the names of panels to remove here
  * @see https://developer.wordpress.org/block-editor/reference-guides/data/data-core-edit-post/#removeeditorpanel
  */
-const removeEditorPanels = ["discussion-panel"];
+const removeEditorPanels = [
+	// "discussion-panel"
+];
 
 /**
  * Remove block styles
@@ -37,7 +41,7 @@ const removeEditorPanels = ["discussion-panel"];
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-styles/
  */
 const unregisterBlockStyles = {
-	"core/button": "outline",
+	// "core/button": "outline",
 };
 
 /**
@@ -47,10 +51,12 @@ const unregisterBlockStyles = {
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-styles/
  */
 const registerBlockStyles = {
-	"core/cover": {
-		name: "hero",
-		label: "Hero",
-	},
+	// "core/cover": [
+	// 	{
+	// 		name: "hero",
+	// 		label: "Hero",
+	// 	},
+	// ]
 };
 
 /**
@@ -60,7 +66,7 @@ const registerBlockStyles = {
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-variations/
  */
 const unregisterBlockVariations = {
-	"core/columns": "two-columns-two-thirds-one-third",
+	// "core/columns": "two-columns-two-thirds-one-third",
 };
 
 /**
@@ -70,17 +76,17 @@ const unregisterBlockVariations = {
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-variations/
  */
 const registerBlockVariations = {
-	"core/columns": {
-		name: "three-columns-wide-left",
-		title: "50 / 25 / 25",
-		description: "Three columns; wide left column",
-		innerBlocks: [
-			["core/column", { width: "50%" }],
-			["core/column", { width: "25%" }],
-			["core/column", { width: "25%" }],
-		],
-		scope: ["block"],
-	},
+	// "core/columns": {
+	// 	name: "three-columns-wide-left",
+	// 	title: "50 / 25 / 25",
+	// 	description: "Three columns; wide left column",
+	// 	innerBlocks: [
+	// 		["core/column", { width: "50%" }],
+	// 		["core/column", { width: "25%" }],
+	// 		["core/column", { width: "25%" }],
+	// 	],
+	// 	scope: ["block"],
+	// },
 };
 
 /**
