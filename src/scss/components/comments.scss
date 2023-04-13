@@ -3,9 +3,7 @@
 @use "sass:color";
 
 #comments {
-	padding: utils.style("root", "padding-top")
-		utils.style("root", "padding-left") utils.style("root", "padding-bottom")
-		utils.style("root", "padding-right");
+	@include utils.padding();
 	max-width: utils.custom("content-sizes", "wide");
 	@include utils.margin-x(auto);
 	@extend .flow;
@@ -52,10 +50,7 @@
 				border-color: utils.custom("border", "color");
 				border-style: utils.custom("border", "style");
 				border-width: utils.custom("border", "width");
-				padding: utils.style("root", "padding-top")
-					utils.style("root", "padding-left")
-					utils.style("root", "padding-bottom")
-					utils.style("root", "padding-right");
+				@include utils.padding();
 				.comment-meta {
 					display: flex;
 					flex-direction: column;
