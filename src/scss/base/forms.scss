@@ -178,10 +178,12 @@ button:not(.components-button):not(.link-button) {
 	border-color: utils.custom("button", "border--color");
 	border-width: utils.custom("button", "border--width");
 	color: utils.custom("button", "color--text");
-	padding-top: utils.custom("button", "spacing--padding--top");
-	padding-right: utils.custom("button", "spacing--padding--right");
-	padding-bottom: utils.custom("button", "spacing--padding--bottom");
-	padding-left: utils.custom("button", "spacing--padding--left");
+	@include utils.padding(
+		utils.custom("button", "spacing--padding--top"),
+		utils.custom("button", "spacing--padding--right"),
+		utils.custom("button", "spacing--padding--bottom"),
+		utils.custom("button", "spacing--padding--left")
+	);
 	&:hover {
 		background-color: utils.custom("button", "hover--color--background");
 		color: utils.custom("button", "hover--color--text");
