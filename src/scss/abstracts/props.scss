@@ -13,7 +13,7 @@
 	$splitKeys: string.split($keys, ".");
 	$combinedKeys: "--wp";
 	@for $i from 1 through length($splitKeys) {
-		$combinedKeys: $combinedKeys + "--" + kebabCase(nth($splitKeys, $i));
+		$combinedKeys: $combinedKeys + "--" + toKebabCase(nth($splitKeys, $i));
 	}
 	@return var(#{$combinedKeys});
 }
@@ -24,29 +24,30 @@
 /// backgroundColor => background-color
 /// h3 => h-3
 
-/// kebabCase($string, $prefix: "", $glue: "-", $suffix: "")
-@function kebabCase($string, $glue: "-") {
+/// Convert a string to kebab-case
+/// @param {string} $string String that you want to convert
+/// @param {string} $glue   String that you want to use as a glue
+/// @return {string}  String in kebab-case
+@function toKebabCase($string, $glue: "-") {
 	$string-length: string.length($string);
 	$result: $string;
 	@for $i from 1 through $string-length {
 		$char: string.slice($string, $i, $i);
 		$uppercase: string.to-upper-case($char);
-		$lowercase: string.to-lower-case($char);
 		@if $char == $uppercase {
-			$result: replace($result, $char, $glue + $lowercase, 0);
+			$result: replace($result, $char, $glue + string.to-lower-case($char), 0);
 		}
 	}
-
 	@return $result;
 }
 
-// str-replace() - Replace in a string
-// from: https://github.com/hail2u/scss-functions/blob/master/string/_str-replace.scss
-// @param {string}  $string    String that you want to replace
-// @param {string}  $substr    String that is to be replaced by `$newsubstr`
-// @param {string}  $newsubstr String that replaces `$substr`
-// @param {number*} $all       Flag for replaceing all (1+) or not (0)
-// @return {string}
+/// Replace in a string
+/// @from https://github.com/hail2u/scss-functions/blob/master/string/_str-replace.scss
+/// @param {string}  $string    String that you want to replace
+/// @param {string}  $substr    String that is to be replaced by `$newsubstr`
+/// @param {string}  $newsubstr String that replaces `$substr`
+/// @param {number*} $all       Flag for replaceing all (1+) or not (0)
+/// @return {string} String with replaced `$substr` by `$newsubstr`
 @function replace($string, $substr, $newsubstr, $all: 0) {
 	$string: string.quote(#{$string});
 	$substr: string.quote(#{$substr});
