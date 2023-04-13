@@ -21,7 +21,7 @@
 		transition: 0.3s ease all;
 		color: props.preset("color", "background");
 		&:hover {
-			color: props.preset("color", "foreground");
+			color: props.preset("color", "background");
 			border: 2px solid props.preset("color", "secondary");
 			background-color: props.preset("color", "secondary");
 		}
