@@ -31,7 +31,6 @@
 	"devDependencies": {
 		"@wordpress/scripts": "^25.3.0",
 		"cli-color": "^2.0.3",
-		"concurrently": "^7.6.0",
 		"fs-extra": "^11.1.0",
 		"glob": "^8.1.0",
 		"jsonc": "^2.0.0",
