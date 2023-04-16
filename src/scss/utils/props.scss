@@ -1,45 +1,84 @@
-/// A handy function to get CSS Custom Properties
-/// generated from the custom section of the theme.json file.
-@function custom($type, $key:null, $default:null) {
-	@if ( $key and $default ) {
-		@return var(--wp--custom--#{$type}--#{$key}, $default);
-	} @else if ( $key and $default == null ) {
-		@return var(--wp--custom--#{$type}--#{$key});
-	} @else if ( $key == null and $default ) {
-		@return var(--wp--custom--#{$type}, $default);
-	} @else {
-		@return var(--wp--custom--#{$type});
-	}
-}
-
-/// A handy function to get CSS Custom Properties
-/// generated from the settings section of the theme.json file.
-/// These are values not set in theme.json settings, excluding the custom section.
-@function preset($type, $key:null, $default:null) {
-	@if ( $key and $default ) {
-		@return var(--wp--preset--#{$type}--#{$key}, $default);
-	} @else if ( $key and $default == null ) {
-		@return var(--wp--preset--#{$type}--#{$key});
-	} @else if ( $key == null and $default ) {
-		@return var(--wp--preset--#{$type}, $default);
-	} @else {
-		@return var(--wp--preset--#{$type});
-	}
-}
+@use "sass:string";
+@use "sass:list";
 
 /// A handy function to get CSS Custom Properties
 /// generated from theme.json file.
-/// This is for a few exceptional CSS Custom Properties that
+/// CSS Custom Properties are prefixed with `preset`, `custom`, or `style`.
+///
+/// The `style` preset is for a few exceptional CSS Custom Properties that
 /// generated from the styles section of the theme.json file.
 /// For example: blockGap, contentSize, and root padding
-@function style($type, $key:null, $default:null) {
-	@if ( $key and $default ) {
-		@return var(--wp--style--#{$type}--#{$key}, $default);
-	} @else if ( $key and $default == null ) {
-		@return var(--wp--style--#{$type}--#{$key});
-	} @else if ( $key == null and $default ) {
-		@return var(--wp--style--#{$type}, $default);
-	} @else {
-		@return var(--wp--style--#{$type});
+///
+@function ref($keys) {
+	$splitKeys: string.split($keys, ".");
+	$combinedKeys: "--wp";
+	@for $i from 1 through length($splitKeys) {
+		$combinedKeys: $combinedKeys + "--" + toKebabCase(nth($splitKeys, $i));
 	}
+	@return var(#{$combinedKeys});
+}
+
+/// Helper functions to convert a string to kebab-case are below
+/// built primarily to convert camelCase to kebab-case
+/// paddingLeft => padding-left
+/// backgroundColor => background-color
+/// h3 => h-3
+
+/// Convert a string to kebab-case
+/// @param {string} $string String that you want to convert
+/// @param {string} $glue   String that you want to use as a glue
+/// @return {string}  String in kebab-case
+@function toKebabCase($string, $glue: "-") {
+	$string-length: string.length($string);
+	$result: $string;
+	@for $i from 1 through $string-length {
+		$char: string.slice($string, $i, $i);
+		$uppercase: string.to-upper-case($char);
+		@if $char == $uppercase {
+			$result: replace($result, $char, $glue + string.to-lower-case($char), 0);
+		}
+	}
+	@return $result;
+}
+
+/// Replace in a string
+/// @from https://github.com/hail2u/scss-functions/blob/master/string/_str-replace.scss
+/// @param {string}  $string    String that you want to replace
+/// @param {string}  $substr    String that is to be replaced by `$newsubstr`
+/// @param {string}  $newsubstr String that replaces `$substr`
+/// @param {number*} $all       Flag for replaceing all (1+) or not (0)
+/// @return {string} String with replaced `$substr` by `$newsubstr`
+@function replace($string, $substr, $newsubstr, $all: 0) {
+	$string: string.quote(#{$string});
+	$substr: string.quote(#{$substr});
+	$newsubstr: string.quote(#{$newsubstr});
+	$position-found: string.index($string, $substr);
+	$processed: ();
+
+	@while ($position-found and $position-found > 0) {
+		$length-substr: string.length($substr);
+		@if (1 != $position-found) {
+			$processed: list.append(
+				$processed,
+				string.slice($string, 0, $position-found - 1)
+			);
+		}
+		$processed: list.append($processed, $newsubstr);
+		$string: string.slice($string, $position-found + $length-substr);
+
+		$position-found: 0;
+
+		@if ($all > 0) {
+			$position-found: string.index($string, $substr);
+		}
+	}
+
+	$processed: list.append($processed, $string);
+	$string: "";
+
+	@each $s in $processed {
+		$string: #{$string}#{$s};
+	}
+
+	@return $string;
 }

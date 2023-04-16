@@ -1,9 +1,10 @@
 @use "../utils";
 
 small {
-	font-size: utils.preset("font-size", "small");
+	font-size: utils.ref(preset.fontSize.small);
 }
 
-ul, ol {
-	padding: 0 0 0 utils.preset("spacing", "md");
+ul,
+ol {
+	padding: 0 0 0 utils.ref(preset.spacing.md);
 }

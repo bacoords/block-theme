@@ -8,20 +8,20 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		gap: utils.style("block-gap");
+		gap: utils.ref("style.blockGap");
 	}
 	.prev,
 	.next {
-		border: 2px solid utils.preset("color", "accent");
-		border-radius: utils.custom('border', 'radius');
+		border: 2px solid utils.ref("preset.color.accent");
+		border-radius: utils.ref("custom.border.radius");
 		padding: 0.2em 1em;
 		text-decoration: none;
-		background-color: utils.preset("color", "accent");
+		background-color: utils.ref("preset.color.accent");
 		transition: 0.3s ease all;
-		color: utils.preset("color", "background");
+		color: utils.ref("preset.color.background");
 		&:hover {
-			border: 2px solid utils.preset("color", "secondary");
-			background-color: utils.preset("color", "secondary");
+			border: 2px solid utils.ref("preset.color.secondary");
+			background-color: utils.ref("preset.color.secondary");
 		}
 	}
 }

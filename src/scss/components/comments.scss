@@ -4,8 +4,8 @@
 
 #comments {
 	@include utils.padding();
-	max-width: utils.custom("content-sizes", "wide");
-	@include utils.margin-x(auto);
+	max-width: utils.ref("custom.contentSizes.wide");
+	@include mixins.margin-x(auto);
 	@extend .flow;
 	.comments-title {
 		text-align: center;
@@ -29,27 +29,26 @@
 		.comment {
 			@extend .flow;
 			// threaded reply form should have the same background as a comment block
-			#respond, .comment-body {
+			#respond,
+			.comment-body {
 				@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
 					// backdrop-filter: brightness(0.95);
 				}
 			}
 			#respond {
 				border-radius: var(--wp--custom--border--radius);
-				border-radius: utils.custom("border", "radius");
-				border-color: utils.custom("border", "color");
-				border-style: utils.custom("border", "style");
-				border-width: utils.custom("border", "width");
-				padding: utils.style("root", "padding-top")
-				utils.style("root", "padding-left") utils.style("root", "padding-bottom")
-				utils.style("root", "padding-right");
+				border-radius: utils.ref("custom.border.radius");
+				border-color: utils.ref("custom.border.color");
+				border-style: utils.ref("custom.border.style");
+				border-width: utils.ref("custom.border.width");
+				@include utils.padding();
 			}
 			.comment-body {
 				border-radius: var(--wp--custom--border--radius);
-				border-radius: utils.custom("border", "radius");
-				border-color: utils.custom("border", "color");
-				border-style: utils.custom("border", "style");
-				border-width: utils.custom("border", "width");
+				border-radius: utils.ref("custom.border.radius");
+				border-color: utils.ref("custom.border.color");
+				border-style: utils.ref("custom.border.style");
+				border-width: utils.ref("custom.border.width");
 				@include utils.padding();
 				.comment-meta {
 					display: flex;
@@ -60,7 +59,7 @@
 					gap: 0.5rem;
 					@include utils.breakpoint(md) {
 						flex-direction: row;
-					 }
+					}
 
 					.comment-author {
 						display: flex;
@@ -71,7 +70,7 @@
 						}
 					}
 					.comment-metadata {
-						font-size: utils.preset("font-size", "small");
+						font-size: utils.ref("preset.fontSize.small");
 					}
 				}
 			}
@@ -82,8 +81,8 @@
 	#respond {
 		.required-field-message {
 			display: block;
-			font-size: utils.preset("font-size", "small");
-			margin-top: utils.preset("spacing", "sm");
+			font-size: utils.ref("preset.fontSize.small");
+			margin-top: utils.ref("preset.spacing.sm");
 		}
 		form {
 			@extend .flow;
@@ -108,12 +107,12 @@
 				}
 				&.logged-in-as {
 					display: block;
-					margin-top: utils.preset("spacing", "sm");
+					margin-top: utils.ref("preset.spacing.sm");
 				}
 			}
 			.comment-notes {
-				font-size: utils.preset("font-size", "small");
-				margin-top: utils.style("block-gap");
+				font-size: utils.ref("preset.fontSize.small");
+				margin-top: utils.ref("style.blockGap");
 			}
 		}
 	}

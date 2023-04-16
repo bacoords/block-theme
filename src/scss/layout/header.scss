@@ -8,8 +8,8 @@
 		flex-wrap: wrap;
 		@include utils.padding;
 
-		.site-title{
-			font-size: utils.preset("font-sizes", "h-3");
+		.site-title {
+			font-size: utils.ref("preset.fontSizes.h3");
 		}
 
 		.custom-logo-link img {

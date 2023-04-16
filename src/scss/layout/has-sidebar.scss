@@ -6,18 +6,23 @@ body.has-sidebar {
 		@extend .container-wide;
 		display: grid;
 		grid-template-areas:
-		"header"
-		"content"
-		"sidebar"
-		"footer";
+			"header"
+			"content"
+			"sidebar"
+			"footer";
 		@include utils.breakpoint(lg) {
 			grid-template-areas:
-			"header header header header"
-			"content content content sidebar"
-			"footer footer footer footer";
-		 }
-		@include utils.padding( 0, utils.style("root", "padding-left"), 0, utils.style("root", "padding-right"));
-		gap: utils.style("block-gap");
+				"header header header header"
+				"content content content sidebar"
+				"footer footer footer footer";
+		}
+		@include mixins.padding(
+			0,
+			utils.ref("style.root.paddingLeft"),
+			0,
+			utils.ref("style.root.paddingRight")
+		);
+		gap: utils.ref("style.blockGap");
 		#masthead {
 			grid-area: header;
 		}
