@@ -1,37 +1,31 @@
-# Using the functions found in the `props.scss` file
-These functions help you generate the correct CSS Custom Properties for design tokens set in `theme.json`.
+# Using the function found in the `props.scss` file
+The `ref` function help you generate the correct CSS Custom Properties for design tokens set in `theme.json`.
 
 ## Usage
-All functions work as follows:
+Here's how you use the `ref` funciton.
 
-You `@use "../abstracts/props.scss";` in the file you want to use these functions.
+You `@use "../utils";` in the file you want to use these function in, or you can pull in the `props.scss` file in specifically with `@use "../utils/props"`, adjusting the relative path as needed.
 
-Both functions take the following arguments:
+The function takes a single argument in dot notation that reflects where that design token is found in `theme.json`.
 
-- `$type`: this is the type of property you want to access, typically the name of the file inside `theme-json` folder.
-- `$key` (optional): this is the name of the property you want to access, typically inside the `.jsonc` file in `theme-json` folder.
-- `$default` (optional): an optional default you can provide if the variable isn't set.
+For example, to reference the design token for the `primary` colour in `theme.json` settings, we know that anything in `settings` (that isn't inside `custom`) is referenced to as a `preset`, and then within the `color` set, we find the `primary` color defined:
+
+```scss
+@use "../utils";
+.my-class {
+	font-size: ref("preset.fontSize.small");
+}
+```
 
 ### Example 1
 
 Let's say you want to access the `wide` property inside the `custom` section under `contentSizes`, you would call it like this:
 
 ```scss
-@use "../abstracts/props.scss";
+@use "../utils";
 
 .my-class {
-    width: props.custom("content-sizes", "wide");
-}
-```
-(All camelCase names are transformed into kebab-case within CSS.)
-
-If you wanted to provide a default in case the variable wasn't defined you would do it like this:
-
-```scss
-@use "../abstracts/props.scss";
-
-.my-class {
-    width: props.custom("content-sizes", "wide", 1200px);
+    width: utils.ref("custom.contentSizes.wide");
 }
 ```
 
@@ -40,42 +34,21 @@ If you wanted to provide a default in case the variable wasn't defined you would
 Let's say you wanted to access the `blockGap` property inside the `custom` section:
 
 ```scss
-@use "../abstracts/props.scss";
+@use "../utils";
 
 .my-class {
-    gap: props.custom("block-gap");
-}
-```
-If you wanted to provide a default in case the variable wasn't defined you would do it like this:
-
-```scss
-@use "../abstracts/props.scss";
-
-.my-class {
-    gap: props.custom("block-gap", null, 1rem);
-}
-```
-
-### Example 3
-
-Let's say you wanted to access the `primary` colour from the palette set in `theme.json`. We know that all colours in `theme.json`'s palette section start with `wp--preset--color--`, so this makes our `$key` be `color`, and any CSS Custom Property set from the `settings` section (other than the `custom` section) is called a `preset`:
-
-```scss
-@use "../abstracts/props.scss";
-
-.my-class {
-    background-color: props.preset("color", "primary");
+    gap: utils.ref("custom.blockGap");
 }
 ```
 
 ### Example 4
 
-Let's say you wanted to access the `root` `padding-right` property from the styles set in `theme.json`. We know that all the root padding settings in in `theme.json`'s `styles` section start with `wp--style--root--`, so this makes our `$key` be `root`, and any CSS Custom Property set from the `styles` section (other than the `custom` section) is called a `style`:
+Let's say you wanted to access the `root` `padding-right` property from the styles set in `theme.json`. We know that all the root padding settings in in `theme.json`'s `styles` section start with `wp--style--root--`, so this makes our first `key` be `style`, the second `key` be `root`, and the last key is `paddingRight`.
 
 ```scss
-@use "../abstracts/props.scss";
+@use "../utils";
 
 .my-class {
-    padding-right: props.style("root", "padding-right");
+    padding-right: utils.ref("style.root.paddingRight");
 }
 ```

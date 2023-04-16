@@ -8,10 +8,10 @@
 
 /// Add left/right padding to an element
 @mixin padding(
-	$top: utils.ref("style.root.paddingTop"),
-	$left: utils.ref("style.root.paddingLeft"),
-	$bottom: utils.ref("style.root.paddingBottom"),
-	$right: utils.ref("style.root.paddingRight")
+	$top: ref("style.root.paddingTop"),
+	$left: ref("style.root.paddingLeft"),
+	$bottom: ref("style.root.paddingBottom"),
+	$right: ref("style.root.paddingRight")
 ) {
 	padding: $top $right $bottom $left;
 }

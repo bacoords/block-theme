@@ -5,7 +5,7 @@
 #comments {
 	@include utils.padding();
 	max-width: utils.ref("custom.contentSizes.wide");
-	@include mixins.margin-x(auto);
+	@include utils.margin-x(auto);
 	@extend .flow;
 	.comments-title {
 		text-align: center;
