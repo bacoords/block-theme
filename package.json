@@ -45,10 +45,9 @@
 		"terminal-overwrite": "^2.0.1"
 	},
 	"scripts": {
-		"themejson": "node ./bin/theme-json.js",
 		"lint:pkg-json": "wp-scripts lint-pkg-json",
-		"build": "npm run themejson && wp-scripts build --config ./bin/webpack.config.js  --webpack-src-dir=src/blocks",
-		"start": "concurrently \"npm-watch themejson\" \"wp-scripts start --config ./bin/webpack.config.js --webpack-src-dir=src/blocks\"",
+		"build": "wp-scripts build --config ./bin/webpack.config.js  --webpack-src-dir=src/blocks",
+		"start": "wp-scripts start --config ./bin/webpack.config.js --webpack-src-dir=src/blocks",
 		"watch": "nodemon --watch ./src --ext js,css,scss,jsonc --exec \"npm run build\""
 	}
 }
