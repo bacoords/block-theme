@@ -79,7 +79,9 @@ var config = {
 			 * After compilation permanently removes
 			 * the extra `.js`, `.php`, and `.js.map` files in the output folders
 			 */
+
 			after: {
+				log: false,
 				test: [
 					{
 						folder: styleOutputFolder,
