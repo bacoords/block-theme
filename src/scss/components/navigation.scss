@@ -1,5 +1,4 @@
-@use "../abstracts/breakpoint-mixin.scss" as *;
-@use "../abstracts/props.scss";
+@use "../utils";
 
 // Offcanvas Navigation
 .offcanvas-navigation {
@@ -11,9 +10,9 @@
 		appearance: none;
 		background-color: transparent;
 		border: none;
-		padding: props.preset("spacing", "sm");
+		padding: utils.preset("spacing", "sm");
 		cursor: pointer;
-		@include breakpoint('md') {
+		@include utils.breakpoint('md') {
 			display: none;
 		}
 	}
@@ -28,13 +27,13 @@
 			text-align: right;
 			a {
 				display: inline-block;
-				padding: props.preset("spacing", "xs");
+				padding: utils.preset("spacing", "xs");
 			}
 		}
-		@include breakpoint('md') {
+		@include utils.breakpoint('md') {
 			flex-direction: row;
 			li {
-				margin-left: props.preset("spacing", "md");
+				margin-left: utils.preset("spacing", "md");
 				text-align: left;
 				a {
 					padding: 0;
@@ -50,14 +49,14 @@
 		position: fixed;
 		right: 0;
 		top: 0;
-		background-color: props.preset("color", "background");
-		padding: props.preset("spacing", "lg") 0;
+		background-color: utils.preset("color", "background");
+		padding: utils.preset("spacing", "lg") 0;
 		&.is-open {
 			display: block;
 			overflow: auto;
 			z-index: 100000;
 		}
-		@include breakpoint('md') {
+		@include utils.breakpoint('md') {
 			display: block;
 			position: relative;
 			background-color: transparent;
@@ -72,7 +71,7 @@
 body.admin-bar {
 	.offcanvas-navigation .menu-modal {
 		top: 46px;
-		@include breakpoint('md') {
+		@include utils.breakpoint('md') {
 			top: 0px;
 		}
 	}
@@ -82,7 +81,7 @@ body.admin-bar {
 // Accessible Submenu for the tangent\navwalker
 .has-accessible-submenu {
 	.menu-item-has-children {
-		@include breakpoint('md') {
+		@include utils.breakpoint('md') {
 			position: relative;
 		}
 		.sub-menu-toggle{
@@ -91,13 +90,13 @@ body.admin-bar {
 			border: none;
 			cursor: pointer;
 			display: none;
-			padding:4px props.preset("spacing", "xs");
+			padding:4px utils.preset("spacing", "xs");
 			svg {
 				width: 1rem;
 				height: 1rem;
-				stroke: props.preset("color", "secondary");
+				stroke: utils.preset("color", "secondary");
 			}
-			@include breakpoint('md') {
+			@include utils.breakpoint('md') {
 				display: inline-block;
 				&[aria-expanded="true"] ~ .sub-menu{
 					display: block;
@@ -106,7 +105,7 @@ body.admin-bar {
 		}
 
 		&:hover {
-			@include breakpoint('md') {
+			@include utils.breakpoint('md') {
 				.sub-menu {
 					display: block;
 				}
@@ -120,14 +119,14 @@ body.admin-bar {
 		flex-direction: column;
 		align-items: flex-end;
 		padding-left: 0;
-		padding-right: props.preset("spacing", "md");
+		padding-right: utils.preset("spacing", "md");
 		li {
 			margin-left: 0;
 			a {
-				padding: props.preset("spacing", "xs");
+				padding: utils.preset("spacing", "xs");
 			}
 		}
-		@include breakpoint('md') {
+		@include utils.breakpoint('md') {
 			display: none;
 			position: absolute;
 			z-index: 2;
@@ -135,12 +134,12 @@ body.admin-bar {
 			right:0;
 			min-width: 200px;
 			padding-left: 0;
-			background-color: props.preset("color", "background");
-			border: 1px solid props.preset("color", "secondary");
-			border-radius: props.custom("border", "radius");
+			background-color: utils.preset("color", "background");
+			border: 1px solid utils.preset("color", "secondary");
+			border-radius: utils.custom("border", "radius");
 			li {
 				a {
-					padding: props.preset("spacing", "xs");
+					padding: utils.preset("spacing", "xs");
 				}
 			}
 		}

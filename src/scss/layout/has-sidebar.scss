@@ -1,7 +1,5 @@
-@use "../abstracts/mixins.scss";
-@use "../abstracts/props.scss";
-@use "../abstracts/breakpoint-mixin.scss" as *;
-@use "../utilities/container.scss" as *;
+@use "../utils";
+@use "../utils/container.scss" as *;
 
 body.has-sidebar {
 	#page {
@@ -12,14 +10,14 @@ body.has-sidebar {
 		"content"
 		"sidebar"
 		"footer";
-		@include breakpoint(lg) {
+		@include utils.breakpoint(lg) {
 			grid-template-areas:
 			"header header header header"
 			"content content content sidebar"
 			"footer footer footer footer";
 		 }
-		@include mixins.padding( 0, props.style("root", "padding-left"), 0, props.style("root", "padding-right"));
-		gap: props.style("block-gap");
+		@include utils.padding( 0, utils.style("root", "padding-left"), 0, utils.style("root", "padding-right"));
+		gap: utils.style("block-gap");
 		#masthead {
 			grid-area: header;
 		}
