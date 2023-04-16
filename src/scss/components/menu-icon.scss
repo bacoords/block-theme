@@ -1,5 +1,4 @@
-@use "../abstracts/breakpoint-mixin" as *;
-@use "../abstracts/props.scss";
+@use "../utils";
 
 // Menu Icon
 .menu-icon {
@@ -7,7 +6,7 @@
 	transition-duration: 0.5s;
 	display: block;
 
-	>span {
+	> span {
 		position: relative;
 		transition-duration: 0.5s;
 		top: 0px;
@@ -18,7 +17,7 @@
 			transition-duration: 0.5s;
 			width: 20px;
 			height: 2px;
-			background-color: props.ref("preset.color.foreground");
+			background-color: utils.ref("preset.color.foreground");
 			content: "";
 			top: 0px;
 			display: block;
@@ -28,7 +27,7 @@
 			transition-duration: 0.5s;
 			width: 20px;
 			height: 2px;
-			background-color: props.ref("preset.color.foreground");
+			background-color: utils.ref("preset.color.foreground");
 			content: "";
 			margin-top: 7px;
 			display: block;
@@ -37,8 +36,8 @@
 }
 
 .menu-close {
-	.menu-icon > span{
-		transition: props.ref("custom.effects.transition");
+	.menu-icon > span {
+		transition: utils.ref("custom.effects.transition");
 
 		&:before {
 			transform: rotateZ(45deg) scaleX(1.25) translate(1px, 5px);

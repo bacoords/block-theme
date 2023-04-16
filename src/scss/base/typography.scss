@@ -1,9 +1,10 @@
-@use "../abstracts/props.scss";
+@use "../utils";
 
 small {
-	font-size: props.ref(preset.fontSize.small);
+	font-size: utils.ref(preset.fontSize.small);
 }
 
-ul, ol {
-	padding: 0 0 0 props.ref(preset.spacing.md);
+ul,
+ol {
+	padding: 0 0 0 utils.ref(preset.spacing.md);
 }

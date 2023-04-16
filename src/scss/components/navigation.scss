@@ -1,9 +1,8 @@
-@use "../abstracts/breakpoint-mixin.scss" as *;
-@use "../abstracts/props.scss";
+@use "../utils";
 
 // Offcanvas Navigation
 .offcanvas-navigation {
-	header{
+	header {
 		text-align: right;
 	}
 	.menu-toggle,
@@ -11,9 +10,9 @@
 		appearance: none;
 		background-color: transparent;
 		border: none;
-		padding: props.ref("preset.spacing.sm");
+		padding: utils.ref("preset.spacing.sm");
 		cursor: pointer;
-		@include breakpoint('md') {
+		@include utils.breakpoint("md") {
 			display: none;
 		}
 	}
@@ -28,13 +27,13 @@
 			text-align: right;
 			a {
 				display: inline-block;
-				padding: props.ref("preset.spacing.xs");
+				padding: utils.ref("preset.spacing.xs");
 			}
 		}
-		@include breakpoint('md') {
+		@include utils.breakpoint("md") {
 			flex-direction: row;
 			li {
-				margin-left: props.ref("preset.spacing.md");
+				margin-left: utils.ref("preset.spacing.md");
 				text-align: left;
 				a {
 					padding: 0;
@@ -50,14 +49,14 @@
 		position: fixed;
 		right: 0;
 		top: 0;
-		background-color: props.ref("preset.color.background");
-		padding: props.ref("preset.spacing.lg") 0;
+		background-color: utils.ref("preset.color.background");
+		padding: utils.ref("preset.spacing.lg") 0;
 		&.is-open {
 			display: block;
 			overflow: auto;
 			z-index: 100000;
 		}
-		@include breakpoint('md') {
+		@include utils.breakpoint("md") {
 			display: block;
 			position: relative;
 			background-color: transparent;
@@ -72,41 +71,40 @@
 body.admin-bar {
 	.offcanvas-navigation .menu-modal {
 		top: 46px;
-		@include breakpoint('md') {
+		@include utils.breakpoint("md") {
 			top: 0px;
 		}
 	}
 }
 
-
 // Accessible Submenu for the tangent\navwalker
 .has-accessible-submenu {
 	.menu-item-has-children {
-		@include breakpoint('md') {
+		@include utils.breakpoint("md") {
 			position: relative;
 		}
-		.sub-menu-toggle{
+		.sub-menu-toggle {
 			appearance: none;
 			background-color: transparent;
 			border: none;
 			cursor: pointer;
 			display: none;
-			padding:4px props.ref("preset.spacing.xs");
+			padding: 4px utils.ref("preset.spacing.xs");
 			svg {
 				width: 1rem;
 				height: 1rem;
-				stroke: props.ref("preset.color.secondary");
+				stroke: utils.ref("preset.color.secondary");
 			}
-			@include breakpoint('md') {
+			@include utils.breakpoint("md") {
 				display: inline-block;
-				&[aria-expanded="true"] ~ .sub-menu{
+				&[aria-expanded="true"] ~ .sub-menu {
 					display: block;
 				}
 			}
 		}
 
 		&:hover {
-			@include breakpoint('md') {
+			@include utils.breakpoint("md") {
 				.sub-menu {
 					display: block;
 				}
@@ -116,31 +114,31 @@ body.admin-bar {
 
 	.sub-menu {
 		list-style-type: none;
-		display:flex;
+		display: flex;
 		flex-direction: column;
 		align-items: flex-end;
 		padding-left: 0;
-		padding-right: props.ref("preset.spacing.md");
+		padding-right: utils.ref("preset.spacing.md");
 		li {
 			margin-left: 0;
 			a {
-				padding: props.ref("preset.spacing.xs");
+				padding: utils.ref("preset.spacing.xs");
 			}
 		}
-		@include breakpoint('md') {
+		@include utils.breakpoint("md") {
 			display: none;
 			position: absolute;
 			z-index: 2;
-			top:100%;
-			right:0;
+			top: 100%;
+			right: 0;
 			min-width: 200px;
 			padding-left: 0;
-			background-color: props.ref("preset.color.background");
-			border: 1px solid props.ref("preset.color.secondary");
-			border-radius: props.ref("custom.border.radius");
+			background-color: utils.ref("preset.color.background");
+			border: 1px solid utils.ref("preset.color.secondary");
+			border-radius: utils.ref("custom.border.radius");
 			li {
 				a {
-					padding: props.ref("preset.spacing.xs");
+					padding: utils.ref("preset.spacing.xs");
 				}
 			}
 		}

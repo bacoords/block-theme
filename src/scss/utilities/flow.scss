@@ -1,6 +1,0 @@
-@use "../abstracts/props.scss";
-.flow {
-	& > * + * {
-		margin-top: props.ref("style.blockGap");
-	}
-}
