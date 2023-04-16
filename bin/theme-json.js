@@ -1,14 +1,9 @@
 const fs = require("fs-extra");
 const jsonc = require("jsonc");
-const { readFile } = require("fs");
+const { readFileSync } = require("fs");
 const { join, parse, sep } = require("path");
-const { promisify } = require("util");
 const glob = require("glob");
 const set = require("lodash.set");
-const asyncReadFile = promisify(readFile);
-const asyncGlob = promisify(glob);
-const asyncMap = (arr, callback) =>
-	Promise.all(arr.map((...args) => callback(...args)));
 
 /**
  * Parses the file with the given parser if provided or jsonc.parse() by default.
@@ -16,8 +11,8 @@ const asyncMap = (arr, callback) =>
  * @param {function} parser
  * @returns parsed file
  */
-async function parseFile(filePath, parser = jsonc.parse) {
-	const buff = await asyncReadFile(filePath);
+function parseFile(filePath, parser = jsonc.parse) {
+	const buff = readFileSync(filePath);
 	const text = buff.toString();
 	try {
 		return parser(text);
@@ -48,9 +43,10 @@ function getKey(path) {
  * @param {function} parser
  * @returns {object} result
  */
-async function processMatch(result, root, filePath, parser) {
+function processMatch(result, root, filePath, parser) {
 	const fullPath = join(root, filePath);
-	const what = await parseFile(fullPath, parser);
+
+	const what = parseFile(fullPath, parser);
 	const where = getKey(filePath);
 	// if we are in the blocks directory, we need to combine the block namespace and name into one key
 	const inBlocksObject = where[1] === "blocks";
@@ -83,12 +79,12 @@ async function processMatch(result, root, filePath, parser) {
  * @throws An error if it can't access or parse a file or directory.
  * @returns {object} A JavaScript object (or an array if that's what the data represents).
  */
-async function combineJSONC(root, options = {}) {
+function combineJSONC(root, options = {}) {
 	// get the options, set defaults
-	const { parser, include = "*.jsonc", exclude } = options;
+	const { parser = jsonc.parse, include = "*.jsonc", exclude } = options;
 
 	// get the files
-	const matches = await asyncGlob(include, {
+	const matches = glob.sync(include, {
 		// glob options: https://www.npmjs.com/package/glob#options
 		ignore: exclude,
 		cwd: root,
@@ -100,9 +96,10 @@ async function combineJSONC(root, options = {}) {
 
 	// process the files
 	const result = {};
-	await asyncMap(matches, (filePath) =>
-		processMatch(result, root, filePath, parser),
-	);
+	matches.map((filePath) => processMatch(result, root, filePath, parser));
+	// await asyncMap(matches, (filePath) =>
+	// 	processMatch(result, root, filePath, parser),
+	// );
 
 	return result;
 }
@@ -111,9 +108,9 @@ async function combineJSONC(root, options = {}) {
  * Creates a theme.json file from the provided directory (defaults to src/theme-json directory) in the root of the project.
  * @returns void
  */
-async function createThemeJson(path = "src/theme-json") {
+function createThemeJson(path = "src/theme-json") {
 	// Combine the JSONC files in the themejson directory into a JSON object
-	const themeJson = await combineJSONC(path);
+	const themeJson = combineJSONC(path);
 
 	// Write the theme.json file
 	let themeJsonObject = JSON.stringify(themeJson, null, 2);
