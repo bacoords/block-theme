@@ -1,29 +1,27 @@
-@use "../abstracts/props.scss";
-@use "../utilities/container.scss" as *;
-@use "../abstracts/mixins.scss";
+@use "../utils";
+@use "../utils/container.scss" as *;
 
 .navigation.pagination {
 	@extend .container-wide;
-	@include mixins.padding;
+	@include utils.padding;
 	.nav-links {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		gap: props.style("block-gap");
+		gap: utils.ref("style.blockGap");
 	}
 	.prev,
 	.next {
-		border: 2px solid props.preset("color", "primary");
-		border-radius: props.custom('border', 'radius');
+		border: 2px solid utils.ref("preset.color.accent");
+		border-radius: utils.ref("custom.border.radius");
 		padding: 0.2em 1em;
 		text-decoration: none;
-		background-color: props.preset("color", "primary");
+		background-color: utils.ref("preset.color.accent");
 		transition: 0.3s ease all;
-		color: props.preset("color", "background");
+		color: utils.ref("preset.color.background");
 		&:hover {
-			color: props.preset("color", "background");
-			border: 2px solid props.preset("color", "secondary");
-			background-color: props.preset("color", "secondary");
+			border: 2px solid utils.ref("preset.color.secondary");
+			background-color: utils.ref("preset.color.secondary");
 		}
 	}
 }

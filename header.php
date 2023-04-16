@@ -9,8 +9,7 @@
  * @package Tangent
  */
 
- $active_sidebars = is_dynamic_sidebar() ? 'has-sidebar' : '';
-
+$active_sidebars = is_dynamic_sidebar() ? 'has-sidebar' : '';
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -49,8 +48,8 @@
 				<?php else : ?>
 					<?php block_template_part( 'site-logo' ); ?>
 				<?php endif; ?>
-			</div><!-- .site-branding -->
+			</div>
 
 			<?php get_template_part( 'template-parts/navigation', 'offcanvas' ); ?>
 		</div>
-	</header><!-- #masthead -->
+	</header>

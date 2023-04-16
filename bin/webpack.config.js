@@ -27,7 +27,7 @@ var config = {
 			outputFolder: styleOutputFolder,
 			blockDir: true,
 		}),
-		"../src/scss/abstracts/breakpoints": path.resolve(
+		"../src/scss/utils/breakpoints": path.resolve(
 			process.cwd(),
 			"src/theme-json/settings/custom",
 			"breakpoints.jsonc",
@@ -56,7 +56,7 @@ var config = {
 		...defaultConfig.output,
 		// change the output path for blocks to the blocks/ folder
 		path: path.resolve(process.cwd(), "blocks"),
-		assetModuleFilename: "../src/scss/abstracts/[name].scss",
+		assetModuleFilename: "../src/scss/utils/[name].scss",
 	},
 	plugins: [
 		new RemovePlugin({
@@ -79,13 +79,13 @@ var config = {
 						},
 					},
 					{
-						folder: "./src/scss/abstracts",
+						folder: "./src/scss/utils",
 						method: (absoluteItemPath) => {
 							return new RegExp(/\.php$/, "m").test(absoluteItemPath);
 						},
 					},
 					{
-						folder: "./src/scss/abstracts",
+						folder: "./src/scss/utils",
 						method: (absoluteItemPath) => {
 							return new RegExp(/(\.js)(\.map)*$/, "m").test(absoluteItemPath);
 						},

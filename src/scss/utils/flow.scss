@@ -1,0 +1,6 @@
+@use "props" as *;
+.flow {
+	& > * + * {
+		margin-top: style("block-gap", null, 1rem);
+	}
+}

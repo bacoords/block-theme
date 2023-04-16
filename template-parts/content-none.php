@@ -12,7 +12,7 @@
 <section class="no-results not-found">
 	<header class="entry-header">
 		<h1 class="entry-title"><?php esc_html_e( 'Nothing Found', 'tangent' ); ?></h1>
-	</header><!-- .entry-header -->
+	</header>
 
 	<div class="entry-content">
 		<?php
@@ -47,5 +47,5 @@
 
 		endif;
 		?>
-	</div><!-- .entry-content -->
-</section><!-- .no-results -->
+	</div>
+</section>
