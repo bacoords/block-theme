@@ -5,6 +5,8 @@ const { join, parse, sep } = require("path");
 const glob = require("glob");
 const set = require("lodash.set");
 const path = require("path");
+const terminal = require("terminal-overwrite");
+const clc = require("cli-color");
 
 module.exports = function (content) {
 	// get the directory of the file being loaded
@@ -109,28 +111,13 @@ module.exports = function (content) {
 		// process the files
 		const result = {};
 		matches.map((filePath) => processMatch(result, root, filePath, parser));
-		// await asyncMap(matches, (filePath) =>
-		// 	processMatch(result, root, filePath, parser),
-		// );
 
 		return result;
 	}
 
+	if (themeJsonObject) {
+		terminal(`\n${clc.green.bold("Generating theme.json file.")}.\n`);
+	}
+
 	return themeJsonObject;
 };
-
-// /**
-//  * Creates a theme.json file from the provided directory (defaults to src/theme-json directory) in the root of the project.
-//  * @returns void
-//  */
-// function createThemeJson(path = "src/theme-json") {
-// 	// Combine the JSONC files in the themejson directory into a JSON object
-// 	const themeJson = combineJSONC(path);
-
-// 	// Write the theme.json file
-// 	let themeJsonObject = JSON.stringify(themeJson, null, 2);
-// 	fs.writeFileSync("theme.json", themeJsonObject);
-// }
-
-// // run themeJson creator
-// createThemeJson();
