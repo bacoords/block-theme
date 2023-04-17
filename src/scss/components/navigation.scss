@@ -93,7 +93,13 @@ body.admin-bar {
 			svg {
 				width: 1rem;
 				height: 1rem;
-				stroke: utils.ref("preset.color.secondary");
+				stroke: utils.ref("preset.color.primary");
+			}
+			&:hover,
+			&:focus {
+				svg {
+					stroke: currentColor;
+				}
 			}
 			@include utils.breakpoint("md") {
 				display: inline-block;

@@ -1,10 +1,10 @@
 {
 	":hover": {
 		"color": {
-			"text": "var(--wp--preset--color--accent)"
+			"text": "var(--wp--preset--color--foreground)"
 		},
 		"typography": {
-			"textDecoration": "underline var(--wp--preset--color--accent)"
+			"textDecoration": "underline var(--wp--preset--color--foreground)"
 		}
 	},
 	":focus": {
@@ -14,16 +14,16 @@
 	},
 	":active": {
 		"color": {
-			"text": "var(--wp--preset--color--primary)"
+			"text": "var(--wp--preset--color--foreground)"
 		},
 		"typography": {
 			"textDecoration": "none"
 		}
 	},
 	"color": {
-		"text": "var(--wp--preset--color--secondary)"
+		"text": "var(--wp--preset--color--primary)"
 	},
 	"typography": {
-		"textDecoration": "underline var(--wp--preset--color--secondary)"
+		"textDecoration": "underline var(--wp--preset--color--primary)"
 	}
 }

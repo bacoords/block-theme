@@ -13,19 +13,19 @@
 		}
 	},
 	"color": {
-		"background": "var(--wp--preset--color--accent)",
+		"background": "var(--wp--preset--color--primary)",
 		"text": "var(--wp--preset--color--background)"
 	},
 	"hover": {
 		"color": {
-			"background": "var(--wp--preset--color--secondary)",
+			"background": "var(--wp--preset--color--primary)",
 			"text": "var(--wp--preset--color--background)"
 		}
 	},
 	"focus": {
 		"color": {
-			"background": "var(--wp--preset--color--background)",
-			"text": "var(--wp--preset--color--secondary)"
+			"background": "var(--wp--preset--color--foreground)",
+			"text": "var(--wp--preset--color--background)"
 		},
 		"border": {
 			"color": "var(--wp--custom--border--color)"
@@ -34,7 +34,7 @@
 	"active": {
 		"color": {
 			"background": "var(--wp--preset--color--secondary)",
-			"text": "var(--wp--preset--color--background)"
+			"text": "var(--wp--preset--color--foreground)"
 		}
 	},
 	"visited": {
