@@ -48,7 +48,7 @@
 		"themejson": "node ./bin/theme-json.js",
 		"lint:pkg-json": "wp-scripts lint-pkg-json",
 		"build": "npm run themejson && wp-scripts build --config ./bin/webpack.config.js  --webpack-src-dir=src/blocks",
-		"dev:compile": "concurrently \"npm-watch themejson\" \"wp-scripts start --config ./bin/webpack.config.js --webpack-src-dir=src/blocks --no-watch\"",
+		"dev:compile": "concurrently \"npm run themejson\" \"wp-scripts start --config ./bin/webpack.config.js --webpack-src-dir=src/blocks --no-watch\"",
 		"start": "nodemon --watch ./src --ext js,css,scss,jsonc,php,json --exec \"npm run dev:compile\""
 	}
 }
