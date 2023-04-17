@@ -12,16 +12,17 @@
 	}
 	.prev,
 	.next {
-		border: 2px solid utils.ref("preset.color.accent");
+		border: 2px solid utils.ref("preset.color.primary");
 		border-radius: utils.ref("custom.border.radius");
 		padding: 0.2em 1em;
 		text-decoration: none;
-		background-color: utils.ref("preset.color.accent");
+		background-color: utils.ref("preset.color.primary");
 		transition: 0.3s ease all;
 		color: utils.ref("preset.color.background");
 		&:hover {
 			border: 2px solid utils.ref("preset.color.secondary");
 			background-color: utils.ref("preset.color.secondary");
+			color: utils.ref("preset.color.foreground");
 		}
 	}
 }
