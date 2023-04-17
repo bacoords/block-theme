@@ -38,7 +38,6 @@
 		"lodash.set": "^4.3.2",
 		"micromodal": "^0.4.10",
 		"nodemon": "^2.0.20",
-		"npm-watch": "^0.11.0",
 		"remove-files-webpack-plugin": "^1.5.0",
 		"sass": "^1.58.0",
 		"sass-loader": "^13.2.0",
