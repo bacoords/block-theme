@@ -1,5 +1,6 @@
 # Npm
 node_modules
+package-lock.json
 
 # Code editor files
 .vscode
