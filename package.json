@@ -38,7 +38,6 @@
 		"lodash.set": "^4.3.2",
 		"micromodal": "^0.4.10",
 		"nodemon": "^2.0.20",
-		"npm-watch": "^0.11.0",
 		"remove-files-webpack-plugin": "^1.5.0",
 		"sass": "^1.58.0",
 		"sass-loader": "^13.2.0",
@@ -48,7 +47,7 @@
 		"themejson": "node ./bin/theme-json.js",
 		"lint:pkg-json": "wp-scripts lint-pkg-json",
 		"build": "npm run themejson && wp-scripts build --config ./bin/webpack.config.js  --webpack-src-dir=src/blocks",
-		"start": "concurrently \"npm-watch themejson\" \"wp-scripts start --config ./bin/webpack.config.js --webpack-src-dir=src/blocks\"",
-		"watch": "nodemon --watch ./src --ext js,css,scss,jsonc --exec \"npm run build\""
+		"dev:compile": "concurrently \"npm run themejson\" \"wp-scripts start --config ./bin/webpack.config.js --webpack-src-dir=src/blocks --no-watch\"",
+		"start": "nodemon --watch ./src --ext js,css,scss,jsonc,php,json --exec \"npm run dev:compile\""
 	}
 }
