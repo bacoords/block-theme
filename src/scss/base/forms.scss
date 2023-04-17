@@ -172,7 +172,7 @@ input[type="radio"] {
 input[type="submit"],
 input[type="reset"],
 input[type="button"],
-button:not(.components-button):not(.link-button) {
+button:not(.components-button):not(.link-button):not[id="^mceu"] {
 	background-color: utils.ref("custom.button.color.background");
 	border-radius: utils.ref("custom.button.border.radius");
 	border-color: utils.ref("custom.button.border.color");
