@@ -18,9 +18,9 @@ body.has-sidebar {
 		}
 		@include mixins.padding(
 			0,
-			utils.ref("style.root.paddingLeft"),
+			utils.ref("style.root.paddingRight"),
 			0,
-			utils.ref("style.root.paddingRight")
+			utils.ref("style.root.paddingLeft")
 		);
 		gap: utils.ref("style.blockGap");
 		#masthead {
