@@ -16,7 +16,7 @@ body.has-sidebar {
 				"content content content sidebar"
 				"footer footer footer footer";
 		}
-		@include mixins.padding(
+		@include utils.padding(
 			0,
 			utils.ref("style.root.paddingRight"),
 			0,
