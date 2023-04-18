@@ -189,3 +189,33 @@ function register_blocks() {
 }
 
 add_action( 'init', 'Tangent\Enqueue\register_blocks' );
+
+/**
+ * Enqueue assets for blocks when specifically requested.
+ *
+ * Heavily inspired by the Core function wp_enqueue_registered_block_scripts_and_styles()
+ * See: https://developer.wordpress.org/reference/functions/wp_enqueue_registered_block_scripts_and_styles/
+ *
+ * @param array $blocks An array of namespaced block names. (e.g. core/group)
+ *
+ * @return void
+ */
+function selectively_enqueue_block_assets( $blocks ) {
+	$block_registry = \WP_Block_Type_Registry::get_instance();
+	foreach ( $blocks as $block ) {
+		$block_type = $block_registry->get_registered( $block );
+		if ( ! $block_type ) {
+			continue;
+		}
+
+		// Front-end and editor styles.
+		foreach ( $block_type->style_handles as $style_handle ) {
+			wp_enqueue_style( $style_handle );
+		}
+
+		// Front-end and editor scripts.
+		foreach ( $block_type->script_handles as $script_handle ) {
+			wp_enqueue_script( $script_handle );
+		}
+	}
+}
