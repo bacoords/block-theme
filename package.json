@@ -31,7 +31,6 @@
 	"devDependencies": {
 		"@wordpress/scripts": "^25.3.0",
 		"cli-color": "^2.0.3",
-		"concurrently": "^7.6.0",
 		"fs-extra": "^11.1.0",
 		"glob": "^8.1.0",
 		"jsonc": "^2.0.0",
@@ -44,10 +43,9 @@
 		"terminal-overwrite": "^2.0.1"
 	},
 	"scripts": {
-		"themejson": "node ./bin/theme-json.js",
 		"lint:pkg-json": "wp-scripts lint-pkg-json",
 		"build": "npm run themejson && wp-scripts build --config ./bin/webpack.config.js  --webpack-src-dir=src/blocks",
-		"dev:compile": "concurrently \"npm run themejson\" \"wp-scripts start --config ./bin/webpack.config.js --webpack-src-dir=src/blocks --no-watch\"",
+		"dev:compile": "wp-scripts start --config ./bin/webpack.config.js --webpack-src-dir=src/blocks --no-watch",
 		"start": "nodemon --watch ./src --ext js,css,scss,jsonc,php,json --exec \"npm run dev:compile\""
 	}
 }

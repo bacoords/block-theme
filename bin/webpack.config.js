@@ -32,6 +32,11 @@ var config = {
 			"src/theme-json/settings/custom",
 			"breakpoints.jsonc",
 		),
+		"../theme.json": path.resolve(
+			process.cwd(),
+			"src/theme-json",
+			"index.jsonc",
+		),
 	},
 	module: {
 		...defaultConfig.module,
@@ -39,17 +44,27 @@ var config = {
 			...defaultConfig.module.rules,
 			{
 				test: /\.jsonc$/,
+				exclude: /theme-json\/index\.jsonc$/,
 				type: "asset/resource",
 				generator: {
-					filename: "../src/scss/abstracts/[name].scss",
+					filename: "../src/scss/utils/[name].scss",
 				},
 				use: "jsonc-scss-loader",
+			},
+			{
+				test: /theme-json\/index\.jsonc$/,
+				type: "asset/resource",
+				generator: {
+					filename: "../theme.json",
+				},
+				use: "theme-json-loader",
 			},
 		],
 	},
 	resolveLoader: {
 		alias: {
 			"jsonc-scss-loader": path.resolve(process.cwd(), "bin/jsonc-to-scss.js"),
+			"theme-json-loader": path.resolve(process.cwd(), "bin/theme-json.js"),
 		},
 	},
 	output: {
@@ -64,7 +79,9 @@ var config = {
 			 * After compilation permanently removes
 			 * the extra `.js`, `.php`, and `.js.map` files in the output folders
 			 */
+
 			after: {
+				log: false,
 				test: [
 					{
 						folder: styleOutputFolder,
@@ -88,6 +105,22 @@ var config = {
 						folder: "./src/scss/utils",
 						method: (absoluteItemPath) => {
 							return new RegExp(/(\.js)(\.map)*$/, "m").test(absoluteItemPath);
+						},
+					},
+					{
+						folder: ".",
+						method: (absoluteItemPath) => {
+							return new RegExp(/(json\.js)(\.map)*$/, "m").test(
+								absoluteItemPath,
+							);
+						},
+					},
+					{
+						folder: ".",
+						method: (absoluteItemPath) => {
+							return new RegExp(/theme\.json\.asset\.php$/, "m").test(
+								absoluteItemPath,
+							);
 						},
 					},
 				],
