@@ -27,7 +27,9 @@ const unregisterBlocks = [
  * @type {Array} Add the names of panels to remove here
  * @see https://developer.wordpress.org/block-editor/reference-guides/data/data-core-edit-post/#removeeditorpanel
  */
-const removeEditorPanels = ["discussion-panel"];
+const removeEditorPanels = [
+	//"discussion-panel"
+];
 
 /**
  * Remove block styles
