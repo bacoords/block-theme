@@ -128,6 +128,7 @@ var config = {
 		}),
 		...defaultConfig.plugins,
 	],
+	cache: false,
 };
 
 // Return Configuration

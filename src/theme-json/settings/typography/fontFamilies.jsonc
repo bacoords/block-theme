@@ -38,5 +38,49 @@
 		"fontFamily": "\"Lato\", sans-serif",
 		"name": "Lato",
 		"slug": "lato"
+	},
+	{
+		"fontFace": [
+			{
+				"fontFamily": "Manrope",
+				"fontStyle": "normal",
+				"fontWeight": "400",
+				"src": ["file:./fonts/Manrope-Regular.woff2"]
+			},
+			{
+				"fontFamily": "Manrope",
+				"fontStyle": "normal",
+				"fontWeight": "700",
+				"src": ["file:./fonts/Manrope-Bold.woff2"]
+			}
+		],
+		"fontFamily": "\"Manrope\", sans-serif",
+		"name": "Manrope",
+		"slug": "manrope"
+	},
+	{
+		"fontFace": [
+			{
+				"fontFamily": "DM Serif Display",
+				"fontStyle": "normal",
+				"fontWeight": "400",
+				"src": [
+					"file:./fonts/dmserifdisplay-regular-webfont.woff2",
+					"file:./fonts/dmserifdisplay-regular-webfont.woff"
+				]
+			},
+			{
+				"fontFamily": "Manrope",
+				"fontStyle": "italic",
+				"fontWeight": "400",
+				"src": [
+					"file:./fonts/dmserifdisplay-italic-webfont.woff2",
+					"file:./fonts/dmserifdisplay-italic-webfont.woff"
+				]
+			}
+		],
+		"fontFamily": "\"DM Serif Display\", serif",
+		"name": "DM Serif Display",
+		"slug": "dm-serif-display"
 	}
 ]

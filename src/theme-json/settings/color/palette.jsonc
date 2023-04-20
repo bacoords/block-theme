@@ -1,28 +1,23 @@
 /* This is the custom palette for the theme. */
 [
 	{
-		"name": "Primary",
-		"slug": "primary",
-		"color": "#4B7F00"
-	},
-	{
-		"name": "Secondary",
-		"slug": "secondary",
-		"color": "#AD5D00"
+		"name": "Background",
+		"slug": "background",
+		"color": "#FEFEFE"
 	},
 	{
 		"name": "Foreground",
 		"slug": "foreground",
-		"color": "#0d171c"
+		"color": "#181A1F"
 	},
 	{
-		"name": "Background",
-		"slug": "background",
-		"color": "#fff6ed"
+		"name": "Primary",
+		"slug": "primary",
+		"color": "#506930"
 	},
 	{
-		"name": "Accent",
-		"slug": "accent",
-		"color": "#ac3c68"
+		"name": "Secondary",
+		"slug": "secondary",
+		"color": "#ADC178"
 	}
 ]
