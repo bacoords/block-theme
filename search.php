@@ -21,9 +21,11 @@ get_header();
 					printf( esc_html__( 'Search Results for: %s', 'tangent' ), '<span>' . get_search_query() . '</span>' );
 					?>
 				</h1>
+				<div class="container">
 				<?php
 				get_search_form();
 				?>
+				</div>
 			</header>
 
 			<?php
