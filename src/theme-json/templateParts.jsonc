@@ -9,5 +9,10 @@
 		"name": "site-logo",
 		"title": "Site Logo",
 		"area": "header"
+	},
+	{
+		"name": "search-form",
+		"title": "Search Form",
+		"area": "uncategorized"
 	}
 ]
