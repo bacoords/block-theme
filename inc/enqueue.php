@@ -196,12 +196,19 @@ add_action( 'init', 'Tangent\Enqueue\register_blocks' );
  * Heavily inspired by the Core function wp_enqueue_registered_block_scripts_and_styles()
  * See: https://developer.wordpress.org/reference/functions/wp_enqueue_registered_block_scripts_and_styles/
  *
- * @param array $blocks An array of namespaced block names. (e.g. core/group)
+ * @param string|array $blocks The block name(s) to enqueue assets for, e.g. 'core/group'. Accepts a single block name or an array of block names.
  *
  * @return void
  */
 function selectively_enqueue_block_assets( $blocks ) {
 	$block_registry = \WP_Block_Type_Registry::get_instance();
+
+	// If passed a single block name, convert it to an array.
+	if ( ! is_array( $blocks ) ) {
+		$blocks = array( $blocks );
+	}
+
+	// Enqueue assets for each block.
 	foreach ( $blocks as $block ) {
 		$block_type = $block_registry->get_registered( $block );
 		if ( ! $block_type ) {
