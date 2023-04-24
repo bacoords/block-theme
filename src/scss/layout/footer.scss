@@ -1,9 +1,7 @@
-@use "../utils/container.scss" as *;
+@use "../utils/flow.scss" as *;
+// @use "../utils/container.scss" as *;
 @use "../utils";
 
-#colophon {
-	display: flex;
-	justify-content: space-between;
-	@extend .container-wide;
-	@include utils.padding;
+#colophon .site-info {
+	@extend .blocks-alignment;
 }
