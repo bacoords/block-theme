@@ -15,9 +15,15 @@ namespace Tangent;
 require_once get_template_directory() . '/inc/setup.php';
 
 /**
- * Enqueue scripts and styles.
+ * Enqueue general scripts and styles.
+
  */
 require_once get_template_directory() . '/inc/enqueue.php';
+
+/**
+ * Enqueue blocks related scripts, styles, and functionality.
+ */
+require_once get_template_directory() . '/inc/enqueue-blocks.php';
 
 /**
  * Load navwalker class.
