@@ -1,7 +1,6 @@
 @use "../utils/flow.scss" as *;
-// @use "../utils/container.scss" as *;
 @use "../utils";
 
-#colophon .site-info {
+#colophon {
 	@extend .blocks-alignment;
 }

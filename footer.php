@@ -12,10 +12,7 @@
 ?>
 
 	<footer id="colophon" class="site-footer">
-
-		<div class="site-info">
-			<?php block_template_part( 'footer-credit' ); ?>
-		</div>
+		<?php block_template_part( 'footer-credit' ); ?>
 	</footer>
 </div>
 
