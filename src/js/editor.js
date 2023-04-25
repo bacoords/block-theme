@@ -10,9 +10,6 @@ import {
 } from "@wordpress/blocks";
 import { dispatch } from "@wordpress/data";
 import domReady from "@wordpress/dom-ready";
-if (null !== dispatch("core/edit-post")) {
-	const { removeEditorPanel } = dispatch("core/edit-post");
-}
 
 /**
  * Unregister blocks
@@ -31,7 +28,7 @@ const unregisterBlocks = [
  * @see https://developer.wordpress.org/block-editor/reference-guides/data/data-core-edit-post/#removeeditorpanel
  */
 const removeEditorPanels = [
-	// "discussion-panel"
+	//"discussion-panel"
 ];
 
 /**
@@ -98,8 +95,10 @@ domReady(function () {
 	unregisterBlocks.forEach((block) => {
 		unregisterBlockType(block);
 	});
+
 	// Only run if we are in the post editor
 	if (null !== dispatch("core/edit-post")) {
+		const { removeEditorPanel } = dispatch("core/edit-post");
 		removeEditorPanels.forEach((panel) => {
 			removeEditorPanel(panel);
 		});

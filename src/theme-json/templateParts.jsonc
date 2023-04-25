@@ -1,4 +1,4 @@
-// You can add your own template parts here, the available "areas" are: header, footer, uncategerized (shows up as "General" in the editor)
+// You can add your own template parts here, the available "areas" are: header, footer, uncategorized (shows up as "General" in the editor)
 [
 	{
 		"name": "footer-credit",
@@ -13,6 +13,11 @@
 	{
 		"name": "search-form",
 		"title": "Search Form",
+		"area": "uncategorized"
+	},
+	{
+		"name": "404-page",
+		"title": "404 Page",
 		"area": "uncategorized"
 	}
 ]
