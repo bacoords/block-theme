@@ -11,6 +11,11 @@
 		"area": "header"
 	},
 	{
+		"name": "search-form",
+		"title": "Search Form",
+		"area": "uncategorized"
+	},
+	{
 		"name": "404-page",
 		"title": "404 Page",
 		"area": "uncategorized"
