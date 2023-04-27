@@ -17,7 +17,7 @@ namespace Tangent\Helpers;
  */
 function get_svg( $filename, $attributes = array(), $directory = 'imgs' ) {
 	// Get the SVG file.
-	$svg = file_get_contents( get_template_directory() . '/' . $directory . '/' . $filename . '.svg' );
+	$svg = file_get_contents( get_stylesheet_directory() . '/' . $directory . '/' . $filename . '.svg' );
 
 	$errors = new \WP_Error();
 
