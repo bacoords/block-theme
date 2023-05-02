@@ -1,6 +1,6 @@
 @use "../utils";
 @use "../utils/visually-hidden.scss" as *;
-input,
+input:not[id="^acf-"],
 textarea {
 	transition: utils.ref("custom.effects.transition");
 	border-radius: utils.ref("custom.border.radius");
@@ -20,13 +20,13 @@ textarea {
 	}
 }
 
-input[type="checkbox"],
-input[type="radio"] {
+input[type="checkbox"]:not[id="^acf-"],
+input[type="radio"]:not[id="^acf-"] {
 	accent-color: utils.ref("preset.color.foreground");
 }
 
 /// Accessible pseudo checkboxes with a focus state
-input[type="checkbox"] {
+input[type="checkbox"]:not[id="^acf-"] {
 	position: absolute;
 	margin: 0 !important;
 	padding: 0 !important;
@@ -98,7 +98,7 @@ input[type="checkbox"] {
 }
 
 /// Accessible pseudo radio buttons with a focus state
-input[type="radio"] {
+input[type="radio"]:not[id="^acf-"] {
 	position: absolute;
 	margin: 0 !important;
 	padding: 0 !important;
