@@ -101,26 +101,25 @@ function theme_setup() {
 		remove_action( 'in_admin_header', 'wp_global_styles_render_svg_filters' );
 	}
 
-
-
 	/**
 	 * Uncomment the following block of code to register a sidebar.
 	 * You can also uncomment out the sidebar layout styling in
 	 * src/scss/layout/index.scss
 	 *
 	 * @link https://developer.wordpress.org/themes/functionality/sidebars/
+	 *
+	 * register_sidebar(
+	 *   array(
+	 *     'name'          => esc_html__( 'Sidebar', 'tangent' ),
+	 *     'id'            => 'sidebar-1',
+	 *     'description'   => esc_html__( 'Add widgets here.', 'tangent' ),
+	 *     'before_widget' => '<section id="%1$s" class="widget %2$s">',
+	 *     'after_widget'  => '</section>',
+	 *     'before_title'  => '<h2 class="widget-title">',
+	 *     'after_title'   => '</h2>',
+	 *   )
+	 * );
 	 */
-	// register_sidebar(
-	// 	array(
-	// 		'name'          => esc_html__( 'Sidebar', 'tangent' ),
-	// 		'id'            => 'sidebar-1',
-	// 		'description'   => esc_html__( 'Add widgets here.', 'tangent' ),
-	// 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-	// 		'after_widget'  => '</section>',
-	// 		'before_title'  => '<h2 class="widget-title">',
-	// 		'after_title'   => '</h2>',
-	// 	)
-	// );
 }
 add_action( 'after_setup_theme', 'Tangent\Setup\theme_setup' );
 
