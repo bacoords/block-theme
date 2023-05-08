@@ -1,7 +1,7 @@
 @use "../utils";
 @use "../utils/visually-hidden.scss" as *;
-input,
-textarea {
+input:not([id^="acf-"]),
+textarea:not([id^="acf-"]) {
 	transition: utils.ref("custom.effects.transition");
 	border-radius: utils.ref("custom.border.radius");
 	border-color: utils.ref("custom.border.color");
@@ -20,13 +20,13 @@ textarea {
 	}
 }
 
-input[type="checkbox"],
-input[type="radio"] {
+input[type="checkbox"]:not([id^="acf-"]),
+input[type="radio"]:not([id^="acf-"]) {
 	accent-color: utils.ref("preset.color.foreground");
 }
 
 /// Accessible pseudo checkboxes with a focus state
-input[type="checkbox"] {
+input[type="checkbox"]:not([id^="acf-"]) {
 	position: absolute;
 	margin: 0 !important;
 	padding: 0 !important;
@@ -98,7 +98,7 @@ input[type="checkbox"] {
 }
 
 /// Accessible pseudo radio buttons with a focus state
-input[type="radio"] {
+input[type="radio"]:not([id^="acf-"]) {
 	position: absolute;
 	margin: 0 !important;
 	padding: 0 !important;
@@ -172,7 +172,7 @@ input[type="radio"] {
 input[type="submit"],
 input[type="reset"],
 input[type="button"],
-button:not(.components-button):not(.link-button):not[id="^mceu"] {
+button:not(.components-button):not(.link-button):not(.sub-menu-toggle):not([id^="mceu"]) {
 	background-color: utils.ref("custom.button.color.background");
 	border-radius: utils.ref("custom.button.border.radius");
 	border-color: utils.ref("custom.button.border.color");
