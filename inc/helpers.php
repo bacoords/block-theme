@@ -16,6 +16,8 @@ namespace Tangent\Helpers;
  * @return string|WP_Error The SVG file as a string or a WP_Error object if there was an error.
  */
 function get_svg( $filename, $attributes = array(), $directory = 'imgs' ) {
+	// Get the filename without the extension if it was included.
+	$filename = pathinfo($filename, PATHINFO_FILENAME);
 	// Get the SVG file.
 	$svg = file_get_contents( get_stylesheet_directory() . '/' . $directory . '/' . $filename . '.svg' );
 
