@@ -1,0 +1,19 @@
+name: Build release zip
+
+on:
+  push:
+    branches:
+    - main
+
+jobs:
+  build:
+    name: Build release zip
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Build plugin # Remove or modify this step as needed
+      run: |
+        npm install
+        npm run build
