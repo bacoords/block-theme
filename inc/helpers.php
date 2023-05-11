@@ -10,14 +10,14 @@ namespace Tangent\Helpers;
 /**
  * Get an SVG file from the imgs/ folder in the theme, update its attributes if necessary and return it as a string.
  *
- * @param string $filename The name of the SVG file to get.
- * @param array $attributes (optional) An array of attributes to add/modify to the SVG file.
- * @param string $directory (optional) The directory to look for the SVG file in, defaults to 'imgs'.
+ * @param string  $filename The name of the SVG file to get.
+ * @param array  $attributes (optional) An array of attributes to add/modify to the SVG file.
+ * @param string  $directory (optional) The directory to look for the SVG file in, defaults to 'imgs'.
  * @return string|WP_Error The SVG file as a string or a WP_Error object if there was an error.
  */
 function get_svg( $filename, $attributes = array(), $directory = 'imgs' ) {
 	// Get the filename without the extension if it was included.
-	$filename = pathinfo($filename, PATHINFO_FILENAME);
+	$filename = pathinfo( $filename, PATHINFO_FILENAME );
 	// Get the SVG file.
 	$svg = file_get_contents( get_stylesheet_directory() . '/' . trailingslashit( $directory ) . $filename . '.svg' );
 
@@ -36,7 +36,7 @@ function get_svg( $filename, $attributes = array(), $directory = 'imgs' ) {
 			'svg_file_not_found',
 			$svg_error_message,
 			array(
-				'svg_file' => $filename . '.svg',
+				'svg_file'      => $filename . '.svg',
 				'svg_directory' => $directory,
 			)
 		);
