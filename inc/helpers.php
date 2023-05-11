@@ -19,7 +19,7 @@ function get_svg( $filename, $attributes = array(), $directory = 'imgs' ) {
 	// Get the filename without the extension if it was included.
 	$filename = pathinfo($filename, PATHINFO_FILENAME);
 	// Get the SVG file.
-	$svg = file_get_contents( get_stylesheet_directory() . '/' . $directory . '/' . $filename . '.svg' );
+	$svg = file_get_contents( get_stylesheet_directory() . '/' . trailingslashit( $directory ) . $filename . '.svg' );
 
 	$errors = new \WP_Error();
 
