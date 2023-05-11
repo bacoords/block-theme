@@ -20,9 +20,14 @@ jobs:
         npm install
         npm run build
 
-    - name: Archive Release
+    - name: Archive release
       uses: thedoctor0/zip-release@0.7.1
       with:
         type: 'zip'
         filename: 'tangent.zip'
         exclusions: '*.git* /*node_modules/*'
+
+    - uses: actions/upload-artifact@v3
+      with:
+        name: release
+        path: tangent.zip
