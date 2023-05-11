@@ -46,7 +46,7 @@ function get_svg( $filename, $attributes = array(), $directory = 'imgs' ) {
 
 	// Initialize the SVG tag processor.
 	$update_svg = new \WP_HTML_Tag_Processor( $svg );
-	$update_svg->next_tag();
+	$update_svg->next_tag( 'svg' );
 
 	// If there are attributes to add, add them.
 	if ( ! empty( $attributes ) ) {
