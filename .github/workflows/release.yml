@@ -1,6 +1,7 @@
 name: Build release zip
 
 on:
+  workflow_dispatch:
   push:
     branches:
     - main
