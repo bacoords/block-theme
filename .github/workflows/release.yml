@@ -1,4 +1,4 @@
-name: Build release zip
+name: Release
 
 on:
   workflow_dispatch:
