@@ -9,13 +9,13 @@
 		"starter",
 		"theme"
 	],
-	"homepage": "https://github.com/tangentwp/tangent#readme",
+	"homepage": "https://github.com/withtangent/tangent#readme",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/tangentwp/tangent.git"
+		"url": "git+https://github.com/withtangent/tangent.git"
 	},
 	"bugs": {
-		"url": "https://github.com/tangentwp/tangent/issues"
+		"url": "https://github.com/withtangent/tangent/issues"
 	},
 	"main": "index.js",
 	"watch": {
