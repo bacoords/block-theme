@@ -33,3 +33,8 @@ require_once get_template_directory() . '/inc/class-tangent-navwalker.php';
  * Load helpers to access design tokens from theme.json
  */
 require_once get_template_directory() . '/inc/access-design-tokens.php';
+
+/**
+ * Load general helpers file
+ */
+require_once get_template_directory() . '/inc/helpers.php';
