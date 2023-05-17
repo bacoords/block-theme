@@ -1,4 +1,4 @@
-@use "props" as *;
+@use "../utils/props" as *;
 .flow {
 	& > * + * {
 		margin-top: ref("style.blockGap");

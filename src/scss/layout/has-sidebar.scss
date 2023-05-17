@@ -1,5 +1,5 @@
 @use "../utils";
-@use "../utils/container.scss" as *;
+@use "../base/container.scss" as *;
 
 body.has-sidebar {
 	#page {

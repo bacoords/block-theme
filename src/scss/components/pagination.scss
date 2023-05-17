@@ -1,5 +1,5 @@
 @use "../utils";
-@use "../utils/container.scss" as *;
+@use "../base/container.scss" as *;
 
 .navigation.pagination {
 	@extend .container-wide;

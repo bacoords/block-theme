@@ -1,5 +1,5 @@
-@use "props" as *;
-@use "mixins" as *;
+@use "../utils/props" as *;
+@use "../utils/mixins" as *;
 @use "flow.scss" as *;
 
 .container {
