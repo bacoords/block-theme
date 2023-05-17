@@ -1,12 +1,10 @@
-@use "../base/flow.scss" as *;
-@use "../base/container.scss" as *;
 @use "../utils";
 
 #primary {
 	.entry-header {
 		text-align: center;
 		@include utils.padding;
-		@extend .flow;
+		@include utils.flow;
 	}
 	& > article {
 		@include utils.margin-x(auto);
@@ -18,14 +16,14 @@
 		}
 	}
 	.entry-content {
-		@extend .blocks-alignment;
+		@include utils.blocks-alignment;
 	}
 	.entry-summary{
-		@extend .flow;
-		@extend .blocks-alignment;
+		@include utils.flow;
+		@include utils.blocks-alignment;
 	}
 	.entry-footer {
-		@extend .container-wide;
+		@include utils.container('wide');
 		@include utils.padding;
 		display:flex;
 		flex-direction: column;
@@ -35,7 +33,7 @@
 		}
 	}
 	.post-navigation {
-		@extend .container-wide;
+		@include utils.container('wide');
 		@include utils.padding;
 		.nav-links{
 			display: flex;
@@ -45,5 +43,5 @@
 }
 
 .block-editor-block-list__layout.is-root-container {
-	@extend .blocks-alignment;
+	@include utils.blocks-alignment;
 }

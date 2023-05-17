@@ -1,8 +1,7 @@
 @use "../utils";
-@use "../base/container.scss" as *;
 
 .navigation.pagination {
-	@extend .container-wide;
+	@include utils.container('wide');
 	@include utils.padding;
 	.nav-links {
 		display: flex;

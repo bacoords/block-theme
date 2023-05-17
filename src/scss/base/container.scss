@@ -1,50 +1,17 @@
-@use "../utils/props" as *;
-@use "../utils/mixins" as *;
-@use "flow.scss" as *;
+@use "../utils";
 
 .container {
-	max-width: ref("custom.contentSizes.default");
-	@include margin-x(auto);
+	@include utils.container();
 }
 
 .container-wide {
-	max-width: ref("custom.contentSizes.wide");
-	@include margin-x(auto);
+	@include utils.container('wide');
 }
 
 .container-full {
-	max-width: ref("custom.contentSizes.full");
-	@include margin-x(auto);
+	@include utils.container('full');
 }
 
 .blocks-alignment {
-	@extend .flow;
-	padding-right: ref("style.root.paddingRight");
-	padding-left: ref("style.root.paddingLeft");
-	& > *, .is-layout-flow > * {
-		@include margin-x(auto);
-		max-width: ref("custom.contentSizes.default");
-		&:where(.alignfull) {
-			margin-right: calc( var(--wp--style--root--padding-right) * -1 );
-			margin-left: calc( var(--wp--style--root--padding-left) * -1 );
-			max-width: calc( 100% + var(--wp--style--root--padding-right) + var(--wp--style--root--padding-left) );
-		}
-		&:where(.alignwide) {
-			max-width: ref("custom.contentSizes.wide");
-		}
-		&:where(.alignleft) {
-			margin-left: 0;
-			float: left;
-			margin-right: ref("style.blockGap");
-		}
-		&:where(.alignright) {
-			margin-right: 0;
-			float: right;
-			margin-left: ref("style.blockGap");
-		}
-	}
-	.is-layout-flow > * {
-		padding-right: ref("style.root.paddingRight");
-		padding-left: ref("style.root.paddingLeft");
-	}
+	@include utils.blocks-alignment;
 }

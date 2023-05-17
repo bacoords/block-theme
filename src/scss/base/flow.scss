@@ -1,6 +1,5 @@
-@use "../utils/props" as *;
+@use "../utils";
+
 .flow {
-	& > * + * {
-		margin-top: ref("style.blockGap");
-	}
+	@include utils.flow;
 }
