@@ -2,20 +2,20 @@
 	"name": "tangent",
 	"version": "0.0.0",
 	"description": "A theme starter for the modern WordPress developer.",
-	"author": "Howard Development & Consulting",
+	"author": "Tangent Contributors",
 	"license": "GPL-2.0-or-later",
 	"keywords": [
 		"wordpress",
 		"starter",
 		"theme"
 	],
-	"homepage": "https://github.com/tangentwp/tangent#readme",
+	"homepage": "https://github.com/withtangent/tangent#readme",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/tangentwp/tangent.git"
+		"url": "git+https://github.com/withtangent/tangent.git"
 	},
 	"bugs": {
-		"url": "https://github.com/tangentwp/tangent/issues"
+		"url": "https://github.com/withtangent/tangent/issues"
 	},
 	"main": "index.js",
 	"watch": {

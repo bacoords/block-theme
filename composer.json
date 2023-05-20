@@ -1,5 +1,5 @@
 {
-	"name": "tangentwp/tangent",
+	"name": "withtangent/tangent",
 	"description": "A future-oriented starter theme for WordPress",
 	"type": "wordpress-theme",
 	"license": "GPL-3.0",
@@ -8,11 +8,11 @@
 		"wordpress",
 		"theme"
 	],
-	"homepage": "https://github.com/tangentwp/tangent",
+	"homepage": "https://github.com/withtangent/tangent",
 	"authors": [
 		{
 			"name": "Contributors",
-			"homepage": "https://github.com/tangentwp/tangent/contributors.md"
+			"homepage": "https://github.com/withtangent/tangent/contributors.md"
 		}
 	],
 	"require-dev": {
@@ -38,7 +38,7 @@
 		"post-update-cmd": "@phpcs-config-set"
 	},
 	"support": {
-		"issues": "https://github.com/tangentwp/tangent/issues",
-		"source": "https://github.com/tangentwp/tangent"
+		"issues": "https://github.com/withtangent/tangent/issues",
+		"source": "https://github.com/withtangent/tangent"
 	}
 }
