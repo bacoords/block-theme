@@ -1,12 +1,11 @@
-@use "../utils/flow.scss" as *;
 @use "../utils";
 @use "sass:color";
 
 #comments {
-	@include utils.padding();
+	@include utils.padding;
 	max-width: utils.ref("custom.contentSizes.wide");
 	@include utils.margin-x(auto);
-	@extend .flow;
+	@include utils.flow;
 	.comments-title {
 		text-align: center;
 	}
@@ -14,11 +13,11 @@
 		display: block;
 	}
 	.comment-list {
-		@extend .flow;
+		@include utils.flow;
 		list-style: none;
 		padding: 0;
 		.children {
-			@extend .flow;
+			@include utils.flow;
 			list-style: none;
 			.children {
 				ol {
@@ -27,7 +26,7 @@
 			}
 		}
 		.comment {
-			@extend .flow;
+			@include utils.flow;
 			// threaded reply form should have the same background as a comment block
 			#respond,
 			.comment-body {
@@ -85,11 +84,11 @@
 			margin-top: utils.ref("preset.spacing.sm");
 		}
 		form {
-			@extend .flow;
+			@include utils.flow;
 			p {
 				display: flex;
 				flex-direction: column;
-				@extend .flow;
+				@include utils.flow;
 				& > * {
 					--wp--style--block-gap: 0.5rem;
 				}

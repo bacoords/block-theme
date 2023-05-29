@@ -1,0 +1,17 @@
+@use "../utils";
+
+.container {
+	@include utils.container();
+}
+
+.container-wide {
+	@include utils.container('wide');
+}
+
+.container-full {
+	@include utils.container('full');
+}
+
+.blocks-alignment {
+	@include utils.blocks-alignment;
+}

@@ -1,5 +1,5 @@
 @use "../utils";
-@use "../utils/visually-hidden.scss" as *;
+
 input:not([id^="acf-"]),
 textarea:not([id^="acf-"]) {
 	transition: utils.ref("custom.effects.transition");

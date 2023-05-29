@@ -1,0 +1,9 @@
+@use "../utils";
+
+.visually-hidden:not(:focus):not(:active) {
+	@include utils.visually-hidden();
+}
+
+.always-visually-hidden {
+	@include utils.always-visually-hidden();
+}

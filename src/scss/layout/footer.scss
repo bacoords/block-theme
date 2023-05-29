@@ -1,6 +1,5 @@
-@use "../utils/flow.scss" as *;
 @use "../utils";
 
 #colophon {
-	@extend .blocks-alignment;
+	@include utils.blocks-alignment;
 }

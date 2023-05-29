@@ -1,9 +1,8 @@
 @use "../utils";
-@use "../utils/container.scss" as *;
 
 body.has-sidebar {
 	#page {
-		@extend .container-wide;
+		@include utils.container('wide');
 		display: grid;
 		grid-template-areas:
 			"header"
