@@ -44,13 +44,14 @@
 /// Simple fade-in animation
 /// @param {String} $type - "show" or "hide", defaults to "show"
 /// @param {Number} $duration - Animation duration in seconds
-@mixin fade($type: "show", $duration: 0.5s) {
+/// @param {String} $timing-function - Animation timing function, defaults to "ease-in"
+@mixin fade($type: "show", $duration: 0.5s, $timing-function: ease-in) {
 	@if $type == "hide" {
 		visibility: hidden;
 		opacity: 0;
 		transition: visibility $duration, opacity $duration;
 	} @else if $type == "show" {
-		animation: fadeInAnimation ease-in $duration;
+		animation: fadeInAnimation $timing-function $duration;
 		animation-iteration-count: 1;
 		@keyframes fadeInAnimation {
 			0% {
