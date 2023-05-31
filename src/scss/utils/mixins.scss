@@ -48,9 +48,10 @@
 /// @param {Number} $delay - Animation delay in seconds
 @mixin fade(
 	$type: "show",
+	$delay: 0s,
 	$duration: 0.5s,
 	$timing-function: ease-in,
-	$delay: 0s
+
 ) {
 	@if $type == "hide" {
 		animation: $duration hideAnimation $timing-function;
