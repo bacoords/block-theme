@@ -43,9 +43,9 @@
 
 /// Simple fade-in animation
 /// @param {String} $type - "show" or "hide", defaults to "show"
+/// @param {Number} $delay - Animation delay in seconds
 /// @param {Number} $duration - Animation duration in seconds
 /// @param {String} $timing-function - Animation timing function, defaults to "ease-in"
-/// @param {Number} $delay - Animation delay in seconds
 @mixin fade(
 	$type: "show",
 	$delay: 0s,
