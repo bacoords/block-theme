@@ -45,13 +45,26 @@
 /// @param {String} $type - "show" or "hide", defaults to "show"
 /// @param {Number} $duration - Animation duration in seconds
 /// @param {String} $timing-function - Animation timing function, defaults to "ease-in"
-@mixin fade($type: "show", $duration: 0.5s, $timing-function: ease-in) {
+/// @param {Number} $delay - Animation delay in seconds
+@mixin fade(
+	$type: "show",
+	$duration: 0.5s,
+	$timing-function: ease-in,
+	$delay: 0s
+) {
 	@if $type == "hide" {
-		visibility: hidden;
-		opacity: 0;
-		transition: visibility $duration, opacity $duration;
+		animation: $duration hideAnimation $timing-function;
+		animation-delay: $delay;
+		animation-fill-mode: forwards;
+		@keyframes hideAnimation {
+			to {
+				visibility: hidden;
+				opacity: 0;
+			}
+		}
 	} @else if $type == "show" {
-		animation: fadeInAnimation $timing-function $duration;
+		animation: $duration fadeInAnimation $timing-function;
+		animation-delay: $delay;
 		animation-iteration-count: 1;
 		@keyframes fadeInAnimation {
 			0% {
