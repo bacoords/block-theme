@@ -1,11 +1,5 @@
 @use "props" as *;
 
-/// Size an element
-@mixin size($width, $height: $width) {
-	width: $width;
-	height: $height;
-}
-
 /// Add left/right padding to an element
 @mixin padding(
 	$top: ref("style.root.paddingTop"),
@@ -32,13 +26,6 @@
 @mixin margin-y($top, $bottom: $top) {
 	margin-top: $top;
 	margin-bottom: $bottom;
-}
-
-/// Set font size, line height, and letter spacing
-@mixin font-size($font-size, $line-height: normal, $letter-spacing: normal) {
-	font-size: $font-size;
-	line-height: $line-height;
-	letter-spacing: $letter-spacing;
 }
 
 /// Simple fade-in animation
