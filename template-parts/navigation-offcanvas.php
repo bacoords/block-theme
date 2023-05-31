@@ -6,7 +6,10 @@
  */
 
 ?>
-
+<?php
+// don't render the navigation if no menu is assigned.
+if ( has_nav_menu( 'menu-1' ) ) {
+	?>
 <nav id="site-navigation" class="offcanvas-navigation">
 
 	<button class="menu-toggle link-button" aria-haspopup="true" data-micromodal-trigger="navigation-modal" aria-label="<?php esc_html_e( 'Primary Menu', 'tangent' ); ?>">
@@ -26,7 +29,6 @@
 				</header>
 
 				<?php
-				if ( has_nav_menu( 'menu-1' ) ) {
 					wp_nav_menu(
 						array(
 							'theme_location'  => 'menu-1',
@@ -37,10 +39,10 @@
 							'walker'          => new Tangent\Navwalker\Tangent_Navwalker(),
 						)
 					);
-				}
 				?>
 
 			</div>
 		</div>
 	</div>
 </nav>
+<?php } ?>
