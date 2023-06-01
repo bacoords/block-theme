@@ -121,7 +121,7 @@ function theme_setup() {
 	 * );
 	 */
 }
-add_action( 'after_setup_theme', 'Tangent\Setup\theme_setup' );
+add_action( 'after_setup_theme', __NAMESPACE__ . '\theme_setup' );
 
 /**
  * Custom login logo
@@ -146,7 +146,7 @@ function custom_login_logo() {
 		<?php
 	}
 }
-add_action( 'login_enqueue_scripts', 'Tangent\Setup\custom_login_logo' );
+add_action( 'login_enqueue_scripts', __NAMESPACE__ . '\custom_login_logo' );
 
 
 /**
@@ -155,4 +155,4 @@ add_action( 'login_enqueue_scripts', 'Tangent\Setup\custom_login_logo' );
 function custom_login_link() {
 	return home_url();
 }
-add_filter( 'login_headerurl', 'Tangent\Setup\custom_login_link' );
+add_filter( 'login_headerurl', __NAMESPACE__ . '\custom_login_link' );

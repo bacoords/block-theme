@@ -39,7 +39,7 @@ function enqueue_block_specific_styles() {
 	}
 }
 
-add_action( 'after_setup_theme', 'Tangent\Enqueue\Blocks\enqueue_block_specific_styles' );
+add_action( 'after_setup_theme', __NAMESPACE__ . '\enqueue_block_specific_styles' );
 
 /**
  * Get all the Block Specific CSS files in the css/ folder.
@@ -49,7 +49,7 @@ add_action( 'after_setup_theme', 'Tangent\Enqueue\Blocks\enqueue_block_specific_
  */
 function get_block_specific_stylesheets() {
 	$get_all_css_files = glob( get_stylesheet_directory() . '/css/*.css' );
-	$css_files         = array_reduce( $get_all_css_files, 'Tangent\Enqueue\Blocks\associative_array_of_blocks_and_stylesheet_args', array() );
+	$css_files         = array_reduce( $get_all_css_files, __NAMESPACE__ . '\associative_array_of_blocks_and_stylesheet_args', array() );
 	return $css_files;
 }
 
@@ -98,7 +98,7 @@ function register_blocks() {
 	}
 }
 
-add_action( 'init', 'Tangent\Enqueue\Blocks\register_blocks' );
+add_action( 'init', __NAMESPACE__ . '\register_blocks' );
 
 /**
  * Enqueue assets for blocks when specifically requested.

@@ -20,7 +20,7 @@ function global_theme_styles() {
 
 	wp_enqueue_style( 'tangent-global-theme-style', get_template_directory_uri() . '/css/global.css', array(), $css_version );
 }
-add_action( 'wp_enqueue_scripts', 'Tangent\Enqueue\global_theme_styles' );
+add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\global_theme_styles' );
 
 /**
  * Enqueue the `scripts.js` file and associated dependencies.
@@ -36,7 +36,7 @@ function front_end_scripts() {
 
 	wp_enqueue_script( 'tangent-front-end-scripts', get_template_directory_uri() . '/js/scripts.js', $dependencies, $asset_file['version'], true );
 }
-add_action( 'wp_enqueue_scripts', 'Tangent\Enqueue\front_end_scripts' );
+add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\front_end_scripts' );
 
 /**
  * Enqueue editor specific modifications in the Post Editor, Site Editor,
@@ -70,7 +70,7 @@ function enqueue_editor_modifications() {
 	wp_enqueue_script( 'tangent-editor-modifications', get_template_directory_uri() . '/js/editor.js', $dependencies, $asset_file['version'], true );
 }
 
-add_action( 'enqueue_block_editor_assets', 'Tangent\Enqueue\enqueue_editor_modifications' );
+add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\enqueue_editor_modifications' );
 
 /**
  * Enqueue the `comment-reply` script if threaded comments are enabled.
@@ -83,7 +83,7 @@ function enqueue_threaded_comment_reply() {
 	}
 }
 
-add_action( 'comment_form_before', 'Tangent\Enqueue\enqueue_threaded_comment_reply' );
+add_action( 'comment_form_before', __NAMESPACE__ . '\enqueue_threaded_comment_reply' );
 
 /**
  * Enqueue the `editor.css` file in the Block Editor.
@@ -93,4 +93,4 @@ add_action( 'comment_form_before', 'Tangent\Enqueue\enqueue_threaded_comment_rep
 function add_editor_styles() {
 	add_editor_style( 'css/editor.css' );
 }
-add_action( 'after_setup_theme', 'Tangent\Enqueue\add_editor_styles' );
+add_action( 'after_setup_theme', __NAMESPACE__ . '\add_editor_styles' );
