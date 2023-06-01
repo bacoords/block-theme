@@ -1,13 +1,26 @@
 @use "props" as *;
 
 /// Add left/right padding to an element
+@mixin padding-x($left: ref("style.root.paddingLeft"), $right: ref("style.root.paddingRight")) {
+	padding-left: $left;
+	padding-right: $right;
+}
+
+/// Add top/bottom padding to an element
+@mixin padding-y($top: ref("style.root.paddingTop"), $bottom: ref("style.root.paddingBottom")) {
+	padding-top: $top;
+	padding-bottom: $bottom;
+}
+
+/// Add padding to an element
 @mixin padding(
 	$top: ref("style.root.paddingTop"),
 	$right: ref("style.root.paddingRight"),
 	$bottom: ref("style.root.paddingBottom"),
 	$left: ref("style.root.paddingLeft")
 ) {
-	padding: $top $right $bottom $left;
+	@include padding-y($top, $bottom);
+	@include padding-x($left, $right);
 }
 
 /// Add top/bottom padding to an element
@@ -17,9 +30,15 @@
 }
 
 /// Add left/right margin to an element
-@mixin margin-x($left, $right: $left) {
+@mixin margin-x($right, $left: $right) {
 	margin-left: $left;
 	margin-right: $right;
+}
+
+/// Add margin to an element
+@mixin margin($top, $right: $top, $bottom: $top, $left: $right) {
+	@include margin-y($top, $bottom);
+	@include margin-x($left, $right);
 }
 
 /// Simple fade-in animation
