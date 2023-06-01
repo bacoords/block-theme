@@ -22,12 +22,6 @@
 	margin-right: $right;
 }
 
-/// Add top/bottom margin to an element
-@mixin margin-y($top, $bottom: $top) {
-	margin-top: $top;
-	margin-bottom: $bottom;
-}
-
 /// Simple fade-in animation
 @mixin fade($type: "hide") {
 	@if $type == "hide" {
