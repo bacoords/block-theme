@@ -42,18 +42,41 @@
 }
 
 /// Simple fade-in animation
-@mixin fade($type: "hide") {
+/// @param {String} $type - "show" or "hide", defaults to "show"
+/// @param {Number} $delay - Animation delay in seconds
+/// @param {Number} $duration - Animation duration in seconds
+/// @param {String} $timing-function - Animation timing function, defaults to "ease-in"
+@mixin fade(
+	$type: "show",
+	$delay: 0s,
+	$duration: 0.5s,
+	$timing-function: ease-in,
+
+) {
 	@if $type == "hide" {
-		visibility: hidden;
-		opacity: 0;
-		transition: visibility 1s, opacity 1s;
+		animation: $duration hideAnimation $timing-function;
+		animation-delay: $delay;
+		animation-fill-mode: forwards;
+		@keyframes hideAnimation {
+			to {
+				visibility: hidden;
+				opacity: 0;
+			}
+		}
 	} @else if $type == "show" {
-		visibility: visible;
-		opacity: 1;
-		transition: visibility 1s, opacity 1s;
+		animation: $duration fadeInAnimation $timing-function;
+		animation-delay: $delay;
+		animation-iteration-count: 1;
+		@keyframes fadeInAnimation {
+			0% {
+				opacity: 0;
+			}
+			100% {
+				opacity: 1;
+			}
+		}
 	}
 }
-
 
 /// Flow mixin
 @mixin flow($gap: ref("style.blockGap")) {
@@ -76,18 +99,21 @@
 	}
 }
 
-
 /// Blocks alignment mixin
 @mixin blocks-alignment() {
 	padding-right: ref("style.root.paddingRight");
 	padding-left: ref("style.root.paddingLeft");
-	& > *, .is-layout-flow > * {
+	& > *,
+	.is-layout-flow > * {
 		@include margin-x(auto);
 		max-width: ref("custom.contentSizes.default");
 		&:where(.alignfull) {
-			margin-right: calc( var(--wp--style--root--padding-right) * -1 );
-			margin-left: calc( var(--wp--style--root--padding-left) * -1 );
-			max-width: calc( 100% + var(--wp--style--root--padding-right) + var(--wp--style--root--padding-left) );
+			margin-right: calc(var(--wp--style--root--padding-right) * -1);
+			margin-left: calc(var(--wp--style--root--padding-left) * -1);
+			max-width: calc(
+				100% + var(--wp--style--root--padding-right) +
+					var(--wp--style--root--padding-left)
+			);
 		}
 		&:where(.alignwide) {
 			max-width: ref("custom.contentSizes.wide");
