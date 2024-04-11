@@ -23,6 +23,7 @@ add_filter( 'should_load_separate_core_block_assets', '__return_true' );
  */
 function enqueue_block_specific_styles() {
 
+	$theme_version = wp_get_theme()->get( 'Version' );
 	/**
 	 * Get all the block stylesheets with the block namespace/name as the key.
 	 * e.g. array( 'core/group' => array( 'path' => '/path/to/file.css', 'src' => 'https://example.com/path/to/file.css' ) )
@@ -34,6 +35,7 @@ function enqueue_block_specific_styles() {
 			'handle' => $block_name,
 			'path'   => $stylesheet_path['path'],
 			'src'    => $stylesheet_path['src'],
+			'ver'    => $theme_version . '.' . filemtime( $stylesheet_path['path'] ),
 		);
 		wp_enqueue_block_style( $block_name, $args );
 	}
