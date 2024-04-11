@@ -2,10 +2,10 @@
 /**
  * Enqueue scripts, styles, and functionality for blocks.
  *
- * @package Tangent
+ * @package BlockTheme
  */
 
-namespace Tangent\Enqueue\Blocks;
+namespace BlockTheme\Enqueue\Blocks;
 
 /**
  * Load all block stylesheets separately
@@ -23,6 +23,7 @@ add_filter( 'should_load_separate_core_block_assets', '__return_true' );
  */
 function enqueue_block_specific_styles() {
 
+	$theme_version = wp_get_theme()->get( 'Version' );
 	/**
 	 * Get all the block stylesheets with the block namespace/name as the key.
 	 * e.g. array( 'core/group' => array( 'path' => '/path/to/file.css', 'src' => 'https://example.com/path/to/file.css' ) )
@@ -34,12 +35,13 @@ function enqueue_block_specific_styles() {
 			'handle' => $block_name,
 			'path'   => $stylesheet_path['path'],
 			'src'    => $stylesheet_path['src'],
+			'ver'    => $theme_version . '.' . filemtime( $stylesheet_path['path'] ),
 		);
 		wp_enqueue_block_style( $block_name, $args );
 	}
 }
 
-add_action( 'after_setup_theme', 'Tangent\Enqueue\Blocks\enqueue_block_specific_styles' );
+add_action( 'after_setup_theme', __NAMESPACE__ . '\enqueue_block_specific_styles' );
 
 /**
  * Get all the Block Specific CSS files in the css/ folder.
@@ -49,7 +51,7 @@ add_action( 'after_setup_theme', 'Tangent\Enqueue\Blocks\enqueue_block_specific_
  */
 function get_block_specific_stylesheets() {
 	$get_all_css_files = glob( get_stylesheet_directory() . '/css/*.css' );
-	$css_files         = array_reduce( $get_all_css_files, 'Tangent\Enqueue\Blocks\associative_array_of_blocks_and_stylesheet_args', array() );
+	$css_files         = array_reduce( $get_all_css_files, __NAMESPACE__ . '\associative_array_of_blocks_and_stylesheet_args', array() );
 	return $css_files;
 }
 
@@ -98,7 +100,7 @@ function register_blocks() {
 	}
 }
 
-add_action( 'init', 'Tangent\Enqueue\Blocks\register_blocks' );
+add_action( 'init', __NAMESPACE__ . '\register_blocks' );
 
 /**
  * Enqueue assets for blocks when specifically requested.

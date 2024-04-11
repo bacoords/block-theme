@@ -1,6 +1,6 @@
 {
-	"name": "withtangent/tangent",
-	"description": "A future-oriented starter theme for WordPress",
+	"name": "bacoords/block-theme",
+	"description": "A starter theme for modern WordPress developers.",
 	"type": "wordpress-theme",
 	"license": "GPL-3.0",
 	"minimum-stability": "stable",
@@ -8,11 +8,11 @@
 		"wordpress",
 		"theme"
 	],
-	"homepage": "https://github.com/withtangent/tangent",
+	"homepage": "https://github.com/bacoords/block-theme",
 	"authors": [
 		{
 			"name": "Contributors",
-			"homepage": "https://github.com/withtangent/tangent/contributors.md"
+			"homepage": "https://github.com/bacoords/block-theme/contributors.md"
 		}
 	],
 	"require-dev": {
@@ -38,7 +38,7 @@
 		"post-update-cmd": "@phpcs-config-set"
 	},
 	"support": {
-		"issues": "https://github.com/withtangent/tangent/issues",
-		"source": "https://github.com/withtangent/tangent"
+		"issues": "https://github.com/bacoords/block-theme/issues",
+		"source": "https://github.com/bacoords/block-theme"
 	}
 }

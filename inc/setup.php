@@ -2,10 +2,10 @@
 /**
  * Setup theme
  *
- * @package Tangent
+ * @package BlockTheme
  */
 
-namespace Tangent\Setup;
+namespace BlockTheme\Setup;
 
 /**
  * Setup theme
@@ -15,34 +15,12 @@ function theme_setup() {
 	* Make theme available for translation.
 	* Translations can be filed in the /languages/ directory.
 	* If you're building a theme based on _s, use a find and replace
-	* to change 'tangent' to the name of your theme in all the template files.
+	* to change 'block-theme' to the name of your theme in all the template files.
 	*/
-	load_theme_textdomain( 'tangent', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'block-theme', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
-
-	/**
-	* Let WordPress manage the document title.
-	* By adding theme support, we declare that this theme does not use a
-	* hard-coded <title> tag in the document head, and expect WordPress to
-	* provide it for us.
-	*/
-	add_theme_support( 'title-tag' );
-
-	/**
-	 * Enable support for Post Thumbnails on posts and pages.
-	 *
-	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
-	 */
-	add_theme_support( 'post-thumbnails' );
-
-	// This theme uses wp_nav_menu() in one location.
-	register_nav_menus(
-		array(
-			'menu-1' => esc_html__( 'Primary', 'tangent' ),
-		)
-	);
 
 	/**
 	 * Add support for core custom logo.
@@ -60,35 +38,11 @@ function theme_setup() {
 	);
 
 	/**
-	 * Switch default core markup for search form, comment form, and comments
-	 * to output valid HTML5.
-	 */
-	add_theme_support(
-		'html5',
-		array(
-			'search-form',
-			'comment-form',
-			'comment-list',
-			'gallery',
-			'caption',
-			'style',
-			'script',
-		)
-	);
-
-	/**
-	 * Add support for Editor Styles
+	 * Remove support for the core block pattern library.
 	 *
-	 * @link https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-support/#editor-styles
+	 * @link https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-support/#disabling-the-default-block-patterns
 	 */
-	add_theme_support( 'editor-styles' );
-
-	/**
-	 * Add support for Block Template Parts
-	 *
-	 * @link https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-support/#block-based-template-parts
-	 */
-	add_theme_support( 'block-template-parts' );
+	remove_theme_support( 'core-block-patterns' );
 
 	/**
 	 * Remove duotone filter SVGs from loading on the frontend if default
@@ -100,28 +54,8 @@ function theme_setup() {
 		remove_action( 'wp_body_open', 'wp_global_styles_render_svg_filters' );
 		remove_action( 'in_admin_header', 'wp_global_styles_render_svg_filters' );
 	}
-
-	/**
-	 * Uncomment the following block of code to register a sidebar.
-	 * You can also uncomment out the sidebar layout styling in
-	 * src/scss/layout/index.scss
-	 *
-	 * @link https://developer.wordpress.org/themes/functionality/sidebars/
-	 *
-	 * register_sidebar(
-	 *   array(
-	 *     'name'          => esc_html__( 'Sidebar', 'tangent' ),
-	 *     'id'            => 'sidebar-1',
-	 *     'description'   => esc_html__( 'Add widgets here.', 'tangent' ),
-	 *     'before_widget' => '<section id="%1$s" class="widget %2$s">',
-	 *     'after_widget'  => '</section>',
-	 *     'before_title'  => '<h2 class="widget-title">',
-	 *     'after_title'   => '</h2>',
-	 *   )
-	 * );
-	 */
 }
-add_action( 'after_setup_theme', 'Tangent\Setup\theme_setup' );
+add_action( 'after_setup_theme', __NAMESPACE__ . '\theme_setup' );
 
 /**
  * Custom login logo
@@ -146,7 +80,7 @@ function custom_login_logo() {
 		<?php
 	}
 }
-add_action( 'login_enqueue_scripts', 'Tangent\Setup\custom_login_logo' );
+add_action( 'login_enqueue_scripts', __NAMESPACE__ . '\custom_login_logo' );
 
 
 /**
@@ -155,4 +89,4 @@ add_action( 'login_enqueue_scripts', 'Tangent\Setup\custom_login_logo' );
 function custom_login_link() {
 	return home_url();
 }
-add_filter( 'login_headerurl', 'Tangent\Setup\custom_login_link' );
+add_filter( 'login_headerurl', __NAMESPACE__ . '\custom_login_link' );

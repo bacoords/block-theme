@@ -1,12 +1,12 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 2,
-	"name": "tangent/hello-world",
+	"name": "block-theme/hello-world",
 	"title": "Hello World",
 	"category": "text",
 	"icon": "admin-comments",
 	"description": "An example block written with ESNext standard and JSX support – build step required.",
-	"textdomain": "tangent",
+	"textdomain": "block-theme",
 	"attributes": {
 		"content": {
 			"type": "string",

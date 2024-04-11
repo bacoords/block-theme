@@ -85,7 +85,7 @@ export default function Edit(props) {
 				// We're adding the Media Add/Replace buttons to the toolbar of the whole block as a section.
 			}
 			<BlockControls>
-				<ToolbarGroup label={__("Media", "tangent")}>
+				<ToolbarGroup label={__("Media", "block-theme")}>
 					{
 						// If there is an image, show the replace button
 						media ? (
@@ -93,7 +93,7 @@ export default function Edit(props) {
 								<MediaReplaceFlow
 									mediaUrl={media?.source_url}
 									onSelect={selectImage}
-									name={__("Replace Image", "tangent")}
+									name={__("Replace Image", "block-theme")}
 								/>
 							</>
 						) : (
@@ -103,7 +103,7 @@ export default function Edit(props) {
 									onSelect={selectImage}
 									render={({ open }) => (
 										<ToolbarButton onClick={open}>
-											{__("Add Image", "tangent")}
+											{__("Add Image", "block-theme")}
 										</ToolbarButton>
 									)}
 								/>
@@ -131,7 +131,7 @@ export default function Edit(props) {
 					// This is the tag name that will be used in the editor
 					tagName="h3"
 					// This is the placeholder text that will be shown in the editor
-					placeholder={__("Enter text..", "tangent")}
+					placeholder={__("Enter text..", "block-theme")}
 					// If there is heading text, show it, otherwise show the placeholder
 					value={heading}
 					// This is the function that will be called when the heading text is changed

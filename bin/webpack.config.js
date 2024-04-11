@@ -27,45 +27,6 @@ var config = {
 			outputFolder: styleOutputFolder,
 			blockDir: true,
 		}),
-		"../src/scss/utils/breakpoints": path.resolve(
-			process.cwd(),
-			"src/theme-json/settings/custom",
-			"breakpoints.jsonc",
-		),
-		"../theme.json": path.resolve(
-			process.cwd(),
-			"src/theme-json",
-			"index.jsonc",
-		),
-	},
-	module: {
-		...defaultConfig.module,
-		rules: [
-			...defaultConfig.module.rules,
-			{
-				test: /\.jsonc$/,
-				exclude: /theme-json\/index\.jsonc$/,
-				type: "asset/resource",
-				generator: {
-					filename: "../src/scss/utils/[name].scss",
-				},
-				use: "jsonc-scss-loader",
-			},
-			{
-				test: /theme-json\/index\.jsonc$/,
-				type: "asset/resource",
-				generator: {
-					filename: "../theme.json",
-				},
-				use: "theme-json-loader",
-			},
-		],
-	},
-	resolveLoader: {
-		alias: {
-			"jsonc-scss-loader": path.resolve(process.cwd(), "bin/jsonc-to-scss.js"),
-			"theme-json-loader": path.resolve(process.cwd(), "bin/theme-json.js"),
-		},
 	},
 	output: {
 		...defaultConfig.output,
@@ -111,7 +72,7 @@ var config = {
 						folder: ".",
 						method: (absoluteItemPath) => {
 							return new RegExp(/(json\.js)(\.map)*$/, "m").test(
-								absoluteItemPath,
+								absoluteItemPath
 							);
 						},
 					},
@@ -119,7 +80,7 @@ var config = {
 						folder: ".",
 						method: (absoluteItemPath) => {
 							return new RegExp(/theme\.json\.asset\.php$/, "m").test(
-								absoluteItemPath,
+								absoluteItemPath
 							);
 						},
 					},
