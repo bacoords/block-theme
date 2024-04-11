@@ -1,5 +1,6 @@
 # Npm
 node_modules
+package-lock.json
 
 # Code editor files
 .vscode
@@ -7,3 +8,13 @@ node_modules
 # Other system files
 .DS_Store
 
+# Composer
+/vendor/
+composer.lock
+.phpcs-cache
+
+/css
+/js
+/blocks
+
+/theme.json

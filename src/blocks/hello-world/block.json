@@ -1,0 +1,30 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "block-theme/hello-world",
+	"title": "Hello World",
+	"category": "text",
+	"icon": "admin-comments",
+	"description": "An example block written with ESNext standard and JSX support – build step required.",
+	"textdomain": "block-theme",
+	"attributes": {
+		"content": {
+			"type": "string",
+			"selector": "hello-world-text"
+		},
+		"img": {
+			"type": "object"
+		}
+	},
+	"supports": {
+		"html": false,
+		"align": ["full", "wide"],
+		"color": {
+			"background": true,
+			"text": true
+		}
+	},
+	"editorScript": "file:index.js",
+	"editorStyle": "file:index.css",
+	"style": "file:style-index.css"
+}

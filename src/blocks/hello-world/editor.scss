@@ -1,0 +1,25 @@
+.wp-block-block-theme-hello-world {
+	h3 {
+		margin: 0;
+	}
+	.hello-world-image {
+		position: relative;
+		&:hover,
+		&:focus {
+			cursor: pointer;
+		}
+
+		// make the button invisible
+		button {
+			border: none;
+			padding: 0;
+			display: block;
+		}
+	}
+}
+
+.wp-block-block-theme-hello-world .hello-world-image {
+	.components-resizable-box__container {
+		display: block;
+	}
+}

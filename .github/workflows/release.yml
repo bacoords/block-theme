@@ -1,0 +1,39 @@
+name: Release
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+    - main
+
+jobs:
+  build:
+    name: Build release zip
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Build plugin # Remove or modify this step as needed
+      run: |
+        npm install
+        npm run build
+
+    - name: Archive release
+      uses: thedoctor0/zip-release@0.7.1
+      with:
+        type: 'zip'
+        filename: 'block-theme.zip'
+        exclusions: '*.git* /*node_modules/*'
+
+    - name: Upload release artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: release
+        path: block-theme.zip
+
+    - name: Upload Release
+      uses: ncipollo/release-action@v1.12.0
+      with:
+        artifacts: "block-theme.zip"
+        token: ${{ secrets.GITHUB_TOKEN }}

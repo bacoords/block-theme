@@ -1,0 +1,22 @@
+.wp-block-block-theme-hello-world {
+	display: flex;
+	gap: 1em;
+	h3 {
+		align-self: center;
+	}
+}
+
+.wp-block-block-theme-hello-world .hello-world-image {
+	img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+	width: 100%;
+	flex-basis: 50%;
+	margin-bottom: 0;
+	figcaption {
+		display: none;
+	}
+}
