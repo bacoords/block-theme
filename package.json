@@ -1,21 +1,21 @@
 {
-	"name": "tangent",
+	"name": "block-theme",
 	"version": "0.0.0",
-	"description": "A theme starter for the modern WordPress developer.",
-	"author": "Tangent Contributors",
+	"description": "A block theme for the modern WordPress developer.",
+	"author": "BlockTheme Contributors",
 	"license": "GPL-2.0-or-later",
 	"keywords": [
 		"wordpress",
 		"starter",
 		"theme"
 	],
-	"homepage": "https://github.com/withtangent/tangent#readme",
+	"homepage": "https://github.com/bacoords/block-theme#readme",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/withtangent/tangent.git"
+		"url": "git+https://github.com/bacoords/block-theme.git"
 	},
 	"bugs": {
-		"url": "https://github.com/withtangent/tangent/issues"
+		"url": "https://github.com/bacoords/block-theme/issues"
 	},
 	"main": "index.js",
 	"watch": {

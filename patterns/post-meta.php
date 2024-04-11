@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Post Meta
- * Slug: tangent/post-meta
+ * Slug: block-theme/post-meta
  * Categories: query
  * Keywords: post meta
  * Block Types: core/template-part/post-meta
@@ -26,7 +26,7 @@
 			<div class="wp-block-group">
 				<!-- wp:paragraph -->
 				<p>
-					<?php echo esc_html_x( 'Posted', 'Verb to explain the publication status of a post', 'tangent' ); ?>
+					<?php echo esc_html_x( 'Posted', 'Verb to explain the publication status of a post', 'block-theme' ); ?>
 				</p>
 				<!-- /wp:paragraph -->
 
@@ -34,7 +34,7 @@
 
 				<!-- wp:paragraph -->
 				<p>
-					<?php echo esc_html_x( 'in', 'Preposition to show the relationship between the post and its categories', 'tangent' ); ?>
+					<?php echo esc_html_x( 'in', 'Preposition to show the relationship between the post and its categories', 'block-theme' ); ?>
 				</p>
 				<!-- /wp:paragraph -->
 
@@ -46,7 +46,7 @@
 			<div class="wp-block-group">
 				<!-- wp:paragraph -->
 				<p>
-					<?php echo esc_html_x( 'by', 'Preposition to show the relationship between the post and its author', 'tangent' ); ?>
+					<?php echo esc_html_x( 'by', 'Preposition to show the relationship between the post and its author', 'block-theme' ); ?>
 				</p>
 				<!-- /wp:paragraph -->
 
@@ -62,7 +62,7 @@
 			<div class="wp-block-group">
 				<!-- wp:paragraph -->
 				<p>
-					<?php echo esc_html_x( 'Tags:', 'Label for a list of post tags', 'tangent' ); ?>
+					<?php echo esc_html_x( 'Tags:', 'Label for a list of post tags', 'block-theme' ); ?>
 				</p>
 				<!-- /wp:paragraph -->
 

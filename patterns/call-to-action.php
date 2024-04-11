@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Call to Action
- * Slug: tangent/call-to-action
+ * Slug: block-theme/call-to-action
  * Description: A call to action block with a heading, paragraph, and button.
  * Viewport Width: 1024
  * Categories: featured
@@ -9,7 +9,7 @@
  * Block Types: core/group
  * Inserter: yes
  *
- * @package Tangent
+ * @package BlockTheme
  */
 
 ?>
@@ -19,7 +19,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"align":"center"} -->
-<p class="has-text-align-center">Tangent is constantly improving and we share the latest features and work we're doing with our subscribers first.</p>
+<p class="has-text-align-center">BlockTheme is constantly improving and we share the latest features and work we're doing with our subscribers first.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->

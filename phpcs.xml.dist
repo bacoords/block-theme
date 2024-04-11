@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
-<ruleset name="Tangent Coding Standards">
+<ruleset name="BlockTheme Coding Standards">
 
-	<description>Apply WordPress Coding Standards to Tangent</description>
+	<description>Apply WordPress Coding Standards to BlockTheme</description>
 
 	<!-- Whenever possible, cache the scan results and re-use those for unchanged files on the next scan. -->
 	<arg name="cache" value=".phpcs-cache"/>
@@ -48,7 +48,7 @@
 	<rule ref="WordPress.WP.I18n">
 		<properties>
 			<property name="text_domain" type="array">
-				<element value="tangent"/>
+				<element value="block-theme"/>
 			</property>
 		</properties>
 	</rule>

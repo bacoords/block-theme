@@ -1,61 +1,43 @@
-# Tangent
+# BlockTheme
 
-Tangent is a new starter theme (currently in development) for WordPress.
-[withtangent.com](https://withtangent.com)
+BlockTheme is a WordPress block theme foundation built for modern web developers from [@aurooba](https://github.com/aurooba) and [@bacoords](https://github.com/bacoords).
 
 ## Theme Setup
 
-Tangent is a "hybrid" theme, which means that most of the theme setup is handled in the `inc/setup.php` file. This includes:
+Most of the theme setup is handled in the `inc/*.php` files. This includes:
 
 - Theme supports
-- Menus and widgets
+- Enqueueing scripts and styles, including block-specific styles
 - Any custom theme options
-
-Similarly, most of the design setup starts in the `src/theme-json` folder. More on that below.
 
 ## Build Process
 
-As of now, this repository does _not_ include the final built assets. You'll need to build them once you've cloned the repo. (You may also want to exclude them from your `.gitignore` file, depending on your workflow.)
+As of now, this repository does _not_ include the final built assets or blocks. You'll need to build them once you've cloned the repo. (You may also want to exclude them from your `.gitignore` file, depending on your workflow.)
 
-`npm run build` will build the theme's CSS, JavaScript files, and theme.json.
+`npm run build` will build the theme's CSS and JavaScript files.
 
-`npm run watch` will watch for changes to the theme's SCSS, JavaScript files, and theme.json partials and rebuild them automatically.
+`npm run watch` will watch for changes to the theme's SCSS and JavaScript files partials and rebuild them automatically.
 
 ### CSS & SCSS
 
-Tangent does enqueue stylesheets for the frontend and the block editor, However, Tangent's superpowers include the ability to pull props _directly from your theme.json_ as well as generate _block-specific CSS files_ and enqueue them to their specific blocks.
-
-- [Using SCSS in Tangent](https://github.com/understrap/tangent/tree/develop/src/scss#readme)
-- [Using the functions found in the `props.scss` file](https://github.com/understrap/tangent/blob/develop/src/scss/abstracts/props.md)
-- [Breakpoints in Tangent](https://github.com/understrap/tangent/blob/develop/src/scss/abstracts/breakpoints.md)
+BlockTheme does enqueue stylesheets for the frontend and the block editor, However, BlockTheme's superpowers include the ability to generate _block-specific CSS files_ and enqueue them automatically to their specific blocks.
 
 ### JavaScript
 
-TK
+There are two separate JavaScript files
 
-### Theme.json
-
-Tangent uses `.jsonc` partials to store all of the theme's design settings. These smaller partials are automatically compiled into a `theme.json` file for your theme.
-
-Read: [How to create a theme.json from partials](https://github.com/understrap/tangent/tree/develop/src/theme-json#readme)
-
-## Block Template Parts
-
-Block Template Parts are enabled in Tangent, allowing you to create and store HTML template parts in the `parts` folder. This allows users to edit the template parts in the WordPress Dashboard from WordPress > Template Parts. You can control the registration of the template part (specifically the name and what `area` it's associated with) from `theme.json`. See `src/theme-json/templateParts.jsonc` for more information.
+- `scripts.js` is the main JavaScript file for the theme. It is enqueued on the frontend.
+- `editor.js` is the main JavaScript file for the block and site editor. It includes code scaffolding for actions like registering block variations and styles or unregistering specific block types.
 
 ### Custom Blocks
 
-Because we're already using `@wordpress/scripts` to build our theme, we can also use it to build our custom blocks. TK
-
-## Navigation Menu
-
-Tangent's `header.php` uses a "classic" WordPress Menu but is enhanced with much of the same front-end updates in the Gutenberg navigation block. This includes a responsive full screen modal and solid accessibility. To accomplish this, Tangent combines a custom navwalker called `Tangent_Navwalker` with additional JavaScript to enable accessible dropdowns for submenus.
+Because we're already using `@wordpress/scripts` to build our theme, we can also use it to build our custom blocks. The `blocks` directory contains all of the custom blocks for the theme.
 
 ## Linting and WordPress Coding Standards
 
 PHP linting is available by running `composer php-lint` from the command line.
 
-Tangent follows the WordPress Coding Standards. You can check your code against the standards by running `composer phpcs` from the command line. You can also run `composer phpcs-fix` to automatically fix any errors that can be fixed automatically.
+BlockTheme follows the WordPress Coding Standards. You can check your code against the standards by running `composer phpcs` from the command line. You can also run `composer phpcs-fix` to automatically fix any errors that can be fixed automatically.
 
 
 ## File/Folder Structure
@@ -66,7 +48,7 @@ Tangent follows the WordPress Coding Standards. You can check your code against 
 ├── css 			<-- Compiled CSS files
 ├── fonts			<-- Theme fonts
 ├── inc				<-- Theme includes and functions
-│   ├── class-tangent-navwalker.php		<-- Custom navwalker
+│   ├── enqueue-blocks.php				<-- Enqueue block-specific styles
 │   ├── enqueue.php						<-- Enqueue scripts and styles
 │   ├── setup.php						<-- Theme setup
 ├── js				<-- Compiled JavaScript files
@@ -74,18 +56,19 @@ Tangent follows the WordPress Coding Standards. You can check your code against 
 ├── parts 			<-- Custom block template parts
 ├── patterns 		<-- Custom block patterns
 ├── src				<-- Theme source files
+│   ├── blocks 		<-- Block source files
 │   ├── css 		<-- SCSS source files
 │   ├── js			<-- JavaScript source files
-│   ├── theme-json	<-- Theme.json partials
-├── template-parts	<-- Template parts and other partials
+├── templates    	<-- Templates for the site editor
 ```
 
 ## License
 
-Tangent is licensed under the GNU General Public License v3.0 or later.
+BlockTheme is licensed under the GNU General Public License v3.0 or later.
 
 ## Credits
 
-- Underscores: https://github.com/Automattic/_s
-- Micromodal: https://micromodal.vercel.app
+- TwentyTwentyThree: https://wordpress.org/themes/twentytwentythree
+- TwentyTwentyFour: https://wordpress.org/themes/twentytwentyfour
 - WordPress Scripts: https://developer.wordpress.org/block-editor/packages/packages-scripts/
+- Aurooba Ahmed: https://github.com/aurooba (Much of the work and thoughtfulness behind this theme is completely Aurooba)
