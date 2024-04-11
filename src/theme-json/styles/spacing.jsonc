@@ -1,9 +1,0 @@
-{
-	"blockGap": "var(--wp--custom--block-gap)",
-	"padding": {
-		"top": "var(--wp--preset--spacing--40)",
-		"right": "var(--wp--preset--spacing--30)",
-		"bottom": "var(--wp--preset--spacing--40)",
-		"left": "var(--wp--preset--spacing--30)"
-	}
-}

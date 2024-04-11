@@ -72,18 +72,7 @@ function enqueue_editor_modifications() {
 
 add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\enqueue_editor_modifications' );
 
-/**
- * Enqueue the `comment-reply` script if threaded comments are enabled.
- *
- * @return void
- */
-function enqueue_threaded_comment_reply() {
-	if ( get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
-}
 
-add_action( 'comment_form_before', __NAMESPACE__ . '\enqueue_threaded_comment_reply' );
 
 /**
  * Enqueue the `editor.css` file in the Block Editor.
