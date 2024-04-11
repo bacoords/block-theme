@@ -1,6 +1,6 @@
 {
 	"name": "bacoords/block-theme",
-	"description": "A block theme for the modern WordPress developer.",
+	"description": "A starter theme for modern WordPress developers.",
 	"type": "wordpress-theme",
 	"license": "GPL-3.0",
 	"minimum-stability": "stable",

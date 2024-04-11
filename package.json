@@ -1,7 +1,7 @@
 {
 	"name": "block-theme",
 	"version": "0.0.0",
-	"description": "A block theme for the modern WordPress developer.",
+	"description": "A starter theme for modern WordPress developers.",
 	"author": "BlockTheme Contributors",
 	"license": "GPL-2.0-or-later",
 	"keywords": [
