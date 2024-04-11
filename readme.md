@@ -1,6 +1,8 @@
 # BlockTheme
 
-BlockTheme is a block-based starter theme built for modern WordPress developers from [@aurooba](https://github.com/aurooba) and [@bacoords](https://github.com/bacoords).
+BlockTheme is a block-based starter theme built for modern WordPress developers. 
+
+Built by [@aurooba](https://github.com/aurooba) and [@bacoords](https://github.com/bacoords).
 
 ## Theme Setup
 
@@ -20,13 +22,19 @@ As of now, this repository does _not_ include the final built assets or blocks. 
 
 ### CSS & SCSS
 
-BlockTheme does enqueue stylesheets for the frontend and the block editor, However, BlockTheme's superpowers include the ability to generate _block-specific CSS files_ and enqueue them automatically to their specific blocks.
+BlockTheme does enqueue global stylesheets for the frontend and the block editor, `global.css` and `editor.css`.
+
+However, BlockTheme's superpowers include the ability to generate _block-specific CSS files_ and enqueue them automatically to their specific blocks.
+
+To add a block-specific file, create a new SCSS file in the `src/scss/blocks` directory. The directory should match the block's namespace, and the file should be named after the block's slug. For example, a block like `core/paragraph` would get a corresponding SCSS file named `src/scss/blocks/core/paragraph.scss`.
+
+The theme will compile the block-specific SCSS files into CSS files and enqueue them on the frontend and block editor.
 
 ### JavaScript
 
 There are two separate JavaScript files
 
-- `scripts.js` is the main JavaScript file for the theme. It is enqueued on the frontend.
+- `scripts.js` is the main JavaScript file for the theme. It is enqueued on the frontend, but is currently empty. Feel free to remove it if you don't need it.
 - `editor.js` is the main JavaScript file for the block and site editor. It includes code scaffolding for actions like registering block variations and styles or unregistering specific block types.
 
 ### Custom Blocks
@@ -38,7 +46,6 @@ Because we're already using `@wordpress/scripts` to build our theme, we can also
 PHP linting is available by running `composer php-lint` from the command line.
 
 BlockTheme follows the WordPress Coding Standards. You can check your code against the standards by running `composer phpcs` from the command line. You can also run `composer phpcs-fix` to automatically fix any errors that can be fixed automatically.
-
 
 ## File/Folder Structure
 
