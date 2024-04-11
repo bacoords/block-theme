@@ -1,5 +1,3 @@
-@use "props" as *;
-
 /// Size an element
 @mixin size($width, $height: $width) {
 	width: $width;
@@ -7,12 +5,13 @@
 }
 
 /// Add left/right padding to an element
-@mixin padding-x($left: ref("style.root.paddingLeft"), $right: ref("style.root.paddingRight")) {
+@mixin padding-x($left: var(--wp--style--root--padding-left), $right: var(--wp--style--root--padding-right)) {
 	padding-left: $left;
 	padding-right: $right;
+}
 
 /// Add top/bottom padding to an element
-@mixin padding-y($top: ref("style.root.paddingTop"), $bottom: ref("style.root.paddingBottom")) {
+@mixin padding-y($top: var(--wp--style--root--padding-top), $bottom: var(--wp--style--root--padding-bottom)) {
 	padding-top: $top;
 	padding-bottom: $bottom;
 }
