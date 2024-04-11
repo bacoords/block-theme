@@ -39,7 +39,12 @@ There are two separate JavaScript files
 
 ### Custom Blocks
 
-Because we're already using `@wordpress/scripts` to build our theme, we can also use it to build our custom blocks. The `blocks` directory contains all of the custom blocks for the theme.
+Because we're already using `@wordpress/scripts` to build our theme, we can also use it to build our custom blocks. 
+
+To scaffold a new custom block, run `npm run create-block [block-name]` from the command line. This will create a new _dynamic_ block in the `./src/blocks` directory. The block will be namespaced to the theme: `block-theme`. You can pass additional arguments to `@wordpress/create-block` using the extra `--` flag.
+
+
+The `./blocks` directory contains all of compiled blocks, which are automatically registered for you.
 
 ## Linting and WordPress Coding Standards
 
