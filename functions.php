@@ -1,13 +1,13 @@
 <?php
 /**
- * Tangent functions and definitions
+ * BlockTheme functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package Tangent
+ * @package BlockTheme
  */
 
-namespace Tangent;
+namespace BlockTheme;
 
 /**
  * Load theme setup.

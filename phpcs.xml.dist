@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
-<ruleset name="Tangent Coding Standards">
+<ruleset name="BlockTheme Coding Standards">
 
-	<description>Apply WordPress Coding Standards to Tangent</description>
+	<description>Apply WordPress Coding Standards to BlockTheme</description>
 
 	<!-- Whenever possible, cache the scan results and re-use those for unchanged files on the next scan. -->
 	<arg name="cache" value=".phpcs-cache"/>
@@ -28,7 +28,7 @@
 	<exclude-pattern>/inc/deprecated.php</exclude-pattern>
 	<exclude-pattern>/fonts/*</exclude-pattern>
 	<exclude-pattern>/dist/*</exclude-pattern>
-	<exclude-pattern>/patterns/*</exclude-pattern>
+	<exclude-pattern>/patterns/*\.php$</exclude-pattern>
 	<exclude-pattern>/css/*</exclude-pattern>
 	<exclude-pattern>/blocks/*</exclude-pattern>
 	<exclude-pattern>/js/*</exclude-pattern>
@@ -48,7 +48,7 @@
 	<rule ref="WordPress.WP.I18n">
 		<properties>
 			<property name="text_domain" type="array">
-				<element value="tangent"/>
+				<element value="block-theme"/>
 			</property>
 		</properties>
 	</rule>
@@ -76,7 +76,5 @@
 		<exclude phpcs-only="true" name="Generic.Files.LineEndings"/>
 	</rule>
 
-	<config name="testVersion" value="7.0-99.0"/>
-	<rule ref="PHPCompatibility" />
 
 </ruleset>

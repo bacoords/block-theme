@@ -2,10 +2,10 @@
 /**
  * Enqueue scripts, styles, and functionality for blocks.
  *
- * @package Tangent
+ * @package BlockTheme
  */
 
-namespace Tangent\Enqueue\Blocks;
+namespace BlockTheme\Enqueue\Blocks;
 
 /**
  * Load all block stylesheets separately

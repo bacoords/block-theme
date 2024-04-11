@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Default Footer
- * Slug: tangent/footer-default
+ * Slug: block-theme/footer-default
  * Categories: footer
  * Block Types: core/template-part/footer
  */
@@ -17,8 +17,8 @@
 		<?php
 		printf(
 			/* Translators: WordPress link. */
-			esc_html__( 'Proudly powered by %s', 'tangent' ),
-			'<a href="' . esc_url( __( 'https://wordpress.org', 'tangent' ) ) . '" rel="nofollow">WordPress</a>'
+			esc_html__( 'Proudly powered by %s', 'block-theme' ),
+			'<a href="' . esc_url( __( 'https://wordpress.org', 'block-theme' ) ) . '" rel="nofollow">WordPress</a>'
 		)
 		?>
 		</p>
