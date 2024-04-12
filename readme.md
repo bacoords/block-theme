@@ -12,6 +12,12 @@ Most of the theme setup is handled in the `inc/*.php` files. This includes:
 - Enqueueing scripts and styles, including block-specific styles
 - Any custom theme options
 
+## Theme.json
+
+### Spacing
+
+The naming convention for spacing presets are the same 20 - 80 scale that core uses, but the values are overridden to be fluid. These spacing values be also used as CSS variables, example: `var(--wp--preset--spacing--50)`.
+
 ## Build Process
 
 As of now, this repository does _not_ include the final built assets or blocks. You'll need to build them once you've cloned the repo. (You may also want to exclude them from your `.gitignore` file, depending on your workflow.)
