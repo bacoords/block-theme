@@ -27,16 +27,16 @@
 	@include padding-x($left, $right);
 }
 
-/// Add top/bottom padding to an element
-@mixin margin-y($top, $bottom: $top) {
-	padding-top: $top;
-	padding-bottom: $bottom;
-}
-
 /// Add left/right margin to an element
 @mixin margin-x($right, $left: $right) {
 	margin-left: $left;
 	margin-right: $right;
+}
+
+/// Add top/bottom padding to an element
+@mixin margin-y($top, $bottom: $top) {
+	padding-top: $top;
+	padding-bottom: $bottom;
 }
 
 /// Add margin to an element
