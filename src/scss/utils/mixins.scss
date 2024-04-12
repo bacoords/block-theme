@@ -5,13 +5,26 @@
 }
 
 /// Add left/right padding to an element
+@mixin padding-x($left: var(--wp--style--root--padding-left), $right: var(--wp--style--root--padding-right)) {
+	padding-left: $left;
+	padding-right: $right;
+}
+
+/// Add top/bottom padding to an element
+@mixin padding-y($top: var(--wp--style--root--padding-top), $bottom: var(--wp--style--root--padding-bottom)) {
+	padding-top: $top;
+	padding-bottom: $bottom;
+}
+
+/// Add padding to an element
 @mixin padding(
 	$top: var(--wp--style--root--padding-top),
 	$right: var(--wp--style--root--padding-right),
 	$bottom: var(--wp--style--root--padding-bottom),
 	$left: var(--wp--style--root--padding-left)
 ) {
-	padding: $top $right $bottom $left;
+	@include padding-y($top, $bottom);
+	@include padding-x($left, $right);
 }
 
 /// Add top/bottom padding to an element
@@ -21,22 +34,15 @@
 }
 
 /// Add left/right margin to an element
-@mixin margin-x($left, $right: $left) {
+@mixin margin-x($right, $left: $right) {
 	margin-left: $left;
 	margin-right: $right;
 }
 
-/// Add top/bottom margin to an element
-@mixin margin-y($top, $bottom: $top) {
-	margin-top: $top;
-	margin-bottom: $bottom;
-}
-
-/// Set font size, line height, and letter spacing
-@mixin font-size($font-size, $line-height: normal, $letter-spacing: normal) {
-	font-size: $font-size;
-	line-height: $line-height;
-	letter-spacing: $letter-spacing;
+/// Add margin to an element
+@mixin margin($top, $right: $top, $bottom: $top, $left: $right) {
+	@include margin-y($top, $bottom);
+	@include margin-x($left, $right);
 }
 
 /// Simple fade-in animation
@@ -124,7 +130,7 @@
 	}
 }
 
-/// Visually Hidden
+/// Always visually hidden, but accessible to screen readers
 @mixin always-visually-hidden() {
 	border: 0;
 	clip: rect(0 0 0 0);
@@ -137,6 +143,7 @@
 	white-space: nowrap;
 }
 
+/// Visually hidden, accessible to screen readers, but visible on focus
 @mixin visually-hidden() {
 	&:not(:focus):not(:active) {
 		@include always-visually-hidden();
