@@ -21,14 +21,11 @@
 	"devDependencies": {
 		"@wordpress/scripts": "^27.6.0",
 		"glob": "^8.1.0",
-		"nodemon": "^3.1.0",
 		"remove-files-webpack-plugin": "^1.5.0"
 	},
 	"scripts": {
-		"lint:pkg-json": "wp-scripts lint-pkg-json",
 		"build": "wp-scripts build --config ./bin/webpack.config.js --webpack-src-dir=src/blocks",
 		"create-block": "cd ./src/blocks && npx @wordpress/create-block --namespace=block-theme --no-plugin --variant=dynamic",
-		"dev:compile": "wp-scripts start --config ./bin/webpack.config.js --webpack-src-dir=src/blocks --no-watch",
-		"start": "nodemon --watch ./src --ext js,css,scss,php,json --exec \"npm run dev:compile\""
+		"start": "wp-scripts start --config ./bin/webpack.config.js --webpack-src-dir=src/blocks"
 	}
 }
