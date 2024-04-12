@@ -23,24 +23,24 @@
         {
           "name": "Primary",
           "slug": "primary",
-          "color": "#506930"
+          "color": "#3858e9"
         },
         {
           "name": "Secondary",
           "slug": "secondary",
-          "color": "#ADC178"
+          "color": "#7b90ff"
         }
       ]
     },
     "custom": {
       "blockGap": "1.5rem",
       "border": {
-        "radius": "5px",
+        "radius": "0px",
         "width": "2px",
         "style": "solid",
         "color": "var(--wp--preset--color--foreground)",
         "focus": {
-          "radius": "5px",
+          "radius": "0px",
           "width": "2px",
           "style": "solid",
           "color": "var(--wp--preset--color--secondary)"
@@ -146,93 +146,64 @@
         {
           "fontFace": [
             {
-              "fontFamily": "Lato",
+              "fontFamily": "EBGaramond",
               "fontStyle": "normal",
               "fontWeight": "400",
               "src": [
-                "file:./fonts/lato-regular.woff2",
-                "file:./fonts/lato-regular.woff"
+                "file:./fonts/EBGaramond-Regular.ttf"
               ]
             },
             {
-              "fontFamily": "Lato",
-              "fontStyle": "italic",
-              "fontWeight": "400",
-              "src": [
-                "file:./fonts/lato-italic.woff2",
-                "file:./fonts/lato-italic.woff"
-              ]
-            },
-            {
-              "fontFamily": "Lato",
-              "fontStyle": "italic",
-              "fontWeight": "700",
-              "src": [
-                "file:./fonts/lato-bolditalic.woff2",
-                "file:./fonts/lato-bolditalic.woff"
-              ]
-            },
-            {
-              "fontFamily": "Lato",
+              "fontFamily": "EBGaramond",
               "fontStyle": "normal",
               "fontWeight": "700",
               "src": [
-                "file:./fonts/lato-bold.woff2",
-                "file:./fonts/lato-bold.woff"
+                "file:./fonts/EBGaramond-Bold.ttf"
               ]
-            }
+            },
+			{
+			  "fontFamily": "EBGaramond",
+              "fontStyle": "italic",
+              "fontWeight": "400",
+              "src": [
+                "file:./fonts/EBGaramond-Italic.ttf"
+              ]
+            },
+			{
+              "fontFamily": "EBGaramond",
+              "fontStyle": "italic",
+              "fontWeight": "700",
+              "src": [
+                "file:./fonts/EBGaramond-BoldItalic.ttf"
+              ]
+			}
           ],
-          "fontFamily": "\"Lato\", sans-serif",
-          "name": "Lato",
-          "slug": "lato"
+          "fontFamily": "\"EBGaramond\", sans-serif",
+          "name": "EB Garamond",
+          "slug": "ebgaramond"
         },
         {
           "fontFace": [
             {
-              "fontFamily": "Manrope",
+              "fontFamily": "Inter",
               "fontStyle": "normal",
               "fontWeight": "400",
               "src": [
-                "file:./fonts/Manrope-Regular.woff2"
+                "file:./fonts/Inter-Regular.ttf"
               ]
             },
             {
-              "fontFamily": "Manrope",
+              "fontFamily": "Inter",
               "fontStyle": "normal",
               "fontWeight": "700",
               "src": [
-                "file:./fonts/Manrope-Bold.woff2"
+                "file:./fonts/Inter-Bold.ttf"
               ]
             }
           ],
-          "fontFamily": "\"Manrope\", sans-serif",
-          "name": "Manrope",
-          "slug": "manrope"
-        },
-        {
-          "fontFace": [
-            {
-              "fontFamily": "DM Serif Display",
-              "fontStyle": "normal",
-              "fontWeight": "400",
-              "src": [
-                "file:./fonts/dmserifdisplay-regular-webfont.woff2",
-                "file:./fonts/dmserifdisplay-regular-webfont.woff"
-              ]
-            },
-            {
-              "fontFamily": "Manrope",
-              "fontStyle": "italic",
-              "fontWeight": "400",
-              "src": [
-                "file:./fonts/dmserifdisplay-italic-webfont.woff2",
-                "file:./fonts/dmserifdisplay-italic-webfont.woff"
-              ]
-            }
-          ],
-          "fontFamily": "\"DM Serif Display\", serif",
-          "name": "DM Serif Display",
-          "slug": "dm-serif-display"
+          "fontFamily": "\"Inter\", serif",
+          "name": "Inter",
+          "slug": "inter"
         }
       ],
       "fontSizes": [
@@ -404,7 +375,7 @@
       },
       "heading": {
         "typography": {
-          "fontFamily": "var(--wp--preset--font-family--dm-serif-display)",
+          "fontFamily": "var(--wp--preset--font-family--ebgaramond)",
           "fontWeight": "400",
           "lineHeight": "1.2"
         }
@@ -449,7 +420,7 @@
       }
     },
     "typography": {
-      "fontFamily": "var(--wp--preset--font-family--manrope)",
+      "fontFamily": "var(--wp--preset--font-family--inter)",
       "fontSize": "var(--wp--preset--font-size--paragraph)",
       "lineHeight": "1.6"
     }
