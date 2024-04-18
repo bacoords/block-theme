@@ -92,11 +92,13 @@ For a dynamic block, run the command `npm run create-block:dynamic [block-name]`
 
 The `./blocks` directory contains all of compiled blocks, and new blocks that appear there are automatically registered in the theme.
 
-## Linting and WordPress Coding Standards
+## Linting, Prettier, and WordPress Coding Standards
 
 PHP linting is available by running `composer php-lint` from the command line.
 
 BlockTheme follows the WordPress Coding Standards. You can check your code against the standards by running `composer phpcs` from the command line. You can also run `composer phpcs-fix` to automatically fix any errors that can be fixed automatically.
+
+The WordPress Prettier config is also included for JavaScript and SCSS files, but can be removed by deleting the `.prettierrc` file.
 
 ## File/Folder Structure
 

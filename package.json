@@ -19,6 +19,7 @@
 	},
 	"main": "index.js",
 	"devDependencies": {
+		"@wordpress/prettier-config": "^3.12.0",
 		"@wordpress/scripts": "^27.6.0",
 		"glob": "^8.1.0",
 		"remove-files-webpack-plugin": "^1.5.0"

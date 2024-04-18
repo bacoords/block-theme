@@ -7,9 +7,9 @@ import {
 	unregisterBlockVariation,
 	registerBlockStyle,
 	registerBlockVariation,
-} from "@wordpress/blocks";
-import { dispatch } from "@wordpress/data";
-import domReady from "@wordpress/dom-ready";
+} from '@wordpress/blocks';
+import { dispatch } from '@wordpress/data';
+import domReady from '@wordpress/dom-ready';
 
 /**
  * Unregister blocks
@@ -91,28 +91,28 @@ const registerBlockVariations = {
  * remove editor panels, remove block styles, remove block variations,
  * register block styles, and register block variations – all as defined above.
  */
-domReady(function () {
-	unregisterBlocks.forEach((block) => {
-		unregisterBlockType(block);
-	});
+domReady( function () {
+	unregisterBlocks.forEach( ( block ) => {
+		unregisterBlockType( block );
+	} );
 
 	// Only run if we are in the post editor
-	if (null !== dispatch("core/edit-post")) {
-		const { removeEditorPanel } = dispatch("core/edit-post");
-		removeEditorPanels.forEach((panel) => {
-			removeEditorPanel(panel);
-		});
+	if ( null !== dispatch( 'core/edit-post' ) ) {
+		const { removeEditorPanel } = dispatch( 'core/edit-post' );
+		removeEditorPanels.forEach( ( panel ) => {
+			removeEditorPanel( panel );
+		} );
 	}
-	Object.keys(unregisterBlockStyles).forEach((block) => {
-		unregisterBlockStyle(block, unregisterBlockStyles[block]);
-	});
-	Object.keys(unregisterBlockVariations).forEach((block) => {
-		unregisterBlockVariation(block, unregisterBlockVariations[block]);
-	});
-	Object.keys(registerBlockStyles).forEach((block) => {
-		registerBlockStyle(block, registerBlockStyles[block]);
-	});
-	Object.keys(registerBlockVariations).forEach((block) => {
-		registerBlockVariation(block, registerBlockVariations[block]);
-	});
-});
+	Object.keys( unregisterBlockStyles ).forEach( ( block ) => {
+		unregisterBlockStyle( block, unregisterBlockStyles[ block ] );
+	} );
+	Object.keys( unregisterBlockVariations ).forEach( ( block ) => {
+		unregisterBlockVariation( block, unregisterBlockVariations[ block ] );
+	} );
+	Object.keys( registerBlockStyles ).forEach( ( block ) => {
+		registerBlockStyle( block, registerBlockStyles[ block ] );
+	} );
+	Object.keys( registerBlockVariations ).forEach( ( block ) => {
+		registerBlockVariation( block, registerBlockVariations[ block ] );
+	} );
+} );

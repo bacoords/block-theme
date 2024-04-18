@@ -12,7 +12,7 @@
 	"authors": [
 		{
 			"name": "Contributors",
-			"homepage": "https://github.com/bacoords/block-theme/contributors.md"
+			"homepage": "https://github.com/bacoords/block-theme/graphs/contributors"
 		}
 	],
 	"require-dev": {
