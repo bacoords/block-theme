@@ -58,10 +58,6 @@ function enqueue_editor_modifications() {
 			$dependencies[] = 'wp-edit-post';
 			break;
 
-		case 'widgets':
-			$dependencies[] = 'wp-edit-widgets';
-			break;
-
 		case 'site-editor':
 			$dependencies[] = 'wp-edit-site';
 			break;
