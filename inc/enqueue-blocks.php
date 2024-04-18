@@ -40,7 +40,6 @@ function enqueue_block_specific_styles() {
 		wp_enqueue_block_style( $block_name, $args );
 	}
 }
-
 add_action( 'after_setup_theme', __NAMESPACE__ . '\enqueue_block_specific_styles' );
 
 /**
