@@ -11,6 +11,7 @@ Most of the theme setup is handled in the `inc/*.php` files. This includes:
 - Theme supports
 - Enqueueing scripts and styles, including block-specific styles
 - Any custom theme options
+- Replacing the WordPress Logo and colors on the login screen with the site logo and colors
 
 ## Theme.json
 

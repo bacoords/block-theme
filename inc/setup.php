@@ -61,24 +61,37 @@ add_action( 'after_setup_theme', __NAMESPACE__ . '\theme_setup' );
  * Custom login logo
  */
 function custom_login_logo() {
-	$custom_logo_id = get_theme_mod( 'custom_logo' );
 
-	// We have a logo. Logo is go.
-	if ( $custom_logo_id ) {
-		$image = wp_get_attachment_image_src( $custom_logo_id, 'medium' );
-		?>
-		<style type="text/css">
-		#login h1 a, .login h1 a {
-			background-image: url(<?php echo esc_attr( $image[0] ); ?>);
-			height:<?php echo esc_attr( $image[2] ); ?>px;
-			width:<?php echo esc_attr( $image[1] ); ?>px;
-			background-size: <?php echo esc_attr( $image[1] ); ?>px <?php echo esc_attr( $image[2] ); ?>px;
-			background-repeat: no-repeat;
-			padding-bottom: 30px;
+	$colors    = wp_get_global_styles( array( 'color' ) );
+	$variables = wp_get_global_stylesheet( array( 'variables' ) );
+	?>
+
+	<style type="text/css">
+		<?php echo esc_html( $variables ); ?>
+		body.login {
+			background-color: <?php echo esc_attr( $colors['background'] ); ?>;
+			color: <?php echo esc_attr( $colors['text'] ); ?>;
 		}
-		</style>
+
 		<?php
-	}
+		$custom_logo_id = get_theme_mod( 'custom_logo' );
+
+		// We have a logo. Logo is go.
+		if ( $custom_logo_id ) :
+			$image = wp_get_attachment_image_src( $custom_logo_id, 'medium' );
+			?>
+			#login h1 a, .login h1 a {
+				background-image: url(<?php echo esc_attr( $image[0] ); ?>);
+				height:<?php echo esc_attr( $image[2] ); ?>px;
+				width:<?php echo esc_attr( $image[1] ); ?>px;
+				background-size: <?php echo esc_attr( $image[1] ); ?>px <?php echo esc_attr( $image[2] ); ?>px;
+				background-repeat: no-repeat;
+				padding-bottom: 30px;
+			}
+		<?php endif; ?>
+
+	</style>
+	<?php
 }
 add_action( 'login_enqueue_scripts', __NAMESPACE__ . '\custom_login_logo' );
 
