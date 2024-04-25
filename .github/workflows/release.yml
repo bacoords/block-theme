@@ -19,7 +19,21 @@ jobs:
         npm install
         npm run build
 
-    - name: Generate zip
-      uses: 10up/action-wordpress-plugin-build-zip@stable
-      env:
-        SLUG: block-theme
+    - name: Archive release
+      uses: thedoctor0/zip-release@0.7.5
+      with:
+        type: 'zip'
+        filename: 'release.zip'
+        exclusions: '*.git* /*node_modules/*'
+
+    - name: Upload release artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: release
+        path: release.zip
+
+    - name: Upload Release
+      uses: ncipollo/release-action@v1.14.0
+      with:
+        artifacts: "release.zip"
+        token: ${{ secrets.GITHUB_TOKEN }}
