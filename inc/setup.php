@@ -55,6 +55,7 @@ function custom_login_logo() {
 				background-image: url(<?php echo esc_attr( $image[0] ); ?>);
 				height:<?php echo esc_attr( $image[2] ); ?>px;
 				width:<?php echo esc_attr( $image[1] ); ?>px;
+				max-width: 100%;
 				background-size: <?php echo esc_attr( $image[1] ); ?>px <?php echo esc_attr( $image[2] ); ?>px;
 				background-repeat: no-repeat;
 				padding-bottom: 30px;
