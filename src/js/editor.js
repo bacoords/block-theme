@@ -12,6 +12,41 @@ import { dispatch } from '@wordpress/data';
 import domReady from '@wordpress/dom-ready';
 
 /**
+ * Register block styles
+ *
+ * @type {Object} Add the names of blocks and styles to register here
+ * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-styles/
+ */
+const registerBlockStyles = {
+	// "core/cover": [
+	// 	{
+	// 		name: "hero",
+	// 		label: "Hero",
+	// 	},
+	// ]
+};
+
+/**
+ * Register block variations
+ *
+ * @type {Object} Add the names of blocks and variations to register here
+ * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-variations/
+ */
+const registerBlockVariations = {
+	// "core/columns": {
+	// 	name: "three-columns-wide-left",
+	// 	title: "50 / 25 / 25",
+	// 	description: "Three columns; wide left column",
+	// 	innerBlocks: [
+	// 		["core/column", { width: "50%" }],
+	// 		["core/column", { width: "25%" }],
+	// 		["core/column", { width: "25%" }],
+	// 	],
+	// 	scope: ["block"],
+	// },
+};
+
+/**
  * Unregister blocks
  *
  * @type {Array} Add the names of blocks to unregister here
@@ -42,21 +77,6 @@ const unregisterBlockStyles = {
 };
 
 /**
- * Register block styles
- *
- * @type {Object} Add the names of blocks and styles to register here
- * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-styles/
- */
-const registerBlockStyles = {
-	// "core/cover": [
-	// 	{
-	// 		name: "hero",
-	// 		label: "Hero",
-	// 	},
-	// ]
-};
-
-/**
  * Remove block variations
  *
  * @type {Object} Add the names of blocks and variations to remove here
@@ -67,31 +87,17 @@ const unregisterBlockVariations = {
 };
 
 /**
- * Register block variations
- *
- * @type {Object} Add the names of blocks and variations to register here
- * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-variations/
- */
-const registerBlockVariations = {
-	// "core/columns": {
-	// 	name: "three-columns-wide-left",
-	// 	title: "50 / 25 / 25",
-	// 	description: "Three columns; wide left column",
-	// 	innerBlocks: [
-	// 		["core/column", { width: "50%" }],
-	// 		["core/column", { width: "25%" }],
-	// 		["core/column", { width: "25%" }],
-	// 	],
-	// 	scope: ["block"],
-	// },
-};
-
-/**
  * Here we hook into the editor initialization and unregister the blocks,
  * remove editor panels, remove block styles, remove block variations,
  * register block styles, and register block variations – all as defined above.
  */
 domReady( function () {
+	Object.keys( registerBlockStyles ).forEach( ( block ) => {
+		registerBlockStyle( block, registerBlockStyles[ block ] );
+	} );
+	Object.keys( registerBlockVariations ).forEach( ( block ) => {
+		registerBlockVariation( block, registerBlockVariations[ block ] );
+	} );
 	unregisterBlocks.forEach( ( block ) => {
 		unregisterBlockType( block );
 	} );
@@ -108,11 +114,5 @@ domReady( function () {
 	} );
 	Object.keys( unregisterBlockVariations ).forEach( ( block ) => {
 		unregisterBlockVariation( block, unregisterBlockVariations[ block ] );
-	} );
-	Object.keys( registerBlockStyles ).forEach( ( block ) => {
-		registerBlockStyle( block, registerBlockStyles[ block ] );
-	} );
-	Object.keys( registerBlockVariations ).forEach( ( block ) => {
-		registerBlockVariation( block, registerBlockVariations[ block ] );
 	} );
 } );
