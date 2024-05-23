@@ -66,7 +66,7 @@ function get_block_specific_stylesheets() {
 function associative_array_of_blocks_and_stylesheet_args( $accumulator, $css_file ) {
 	// Hard coded values to exclude certain stylesheets.
 	// TODO: Make this dynamic or provide a way to exclude stylesheets through /setup.php.
-	$exclude_stylesheets = array( 'global.css', 'editor.css' );
+	$exclude_stylesheets = array( 'global.css', 'global-rtl.css', 'editor.css', 'editor-rtl.css' );
 
 	if ( in_array( basename( $css_file ), $exclude_stylesheets, true ) ) {
 		return $accumulator;
