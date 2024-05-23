@@ -48,7 +48,9 @@ BlockTheme does enqueue two global stylesheets, one for the frontend (`global.cs
 
 #### Utils/Mixins
 
-There are a few mixins and functions in the `src/scss/utils` directory that you can use in any of your SCSS files by importing them. An example:
+There are a few mixins and functions in the `src/scss/utils` directory that you can use in any of your SCSS files by importing them. This includes any `style.scss`, `editor.scss`, or `view.scss` file in a custom block. 
+
+An example:
 
 ```scss
 @use '../utils';
