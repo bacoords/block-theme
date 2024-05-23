@@ -38,7 +38,7 @@ As of now, this repository does _not_ include the final built assets or blocks. 
 
 `npm run build` will build the theme's CSS and JavaScript files.
 
-`npm run watch` will watch for changes to the theme's SCSS and JavaScript files partials and rebuild them automatically.
+`npm run start` will watch for changes to the theme's SCSS and JavaScript files partials and rebuild them automatically.
 
 One note is that `@wordpress/scripts` is not great at recognizing _new_ files in the `src` directory. If you add a new file, you may need to restart the build process.
 
