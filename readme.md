@@ -36,6 +36,8 @@ The build process uses `@wordpress/scripts` to compile SCSS and JavaScript files
 
 As of now, this repository does _not_ include the final built assets or blocks. You'll need to build them once you've cloned the repo. (You may also want to exclude them from your `.gitignore` file, depending on your workflow.)
 
+Run `npm install` to install all of the dependencies.
+
 `npm run build` will build the theme's CSS and JavaScript files.
 
 `npm run start` will watch for changes to the theme's SCSS and JavaScript files partials and rebuild them automatically.
