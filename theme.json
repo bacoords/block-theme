@@ -351,7 +351,7 @@
       }
     },
     "spacing": {
-      "blockGap": "var:custom|blockGap",
+      "blockGap": "var:custom|block-gap",
       "padding": {
         "top": "var:preset|spacing|30",
         "right": "var:preset|spacing|20",
