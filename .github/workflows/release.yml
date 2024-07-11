@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Build plugin # Remove or modify this step as needed
       run: |
@@ -20,20 +20,20 @@ jobs:
         npm run build
 
     - name: Archive release
-      uses: thedoctor0/zip-release@0.7.1
+      uses: thedoctor0/zip-release@0.7.5
       with:
         type: 'zip'
-        filename: 'block-theme.zip'
+        filename: 'release.zip'
         exclusions: '*.git* /*node_modules/*'
 
     - name: Upload release artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: release
-        path: block-theme.zip
+        path: release.zip
 
     - name: Upload Release
-      uses: ncipollo/release-action@v1.12.0
+      uses: ncipollo/release-action@v1.14.0
       with:
-        artifacts: "block-theme.zip"
+        artifacts: "release.zip"
         token: ${{ secrets.GITHUB_TOKEN }}
