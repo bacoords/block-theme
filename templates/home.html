@@ -1,34 +1,181 @@
 <!-- wp:template-part {"slug":"header","tagName":"header"} /-->
 
-<!-- wp:group {"tagName":"main","style":{"spacing":{"margin":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|70"}}},"layout":{"type":"constrained"}} -->
-<main class="wp-block-group" style="margin-top:var(--wp--preset--spacing--50);margin-bottom:var(--wp--preset--spacing--70)">
-	<!-- wp:site-title {"style":{"spacing":{"margin":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80"}}}, "align":"wide"} /-->
+<!-- wp:group {"tagName":"main","layout":{"type":"constrained"}} -->
+<main class="wp-block-group">
+        <!-- wp:group {"align":"full","className":"hero-section","style":{"color":{"text":"#ffffff"}},"layout":{"type":"default"}} -->
+        <div class="wp-block-group alignfull hero-section" style="background-image:url('https://images.unsplash.com/photo-1598257006458-087169a1a447?auto=format&fit=crop&w=1770&q=80');color:#ffffff;">
+                <div class="hero-content">
+                        <!-- wp:heading {"textAlign":"center","level":1,"style":{"typography":{"fontSize":"3rem","fontWeight":"700"}}} -->
+                        <h1 class="has-text-align-center" style="font-size:3rem;font-weight:700">Digital Marketing that Helps Small Businesses Grow</h1>
+                        <!-- /wp:heading -->
+                        <!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"1.25rem"}}} -->
+                        <p class="has-text-align-center" style="font-size:1.25rem">We make marketing fun, effective, and stress-free—so you can focus on your business.</p>
+                        <!-- /wp:paragraph -->
+                        <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
+                        <div class="wp-block-buttons">
+                                <!-- wp:button {"className":"hero-button"} -->
+                                <div class="wp-block-button hero-button"><a class="wp-block-button__link">Get Your Free Consultation</a></div>
+                                <!-- /wp:button -->
+                        </div>
+                        <!-- /wp:buttons -->
+                </div>
+                <!-- wp:html -->
+                <svg class="hero-wave" viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg"><path fill="#ffffff" d="M0,0H1440V40C960,80 480,0 0,40Z"/></svg>
+                <!-- /wp:html -->
+        </div>
+        <!-- /wp:group -->
 
-	<!-- wp:query {"query":{"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true},"displayLayout":{"type":"flex","columns":3},"align":"wide","layout":{"type":"constrained"}} -->
-	<div class="wp-block-query alignwide">
-		<!-- wp:post-template {"align":"wide"} -->
-			<!-- wp:post-featured-image {"isLink":true,"width":"100%","height":"clamp(15vw, 30vh, 400px)","align":"wide"} /-->
-			<!-- wp:post-title {"isLink":true} /-->
-			<!-- wp:post-excerpt /-->
-			<!-- wp:post-date {"isLink":true} /-->
+        <!-- wp:group {"align":"full","style":{"color":{"background":"#FFFFFF","text":"#000000"},"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}}} -->
+	<div
+		class="wp-block-group alignfull concept-section"
+		style="
+                        color: #000000;
+                        background-color: #ffffff;
+                        padding-top: var(--wp--preset--spacing--60);
+                        padding-bottom: var(--wp--preset--spacing--60);
+                "
+        >
+		<!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"1.5rem"}}} -->
+		<p class="has-text-align-center" style="font-size: 1.5rem">
+			We craft digital marketing experiences that help small businesses
+			grow and connect with their customers.
+		</p>
+		<!-- /wp:paragraph -->
 
-			<!-- wp:spacer {"height":"var(--wp--preset--spacing--40)"} -->
-			<div style="height:var(--wp--preset--spacing--40)" aria-hidden="true" class="wp-block-spacer"></div>
-			<!-- /wp:spacer -->
-		<!-- /wp:post-template -->
+		<!-- wp:columns {"style":{"spacing":{"margin":{"top":"var:preset|spacing|60"}}}} -->
+		<div
+			class="wp-block-columns"
+			style="margin-top: var(--wp--preset--spacing--60)"
+		>
+			<!-- wp:column -->
+			<div class="wp-block-column">
+				<!-- wp:html -->
+                                <svg
+                                        class="icon"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 24 24"
+                                        fill="currentColor"
+                                        stroke="none"
+                                >
+                                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                                </svg>
+                                <!-- /wp:html -->
+				<!-- wp:heading {"textAlign":"center","level":3} -->
+				<h3 class="has-text-align-center">Who I Am</h3>
+				<!-- /wp:heading -->
+				<!-- wp:paragraph {"align":"center"} -->
+				<p class="has-text-align-center">
+					A dedicated marketer passionate about elevating small
+					businesses.
+				</p>
+				<!-- /wp:paragraph -->
+			</div>
+			<!-- /wp:column -->
 
-		<!-- wp:query-pagination {"paginationArrow":"arrow","align":"wide","layout":{"type":"flex","justifyContent":"space-between"}} -->
-			<!-- wp:query-pagination-previous {"label":"Newer Posts"} /-->
-			<!-- wp:query-pagination-next {"label":"Older Posts"} /-->
-		<!-- /wp:query-pagination -->
-	</div>
-	<!-- /wp:query -->
+			<!-- wp:column -->
+			<div class="wp-block-column">
+				<!-- wp:html -->
+                                <svg
+                                        class="icon"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 24 24"
+                                        fill="currentColor"
+                                        stroke="none"
+                                >
+                                        <path d="M12 17.27L18.18 21 16.54 13.97 22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z" />
+                                </svg>
+                                <!-- /wp:html -->
+				<!-- wp:heading {"textAlign":"center","level":3} -->
+				<h3 class="has-text-align-center">What I Do</h3>
+				<!-- /wp:heading -->
+				<!-- wp:paragraph {"align":"center"} -->
+				<p class="has-text-align-center">
+					Strategic campaigns and content that turn clicks into
+					customers.
+				</p>
+				<!-- /wp:paragraph -->
+			</div>
+			<!-- /wp:column -->
 
-	<!-- wp:spacer {"height":"var(--wp--preset--spacing--60)"} -->
-	<div style="height:var(--wp--preset--spacing--60)" aria-hidden="true" class="wp-block-spacer"></div>
-	<!-- /wp:spacer -->
+			<!-- wp:column -->
+			<div class="wp-block-column">
+				<!-- wp:html -->
+                                <svg
+                                        class="icon"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 24 24"
+                                        fill="currentColor"
+                                        stroke="none"
+                                >
+                                        <path d="M3 3h2v18H3V3zm4 10h2v8H7v-8zm4-4h2v12h-2V9zm4-4h2v16h-2V5zm4-4h2v20h-2V1z" />
+                                </svg>
+                                <!-- /wp:html -->
+				<!-- wp:heading {"textAlign":"center","level":3} -->
+				<h3 class="has-text-align-center">Results</h3>
+				<!-- /wp:heading -->
+				<!-- wp:paragraph {"align":"center"} -->
+				<p class="has-text-align-center">
+					Data-driven outcomes that grow your revenue and reach.
+				</p>
+				<!-- /wp:paragraph -->
+			</div>
+			<!-- /wp:column -->
+		</div>
+		<!-- /wp:columns -->
 
-	<!-- wp:pattern {"slug":"block-theme/call-to-action"} /-->
+		<!-- wp:html -->
+		<div class="logo-carousel">
+			<div class="logo-slide">
+				<img
+					src="https://via.placeholder.com/150x80?text=Logo+1"
+					alt="Logo 1"
+				/>
+			</div>
+			<div class="logo-slide">
+				<img
+					src="https://via.placeholder.com/150x80?text=Logo+2"
+					alt="Logo 2"
+				/>
+			</div>
+			<div class="logo-slide">
+				<img
+					src="https://via.placeholder.com/150x80?text=Logo+3"
+					alt="Logo 3"
+				/>
+			</div>
+		</div>
+                <!-- /wp:html -->
+                <!-- wp:html -->
+                <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                        const slides = document.querySelectorAll('.logo-slide');
+                        let index = 0;
+                        function showSlide(i) {
+                                slides.forEach((s, n) => {
+                                        s.classList.toggle('active', n === i);
+                                });
+                        }
+                        function nextSlide() {
+                                index = (index + 1) % slides.length;
+                                showSlide(index);
+                        }
+                        showSlide(index);
+                        setInterval(nextSlide, 3000);
+                });
+                </script>
+                <!-- /wp:html -->
+        </div>
+        <!-- /wp:group -->
+
+        <!-- wp:group {"align":"full","className":"orange-section","style":{"color":{"background":"#E06547"}}} -->
+        <div class="wp-block-group alignfull orange-section" style="background-color: #E06547">
+                <!-- wp:html -->
+                <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg">
+                        <path fill="#ffffff" d="M0,0H1440V40C960,80 480,0 0,40Z" />
+                </svg>
+                <!-- /wp:html -->
+        </div>
+        <!-- /wp:group -->
 </main>
 <!-- /wp:group -->
 

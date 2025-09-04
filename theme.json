@@ -10,16 +10,16 @@
       "defaultPalette": false,
       "duotone": [],
       "palette": [
-        {
-          "name": "Background",
-          "slug": "background",
-          "color": "#FEFEFE"
-        },
-        {
-          "name": "Foreground",
-          "slug": "foreground",
-          "color": "#181A1F"
-        },
+          {
+            "name": "Background",
+            "slug": "background",
+            "color": "#E06547"
+          },
+          {
+            "name": "Foreground",
+            "slug": "foreground",
+            "color": "#FFFFFF"
+          },
         {
           "name": "Primary",
           "slug": "primary",
@@ -320,35 +320,35 @@
           "lineHeight": "1.2"
         }
       },
-      "link": {
-        ":hover": {
+        "link": {
+          ":hover": {
+            "color": {
+              "text": "var:preset|color|foreground"
+            },
+            "typography": {
+              "textDecoration": "underline var(--wp--preset--color--foreground)"
+            }
+          },
+          ":focus": {
+            "typography": {
+              "textDecoration": "underline dashed"
+            }
+          },
+          ":active": {
+            "color": {
+              "text": "var:preset|color|foreground"
+            },
+            "typography": {
+              "textDecoration": "none"
+            }
+          },
           "color": {
             "text": "var:preset|color|foreground"
           },
           "typography": {
             "textDecoration": "underline var(--wp--preset--color--foreground)"
           }
-        },
-        ":focus": {
-          "typography": {
-            "textDecoration": "underline dashed"
-          }
-        },
-        ":active": {
-          "color": {
-            "text": "var:preset|color|foreground"
-          },
-          "typography": {
-            "textDecoration": "none"
-          }
-        },
-        "color": {
-          "text": "var:preset|color|primary"
-        },
-        "typography": {
-          "textDecoration": "underline var(--wp--preset--color--primary)"
         }
-      }
     },
     "spacing": {
       "blockGap": "var:custom|block-gap",

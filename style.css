@@ -11,3 +11,103 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags:
 Text Domain: block-theme
 */
+
+/* Styles for wave-shaped hero image, icons, and logo carousel */
+body {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.icon {
+    width: 64px;
+    height: 64px;
+    display: block;
+    margin: 3cm;
+    color: var(--wp--preset--color--primary, #000);
+}
+
+.logo-carousel {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    text-align: center;
+}
+
+.logo-slide {
+    display: none;
+}
+
+.logo-slide img {
+    max-width: 100%;
+    height: auto;
+}
+
+.logo-slide.active {
+    display: block;
+}
+
+.hero-section {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 75vh;
+    color: #ffffff;
+}
+
+.hero-section.alignfull {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: 65vh;
+    }
+}
+
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 0;
+}
+
+.hero-section .hero-content {
+    position: relative;
+    z-index: 1;
+    padding: 0 1rem;
+}
+
+.hero-button .wp-block-button__link {
+    background: #ffffff;
+    color: #E06547;
+    border: none;
+    border-radius: 9999px;
+    padding: 1rem 2rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-shadow: none;
+}
+
+.hero-button .wp-block-button__link:hover {
+    background: #E06547;
+    color: #ffffff;
+}
+
+.hero-wave {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: auto;
+}

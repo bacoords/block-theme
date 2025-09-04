@@ -3,6 +3,8 @@
  * Enqueue scripts and styles.
  *
  * @package BlockTheme
+ * @subpackage Enqueue
+ * @author BlockTheme
  */
 
 namespace BlockTheme\Enqueue;
@@ -15,10 +17,13 @@ namespace BlockTheme\Enqueue;
  * @return void
  */
 function global_theme_styles() {
-	$theme_version = wp_get_theme()->get( 'Version' );
-	$css_version   = $theme_version . '.' . filemtime( get_template_directory() . '/css/global.css' );
+       $css_file = get_template_directory() . '/css/global.css';
+       if ( file_exists( $css_file ) ) {
+               $theme_version = wp_get_theme()->get( 'Version' );
+               $css_version   = $theme_version . '.' . filemtime( $css_file );
 
-	wp_enqueue_style( 'block-theme-global-theme-style', get_template_directory_uri() . '/css/global.css', array(), $css_version );
+               wp_enqueue_style( 'block-theme-global-theme-style', get_template_directory_uri() . '/css/global.css', array(), $css_version );
+       }
 }
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\global_theme_styles' );
 
@@ -31,10 +36,14 @@ add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\global_theme_styles' );
  */
 function front_end_scripts() {
 
-	$asset_file   = include get_template_directory() . '/js/scripts.asset.php';
-	$dependencies = $asset_file['dependencies'];
+       $asset_path = get_template_directory() . '/js/scripts.asset.php';
+       if ( file_exists( $asset_path ) ) {
+               $asset_file   = include $asset_path;
+               $dependencies = isset( $asset_file['dependencies'] ) ? $asset_file['dependencies'] : array();
+               $version      = isset( $asset_file['version'] ) ? $asset_file['version'] : false;
 
-	wp_enqueue_script( 'block-theme-front-end-scripts', get_template_directory_uri() . '/js/scripts.js', $dependencies, $asset_file['version'], true );
+               wp_enqueue_script( 'block-theme-front-end-scripts', get_template_directory_uri() . '/js/scripts.js', $dependencies, $version, true );
+       }
 }
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\front_end_scripts' );
 
@@ -48,8 +57,15 @@ add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\front_end_scripts' );
  * @return void
  */
 function enqueue_editor_modifications() {
-	$asset_file   = include get_template_directory() . '/js/editor.asset.php';
-	$dependencies = $asset_file['dependencies'];
+       $asset_path = get_template_directory() . '/js/editor.asset.php';
+       if ( ! file_exists( $asset_path ) ) {
+               return;
+       }
+
+       $asset_file   = include $asset_path;
+       $dependencies = isset( $asset_file['dependencies'] ) ? $asset_file['dependencies'] : array();
+
+       $version = isset( $asset_file['version'] ) ? $asset_file['version'] : false;
 
 	// Add extra dependencies depending on the current screen.
 	$screen = get_current_screen();
@@ -63,7 +79,7 @@ function enqueue_editor_modifications() {
 			break;
 	}
 
-	wp_enqueue_script( 'block-theme-editor-modifications', get_template_directory_uri() . '/js/editor.js', $dependencies, $asset_file['version'], true );
+       wp_enqueue_script( 'block-theme-editor-modifications', get_template_directory_uri() . '/js/editor.js', $dependencies, $version, true );
 }
 
 add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\enqueue_editor_modifications' );
